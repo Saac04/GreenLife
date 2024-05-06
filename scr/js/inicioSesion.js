@@ -9,5 +9,5 @@ window.onload = function() {
     passwordInput.onfocus = function() {
         this.placeholder = '';
     }
-}
+} //hola
 
