@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Kanit', sans-serif;
+    background-color: #FFFFFF;
+}
+.login-container {
+    text-align: center;
+}
+h1 {
+    font-size: 48px;
+    font-weight: 500;
+    color: #545454;
+}
+h1 span {
+    color: #76BD57;
+}
+h2 {
+    font-size: 28px;
+    font-weight: 400;
+    color: #479555;
+}
+h4 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #479555;
+}
+.input-field {
+    font-size: 20px;
+    font-weight: 300;
+    display: block;
+    width: 426px;
+    box-sizing: border-box;  /* ancho y la altura de los elementos incluyen el padding y el borde */
+    border: none;
+    border-bottom: 2px solid #C6C6C6;
+    margin: 30px 0;  /* Aumenta este valor para más espacio entre los campos */
+    padding: 10px;
+}
+
+.input-field:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: #c6c6c6; /* Puedes ajustar el color según tus preferencias */
+  }
+
+.button {
+    width: 426px;  
+    height: 44px;  
+    font-size: 20px;
+    font-weight: 300;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    background-color: #7ED957;
+    color: white;
+    padding: 10px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    cursor: pointer;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: -10px;
+}
+
+.separator {
+    width: 100%;
+    border-top: 1px solid #c6c6c6;
+    text-align: center;
+    margin-top: 0px ;
+    margin-bottom: -22px;
+    
+}
+
+.separator-text {
+    color: rgba(51, 51, 51, 0.68); /* Color #333333 con 68% de opacidad */
+}
+
+.separator span {
+    background-color: #FFFFFF;
+    padding: 0 10px;
+    position: relative;
+    top: -12px;
+}
+
+.button2 {
+    width: 165px;  
+    height: 44px;  
+    font-size: 20px;
+    font-weight: 300;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    background-color: #7ED957;
+    color: white;
+    padding: 10px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    cursor: pointer;
+    float: right; 
+}
+
+
