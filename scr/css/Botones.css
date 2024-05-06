@@ -1,0 +1,154 @@
+/*------------------------------------------------------------------------------*/
+/* BOTONES */
+/*------------------------------------------------------------------------------*/
+
+
+/* Estilos para botones con fondo */
+.button {
+    background-color: #7ED957;
+    color: #ffffff; /* Blanco */
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px 20px; /* Ajusta según sea necesario */
+    border: none; /* Quita el borde si no lo deseas */
+    cursor: pointer;
+}
+
+/* Estilos para botones con fondo cuando están seleccionados */
+.button.active {
+    background-color: #479555; /* Cambia el color cuando el botón está seleccionado */
+}
+
+
+
+/* Estilos para botones solo con texto */
+.text-button {
+    background: none;
+    color: #545455; /* Gris oscuro */
+    font-family: 'Kanit Light', sans-serif;
+    font-size: 24px;
+    padding: 10px 20px; /* Ajusta según sea necesario */
+    border: none; /* Quita el borde si no lo deseas */
+    cursor: pointer;
+}
+
+/* Estilos para botones solo con texto cuando están seleccionados */
+.text-button.active {
+    color: #479555; /* Cambia el color del texto cuando el botón está seleccionado */
+}
+
+
+/*------------------------------------------------------------------------------*/
+/* FOMRULARIOS*/
+/*------------------------------------------------------------------------------*/
+
+
+/* Estilos para el formulario */
+form {
+    font-family: 'Kanit Light', sans-serif;
+}
+
+/* Estilos para los campos de entrada de texto */
+input[type="text"], input[type="email"], input[type="password"], textarea {
+    font-family: 'Kanit Light', sans-serif; /* Establece la fuente para el texto de entrada */
+    font-size: 20px;
+    color: #333333; /* Color del texto */
+    background-color: #ffffff; /* Fondo blanco */
+    border: none; /* Sin bordes */
+    padding: 10px; /* Ajuste de relleno */
+    border-radius: 5px; /* Borde redondeado */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+/* Estilos para el texto de ejemplo dentro de los campos de entrada */
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+textarea::placeholder {
+    color: #c6c6c6; /* Color del texto de ejemplo */
+}
+
+/* Estilos para el botón de enviar */
+input[type="submit"] {
+    background-color: #7ED957; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    border: none; /* Sin bordes */
+    border-radius: 10px; /* Borde redondeado */
+    padding: 10px 20px; /* Ajuste de relleno */
+    cursor: pointer; /* Cambio de cursor */
+}
+
+/* Estilos para el botón de enviar cuando está activo */
+input[type="submit"]:active {
+    background-color: #479555; /* Cambia el color cuando el botón está activo */
+}
+
+
+
+
+/*------------------------------------------------------------------------------*/
+/* DROPDOWN MENU*/
+/*------------------------------------------------------------------------------*/
+
+/* Estilos para el contenedor del menú desplegable */
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+/* Estilos para el botón del menú desplegable */
+.dropdown-btn {
+background: none; /* Fondo transparente */
+color: #333333; /* Color del texto */
+font-family: 'Kanit', sans-serif;
+font-size: 20px; /* Tamaño de letra por defecto */
+border: none; /* Sin borde */
+cursor: pointer;
+}
+
+/* Estilos para el contenido del menú desplegable */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #ffffff;
+min-width: 160px;
+z-index: 1;
+}
+
+/* Estilos para los elementos del menú desplegable */
+.dropdown-content a {
+color: #333333; /* Color del texto */
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+font-size: 20px; /* Tamaño de letra por defecto */
+}
+
+/* Estilos para el elemento del menú desplegable cuando está activo */
+.dropdown-content a:hover {
+background-color: #f1f1f1;
+}
+
+
+/*------------------------------------------------------------------------------*/
+/* CAMBIOS DE PANTALLA*/
+/*------------------------------------------------------------------------------*/
+
+/* Consulta de medios para tamaños de pantalla menores o iguales a 400px */
+@media screen and (max-width: 500px) {
+    .button {
+        font-size: 14px; /* Tamaño de letra de los botones con fondo para pantallas pequeñas */
+    }
+
+    .text-button {
+        font-size: 18px; /* Tamaño de letra de los botones de solo texto para pantallas pequeñas */
+    }
+
+    input[type="text"], input[type="email"], textarea, input[type="submit"]{
+        font-size: 14px; /* Tamaño de fuente para pantallas pequeñas */
+    }
+
+}
