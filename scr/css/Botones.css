@@ -56,8 +56,8 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
     color: #333333; /* Color del texto */
     background-color: #ffffff; /* Fondo blanco */
     border: none; /* Sin bordes */
+    border-bottom:  2px solid #c6c6c6;
     padding: 10px; /* Ajuste de relleno */
-    border-radius: 5px; /* Borde redondeado */
     margin-bottom: 10px; /* Margen inferior */
 }
 
@@ -66,7 +66,7 @@ input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="password"]::placeholder,
 textarea::placeholder {
-    color: #c6c6c6; /* Color del texto de ejemplo */
+    color: #333333; /* Color del texto de ejemplo */
 }
 
 /* Estilos para el botón de enviar */
