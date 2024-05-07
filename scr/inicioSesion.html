@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/Botones.css">
     <link rel="stylesheet" type="text/css" href="css/inicioSesion.css">
 </head>
 <body>
@@ -12,10 +13,16 @@
     <input type="password" class="input-field" placeholder="Contraseña">
     <h4 id="mensaje-error" class="error-message"></h4>
     <h4 class="forgot-password">¿Olvidaste tu contraseña?</h4>
-    <button class="button" onclick="iniciarSesion()">Iniciar sesión</button>
+    <button class="button" onclick="toggleActive(this); iniciarSesion()">Iniciar sesión</button>
     <div class="separator"><span class="separator-text">ó</span></div>
-    <button class="button">Registrarse</button>
-    <button class="button2" onclick="volver()">Volver</button>
+    <button class="button" onclick="toggleActive(this); registrarse();">Registrarse</button>
+    <button class="button2" onclick="toggleActive(this); volver();">Volver</button>
+
 </div>
+<script src="js/Botones.js"></script>
 <script src="js/inicioSesion.js"></script>
+
+
+
+
 

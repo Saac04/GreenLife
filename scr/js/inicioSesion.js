@@ -26,6 +26,11 @@ function iniciarSesion() {
     }
 }
 
+function registrarse() {
+    // Aquí puedes cambiar la URL por la de la página a la que quieras redirigir al usuario
+    window.location.href = "pagina_registrarse.html";
+}
+
 function volver() {
     // Aquí puedes cambiar la URL por la de la página a la que quieras redirigir al usuario
     window.location.href = "pagina_volver.html";
