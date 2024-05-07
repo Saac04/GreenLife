@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="inicioSesion.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/inicioSesion.css">
 </head>
 <body>
-    <div class="login-container">
-        <h1><span>Green</span>Life</h1>
-        <h2>Inicio de sesión</h2>
-        <input type="email" class="input-field" placeholder="Correo electrónico">
-        <input type="password" class="input-field" placeholder="Contraseña">
-        <h4 class="forgot-password">¿Olvidaste tu contraseña?</h4> <!-- Añade esta línea -->
-        <button class="button">Iniciar sesión</button>
-        <div class="separator"><span class="separator-text">ó</span></div>
-        <button class="button">Registrarse</button>
-        <button class="button2">Volver</button>
-    </div>
-    <script src="inicioSesion.js"></script>
-</body>
-</html>
+<div class="login-container">
+    <h1><span>Green</span>Life</h1>
+    <h2>Inicio de sesión</h2>
+    <input type="email" class="input-field" placeholder="Correo electrónico">
+    <input type="password" class="input-field" placeholder="Contraseña">
+    <h4 id="mensaje-error" class="error-message"></h4>
+    <h4 class="forgot-password">¿Olvidaste tu contraseña?</h4>
+    <button class="button" onclick="iniciarSesion()">Iniciar sesión</button>
+    <div class="separator"><span class="separator-text">ó</span></div>
+    <button class="button">Registrarse</button>
+    <button class="button2" onclick="volver()">Volver</button>
+</div>
+<script src="js/inicioSesion.js"></script>
+

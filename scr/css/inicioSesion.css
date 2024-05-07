@@ -49,6 +49,12 @@ h4 {
     color: #c6c6c6; /* Puedes ajustar el color según tus preferencias */
   }
 
+#mensaje-error {
+    font-size: 15px;
+    font-weight: 400;
+    color: #EA3B50;
+}
+
 .button {
     width: 426px;  
     height: 44px;  
