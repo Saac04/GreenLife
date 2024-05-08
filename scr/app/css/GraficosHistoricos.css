@@ -1,0 +1,75 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropdown{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px;
+}
+
+.button{
+    width: 157px;
+    height: 50px;
+}
+
+.button-menu{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px;
+}
+
+.button-color{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.color-humedad{
+    width: 55px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: #25A6FF;
+}
+.color-temperatura{
+    width: 55px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: #E54D4D;
+}
+.color-luminosidad{
+    width: 55px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: #FFCB40
+}
+.color-salinidad{
+    width: 55px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: #847E7E
+}
+.color-pH{
+    width: 55px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: #0B8C00
+}
+
+.dropdown, .button {
+    margin: 10px;
+}
+.chart-container {
+    width: 80%;
+    height: 400px;
+}
+
+.grafica-edit{
+    display: flex;
+    width: 100%;
+
+}

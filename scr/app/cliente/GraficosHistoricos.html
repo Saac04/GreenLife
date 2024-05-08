@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Huertos</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../../css/Botones.css">
+    <link rel="stylesheet" href="../../css/Fuentes.css">
+    <link rel="stylesheet" href="../css/GraficosHistoricos.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+<h2>Mis Huertos</h2>
+
+<div class="dropdown">
+    <div>
+        <label class="dropdown-label-h3" for="huerto">Selecciona un huerto:</label>
+        <select class="dropdown-select"  id="huerto">
+            <option class="dropdown-option" value="tomates">Tomates</option>
+            <option class="dropdown-option" value="chile">Chile</option>
+            <option class="dropdown-option" value="Jasmin">Jasmin</option>
+            <option class="dropdown-option" value="planta cde cesar no se que coño es">Cesar</option>
+            <!-- Otras opciones -->
+        </select>
+    </div>
+
+    <div>
+        <label class="dropdown-label-h3" for="tiempo">Selecciona un rango de tiempo:</label>
+        <select class="dropdown-select" id="tiempo">
+            <option class="dropdown-option" value="dia">Día</option>
+            <option class="dropdown-option" value="1semana">Una semana</option>
+            <option class="dropdown-option" value="2semanas">Dos semanas</option>
+            <option class="dropdown-option" value="mes">Mes</option>
+            <!-- Otras opciones -->
+        </select>
+    </div>
+
+</div>
+
+
+<div class="button-menu">
+    <!-- Botones para seleccionar el tipo de dato a mostrar en la gráfica -->
+    <div class="button-color">
+        <button class="button" id="humedad" onclick="activarUnicoGH(this); toggleDataSet(0)">Humedad</button>
+        <div class="color-humedad"></div>
+    </div>
+    <div class="button-color">
+        <button class="button" id="temperatura" onclick="activarUnicoGH(this); toggleDataSet(1)">Temperatura</button>
+        <div class="color-temperatura"></div>
+    </div>
+    <div class="button-color">
+        <button class="button" id="luminosidad" onclick="activarUnicoGH(this); toggleDataSet(2)">Luminosidad</button>
+        <div class="color-luminosidad"></div>
+    </div>
+    <div class="button-color">
+        <button class="button" id="salinidad" onclick="activarUnicoGH(this); toggleDataSet(3)">Salinidad</button>
+        <div class="color-salinidad"></div>
+    </div>
+    <div class="button-color">
+        <button class="button" id="pH" onclick="activarUnicoGH(this); toggleDataSet(4)">Ph</button>
+        <div class="color-pH"></div>
+    </div>
+    <div>
+        <button class="button" id="todo" onclick="activarUnicoGH(this); toggleDataSet(5)">Todo</button>
+    </div>
+    <!-- ... -->
+</div>
+
+<div class="grafica-edit">
+    <div class="chart-container">
+        <canvas id="myChart" ></canvas>
+    </div>
+    <div class="editar">
+
+    </div>
+</div>
+
+
+
+<script src="../js/Graficos.js"></script>
+<script src="../../js/Botones.js"></script>
+
+
+</body>
+</html>
+

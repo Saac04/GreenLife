@@ -103,7 +103,7 @@ display: inline-block;
 .dropdown-btn {
 background: none; /* Fondo transparente */
 color: #333333; /* Color del texto */
-font-family: 'Kanit', sans-serif;
+font-family: 'Kanit Light', sans-serif;
 font-size: 20px; /* Tamaño de letra por defecto */
 border: none; /* Sin borde */
 cursor: pointer;
@@ -111,7 +111,7 @@ cursor: pointer;
 
 /* Estilos para el contenido del menú desplegable */
 .dropdown-content {
-display: none;
+display: block;
 position: absolute;
 background-color: #ffffff;
 min-width: 160px;
@@ -119,7 +119,7 @@ z-index: 1;
 }
 
 /* Estilos para los elementos del menú desplegable */
-.dropdown-content a {
+.dropdown-content a{
 color: #333333; /* Color del texto */
 padding: 12px 16px;
 text-decoration: none;
@@ -127,9 +127,38 @@ display: block;
 font-size: 20px; /* Tamaño de letra por defecto */
 }
 
+.dropdown-select{
+    background: none; /* Fondo transparente */
+    color: #333333; /* Color del texto */
+    font-family: 'Kanit Light', sans-serif;
+    font-size: 24px; /* Tamaño de letra por defecto */
+    border: none; /* Sin borde */
+    border-bottom: 1px solid #545454;
+}
+
+/*.dropdown-select option{
+    color: #333333; /* Color del texto */
+    /*padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 20px; /* Tamaño de letra por defecto */
+/*}*/
+
 /* Estilos para el elemento del menú desplegable cuando está activo */
-.dropdown-content a:hover {
-background-color: #f1f1f1;
+.dropdown-content a:hover option:hover{
+
+    background-color: #f1f1f1;
+}
+
+.dropdown-content option:hover{
+    background-color: #f1f1f1;
+}
+
+
+.dropdown-label-h3{
+    font-family: "Kanit Light", sans-serif;
+    font-size: 24px;
+    color: #333333;
 }
 
 
@@ -149,6 +178,10 @@ background-color: #f1f1f1;
 
     input[type="text"], input[type="email"], textarea, input[type="submit"]{
         font-size: 14px; /* Tamaño de fuente para pantallas pequeñas */
+    }
+
+    .dropdown-label-h3{
+        font-size: 16;
     }
 
 }
