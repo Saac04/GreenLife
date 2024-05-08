@@ -50,7 +50,7 @@ form {
 }
 
 /* Estilos para los campos de entrada de texto */
-input[type="text"], input[type="email"], input[type="password"], textarea {
+input[type="text"], input[type="email"], input[type="password"], textarea, input[type="number"] {
     font-family: 'Kanit Light', sans-serif; /* Establece la fuente para el texto de entrada */
     font-size: 20px;
     color: #333333; /* Color del texto */

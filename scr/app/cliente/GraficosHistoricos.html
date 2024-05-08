@@ -44,27 +44,27 @@
 <div class="button-menu">
     <!-- Botones para seleccionar el tipo de dato a mostrar en la gráfica -->
     <div class="button-color">
-        <button class="button" id="humedad" onclick="activarUnicoGH(this); toggleDataSet(0)">Humedad</button>
+        <button class="button" id="humedad" onclick="toggleDataSet(0); activarUnicoGH(this)">Humedad</button>
         <div class="color-humedad"></div>
     </div>
     <div class="button-color">
-        <button class="button" id="temperatura" onclick="activarUnicoGH(this); toggleDataSet(1)">Temperatura</button>
+        <button class="button" id="temperatura" onclick="toggleDataSet(1); activarUnicoGH(this)">Temperatura</button>
         <div class="color-temperatura"></div>
     </div>
     <div class="button-color">
-        <button class="button" id="luminosidad" onclick="activarUnicoGH(this); toggleDataSet(2)">Luminosidad</button>
+        <button class="button" id="luminosidad" onclick="toggleDataSet(2); activarUnicoGH(this)">Luminosidad</button>
         <div class="color-luminosidad"></div>
     </div>
     <div class="button-color">
-        <button class="button" id="salinidad" onclick="activarUnicoGH(this); toggleDataSet(3)">Salinidad</button>
+        <button class="button" id="salinidad" onclick="toggleDataSet(3); activarUnicoGH(this)">Salinidad</button>
         <div class="color-salinidad"></div>
     </div>
     <div class="button-color">
-        <button class="button" id="pH" onclick="activarUnicoGH(this); toggleDataSet(4)">Ph</button>
+        <button class="button" id="pH" onclick="toggleDataSet(4); activarUnicoGH(this)">Ph</button>
         <div class="color-pH"></div>
     </div>
     <div>
-        <button class="button" id="todo" onclick="activarUnicoGH(this); toggleDataSet(5)">Todo</button>
+        <button class="button active" id="todo" onclick=" toggleDataSet(5); activarUnicoGH(this)">Todo</button>
     </div>
     <!-- ... -->
 </div>
@@ -74,7 +74,22 @@
         <canvas id="myChart" ></canvas>
     </div>
     <div class="editar">
-
+        <h3>Editar Límites</h3>
+        <div class="limites">
+            <div class="limite">
+                <label class="dropdown-label-h3" for="maximo">Máximo:</label>
+                <input type="number" name="Ej:10" id="maximo">
+            </div>
+            <div class="limite">
+                <label class="dropdown-label-h3" for="minimo">Mínimo:</label>
+                <input type="number" name="Ej:10" id="minimo">
+            </div>
+        </div>
+        <p style="color: red;">Seleccione primero un Sensor!</p>
+        <div class="botones">
+            <button class="button aplicar" id="aplicar">Aplicar</button>
+            <button class="button" id="atras">Atrás</button>
+        </div>
     </div>
 </div>
 

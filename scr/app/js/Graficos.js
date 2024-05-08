@@ -10,7 +10,6 @@ function generarNumerosAleatorios(tamaño, minimo, maximo) {
     return numeros;
 }
 
-
 const DATA_COUNT = 7
 const DATA_HUMEDAD = generarNumerosAleatorios(DATA_COUNT, 0, 100);
 const DATA_TEMPERATURA = generarNumerosAleatorios(DATA_COUNT, 6, 36);
@@ -73,10 +72,7 @@ var myChart = new Chart(ctx, {
         },
         stacked: false,
         plugins: {
-            title: {
-                display: true,
-                text: 'Chart.js Line Chart - Multi Axis'
-            }
+
         },
         scales: {
 
@@ -100,6 +96,8 @@ var myChart = new Chart(ctx, {
                 },
                 grid: {
                     drawOnChartArea: false, // only want the grid lines for one axis to show up
+                    tickColor:'#25A6FF',
+                    tickWidth: 2,
                 },
                 min: 0,
                 max: 100,
@@ -123,6 +121,8 @@ var myChart = new Chart(ctx, {
                 // grid line settings
                 grid: {
                     drawOnChartArea: false, // only want the grid lines for one axis to show up
+                    tickColor:'#E54D4D',
+                    tickWidth: 2,
                 },
                 min: 5,
                 max: 40,
@@ -147,6 +147,8 @@ var myChart = new Chart(ctx, {
                 // grid line settings
                 grid: {
                     drawOnChartArea: false, // only want the grid lines for one axis to show up
+                    tickColor:'#FFCB40',
+                    tickWidth: 2,
                 },
 
                 min: 0,
@@ -171,6 +173,8 @@ var myChart = new Chart(ctx, {
                 // grid line settings
                 grid: {
                     drawOnChartArea: false, // only want the grid lines for one axis to show up
+                    tickColor:'#847E7E',
+                    tickWidth: 2,
                 },
 
                 min: 0,
@@ -196,9 +200,19 @@ var myChart = new Chart(ctx, {
                 // grid line settings
                 grid: {
                     drawOnChartArea: false, // only want the grid lines for one axis to show up
+                    tickColor:'#0B8C00',
+                    tickWidth: 2,
                 },
                 min: 4,
                 max: 9,
+            },
+            x: {
+                border:{
+                    display:true,
+                    color: '#545454',
+                    width: 2,
+
+                },
             }
         }
     }
@@ -206,24 +220,67 @@ var myChart = new Chart(ctx, {
 
 function toggleDataSet(datasetIndex) {
     var chart = myChart;
-    var datasets = chart.data.datasets;
-    var dataset = chart.data.datasets[datasetIndex];
+    var datasets = myChart.data.datasets;
 
     if (datasetIndex === 5) {
-
         for (var i = 0; i < datasets.length; i++) {
-            datasets[i].hidden = false
-            datasets[i].
+            showGraphic(i)
         }
+        moveYAxis(datasetIndex)
     } else {
         for (var i = 0; i < datasets.length;  i++) {
             if ( i != datasetIndex) {
-                datasets[i].hidden = true;
+                hideGraphic(i)
             } else if (i === datasetIndex) {
-                datasets[i].hidden = false
+                showGraphic(i)
+                moveYAxis(i)
             }
         }
     }
     chart.update(); // Actualizar el gráfico
 }
 
+function showGraphic(i){
+    myChart.data.datasets[i].hidden = false;
+    if (myChart.options.scales[myChart.data.datasets[i].yAxisID]) {
+        myChart.options.scales[myChart.data.datasets[i].yAxisID].display = true;
+    }
+}
+
+function hideGraphic(i){
+    myChart.data.datasets[i].hidden = true;
+    if (myChart.options.scales[myChart.data.datasets[i].yAxisID]) {
+        myChart.options.scales[myChart.data.datasets[i].yAxisID].display = false;
+    }
+}
+
+function asingNumberToId (i){
+    if (i === 0) {
+        return "humedad";
+    } else if (i === 1) {
+        return "temperatura";
+    } else if (i === 2) {
+        return "luminosidad";
+    } else if (i === 3) {
+        return "salinidad";
+    } else if (i === 4) {
+        return "pH";
+    } else if (i === 5){
+        return "todo"
+    } else {
+        return "Otra cosa";
+    }
+}
+function moveYAxis(i){
+
+    if ( i === 1 || i === 3 || i === 4){
+        myChart.options.scales[myChart.data.datasets[i].yAxisID].position = 'left'
+    } else if (i === 5){
+        for (var j = 0; j < myChart.data.datasets.length; j++) {
+            if (j === 1 || j === 3 || j === 4){
+                myChart.options.scales[myChart.data.datasets[j].yAxisID].position = 'right'
+            }
+        }
+    }
+
+}
