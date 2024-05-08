@@ -181,7 +181,11 @@ font-size: 20px; /* Tamaño de letra por defecto */
     }
 
     .dropdown-label-h3{
-        font-size: 16;
+        font-size: 16px;
+    }
+
+    .dropdown-select{
+        font-size: 16px;
     }
 
 }

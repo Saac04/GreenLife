@@ -1,6 +1,15 @@
 //import * as Utils from "./Utils.js";
 var ctx = document.getElementById('myChart').getContext('2d');
 
+var limites = {
+    "humedad": [90, 45],
+    "temperatura": [30, 15],
+    "luminosidad": [40, 10],
+    "salinidad": [2.5, 0],
+    "pH": [7, 5.5]
+};
+
+
 function generarNumerosAleatorios(tamaño, minimo, maximo) {
     const numeros = [];
     for (let i = 0; i < tamaño; i++) {
@@ -10,12 +19,13 @@ function generarNumerosAleatorios(tamaño, minimo, maximo) {
     return numeros;
 }
 
+
 const DATA_COUNT = 7
-const DATA_HUMEDAD = generarNumerosAleatorios(DATA_COUNT, 0, 100);
-const DATA_TEMPERATURA = generarNumerosAleatorios(DATA_COUNT, 6, 36);
-const DATA_LUMINOSIDAD = generarNumerosAleatorios(DATA_COUNT, 0, 100);
-const DATA_SALINIDAD = generarNumerosAleatorios(DATA_COUNT, 0, 3);
-const DATA_PH = generarNumerosAleatorios(DATA_COUNT, 4, 9);
+const DATA_HUMEDAD = generarNumerosAleatorios(DATA_COUNT, 45, 90);
+const DATA_TEMPERATURA = generarNumerosAleatorios(DATA_COUNT, 15, 30);
+const DATA_LUMINOSIDAD = generarNumerosAleatorios(DATA_COUNT, 10, 40);
+const DATA_SALINIDAD = generarNumerosAleatorios(DATA_COUNT, 0, 2.5);
+const DATA_PH = generarNumerosAleatorios(DATA_COUNT, 5.5, 7);
 
 
 var myChart = new Chart(ctx, {
@@ -61,26 +71,18 @@ var myChart = new Chart(ctx, {
         ]
     },
     options: {
-        datasets: {
-            display:false
-        },
         responsive: true,
-        maintainAspectRatio:true,
         interaction: {
             mode: 'index',
             intersect: false,
         },
         stacked: false,
-        plugins: {
-
-        },
         scales: {
 
             y: {
                 type: 'linear',
                 display: true,
                 position: 'left',
-                weight: 0,
                 ticks: {
                     font: {
                         family: 'Kanit Light', // Cambiar la familia de fuente de los números en el eje Y
@@ -92,12 +94,12 @@ var myChart = new Chart(ctx, {
                 border:{
                     display:true,
                     color: '#25A6FF',
-                    width: 2,
+                    width: 1.5,
                 },
                 grid: {
                     drawOnChartArea: false, // only want the grid lines for one axis to show up
                     tickColor:'#25A6FF',
-                    tickWidth: 2,
+                    tickWidth: 1.5,
                 },
                 min: 0,
                 max: 100,
@@ -116,13 +118,13 @@ var myChart = new Chart(ctx, {
                 border:{
                     display:true,
                     color: '#E54D4D',
-                    width: 2,
+                    width: 1.5,
                 },
                 // grid line settings
                 grid: {
                     drawOnChartArea: false, // only want the grid lines for one axis to show up
                     tickColor:'#E54D4D',
-                    tickWidth: 2,
+                    tickWidth: 1.5,
                 },
                 min: 5,
                 max: 40,
@@ -142,13 +144,13 @@ var myChart = new Chart(ctx, {
                 border:{
                     display:true,
                     color: '#FFCB40',
-                    width: 2,
+                    width: 1.5,
                 },
                 // grid line settings
                 grid: {
                     drawOnChartArea: false, // only want the grid lines for one axis to show up
                     tickColor:'#FFCB40',
-                    tickWidth: 2,
+                    tickWidth: 1.5,
                 },
 
                 min: 0,
@@ -168,13 +170,13 @@ var myChart = new Chart(ctx, {
                 border:{
                     display:true,
                     color: '#847E7E',
-                    width: 2,
+                    width: 1.5,
                 },
                 // grid line settings
                 grid: {
                     drawOnChartArea: false, // only want the grid lines for one axis to show up
                     tickColor:'#847E7E',
-                    tickWidth: 2,
+                    tickWidth: 1.5,
                 },
 
                 min: 0,
@@ -194,14 +196,14 @@ var myChart = new Chart(ctx, {
                 border:{
                     display:true,
                     color: '#0B8C00',
-                    width: 2,
+                    width: 1.5,
 
                 },
                 // grid line settings
                 grid: {
                     drawOnChartArea: false, // only want the grid lines for one axis to show up
                     tickColor:'#0B8C00',
-                    tickWidth: 2,
+                    tickWidth: 1.5,
                 },
                 min: 4,
                 max: 9,
@@ -210,11 +212,12 @@ var myChart = new Chart(ctx, {
                 border:{
                     display:true,
                     color: '#545454',
-                    width: 2,
-
+                    width: 1.5,
                 },
             }
-        }
+        },
+
+
     }
 });
 
@@ -284,3 +287,155 @@ function moveYAxis(i){
     }
 
 }
+
+window.onload = noLegeds()
+
+function  noLegeds (){
+    myChart.options.plugins.legend.display = false
+    myChart.update()
+}
+
+/*function changeLimtis(){
+    var maximo = document.getElementById("maximo").value
+    var minimo = document.getElementById("minimo").value
+
+    agregarLineasHorizontales(myChart, maximo, minimo);
+}
+*/
+
+function conversorInputGrafica(input, tipo){
+
+    if( tipo === 'temperatura'){
+        return ((input - 5) / 35) * 100
+    } else if (tipo === 'salinidad'){
+        return (input*100)/3
+    } else if (tipo === 'pH') {
+        return ((input - 4) / 5) * 100
+    }
+}
+function changeLimtis(i){
+    var limiteID = asingNumberToId(i)
+    var maximo
+    var minimo
+
+    console.log(i)
+    console.log(limiteID)
+
+    var limid = document.getElementsByClassName('active')[0].id
+
+    console.log(limid)
+    console.log( limid === 'humedad')
+
+    if ((i === -1 && limid === 'humedad') || ( i === -1 && limid === 'luminosidad' )){
+        console.log('entramos HL APL')
+
+        maximo = document.getElementById("maximo").value
+        minimo = document.getElementById("minimo").value
+
+    } else if (i === -1 && limid != 'humedad' && limid != 'luminosidad' ){
+        console.log('entramos sin APL')
+        console.log(document.getElementById("maximo").value)
+
+        maximo = conversorInputGrafica(document.getElementById("maximo").value, limid)
+        minimo = conversorInputGrafica(document.getElementById("minimo").value, limid)
+    } else if (limid != 'humedad' && limid != 'luminosidad'){
+        console.log('entramos sin ')
+        console.log(limites[limiteID][0])
+        console.log(limites[limiteID][1])
+
+        maximo = conversorInputGrafica(limites[limiteID][0] , limiteID)
+        minimo = conversorInputGrafica(limites[limiteID][1] , limiteID)
+    } else {
+        console.log('entramos HL')
+        maximo = limites[limiteID][0]
+        minimo = limites[limiteID][1]
+    }
+
+    console.log(maximo)
+    console.log(minimo)
+
+    agregarLineasHorizontales(myChart, maximo, minimo);
+}
+
+function agregarLineasHorizontales(chart, maximo, minimo) {
+
+    if(!document.getElementById('todo').classList.contains('active')){
+        chart.options.plugins.annotation = {
+            annotations: {
+                limMax:{
+                    type: 'line',
+                    yMin: maximo,
+                    yMax: maximo,
+                    borderColor: 'black',
+                    borderWidth: 1.5,
+                    borderDash: [5, 5],
+                },
+                labelMax: {
+                    type: 'label',
+                    xValue: 3.9,
+                    yValue: parseInt(maximo) + 5,
+                    color:'black',
+                    backgroundColor: 'rgba(0,0,0,0)',
+                    content: ['Max'],
+                    font: {
+                        family:"kanit light",
+                        size: 16,
+                    }
+                },
+                LimMin:{
+                    type: 'line',
+                    yMin: minimo,
+                    yMax: minimo,
+                    borderColor: 'black',
+                    borderWidth: 1,
+                    borderDash: [5, 5],
+                },labelMin: {
+                    type: 'label',
+                    xValue: 3.9,
+                    yValue: parseInt(minimo) + 5,
+                    color:'black',
+                    backgroundColor: 'rgba(0,0,0,0)',
+                    content: ['Min'],
+                    font: {
+                        family:"kanit light",
+                        size: 16,
+                    }
+                },
+            }
+        };
+
+        chart.update();
+    }
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Obtener referencia al input
+    var maxInput = document.getElementById("maximo");
+    var minInput = document.getElementById("minimo");
+    var advertencia = document.getElementById('advertencia')
+
+    // Obtener todos los divs con la clase "miDiv"
+    var miDivs = document.querySelectorAll(".button-color");
+    var botonTodo = document.getElementById('todo')
+
+    // Agregar un evento de clic a cada div
+    miDivs.forEach(function(div) {
+        div.addEventListener("click", function(event) {
+            // Verificar si el objetivo del evento es un botón
+            if (event.target.tagName === "BUTTON") {
+                // Habilitar el input si se hace clic en un botón dentro del div
+                maxInput.disabled = false;
+                minInput.disabled = false;
+                advertencia.style.display = "none"
+            }
+        });
+    });
+
+    botonTodo.addEventListener("click", function() {
+        // Habilitar el input cuando se hace clic en el botón
+        maxInput.disabled = true;
+        minInput.disabled = true;
+        advertencia.style.display = "block"
+    });
+});

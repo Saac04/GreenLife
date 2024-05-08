@@ -44,27 +44,27 @@
 <div class="button-menu">
     <!-- Botones para seleccionar el tipo de dato a mostrar en la gráfica -->
     <div class="button-color">
-        <button class="button" id="humedad" onclick="toggleDataSet(0); activarUnicoGH(this)">Humedad</button>
+        <button class="button" id="humedad" onclick="toggleDataSet(0); activarUnicoGH(this); changeLimtis(0)">Humedad</button>
         <div class="color-humedad"></div>
     </div>
     <div class="button-color">
-        <button class="button" id="temperatura" onclick="toggleDataSet(1); activarUnicoGH(this)">Temperatura</button>
+        <button class="button" id="temperatura" onclick="toggleDataSet(1); activarUnicoGH(this); changeLimtis(1)">Temperatura</button>
         <div class="color-temperatura"></div>
     </div>
     <div class="button-color">
-        <button class="button" id="luminosidad" onclick="toggleDataSet(2); activarUnicoGH(this)">Luminosidad</button>
+        <button class="button" id="luminosidad" onclick="toggleDataSet(2); activarUnicoGH(this); changeLimtis(2)">Luminosidad</button>
         <div class="color-luminosidad"></div>
     </div>
     <div class="button-color">
-        <button class="button" id="salinidad" onclick="toggleDataSet(3); activarUnicoGH(this)">Salinidad</button>
+        <button class="button" id="salinidad" onclick="toggleDataSet(3); activarUnicoGH(this); changeLimtis(3)">Salinidad</button>
         <div class="color-salinidad"></div>
     </div>
     <div class="button-color">
-        <button class="button" id="pH" onclick="toggleDataSet(4); activarUnicoGH(this)">Ph</button>
+        <button class="button" id="pH" onclick="toggleDataSet(4); activarUnicoGH(this); changeLimtis(4)">Ph</button>
         <div class="color-pH"></div>
     </div>
     <div>
-        <button class="button active" id="todo" onclick=" toggleDataSet(5); activarUnicoGH(this)">Todo</button>
+        <button class="button active" id="todo" onclick=" toggleDataSet(5); activarUnicoGH(this); changeLimtis(-1)">Todo</button>
     </div>
     <!-- ... -->
 </div>
@@ -78,23 +78,24 @@
         <div class="limites">
             <div class="limite">
                 <label class="dropdown-label-h3" for="maximo">Máximo:</label>
-                <input type="number" name="Ej:10" id="maximo">
+                <input type="number" name="Ej:10" id="maximo" value=80 disabled>
             </div>
             <div class="limite">
                 <label class="dropdown-label-h3" for="minimo">Mínimo:</label>
-                <input type="number" name="Ej:10" id="minimo">
+                <input type="number" name="Ej:10" id="minimo" value=45 disabled>
             </div>
         </div>
-        <p style="color: red;">Seleccione primero un Sensor!</p>
+        <p id="advertencia">Seleccione un sensor para editar!</p>
         <div class="botones">
-            <button class="button aplicar" id="aplicar">Aplicar</button>
+            <button class="button aplicar" id="aplicar" onclick="changeLimtis(-1)">Aplicar</button>
             <button class="button" id="atras">Atrás</button>
         </div>
     </div>
 </div>
 
-
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation/dist/chartjs-plugin-annotation.min.js"></script>
 <script src="../js/Graficos.js"></script>
 <script src="../../js/Botones.js"></script>
 
