@@ -31,7 +31,7 @@ const DATA_PH = generarNumerosAleatorios(DATA_COUNT, 5.5, 7);
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
+        labels: ['09:00', '12:00', '15:00', '18:00', '21:00'],
         datasets: [
             {
                 label: 'HUMEDAD (%)',
@@ -295,13 +295,6 @@ function  noLegeds (){
     myChart.update()
 }
 
-/*function changeLimtis(){
-    var maximo = document.getElementById("maximo").value
-    var minimo = document.getElementById("minimo").value
-
-    agregarLineasHorizontales(myChart, maximo, minimo);
-}
-*/
 
 function conversorInputGrafica(input, tipo){
 
@@ -318,42 +311,28 @@ function changeLimtis(i){
     var maximo
     var minimo
 
-    console.log(i)
-    console.log(limiteID)
 
     var limid = document.getElementsByClassName('active')[0].id
 
-    console.log(limid)
-    console.log( limid === 'humedad')
 
     if ((i === -1 && limid === 'humedad') || ( i === -1 && limid === 'luminosidad' )){
-        console.log('entramos HL APL')
 
         maximo = document.getElementById("maximo").value
         minimo = document.getElementById("minimo").value
 
     } else if (i === -1 && limid != 'humedad' && limid != 'luminosidad' ){
-        console.log('entramos sin APL')
-        console.log(document.getElementById("maximo").value)
 
         maximo = conversorInputGrafica(document.getElementById("maximo").value, limid)
         minimo = conversorInputGrafica(document.getElementById("minimo").value, limid)
+
     } else if (limid != 'humedad' && limid != 'luminosidad'){
-        console.log('entramos sin ')
-        console.log(limites[limiteID][0])
-        console.log(limites[limiteID][1])
 
         maximo = conversorInputGrafica(limites[limiteID][0] , limiteID)
         minimo = conversorInputGrafica(limites[limiteID][1] , limiteID)
     } else {
-        console.log('entramos HL')
         maximo = limites[limiteID][0]
         minimo = limites[limiteID][1]
     }
-
-    console.log(maximo)
-    console.log(minimo)
-
     agregarLineasHorizontales(myChart, maximo, minimo);
 }
 
@@ -389,7 +368,8 @@ function agregarLineasHorizontales(chart, maximo, minimo) {
                     borderColor: 'black',
                     borderWidth: 1,
                     borderDash: [5, 5],
-                },labelMin: {
+                },
+                labelMin: {
                     type: 'label',
                     xValue: 3.9,
                     yValue: parseInt(minimo) + 5,
@@ -405,8 +385,29 @@ function agregarLineasHorizontales(chart, maximo, minimo) {
         };
 
         chart.update();
+    }else{
+        chart.options.plugins.annotation = {
+            annotations: {
+                limMax:{
+                    display: false
+                },
+                labelMax: {
+                    display: false
+                },
+                LimMin:{
+                    display: false
+                },
+                labelMin: {
+                    display: false
+                },
+            }
+        };
+
+        chart.update();
     }
 }
+
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -427,6 +428,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Habilitar el input si se hace clic en un botón dentro del div
                 maxInput.disabled = false;
                 minInput.disabled = false;
+                maxInput.value = undefined;
+                minInput.value = undefined;
                 advertencia.style.display = "none"
             }
         });
