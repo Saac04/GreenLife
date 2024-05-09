@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae426f53-5770-4190-bee0-6ee36902a102" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scr/css/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/Header-Footer-test.html" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Header-Footer-test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/css/Fuentes.css" beforeDir="false" afterPath="$PROJECT_DIR$/scr/css/Fuentes.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/css/MenuHam.css" beforeDir="false" afterPath="$PROJECT_DIR$/scr/css/MenuHam.css" afterDir="false" />
-    </list>
+    <list default="true" id="ae426f53-5770-4190-bee0-6ee36902a102" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +35,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "develop",
     "last_opened_file_path": "C:/Users/santi/Documents/pdf-uni/GreenLife/scr/img",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
