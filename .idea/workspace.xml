@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae426f53-5770-4190-bee0-6ee36902a102" name="Changes" comment="" />
+    <list default="true" id="ae426f53-5770-4190-bee0-6ee36902a102" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/scr/css/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/Header-Footer-test.html" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Header-Footer-test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/css/Fuentes.css" beforeDir="false" afterPath="$PROJECT_DIR$/scr/css/Fuentes.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/css/MenuHam.css" beforeDir="false" afterPath="$PROJECT_DIR$/scr/css/MenuHam.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,12 +27,26 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2gEH9mQmZ1wbLH7EV6q730n8XQq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/santi/Documents/pdf-uni/GreenLife/scr/img",
     "list.type.of.created.stylesheet": "CSS",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -37,7 +57,20 @@
       <recent name="C:\Users\santi\Documents\pdf-uni\GreenLife\scr\img" />
     </key>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ae426f53-5770-4190-bee0-6ee36902a102" name="Changes" comment="" />
+      <created>1715255669692</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715255669692</updated>
+      <workItem from="1715255671021" duration="291000" />
+      <workItem from="1715267074633" duration="10281000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

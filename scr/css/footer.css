@@ -1,0 +1,75 @@
+footer {
+    background-color: #c6c6c6;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-container *{
+    width: 100%;
+    padding: 0.4rem 0 0.4rem 0;
+}
+
+.footer-container .social-icons {
+    order: 3; /* Cambia el orden de los elementos para que aparezca al final */
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.social-icons a {
+    width: 50px;
+}
+
+.social-icons a i{
+    color: #545454;
+    font-size: 50px;
+}
+
+h4 {
+    font-family: "Kanit ExtraLight";
+    margin: 0 0 10px 0;
+    text-align: center;
+    white-space: nowrap;
+    order: 2; /* Coloca el h4 al final en pantallas pequeñas */
+
+
+}
+
+@media screen and (max-width: 850px) {
+    .footer-container {
+        flex-direction: column; /* Vuelve a la dirección de fila en pantallas grandes */
+    }
+
+    h4 {
+        order: 5; /* Mueve el h4 a la posición original en pantallas grandes */
+    }
+
+    .social-icons {
+        justify-content: center;
+        order: 1        ; /* Mueve los iconos a la posición original en pantallas grandes */
+    }
+
+    button {
+        order: 1; /* Mueve el botón a la posición original en pantallas grandes */
+        margin-bottom: 0; /* Elimina el margen inferior del botón en pantallas grandes */
+    }
+}
+
+@media screen and (max-width: 500px){
+    .footer-container *{
+        padding: 0.2rem 0 0.2rem 0;
+    }
+
+}
+
