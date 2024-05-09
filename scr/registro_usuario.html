@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/registro_usuario.css">
+    <script src="js/registro_usuario.js"></script>
+    <title>Registro</title>
+</head>
+<body>
+<div class="register_container">
+
+    <!-- Logo GreenLife -->
+    <h1><span>Green</span>Life</h1>
+    <!-- Registro -->
+    <h2>Registro</h2>
+    <!-- Formulario del registro-->
+    <input class="input-field" type="text" placeholder="Nombre">
+    <input class="input-field" type="text" placeholder="Apellidos">
+    <input class="input-field" type="email" placeholder="Correo electrónico">
+    <input class="input-field" type="password" placeholder="Contraseña">
+    <input class="input-field" type="password" placeholder="Confirmar contraseña">
+    <!-- Mensaje de error -->
+    <h4 id="mensaje-error" class="error-message"></h4>
+    <!-- Apartado de aceptar términos, checkbox y texto -->
+    <h4 class="aceptar_terminos">
+        <input class="aceptarTerminos" type="checkbox" id="aceptar_terminos" name="aceptar_terminos">
+        <label for="aceptar_terminos">Aceptar <a href="#" onclick="terminosYCondiciones()">términos y condiciones</a></label>
+    </h4>
+    <!-- Botón de crear cuenta y función onclick -->
+    <button class="button" onclick="register()">Crear cuenta</button>
+    <!-- Ya tengo cuenta y función onclick -->
+    <h4 class="ya_tengo_cuenta" onclick="tengoCuenta()">Ya tengo una cuenta</h4>
+    <!-- Botón y función onclick -->
+    <button class="button2" onclick="volver()">Atrás</button>
+
+</div>
+</body>
+</html>
