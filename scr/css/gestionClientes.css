@@ -1,0 +1,136 @@
+/* Importar nuestra fuente */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap');
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para el cuerpo del documento */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Kanit', sans-serif; /* Fuente principal */
+    background-color: #FFFFFF; /* Color de fondo */
+}
+
+/* Estilos para los encabezados H2 (gestión y edición de clientes) */
+h2 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #479555; /* Color del texto */
+    margin-bottom: 50px; /* Espacio inferior */
+    text-align: center; /* Alineación del texto */
+}
+
+/* Estilos para la barra de búsqueda */
+.search-bar {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: flex-end;
+    width: 100%;
+    height: 30px;
+}
+
+/* Estilos para el campo de búsqueda */
+.search-bar input[type="text"] {
+    padding: 12px;
+    width: 300px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    color: #333333;
+}
+
+/* Estilos para el contenedor principal (la tabla) */
+.table {
+    margin-top: 20px;
+}
+
+/* Estilos para las tablas */
+table {
+    width: 800px;
+    border-collapse: collapse;
+}
+
+/* Estilos para la tabla de clientes */
+.clients-table {
+    font-family: "Kanit Light", sans-serif; /* Fuente de la tabla */
+    font-size: 20px; /* Tamaño de la fuente */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+/* Estilos para los botones dentro de la tabla */
+.clients-table button {
+    padding: 12px 20px; /* Relleno */
+    font-family: "Kanit Light", sans-serif; /* Fuente */
+    font-size: 20px; /* Tamaño de la fuente */
+}
+
+/* Estilos para los botones de cliente */
+.client-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Estilos para las celdas de tabla */
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Estilos para el encabezado de la tabla */
+thead {
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2;
+}
+
+/* Estilos para las celdas de encabezado */
+th {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para las filas pares del cuerpo de la tabla */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilos generales para los botones */
+button {
+    padding: 8px 24px;
+    font-family: "Kanit Light", sans-serif;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #7ED957;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Estilos para los botones de eliminar y editar dentro de la tabla */
+.clients-table .eliminar-cliente,
+.clients-table .editar-cliente {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+/* Estilos para el botón de guardar */
+.save-client {
+    padding: 10px 24px;
+    font-size: 20px;
+}
+
+/* Estilos para el efecto hover en los botones */
+button:hover {
+    background-color: #479555;
+}
