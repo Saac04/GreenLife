@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/MenuHam.css">
+  <link rel="stylesheet" href="../../css/Botones.css">
+  <link rel="stylesheet" href="../../css/Fuentes.css">
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="../css/ConsultasAdmin.css">
+
+</head>
+<body>
+<header class="header">
+  <div><img class="logo" src="../../img/Grado_en_tecnologías_interactivas.svg" alt="LOGO"></div>
+  <h1><span class="green">Green</span><span class="life">Life</span></h1>
+  <nav>
+    <ul class="nav-menu" id="menuOrdenador">
+      <li><a class="text-button" href="#">Sobre Nosotros</a></li>
+      <li><a class="text-button" href="#">FAQ</a></li>
+      <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+    </ul>
+  </nav>
+</header>
+<nav id="navMenu" role="navigation">
+  <div id="menuToggle">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input type="checkbox" />
+
+    <!--
+    Some spans to act as a hamburger.
+
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+    <ul id="menu">
+      <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+      <li><a class="text-button" href="#">FAQ</a></li>
+      <li><a class="text-button" href="#">Sobre Nosotros</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div>
+  <h2>Consultas</h2>
+
+  <div class="tabla-consulta">
+    <div class="tabla">
+      <table class="consulta-table">
+        <thead>
+        <tr>
+          <th>Correo del Usuario</th>
+          <th>Asunto</th>
+          <th>Finalizado</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Aquí puedes agregar filas de la tabla dinámicamente con tu backend -->
+        <tr>
+          <td>usuario1@example.com</td>
+          <td>Consulta sobre productos</td>
+          <td><input type="checkbox" name="finalizado"></td>
+        </tr>
+        <tr>
+          <td>usuario2@example.com</td>
+          <td>Consulta sobre envíos</td>
+          <td><input type="checkbox" name="finalizado"></td>
+        </tr>
+        <!-- Agrega más filas según sea necesario -->
+        </tbody>
+      </table>
+    </div>
+    <div class="consulta">a</div>
+  </div>
+
+</div>
+
+
+<footer class="footer-container">
+  <button class="text-button" >Botón</button>
+  <h4>© 2024 GreenLife. Todos los derechos reservados.</h4>
+  <div class="social-icons">
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+  </div>
+</footer>
+
+<script src="../js/ConsultasAdmin.js"></script>
+</body>
+</html>
