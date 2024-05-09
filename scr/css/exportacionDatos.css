@@ -1,0 +1,83 @@
+.export-container{ /*contenedor para guiarme*/
+    border: 2px solid #333333;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.selection-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-container, .sensor-container {
+    border: 2px solid #333333;
+ 
+}
+
+#negro {
+    color: #333333;
+    margin-top: -20px;
+}
+.date-inputs { 
+    display: flex;
+    align-items: center;
+    margin-top: -30px;
+}
+
+#sensor {
+    margin-left: 0px;
+    margin-right: 10px; /* Ajusta el margen derecho para alinear con los placeholders */
+    margin-bottom: 10px; /* Margen inferior */
+    margin-top: -17px;
+    width: 492px; 
+    height: 42px;
+
+}
+
+.username-container {
+    border: 2px solid #333333;
+}
+
+.contenedor-buscador{
+    border: 2px solid #333333;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center ;
+}
+
+
+
+/* Estilos para los campos de entrada de texto */
+input[type="text"], textarea {    
+    border: 2px solid #c6c6c6; /* Borde alrededor del campo de entrada */
+    border-radius: 10px; /* Radio del borde */
+    width: 183px; /* Ancho del campo de entrada */
+    height: 20px; /* Altura del campo de entrada */
+
+}
+
+/* Estilos para los campos de entrada de texto y el elemento select */
+.input-field, select {
+    font-family: 'Kanit Light', sans-serif; /* Establece la fuente para el texto de entrada */
+    font-size: 20px;
+    color: #333333; /* Color del texto */
+    background-color: #ffffff; /* Fondo blanco */
+    border: 2px solid #c6c6c6; /* Borde alrededor del campo de entrada */
+    border-radius: 10px; /* Radio del borde */
+    width: 183px; /* Ancho del campo de entrada */
+    height: 20px; /* Altura del campo de entrada */
+    padding: 0px; /* Ajuste de relleno */
+    margin-bottom: 0px; /* Margen inferior */
+    margin-top:15px;
+}
+
+.button{
+    padding: 0px 10px 0 10px;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+h3 {
+    white-space: nowrap;
+}
+

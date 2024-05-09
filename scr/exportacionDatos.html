@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exportación de datos históricos</title>
+    <link rel="stylesheet" type="text/css" href="css/Botones.css">
+    <link rel="stylesheet" type="text/css" href="css/Fuentes.css">
+    <link rel="stylesheet" type="text/css" href="css/exportacionDatos.css">
+</head>
+<body>
+    <div class="export-container">
+        <h2>Exportación de datos históricos</h2>
+        <p id="negro">Para comenzar la exportación de datos históricos, por favor selecciona el rango de fechas y el sensor sobre el que quieres exportar los datos.</p>
+        <div class="selection-container">
+            <div class="date-container">
+                <h3 id="soyH3">Selecciona el rango de fechas</h3>
+                <div class="date-inputs">
+                    <input type="text" class="input-field" placeholder="DD/MM/AAAA">
+                </div>
+            </div>            
+            <div class="sensor-container">
+                <h3>Selecciona el sensor sobre el que desea exportar los datos</h3>
+                <select id="sensor" class="input-field">
+                    <option value="Todos">Todos</option>
+                    <option value="Temperatura">Temperatura</option>
+                    <option value="Humedad">Humedad</option>
+                    <option value="Salinidad">Salinidad</option>
+                    <option value="Ph">Ph</option>
+                    <option value="Luminosidad">Luminosidad</option>
+                </select>
+            </div>
+        </div>
+        <div class="username-container">
+            <h3>Introduce el nombre de usuario sobre el que deseas exportar los datos</h3>
+            <div class="contenedor-buscador">
+                <input list="usernames" id="nombreUsuario" type="text" class="input-field" placeholder="Nombre de usuario">
+                <datalist id="usernames">
+                </datalist>
+                <button class="button">Mostrar tabla</button>
+            </div> 
+        </div>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Hora</th>
+                    <th>Valores</th>
+                    <th>Magnitud</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script src="exportacionDatos.js"></script>
+</body>
+</html>
