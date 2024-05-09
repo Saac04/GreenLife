@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Kanit', sans-serif;
+    background-color: #FFFFFF;
+}
+
+.register-container {
+    text-align: center;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 500;
+    color: #545454;
+    text-align: center;
+}
+h1 span {
+    color: #76BD57;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 400;
+    color: #479555;
+    margin-top: 20px;
+}
+h4 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #479555;
+}
+
+/*-- casillas de nombre, apellidos, correo electrónico y contraseña --*/
+.input-field {
+    font-family: "kanit light", serif;
+    font-size: 20px;
+    font-weight: 300;
+    display: block;
+    width: 426px;
+    box-sizing: border-box;  /* ancho y la altura de los elementos incluyen el padding y el borde */
+    border: none;
+    border-bottom: 2px solid #C6C6C6;
+    margin: 30px 0;  /* Aumenta este valor para más espacio entre los campos    */
+    padding: 10px;
+}
+
+.input-field:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: #c6c6c6; /* Puedes ajustar el color según tus preferencias */
+}
+
+#mensaje-error {
+    font-size: 15px;
+    font-weight: 400;
+    color: #EA3B50;
+}
+
+.aceptar_terminos label, .aceptar_terminos a{
+    color: #479555;
+    text-decoration: none;
+}
+
+.aceptar_terminos label:hover .aceptar_terminos a:hover{
+    text-decoration: underline;
+}
+
+/*-- boton de crear cuenta --*/
+.button {
+    width: 426px;
+    height: 44px;
+    font-family: "kanit light", serif;
+    font-size: 20px;
+    font-weight: 300;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    background-color: #7ED957;
+    color: white;
+    padding: 10px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    cursor: pointer;
+}
+
+.ya_tengo_cuenta {
+    text-align: left;
+    margin-top: -10px;
+    color: #479555;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ya_tengo_cuenta:hover {
+    text-decoration: underline;
+}
+
+.button2 {
+    width: 165px;
+    height: 44px;
+    font-family: "kanit light", serif;
+    font-size: 20px;
+    font-weight: 300;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    background-color: #7ED957;
+    color: white;
+    padding: 10px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    cursor: pointer;
+    float: right;
+}
+
+/*-- cuando el tamaño sea menor a 800px cambia a vista de móvil --*/
+@media (max-width: 800px) {
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    h4 {
+        font-size: 12px;
+    }
+    .input-field {
+        font-size: 14px;
+        width: 320px;
+        margin: 20px 0;  /* Aumenta este valor para más espacio entre los campos    */
+    }
+    #mensaje-error {
+        font-size: 12px;
+    }
+    .button {
+        width: 320px;
+        height: 30px;
+        font-size: 14px;
+        padding: 8px;
+    }
+    .button2 {
+        width: 90px;
+        height: 30px;
+        font-size: 14px;
+        padding: 8px;
+    }
+}
