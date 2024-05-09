@@ -1,0 +1,140 @@
+    /* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply the style guide colors */
+:root {
+    --green-light: #7ed957;
+    --green-dark: #479555;
+    --grey-light: #c6c6c6;
+    --grey-dark: #333333;
+    --black: #000000;
+}
+
+/* General styles */
+body {
+    background-color: #ffffff;
+    color: var(--black);
+    line-height: 1.6;
+}
+
+/* About Us section styles */
+#about-us {
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Titles positioning */
+
+.ContainerOrigen{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 50px;
+
+}
+.ContainerOrigen img{
+    width: 675px;
+    height: 358px;
+    order: 1;
+}
+.textOrigen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 2;
+
+}
+
+.ContainerMision{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 50px;
+}
+
+.ContainerMision img{
+    width: 675px;
+    height: 358px;
+    order: 2;
+}
+
+.textMision{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 1;
+}
+
+.ContainerVision{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 50px;
+
+}
+
+.ContainerVision img{
+    width: 358px;
+    height: 358px;
+    order: 1;
+}
+
+.textVision{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 2;
+}
+
+.ContainerCeo{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 50px;
+}
+
+.ContainerCeo img{
+    width: 570px;
+    height: 358px;
+    order: 2;
+}
+
+.textCeo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 1;
+}
+
+.ContainerFinal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 50px;
+}
+
+.textfinal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.TextUltimo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2{
+    text-align: center;
+    margin-top: 20px;
+    color: #479555;
+}
