@@ -1,0 +1,49 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply the style guide colors */
+:root {
+    --green-light: #7ed957;
+    --green-dark: #479555;
+    --grey-light: #c6c6c6;
+    --grey-dark: #333333;
+    --black: #000000;
+}
+
+/* General styles */
+body {
+    font-family: Kanit, "Kanit Light",serif;
+    background-color: var(--grey-light);
+    color: var(--black);
+    line-height: 1.6;
+}
+
+/* About Us section styles */
+#about-us {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Titles positioning */
+#origenes h2,
+#vision-companyia h2{
+    color: var(--green-dark);
+    text-align: right;
+}
+
+#mision-objectivos h2,#ceo-words h2,
+#palabras-ceo h2 {
+    color: var(--green-dark);
+    text-align: left;
+}
+
+.origenes{
+    margin: 0 auto  ;
+}
