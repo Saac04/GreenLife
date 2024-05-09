@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frequently Asked Questions</title>
+    <link rel="stylesheet" href="css/FAQ.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/MenuHam.css">
+    <link rel="stylesheet" href="css/Botones.css">
+    <link rel="stylesheet" href="css/Fuentes.css">
+    <link rel="stylesheet" href="css/header.css">
+  </head>
+  <body>
+  
+<header class="header">
+  <div><img class="logo" src="img/Grado_en_tecnologías_interactivas.svg" alt="LOGO"></div>
+  <h1><span class="green">Green</span><span class="life">Life</span></h1>
+  <nav>
+    <ul class="nav-menu" id="menuOrdenador">
+      <li><a class="text-button" href="#">Sobre Nosotros</a></li>
+      <li><a class="text-button" href="#">FAQ</a></li>
+      <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+    </ul>
+  </nav>
+</header>
+
+<nav id="navMenu" role="navigation">
+  <div id="menuToggle">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input type="checkbox" />
+
+    <!--
+    Some spans to act as a hamburger.
+
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+    <ul id="menu">
+      <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+      <li><a class="text-button" href="#">FAQ</a></li>
+      <li><a class="text-button" href="#">Sobre Nosotros</a></li>
+    </ul>
+  </div>
+</nav>
+  
+
+  
+    <div class="wrapper">
+      <h1>FAQ</h1>
+
+      <div class="faq">
+        <button class="accordion">
+          ¿Cuál es la durabilidad y vida útil del sensor?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            En condiciones normales de uso, el sensor puede funcionar de manera confiable durante varios años sin necesidad de mantenimiento intensivo.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="accordion">
+          ¿Qué parámetros específicos puede medir el sensor?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            Nuestro sensor mide pH, humedad, temperatura, salinidad y luminosidad, proporcionando datos precisos para optimizar el crecimiento de cultivos hidropónicos verticales.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="accordion">
+          ¿Hay opciones de conectividad, como Wi-Fi, Bluetooth o cableado?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            Sí, nuestro sensor ofrece opciones de conectividad, incluyendo Wi-Fi
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="accordion">
+          ¿El sensor es resistente a condiciones climáticas adversas?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            No, nuestro sensor no es resistente a condiciones climáticas adversas. Es importante protegerlo de tales condiciones para garantizar su funcionamiento óptimo y prolongar su vida útil.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="accordion">
+          ¿El sensor está diseñado para uso en interiores o exteriores?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            El sensor esta enfocado a interiores.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="accordion">
+          ¿El sensor es compatible con sistemas de monitoreo remoto?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="pannel">
+          <p>
+            Sí, el sensor es compatible con sistemas de monitoreo remoto a través de la web después de registrarse y añadir el sensor a la plataforma.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="js/FAQ.js"></script>
+  </body>
+</html>

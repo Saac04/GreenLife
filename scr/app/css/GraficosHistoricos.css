@@ -1,0 +1,144 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.superior {
+    background-image: url('../../img/Marco-Superior-Cliente-Ordenador.png');
+    background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
+    background-position: center top; /* Centra la imagen en la parte superior */
+    height: 50vh; /* Altura del contenedor superior, ajusta según sea necesario */
+    width: 100%;
+    margin-bottom: -320px ;
+    z-index: -1;
+}
+
+.inferior {
+    background-image: url('../../img/Marco-Inferior-Cliente-Ordenador.png');
+    background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
+    background-position: center bottom; /* Centra la imagen en la parte inferior */
+    height: 50vh; /* Altura del contenedor inferior, ajusta según sea necesario */
+    width: 100%;
+    margin-top: -300px;
+    z-index: -1;
+}
+
+.dropdown{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px;
+}
+
+.button{
+    width: 157px;
+    height: 50px;
+}
+
+.button-menu{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px;
+}
+
+.button-color{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.color-humedad{
+    width: 55px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: #25A6FF;
+}
+.color-temperatura{
+    width: 55px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: #E54D4D;
+}
+.color-luminosidad{
+    width: 55px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: #FFCB40
+}
+.color-salinidad{
+    width: 55px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: #847E7E
+}
+.color-pH{
+    width: 55px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: #0B8C00
+}
+
+.dropdown, .button {
+    margin: 10px;
+}
+
+.grafica-edit{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content:space-around;
+    align-items: center;
+    margin: 15px;
+}
+.chart-container {
+    height: 500px;
+    width: 750px;
+    display: flex; /* Usar display flex para centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+h3{
+    text-align: center;
+}
+
+.editar{
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+.limites {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+}
+.limite {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.limite input{
+    width: 50px;
+    height: 24px;
+}
+.botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aplicar{
+    width: 280px;
+}
+
+p{
+    font-family: "Kanit Light";
+    color: red;
+    text-align: center;
+}
