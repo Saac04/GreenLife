@@ -12,6 +12,7 @@ body {
     height: 50vh; /* Altura del contenedor superior, ajusta según sea necesario */
     width: 100%;
     margin-bottom: -320px ;
+    z-index: -1;
 }
 
 .inferior {
@@ -21,6 +22,7 @@ body {
     height: 50vh; /* Altura del contenedor inferior, ajusta según sea necesario */
     width: 100%;
     margin-top: -300px;
+    z-index: -1;
 }
 
 .dropdown{

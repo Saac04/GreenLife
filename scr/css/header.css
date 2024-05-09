@@ -1,3 +1,122 @@
 /*ESTILOS HEADER: POSICION LOGO, POSICION TITULO, POISCION BOTONES, LINEA INDFERIOR, POSICION DE HEADER EN LA PAGINA*/
 
+body{
+    margin: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #479555;
+    background-color: white;
+    height: 64px;
+}
 
+header *{
+    width: 100%;
+}
+
+header div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.logo {
+    height: 140px;
+    width: 140px;
+    /* Añade aquí el estilo para el logo */
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    /* Otros estilos para el título */
+}
+
+.green{
+    color: #7ED957;
+}
+
+.life{
+    color: #545454;
+}
+
+nav ul {
+    list-style-type: none; /* Quita los marcadores de lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Muestra los elementos de la lista en línea */
+    flex-direction: row;
+    align-items: center;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none; /* Quita el subrayado del enlace */
+    white-space: nowrap;
+    text-align: center;
+}
+
+.text-button{
+    font-family: "Kanit";
+    padding: 0;
+    margin: 0;
+}
+
+.fa-user-circle-o{
+    font-size: 36px;
+}
+
+#navMenu{
+    display: none;
+}
+
+@media (max-width: 900px) {
+
+    nav ul{
+        flex-direction: column;
+    }
+
+    #menuOrdenador{
+        display: none;
+    }
+
+    #navMenu{
+        display: block;
+    }
+
+}
+
+
+
+@media (max-width: 600px) {
+    #menu{
+        margin-left: -169px;
+        padding: 150px 0px 10px 0px;
+        width: 250px;
+    }
+
+    .logo{
+       margin-left: -15px;
+    }
+
+    header div{
+        left: 500px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    h1{
+        font-size: 32px;
+    }
+
+    .logo{
+        margin-left: -25px;
+        margin-right: -15px;
+    }
+
+    #menuToggle{
+        right: 30px;
+    }
+}
