@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae426f53-5770-4190-bee0-6ee36902a102" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scr/css/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/Header-Footer-test.html" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Header-Footer-test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/css/Fuentes.css" beforeDir="false" afterPath="$PROJECT_DIR$/scr/css/Fuentes.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/css/MenuHam.css" beforeDir="false" afterPath="$PROJECT_DIR$/scr/css/MenuHam.css" afterDir="false" />
-    </list>
+    <list default="true" id="ae426f53-5770-4190-bee0-6ee36902a102" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +24,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
   <component name="ProjectId" id="2gEH9mQmZ1wbLH7EV6q730n8XQq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -41,7 +38,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/santi/Documents/pdf-uni/GreenLife/scr/img",
+    "git-widget-placeholder": "feature/GestionClientes",
+    "last_opened_file_path": "C:/Users/Usuario/Desktop/progr_web/.AA proyecto en grupo/codigo/gestión y edición de clientes",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -56,6 +54,13 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\santi\Documents\pdf-uni\GreenLife\scr\img" />
     </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14475.35" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
