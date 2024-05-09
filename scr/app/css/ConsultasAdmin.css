@@ -1,0 +1,34 @@
+
+h2{
+    text-align: center;
+}
+
+.tabla-consulta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.consulta-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.consulta-table th,
+.consulta-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.consulta-table th {
+    font-weight: bold;
+}
+
+.consulta-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.consulta-table tbody tr:hover {
+    background-color: #ddd;
+}
