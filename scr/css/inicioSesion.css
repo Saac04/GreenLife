@@ -10,6 +10,7 @@ body {
 }
 .login-container {
     text-align: center;
+    margin: 0px auto;
 }
 h1 {
     font-size: 48px;
@@ -49,9 +50,15 @@ h4 {
     color: #c6c6c6; /* Puedes ajustar el color según tus preferencias */
   }
 
+#mensaje-error {
+    font-size: 15px;
+    font-weight: 400;
+    color: #EA3B50;
+}
+
 .button {
-    width: 426px;  
-    height: 44px;  
+    width: 426px;
+    height: 44px;
     font-size: 20px;
     font-weight: 300;
     display: block;
@@ -76,7 +83,7 @@ h4 {
     text-align: center;
     margin-top: 0px ;
     margin-bottom: -22px;
-    
+
 }
 
 .separator-text {
@@ -91,8 +98,8 @@ h4 {
 }
 
 .button2 {
-    width: 165px;  
-    height: 44px;  
+    width: 165px;
+    height: 44px;
     font-size: 20px;
     font-weight: 300;
     display: block;
@@ -104,7 +111,9 @@ h4 {
     margin-top: 22px;
     margin-bottom: 22px;
     cursor: pointer;
-    float: right; 
+    float: right;
 }
+
+/* acordame de que quiero el texto de los botones un poquito más al medio */
 
 

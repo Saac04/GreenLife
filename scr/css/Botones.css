@@ -20,8 +20,6 @@
     background-color: #479555; /* Cambia el color cuando el botón está seleccionado */
 }
 
-
-
 /* Estilos para botones solo con texto */
 .text-button {
     background: none;
@@ -57,7 +55,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea, input
     background-color: #ffffff; /* Fondo blanco */
     border: none; /* Sin bordes */
     border-bottom:  2px solid #c6c6c6;
-    padding: 10px; /* Ajuste de relleno */
+    padding: 10px; /* Ajuste de repellent */
     margin-bottom: 10px; /* Margen inferior */
 }
 
