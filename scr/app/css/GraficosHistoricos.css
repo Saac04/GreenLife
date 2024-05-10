@@ -5,25 +5,7 @@ body {
     margin: 0;
 }
 
-.superior {
-    background-image: url('../../img/Marco-Superior-Cliente-Ordenador.png');
-    background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
-    background-position: center top; /* Centra la imagen en la parte superior */
-    height: 50vh; /* Altura del contenedor superior, ajusta según sea necesario */
-    width: 100%;
-    margin-bottom: -320px ;
-    z-index: -1;
-}
 
-.inferior {
-    background-image: url('../../img/Marco-Inferior-Cliente-Ordenador.png');
-    background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
-    background-position: center bottom; /* Centra la imagen en la parte inferior */
-    height: 50vh; /* Altura del contenedor inferior, ajusta según sea necesario */
-    width: 100%;
-    margin-top: -300px;
-    z-index: -1;
-}
 
 .dropdown{
     display: flex;

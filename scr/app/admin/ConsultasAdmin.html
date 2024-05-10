@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../../css/Fuentes.css">
   <link rel="stylesheet" href="../../css/header.css">
   <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="../css/Marcos.css">
   <link rel="stylesheet" href="../css/ConsultasAdmin.css">
 
 </head>
@@ -19,12 +20,16 @@
   <h1><span class="green">Green</span><span class="life">Life</span></h1>
   <nav>
     <ul class="nav-menu" id="menuOrdenador">
-      <li><a class="text-button" href="#">Sobre Nosotros</a></li>
-      <li><a class="text-button" href="#">FAQ</a></li>
+      <li><a class="text-button" href="#">Gestión</a></li>
+      <li><a class="text-button" href="#">Consultas</a></li>
       <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
     </ul>
   </nav>
 </header>
+
+<div class="superior">
+  <!-- Contenido de la parte superior de tu página -->
+</div>
 <nav id="navMenu" role="navigation">
   <div id="menuToggle">
     <!--
@@ -49,8 +54,8 @@
     -->
     <ul id="menu">
       <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
-      <li><a class="text-button" href="#">FAQ</a></li>
-      <li><a class="text-button" href="#">Sobre Nosotros</a></li>
+      <li><a class="text-button" href="#"><Consulta></Consulta></a></li>
+      <li><a class="text-button" href="#">Gestión</a></li>
     </ul>
   </div>
 </nav>
@@ -63,42 +68,32 @@
       <table class="consulta-table">
         <thead>
         <tr>
-          <th>Correo del Usuario</th>
-          <th>Asunto</th>
-          <th>Finalizado</th>
+          <th class="h3">Correo del Usuario</th>
+          <th class="h3">Asunto</th>
+          <th class="h3">Finalizado</th>
         </tr>
         </thead>
         <tbody>
         <!-- Aquí puedes agregar filas de la tabla dinámicamente con tu backend -->
-        <tr>
-          <td>usuario1@example.com</td>
-          <td>Consulta sobre productos</td>
-          <td><input type="checkbox" name="finalizado"></td>
-        </tr>
-        <tr>
-          <td>usuario2@example.com</td>
-          <td>Consulta sobre envíos</td>
-          <td><input type="checkbox" name="finalizado"></td>
-        </tr>
         <!-- Agrega más filas según sea necesario -->
         </tbody>
       </table>
     </div>
-    <div class="consulta">a</div>
+    <div class="consulta">
+
+      <div class="nombre p p2">Nombre</div>
+      <div class="usuario p p2">Usuario</div>
+      <div class="asunto p p2">Asunto</div>
+      <div class="consultaTexto p"></div>
+
+    </div>
   </div>
 
 </div>
+<div class="inferior">
+  <!-- Contenido de la parte superior de tu página -->
+</div>
 
-
-<footer class="footer-container">
-  <button class="text-button" >Botón</button>
-  <h4>© 2024 GreenLife. Todos los derechos reservados.</h4>
-  <div class="social-icons">
-    <a href="#"><i class="fa fa-instagram"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-  </div>
-</footer>
 
 <script src="../js/ConsultasAdmin.js"></script>
 </body>

@@ -161,6 +161,31 @@ font-size: 20px; /* Tamaño de letra por defecto */
     color: #333333;
 }
 
+/*------------------------------------------------------------------------------*/
+/* CHECKBOX */
+/*------------------------------------------------------------------------------*/
+
+/* Estilos para el checkbox */
+input[type="checkbox"], .checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: grid;
+    place-content: center;
+    width: 30px; /* Ancho del checkbox */
+    height: 30px; /* Altura del checkbox */
+    background-color: #7ED957; /* Color de fondo del checkbox */
+    border-radius: 5px; /* Borde redondeado */
+    outline: none; /* Quita el borde al enfocar */
+    cursor: pointer; /* Cursor de apuntador al pasar por encima */
+    transition: background-color 0.3s; /* Transición de color al marcar/desmarcar */
+}
+
+/* Estilos para el checkbox al ser marcado */
+input[type="checkbox"]:checked {
+    background-color: #479555; /* Cambia el color de fondo al marcar */
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
 
 /*------------------------------------------------------------------------------*/
 /* CAMBIOS DE PANTALLA*/

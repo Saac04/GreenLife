@@ -42,6 +42,19 @@ var consultasRelacionadas = {
     ]
 };
 
+var listaNombres = [
+    "Sofía",
+    "Juan",
+    "María",
+    "Carlos",
+    "Ana",
+    "Pedro",
+    "Laura",
+    "Diego",
+    "Elena",
+    "Luisa"
+];
+
 // Función para generar un correo electrónico aleatorio
 function generarCorreoAleatorio() {
     var caracteres = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -82,10 +95,13 @@ function agregarFila() {
 
     // HTML de la nueva fila con el asunto, la consulta y el correo generado aleatoriamente
     nuevaFila.innerHTML = `
-    <td>${generarCorreoAleatorio()}</td>
-    <td>${asunto}</td>
-    <td>${consulta}</td>
+    <td class="p p2" >${generarCorreoAleatorio()} </td>
+    <td class="p p2">${asunto}</td>
+    <td class="p p2"><input type="checkbox" class="finalizado checkbox"></td>
   `;
+
+    // Agregar el atributo onclick al tr para llamar a la función rellenarDivsDesdeTR(this)
+    nuevaFila.setAttribute('onclick', 'rellenarDivsDesdeTR(this)');
 
     // Agregar la fila a la tabla
     tabla.appendChild(nuevaFila);
@@ -94,7 +110,7 @@ function agregarFila() {
 // Función para agregar múltiples filas al cargar la página
 function agregarFilasAlCargar() {
     // Determinar el número de filas a agregar
-    var numFilas = 5; // Por ejemplo, agregar 5 filas al cargar la página
+    var numFilas = 20; // Por ejemplo, agregar 5 filas al cargar la página
 
     // Agregar las filas a la tabla
     for (var i = 0; i < numFilas; i++) {
@@ -104,3 +120,27 @@ function agregarFilasAlCargar() {
 
 // Ejecutar la función para agregar filas al cargar el contenido del documento
 document.addEventListener('DOMContentLoaded', agregarFilasAlCargar);
+
+// Función para rellenar los divs con los valores de un tr
+function rellenarDivsDesdeTR(trElement) {
+    // Obtener los td dentro del tr
+    var tds = trElement.querySelectorAll('td');
+
+    // Obtener los valores de los td
+    var correo = tds[0].textContent;
+    var asunto = tds[1].textContent;
+
+
+    var nombre = listaNombres[Math.floor(Math.random() * listaNombres.length)];
+    var consulta = obtenerConsultaRelacionada(asunto);
+
+    // Seleccionar el div con la clase "consulta"
+    var divConsulta = document.querySelector('.consulta');
+
+    // Rellenar los divs con los valores obtenidos
+    divConsulta.querySelector('.nombre').textContent = nombre;
+    divConsulta.querySelector('.usuario').textContent = correo;
+    divConsulta.querySelector('.asunto').textContent = asunto;
+    divConsulta.querySelector('.consultaTexto' +
+        '').textContent = consulta;
+}
