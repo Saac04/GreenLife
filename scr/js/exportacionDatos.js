@@ -24,6 +24,13 @@ document.querySelector('.button').addEventListener('click', function() {
     var end = new Date(start);
     end.setDate(end.getDate() + 1); // Añade un día a la fecha de inicio para obtener la fecha de fin
 
+    // Comprueba si la fecha está en el rango de 2022 a 2024
+    var year = start.getFullYear();
+    if (year < 2022 || year > 2024) {
+        alert('Introduce un rango de 2022 a 2024');
+        return; // Sale de la función si la fecha no está en el rango correcto
+    }
+
     // Aquí es donde generarías los datos para el sensor y el usuario seleccionados.
     // Como este es sólo un ejemplo, voy a utilizar datos aleatorios.
     var sensors = sensor === 'Todos' ? ['Humedad', 'Salinidad', 'Temperatura', 'Luminosidad', 'Ph'] : [sensor];
@@ -70,54 +77,42 @@ document.querySelector('.button').addEventListener('click', function() {
             data.push({time: formattedTime, value: value.toFixed(2), magnitude: magnitude});
         }
 
-        // Crea una nueva tabla para cada sensor
-        var table = document.createElement('table');
-        var header = document.createElement('tr');
-        var timeHeader = document.createElement('th');
-        timeHeader.textContent = 'Hora';
-        var valueHeader = document.createElement('th');
-        valueHeader.textContent = 'Valores';
-        var sensorHeader = document.createElement('th');
-        sensorHeader.textContent = 'Magnitud';
-        header.appendChild(timeHeader);
-        header.appendChild(valueHeader);
-        header.appendChild(sensorHeader);
-        table.appendChild(header);
-        for (var i = 0; i < data.length; i++) {
-            var row = document.createElement('tr');
-            var timeCell = document.createElement('td');
-            timeCell.textContent = data[i].time; // Modificado para mostrar la fecha y hora en el formato deseado
-            var valueCell = document.createElement('td');
-            valueCell.textContent = data[i].value;
-            var sensorCell = document.createElement('td');
-            sensorCell.textContent = data[i].magnitude; // Modificado para mostrar la magnitud
-            row.appendChild(timeCell);
-            row.appendChild(valueCell);
-            row.appendChild(sensorCell);
-            table.appendChild(row);
-        }
+        // Comprueba si hay datos antes de crear la tabla
+        if (data.length > 0) {
+            // Crea una nueva tabla para cada sensor
+            var table = document.createElement('table');
 
-        // Añade la tabla al contenedor
-        document.querySelector('.export-container').appendChild(table);
+            // Añade una clase a la tabla
+            table.className = 'my-table';
+
+            var header = document.createElement('tr');
+            var timeHeader = document.createElement('th');
+            timeHeader.textContent = 'Hora';
+            var valueHeader = document.createElement('th');
+            valueHeader.textContent = 'Valores';
+            var sensorHeader = document.createElement('th');
+            sensorHeader.textContent = 'Magnitud';
+            header.appendChild(timeHeader);
+            header.appendChild(valueHeader);
+            header.appendChild(sensorHeader);
+            table.appendChild(header);
+            for (var i = 0; i < data.length; i++) {
+                var row = document.createElement('tr');
+                var timeCell = document.createElement('td');
+                timeCell.textContent = data[i].time; // Modificado para mostrar la fecha y hora en el formato deseado
+                var valueCell = document.createElement('td');
+                valueCell.textContent = data[i].value;
+                var sensorCell = document.createElement('td');
+                sensorCell.textContent = data[i].magnitude; // Modificado para mostrar la magnitud
+                row.appendChild(timeCell);
+                row.appendChild(valueCell);
+                row.appendChild(sensorCell);
+                table.appendChild(row);
+            }
+
+            // Añade la tabla al contenedor
+            document.querySelector('.export-container').appendChild(table);
+        }
     });
 });
 
-document.getElementById('nombreUsuario').addEventListener('input', function() {
-    var input = this.value; // Obtiene el texto que el usuario ha escrito
-
-    // Aquí es donde buscarías los nombres de usuario que comienzan con el texto de entrada.
-    // Como este es sólo un ejemplo, voy a utilizar una lista de nombres de usuario estática.
-    var usernames = ['Alejandro Vázquez Remes', 'Alan Guevara Martínez', 'Santiago Alejandro Aguirre Crespo', 'Ferran Sansaloni Prats', 'Imanol Figuero Parras', 'Sergio García Camacho', 'Sergi Puig Biosca'];
-
-    var datalist = document.getElementById('usernames');
-    datalist.innerHTML = ''; // Limpia las opciones antiguas
-
-    // Añade las nuevas opciones al datalist
-    for (var i = 0; i < usernames.length; i++) {
-        if (usernames[i].toLowerCase().startsWith(input.toLowerCase())) {
-            var option = document.createElement('option');
-            option.value = usernames[i];
-            datalist.appendChild(option);
-        }
-    }
-});
