@@ -70,6 +70,11 @@ h4 {
     color: #EA3B50;
 }
 
+.aceptar_terminos{
+    display: flex;
+    gap: 20px;
+}
+
 .aceptar_terminos label, .aceptar_terminos a{
     color: #479555;
     text-decoration: none;
