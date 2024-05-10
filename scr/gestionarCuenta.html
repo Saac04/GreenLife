@@ -4,11 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gestionarCuenta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/Botones.css">
     <link rel="stylesheet" type="text/css" href="css/Fuentes.css ">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/MenuHam.css">
     <link rel="stylesheet" type="text/css" href="css/gestionarCuenta.css ">
 </head>
 <body>
+<header class="header">
+    <div><img class="logo" src="img/Grado_en_tecnologías_interactivas.svg" alt="LOGO"></div>
+    <h1><span class="green">Green</span><span class="life">Life</span></h1>
+    <nav>
+        <ul class="nav-menu" id="menuOrdenador">
+            <li><a class="text-button" href="#">Sobre Nosotros</a></li>
+            <li><a class="text-button" href="#">FAQ</a></li>
+            <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+        </ul>
+    </nav>
+</header>
+
+<nav id="navMenu" role="navigation">
+    <div id="menuToggle">
+        <!--
+        A fake / hidden checkbox is used as click reciever,
+        so you can use the :checked selector on it.
+        -->
+        <input type="checkbox" />
+
+        <!--
+        Some spans to act as a hamburger.
+
+        They are acting like a real hamburger,
+        not that McDonalds stuff.
+        -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <!--
+        Too bad the menu has to be inside of the button
+        but hey, it's pure CSS magic.
+        -->
+        <ul id="menu">
+            <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+            <li><a class="text-button" href="#">FAQ</a></li>
+            <li><a class="text-button" href="#">Sobre Nosotros</a></li>
+        </ul>
+    </div>
+</nav>
 <div class="gestion-cuenta">
 
     <div class="global">
@@ -38,8 +82,7 @@
         <div class="contenedores">
             <div id="eliminarCuenta1">
                 <p>Hola, <strong>Alan</strong>:
-                    Lamentamos que quieras eliminar tu cuenta.
-                    ¿Por qué quieres eliminar la cuenta?
+                    Hola, Alan: Lamentamos que quieras eliminar tu cuenta. ¿Por qué quieres eliminar la cuenta? Queremos recordarte que al eliminar tu cuenta, perderás acceso a todos los servicios y contenidos asociados a ella.
                 </p>
                 <h4>¿Olvidaste tu contraseña?</h4>
             </div>
@@ -47,7 +90,7 @@
                 <h3>Por favor, selecciona el motivo e ingresa tu contraseña</h3>
 
                 <div id="motivoContra">
-                    <select>
+                    <select id="hola">
                         <option value="no-uso">No uso la cuenta</option>
                         <option value="seguridad">Preocupaciones de seguridad</option>
                         <!-- Añade más opciones si es necesario -->
