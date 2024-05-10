@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gestionarCuenta</title>
+    <link rel="stylesheet" type="text/css" href="css/Botones.css">
+    <link rel="stylesheet" type="text/css" href="css/Fuentes.css ">
+    <link rel="stylesheet" type="text/css" href="css/gestionarCuenta.css ">
+</head>
+<body>
+<div class="gestion-cuenta">
+
+    <div class="global">
+        <h2>Cambiar Correo</h2>
+        <div class="correoYcontraseña">
+            <input type="email" placeholder="Correo actual">
+            <input type="email" placeholder="Correo nuevo">
+            <input type="password" placeholder="Contraseña">
+        </div>
+        <h4>¿Olvidaste tu contraseña?</h4>
+        <button class="button">Confirmar</button>
+    </div>
+
+    <div class="global">
+        <h2>Reestablecer Contraseña</h2>
+        <div class="correoYcontraseña">
+            <input type="password" placeholder="Contraseña actual">
+            <input type="password" placeholder="Contraseña nueva">
+            <input type="password" placeholder="Confirmar contraseña">
+        </div>
+        <h4>¿Olvidaste tu contraseña?</h4>
+        <button class="button">Confirmar</button>
+    </div>
+
+    <div id="eliminar-cuenta">
+        <h2>Eliminar Cuenta</h2>
+        <div class="contenedores">
+            <div id="eliminarCuenta1">
+                <p>Hola, <strong>Alan</strong>:
+                    Lamentamos que quieras eliminar tu cuenta.
+                    ¿Por qué quieres eliminar la cuenta?
+                </p>
+                <h4>¿Olvidaste tu contraseña?</h4>
+            </div>
+            <div id="eliminarCuenta2">
+                <h3>Por favor, selecciona el motivo e ingresa tu contraseña</h3>
+
+                <div id="motivoContra">
+                    <select>
+                        <option value="no-uso">No uso la cuenta</option>
+                        <option value="seguridad">Preocupaciones de seguridad</option>
+                        <!-- Añade más opciones si es necesario -->
+                    </select>
+                    <input type="password" placeholder="Contraseña">
+                </div>
+            </div>
+        </div>
+
+            <div id="eliminarCuenta3">
+                <p>Si presionas el siguiente botón todos tus datos se eliminarán definitivamente y no se podrán recuperar. Si en el futuro decides crear otra cuenta, no podrás registrarte con el mismo nombre de usuario.</p>
+                <button id ="botonEliminar" class="button">Borrar definitivamente la cuenta</button>
+            </div>
+        </div>
+</div>
+
+</div>
+<script src="js/Botones.js"></script>
+<script src=""></script>
+</body>
+</html>
+
