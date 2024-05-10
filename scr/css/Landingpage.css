@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap');
+.banner-image img{
+    margin-top: -200px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+}
+#contenedorbanner{
+    background-image: url("../img/banner.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    height: 95vh;
+}
+#registerButton {
+    background-color: #5CBA23; /* Ajusta el código de color para que coincida con el verde exacto */
+    border: none;
+    color: white;
+    padding: 3%; /* Ajusta el relleno para el tamaño deseado */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 28px; /* Ajusta el tamaño de la fuente según sea necesario */
+    margin: 4px 2px;
+    margin-left: 58%;
+    cursor: pointer;
+    border-radius: 60px; /* Esto da las esquinas redondeadas tipo píldora */
+    z-index: 0;
+}
+#Nombre_del_Producto{
+    margin-right: 40%;
+}
+#greenLife {
+    font-family: Arial, sans-serif; /* Ajusta la fuente a tu gusto */
+    font-size: 72px;
+    color: #76BD57; /* Ajusta el código de color para que coincida con el verde oscuro exacto */
+    margin-top: 10%;
+}
+
+#life {
+    color: #000000; /* Ajusta el código de color para que coincida con el gris exacto */
+}
+#container {
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #5CBA23; /* Ajusta el color de fondo a tu gusto */
+}
+#text h1{
+    font-size: 75px;
+    color: white;
+}
+#text p{
+    font-size: 28px;
+    margin-left: 10px;
+    background-color: white;
+    padding: 1%;
+    color: green;
+    border-radius: 20px;
+}
+#text h1, #text p{
+    margin-top: 10%;
+}
+#character {
+    width: 80%;
+    background-color: white;
+    border-radius: 5%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin: 5%;
+    /* Aquí irían los estilos para tu imagen del personaje */
+}
+#image{
+    width: 100%;
+    border-radius: 5%;
+}
+.product {
+    display: flex;
+    justify-content: space-between;
+
+}
+.product-info, .product-measurements {
+    width: 45%;
+}
+
+#lista-iconos-servicios{
+    list-style-type: none;
+    font-size: 40px;}
+.icon {
+    height: 50px;
+    width: 50px;
+}
+
+.lista_iconos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+#head1{
+    margin-top: 10%;
+}
+#imagendesensor{
+    width: 90%;
+    margin-left: 20%;
+}
+
+#preguntas-sensor{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.rectangle{
+    background-color: #5CBA23;
+    height: 0.5vh;
+    width: auto;
+}
+#Duda{
+    margin-left: 30%;
+}
+.titulos{
+    font-size: 2vw;
+    width: 100%;
+}
+.Textoh2{
+    font-size: 1.5vw;
+    font-family: "Kanit Medium", sans-serif;
+    width: 100%;
+}
+
+.ajustar{
+    width: fit-content;
+    height: fit-content;
+}
+#conocer-producto h2{
+    margin-bottom: 0px;
+}
+#Sensores{
+    margin-top: 5%;
+}
+
+@media (max-width: 1200px){
+    #contenedorbanner{
+        height: 70vh;
+    }
+    #text h1{
+        font-size: 23px;
+    }
+    #text p{
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 700px){
+    #registerButton{
+        font-size: 18px;
+    }
+    #lista-iconos-servicios{
+        font-size: 6px;
+    }
+    #Sensores{
+        display: none;
+    }
+    #contenedorbanner{
+        height: 35vh;
+    }
+    #greenLife{
+        margin-top: 10%;
+        font-size: 40px;
+    }
+}

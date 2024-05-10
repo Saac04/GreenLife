@@ -1,10 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GreenLife</title>
+    <!--
+    Header
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/MenuHam.css">
+    <link rel="stylesheet" href="css/Botones.css">
+    <link rel="stylesheet" href="css/Fuentes.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/Landingpage.css">
+    <header class="header">
+        <div><img class="logo" src="img/Grado_en_tecnologías_interactivas.svg" alt="LOGO"></div>
+        <h1><span class="green">Green</span><span class="life">Life</span></h1>
+        <nav>
+            <ul class="nav-menu" id="menuOrdenador">
+                <li><a class="text-button" href="#">Sobre Nosotros</a></li>
+                <li><a class="text-button" href="#">FAQ</a></li>
+                <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <nav id="navMenu" role="navigation">
+        <div id="menuToggle">
+            <!--
+            A fake / hidden checkbox is used as click reciever,
+            so you can use the :checked selector on it.
+            -->
+            <input type="checkbox" />
+
+            <!--
+            Some spans to act as a hamburger.
+
+            They are acting like a real hamburger,
+            not that McDonalds stuff.
+            -->
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <!--
+            Too bad the menu has to be inside of the button
+            but hey, it's pure CSS magic.
+            -->
+            <ul id="menu">
+                <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+                <li><a class="text-button" href="#">FAQ</a></li>
+                <li><a class="text-button" href="#">Sobre Nosotros</a></li>
+            </ul>
+        </div>
+    </nav>
+</head>
+
+<body>
+<div id="contenedorbanner">
+    <div id="Nombre_del_Producto">
+        <h1 id="greenLife">Green<span id="life">Life</span></h1>
+    </div>
+    <div>
+        <button id="registerButton">REGISTRARSE</button>
+    </div>
+    <div class="banner-image">
+        <img >
+    </div>
+</div>
+
+<div id="container">
+    <div id="text">
+        <h1>Cuando quieras, donde quieras.</h1>
+        <p class="Textoh2">Con nuestra aplicación web, tienes acceso a tus herramientas en cualquier momento y en cualquier lugar. Ya sea que estés en casa, en el trabajo o de viaje.</p>
+    </div>
+    <div id="character">
+        <img id="image" src="img/Anuncio%20chica.png">
+    </div>
+</div>
+<section id="conocer-producto">
+    <div class="product">
+        <div class="product-info">
+            <img id="imagendesensor" src="img/Sensor.png">
+            <div id="preguntas-sensor">
+                <div>
+                    <h2 class="titulos">¿Cómo llegan los datos a tu dispositivo?</h2>
+                    <div class="rectangle"></div>
+                    <p class="Textoh2">Los datos de GreenLife se pueden ver en tu smartphone o tablet a través de una aplicación después de escanear un código QR en el recibo del usuario.</p>
+                </div>
+                <div id="Duda">
+                    <h2 class="titulos">¿Qué es GreenLife?</h2>
+                    <div class="rectangle"></div>
+                    <p class="Textoh2">GreenLife es un producto que mide la humedad, la temperatura, la intensidad de la luz y los niveles de pH para ayudarte a cuidar tus plantas de la mejor manera.</p>
+                </div>
+            </div>
+        </div>
+        <div class="product-measurements">
+            <div id="head1">
+                <h1>Conoce GreenLife</h1>
+                <div class="rectangle"></div>
+            </div>
+            <div id="mejoropcion">
+                <div class="ajustar">
+                    <h2 class="titulos">Tu mejor opción</h2>
+                    <div class="rectangle"></div>
+                </div>
+            <p class="Textoh2">GreenLife no solo te ofrece una manera conveniente y eficiente de cultivar tus propias plantas en casa, sino que también te brinda la tranquilidad de saber que estás utilizando tecnología de vanguardia para maximizar el éxito de tu huerto hidropónico vertical.</p>
+            <div class="ajustar">
+                <h2 class="titulos">¿Qué medimos?</h2>
+                <div class="rectangle"></div>
+                <img id="Sensores" src="img/banner2.jpg">
+            </div>
+            </div>
+            <ul class="lista_iconos" id="lista-iconos-servicios">
+                <li><img class="icon" src="img/Humedad.png" alt="Humidity icon"> Humedad</li>
+                <li><img class="icon" src="img/Temperatura.png" alt="Temperature icon"> Temperatura</li>
+                <li><img class="icon" src="img/Luminosidad.png" alt="Light intensity icon"> Luminosidad</li>
+                <li><img class="icon" src="img/PH.png" alt="pH icon"> pH</li>
+                <li><img class="icon" src="img/Salinidad.png" alt="pH icon"> Salinidad</li>
+            </ul>
+        </div>
+    </div>
+</section>
 </body>
 </html>
