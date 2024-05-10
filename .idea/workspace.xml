@@ -7,6 +7,7 @@
     <list default="true" id="ae426f53-5770-4190-bee0-6ee36902a102" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< develop
       <change beforePath="$PROJECT_DIR$/scr/Mis huertos.html" beforeDir="false" afterPath="$PROJECT_DIR$/scr/app/cliente/Mis huertos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scr/app/cliente/GraficosHistoricos.html" beforeDir="false" afterPath="$PROJECT_DIR$/scr/app/cliente/GraficosHistoricos.html" afterDir="false" />
@@ -18,6 +19,8 @@
 >>>>>>> me asusto
 =======
 >>>>>>> 269576d03ff406defcf982d196edce6f183875ab
+=======
+>>>>>>> 9f58c1613747a0528efb1b555fe07fdcbbcbc3e0
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +71,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+<<<<<<< HEAD
     "git-widget-placeholder": "feature/ExportarDatos",
+=======
+    "git-widget-placeholder": "feature/gestionarCuenta",
+>>>>>>> 9f58c1613747a0528efb1b555fe07fdcbbcbc3e0
     "last_opened_file_path": "C:/Users/santi/Documents/pdf-uni/GreenLife/scr/img",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
