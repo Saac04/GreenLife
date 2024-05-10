@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenLife - Mis Huertos</title>
+  <link rel="stylesheet" href="css/MisHuertos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/MenuHam.css">
+  <link rel="stylesheet" href="css/Botones.css">
+  <link rel="stylesheet" href="css/Fuentes.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+<body>
+
+<header class="header">
+  <div><img class="logo" src="img/Grado_en_tecnologías_interactivas.svg" alt="LOGO"></div>
+  <h1><span class="green">Green</span><span class="life">Life</span></h1>
+  <nav>
+    <ul class="nav-menu" id="menuOrdenador">
+      <li><a class="text-button" href="#">Mis huertos</a></li>
+      <li><a class="text-button" href="#">Soporte</a></li>
+      <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+    </ul>
+  </nav>
+</header>
+
+<nav id="navMenu" role="navigation">
+  <div id="menuToggle">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input type="checkbox" />
+
+    <!--
+    Some spans to act as a hamburger.
+
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+    <ul id="menu">
+      <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+      <li><a class="text-button" href="#">FAQ</a></li>
+      <li><a class="text-button" href="#">Sobre Nosotros</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+  <div class="nombrePagina">
+    <h2>Mis huertos</h2>
+  </div>
+
+<div class="contendorHuertos">
+
+  <div id="fondo1" class="huerto dios">
+    <h3>Huerto 1</h3>
+    <div>
+      <button class="button">Ver Sensores</button>
+      <button class="button boton-eliminar">Eliminar</button>
+      <button class="button boton-editar">Editar Nombre</button>
+    </div>
+  </div>
+
+  <div id="fondo2" class="huerto dios">
+    <h3>Huerto 2</h3>
+    <div>
+      <button class="button">Ver Sensores</button>
+      <button class="button boton-eliminar">Eliminar</button>
+      <button class="button boton-editar">Editar Nombre</button>
+    </div>
+  </div>
+
+  <div id="fondo3" class="huerto dios">
+    <h3>Huerto 3</h3>
+    <div>
+      <button class="button">Ver Sensores</button>
+      <button class="button boton-eliminar">Eliminar</button>
+      <button class="button boton-editar">Editar Nombre</button>
+    </div>
+  </div>
+
+</div>
+
+
+
+  <!-- Repite los bloques anteriores para más huertos -->
+  <div class="main-container">
+    <button class="button boton_nuevohuerto" onclick="location.href='VinculacionQR.html'">+ Añadir Huerto</button>
+  </div>
+<script src="js/MisHuertos.js"></script>
+</body>
+</html>
