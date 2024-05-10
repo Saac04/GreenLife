@@ -1,0 +1,111 @@
+/* Reset some default styling */
+body, div, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Kanit;
+}
+
+.maincontainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0px 50px 0px 50px;
+}
+
+.container {
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    margin: 2%;
+}
+.ejemploQR{
+     display: flex;
+     justify-content: center;
+     flex-flow: column;
+}
+.ImagenQR{
+    display: flex;
+    height: auto;
+    width: auto;
+    justify-content: center;
+}
+#ejemploQR{
+    display: flex;
+    justify-content: center;
+}
+h2 {
+    color: #479555; /* Dark green text color for main heading */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+h3 {
+    color:#000000 ; /* Dark green text color for subheadings */
+    margin-bottom: 20px; /* Space below subheading */
+}
+.SubirQR{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    padding-left: 10px;
+    padding-bottom: 0px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#Confirmar-subir-archivo{
+    margin-top: 20px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+.Instrucciones{
+    width: 99.6%;
+    margin-top: 20px;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#contenido-vinculacion{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.H3-vinculacion-serie{
+    display: flex;
+    justify-content: center;
+
+}
+input[type="file"], input[type="text"] {
+    margin: 0px 40px 0px 40px;
+    height: 45px;
+    border-radius: 10px;
+    padding-left:20px ;
+    margin-bottom :0px ;/* Rounded corners and padding for inputs*/
+}
+input[type="text"], input[type="email"], input[type="password"], textarea, input[type="number"] {
+    font-family: 'Kanit Light', sans-serif; /* Establece la fuente para el texto de entrada */
+    font-size: 20px;
+    color: #333333; /* Color del texto */
+    background-color: #ffffff; /* Fondo blanco */
+    border: none; /* Sin bordes */
+    border-bottom:  2px solid #c6c6c6;
+    padding: 10px; /* Ajuste de relleno */
+    margin-bottom: 10px; /* Margen inferior */
+}
+#Confirmar-n-serie{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 40px;
+}
+.boton-volver{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+#boton-volver{
+    padding: 15px 50px;
+}

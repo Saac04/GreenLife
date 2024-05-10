@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vinculación</title>
+    <link rel="stylesheet" href="css/VinculaconQR.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/MenuHam.css">
+    <link rel="stylesheet" href="css/Botones.css">
+    <link rel="stylesheet" href="css/Fuentes.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+
+<header class="header">
+    <div><img class="logo" src="img/Grado_en_tecnologías_interactivas.svg" alt="LOGO"></div>
+    <h1><span class="green">Green</span><span class="life">Life</span></h1>
+    <nav>
+        <ul class="nav-menu" id="menuOrdenador">
+            <li><a class="text-button" href="Mis%20huertos.html">Mis huertos</a></li>
+            <li><a class="text-button" href="">Soporte</a></li>
+            <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+        </ul>
+    </nav>
+</header>
+
+<nav id="navMenu" role="navigation">
+    <div id="menuToggle">
+        <!--
+        A fake / hidden checkbox is used as click reciever,
+        so you can use the :checked selector on it.
+        -->
+        <input type="checkbox" />
+
+        <!--
+        Some spans to act as a hamburger.
+
+        They are acting like a real hamburger,
+        not that McDonalds stuff.
+        -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <!--
+        Too bad the menu has to be inside of the button
+        but hey, it's pure CSS magic.
+        -->
+        <ul id="menu">
+            <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+            <li><a class="text-button" href="#">FAQ</a></li>
+            <li><a class="text-button" href="#">Sobre Nosotros</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <div class="maincontainer">
+        <div class="container">
+            <div>
+                <h2>Vinculación de sonda</h2>
+                <h3>Elige la opción que más te convenga para la vinculación de tu sonda</h3>
+            </div>
+            <div class="ejemploQR">
+                <div id="ejemploQR"><h3>Vinculación por código QR</h3></div>
+                <div class="ImagenQR"> <img src="img/Commons_QR_code.png"></div>
+            </div>
+            <div id="Confirmar-subir-archivo">
+                <div class="SubirQR">
+                    <p>Adjuntar QR</p>
+                    <input type="file" name="Elegir archivo" id="Elegir archivo" accept="image/*">
+                </div><div>
+                <button class="button">
+                    Confirmar
+                </button></div>
+            </div>
+
+        <div class="Instrucciones">
+            <ol>Instrucciones para el Qr:
+                <li>Saca foto del QR que viene con tu nuevo sensor</li>
+                <li>Adjunta la imagen donde se indica</li>
+                <li>Pulsa el boton "confirmar"</li></ol>
+        </div>
+        </div>
+
+
+
+    <div class="container">
+        <div id="contenido-vinculacion">
+            <div class="H3-vinculacion-serie"><h3>Vinculación por número de serie</h3></div>
+            <h4>Para encontrar el número de serie de tu dispositivo, simplemente da la vuelta a la sonda. En la parte trasera, verás una etiqueta con una serie de números y letras, introdúcelo y empieza a disfrutar de tu sensor.
+            </h4>
+            <input type="text" name="Introducir número de serie" id="Introducir número de serie" placeholder="Introducir número de serie">
+            <div id="Confirmar-n-serie"><button class="button">Confirmar</button></div>
+        </div>
+        <div class="boton-volver"><button class="button" id="button" onclick="location.href='Mis huertos.html'">Volver</button></div>
+    </div>
+    </div>
+</body>
+</html>
