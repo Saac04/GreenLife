@@ -1,5 +1,5 @@
 .export-container{ /*contenedor para guiarme*/
-    border: 2px solid #333333;
+
     margin-left: 50px;
     margin-right: 50px;
 }
@@ -9,10 +9,7 @@
     justify-content: space-between;
 }
 
-.date-container, .sensor-container {
-    border: 2px solid #333333;
- 
-}
+
 
 #negro {
     color: #333333;
@@ -34,12 +31,10 @@
 
 }
 
-.username-container {
-    border: 2px solid #333333;
-}
+
 
 .contenedor-buscador{
-    border: 2px solid #333333;
+
     display: flex;
     justify-content: flex-start;
     align-items:center ;
@@ -80,4 +75,42 @@ input[type="text"], textarea {
 h3 {
     white-space: nowrap;
 }
+
+/* Estilo general para las tablas */
+/* Estilo general para las tablas */
+.my-table {
+    text-align: left;
+    font-family: "Kanit Light", sans-serif;
+    font-size: 16px;
+    color: #333333;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f8f9fa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para los encabezados de las tablas */
+.my-table th {
+    background-color: #479555;
+    color: white;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+}
+
+/* Estilo para las celdas de las tablas */
+.my-table td {
+    padding: 10px 15px;
+    color: #495057;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Estilo para las filas de las tablas al pasar el ratón por encima */
+.my-table tr:hover {
+    background-color: #e9ecef;
+}
+
+
+
 
