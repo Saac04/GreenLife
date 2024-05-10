@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="login-container">
-    <h1><span>Green</span>Life</h1>
+    <h1 onclick="redirigirAIndex()"><span>Green</span>Life</h1>
     <h2>Inicio de sesión</h2>
     <input type="email" class="input-field" placeholder="Correo electrónico">
     <input type="password" class="input-field" placeholder="Contraseña">
@@ -18,7 +18,7 @@
     <button class="button" onclick="toggleActive(this); iniciarSesion()">Iniciar sesión</button>
     <div class="separator"><span class="separator-text">ó</span></div>
     <button class="button" onclick="toggleActive(this); registrarse();">Registrarse</button>
-    <button class="button2" onclick="toggleActive(this); volver();">Volver</button>
+    <button class="button2" onclick="toggleActive(this) ; redirigirAIndex();">Volver</button>
 </div>
 <script src="js/Botones.js"></script>
 <script src="js/inicioSesion.js"></script>

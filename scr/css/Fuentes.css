@@ -42,23 +42,23 @@ a{
 
     /* Consulta de medios para tamaños de pantalla menores o iguales a 500px */
     @media screen and (max-width: 600px) {
-        h1 {
+        h1, .h1{
             font-size: 22px; /* Tamaño de letra para h1 en pantallas pequeñas */
         }
 
-        h2 {
+        h2, .h2 {
             font-size: 18px; /* Tamaño de letra para h2 en pantallas pequeñas */
         }
 
-        h3 {
+        h3, .h3 {
             font-size: 16px; /* Tamaño de letra para h3 en pantallas pequeñas */
         }
 
-        h4 {
+        h4, .h4 {
             font-size: 12px; /* Tamaño de letra para h4 en pantallas pequeñas */
         }
 
-        p {
+        p, .p {
             font-size: 14px; /* Tamaño de letra para párrafos en pantallas pequeñas */
         }
     }

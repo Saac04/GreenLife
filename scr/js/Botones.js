@@ -32,3 +32,8 @@ function activarUnico(button) {
         // Activar el botón específico
         button.classList.add("active");
     }
+
+    function redirigirAIndex() {
+        // Cambia 'pagina.html' por la URL de la página a la que deseas redirigir
+        window.location.href = 'index.html';
+    }
