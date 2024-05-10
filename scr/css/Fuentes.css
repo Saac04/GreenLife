@@ -35,7 +35,7 @@ p, .p{
 }
 
 /* Consulta de medios para tamaños de pantalla menores o iguales a 500px */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     h1 {
         font-size: 22px; /* Tamaño de letra para h1 en pantallas pequeñas */
     }

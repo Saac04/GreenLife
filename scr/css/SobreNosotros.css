@@ -83,7 +83,6 @@ body {
 .ContainerVision img{
     width: 358px;
     height: 358px;
-    order: 1;
 }
 
 .textVision{
@@ -137,4 +136,65 @@ h2{
     text-align: center;
     margin-top: 20px;
     color: #479555;
+}
+
+
+    @media screen and (max-width: 1100px) {
+        .ContainerOrigen{
+            display: grid;
+            justify-content: center;
+        }
+
+        .ContainerOrigen img{
+            order: 5;
+        }
+
+        .ContainerMision{
+            display: grid;
+        }
+
+        .ContainerVision{
+            display: grid;
+        }
+
+        .ImagenVision{
+            order: 5;
+            display: grid;
+        }
+
+        img{
+            justify-self: center;
+        }
+
+        .ContainerCeo{
+            display: grid;
+        }
+
+    }
+    @media screen and (max-width: 720px) {
+        .ContainerOrigen img, .ContainerCeo img, .ContainerMision img{
+            width: 450px;
+            height: 100%;
+        }
+
+    }
+    @media screen and (max-width: 570px) {
+        .ContainerOrigen img, .ContainerCeo img, .ContainerMision img{
+            width: 280px;
+        }
+
+        .ContainerVision img{
+            width: 300px;
+            height: 100%;
+        }
+    }
+    @media screen and (max-width: 500px) {
+        .ContainerOrigen{
+            flex-direction: column;
+        }
+    }
+
+#menu{
+    height: 200%;
+    margin: -100px 0 0 -200px;
 }
