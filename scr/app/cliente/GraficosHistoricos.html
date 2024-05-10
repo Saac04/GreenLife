@@ -8,12 +8,57 @@
     <link rel="stylesheet" href="../css/Marcos.css">
     <link rel="stylesheet" href="../../css/Botones.css">
     <link rel="stylesheet" href="../../css/Fuentes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/MenuHam.css">
+    <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../css/GraficosHistoricos.css">
     <style>
         
     </style>
 </head>
 <body>
+
+<header class="header">
+    <div><img class="logo" src="../../img/Grado_en_tecnologías_interactivas.svg" alt="LOGO"></div>
+    <h1><span class="green">Green</span><span class="life">Life</span></h1>
+    <nav>
+        <ul class="nav-menu" id="menuOrdenador">
+            <li><a class="text-button" href="#">Mis Huertos</a></li>
+            <li><a class="text-button" href="#">Soporte</a></li>
+            <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+        </ul>
+    </nav>
+</header>
+
+<nav id="navMenu" role="navigation">
+    <div id="menuToggle">
+        <!--
+        A fake / hidden checkbox is used as click reciever,
+        so you can use the :checked selector on it.
+        -->
+        <input type="checkbox" />
+
+        <!--
+        Some spans to act as a hamburger.
+
+        They are acting like a real hamburger,
+        not that McDonalds stuff.
+        -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <!--
+        Too bad the menu has to be inside of the button
+        but hey, it's pure CSS magic.
+        -->
+        <ul id="menu">
+            <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+            <li><a class="text-button" href="#">FAQ</a></li>
+            <li><a class="text-button" href="#">Sobre Nosotros</a></li>
+        </ul>
+    </div>
+</nav>
 <div class="superior">
     <!-- Contenido de la parte superior de tu página -->
 </div>
@@ -47,28 +92,33 @@
 
 <div class="button-menu">
     <!-- Botones para seleccionar el tipo de dato a mostrar en la gráfica -->
-    <div class="button-color">
-        <button class="button" id="humedad" onclick="toggleDataSet(0); activarUnicoGH(this); changeLimtis(0)">Humedad</button>
-        <div class="color-humedad"></div>
+
+    <div class="button-menu1">
+        <div class="button-color">
+            <button class="button" id="humedad" onclick="toggleDataSet(0); activarUnicoGH(this); changeLimtis(0)">Humedad</button>
+            <div class="color-humedad"></div>
+        </div>
+        <div class="button-color">
+            <button class="button" id="temperatura" onclick="toggleDataSet(1); activarUnicoGH(this); changeLimtis(1)">Temperatura</button>
+            <div class="color-temperatura"></div>
+        </div>
+        <div class="button-color">
+            <button class="button" id="luminosidad" onclick="toggleDataSet(2); activarUnicoGH(this); changeLimtis(2)">Luminosidad</button>
+            <div class="color-luminosidad"></div>
+        </div>
     </div>
-    <div class="button-color">
-        <button class="button" id="temperatura" onclick="toggleDataSet(1); activarUnicoGH(this); changeLimtis(1)">Temperatura</button>
-        <div class="color-temperatura"></div>
-    </div>
-    <div class="button-color">
-        <button class="button" id="luminosidad" onclick="toggleDataSet(2); activarUnicoGH(this); changeLimtis(2)">Luminosidad</button>
-        <div class="color-luminosidad"></div>
-    </div>
-    <div class="button-color">
-        <button class="button" id="salinidad" onclick="toggleDataSet(3); activarUnicoGH(this); changeLimtis(3)">Salinidad</button>
-        <div class="color-salinidad"></div>
-    </div>
-    <div class="button-color">
-        <button class="button" id="pH" onclick="toggleDataSet(4); activarUnicoGH(this); changeLimtis(4)">Ph</button>
-        <div class="color-pH"></div>
-    </div>
-    <div>
-        <button class="button active" id="todo" onclick=" toggleDataSet(5); activarUnicoGH(this); changeLimtis(-1)">Todo</button>
+    <div class="button-menu2">
+        <div class="button-color">
+            <button class="button" id="salinidad" onclick="toggleDataSet(3); activarUnicoGH(this); changeLimtis(3)">Salinidad</button>
+            <div class="color-salinidad"></div>
+        </div>
+        <div class="button-color">
+            <button class="button" id="pH" onclick="toggleDataSet(4); activarUnicoGH(this); changeLimtis(4)">Ph</button>
+            <div class="color-pH"></div>
+        </div>
+        <div>
+            <button class="button active" id="todo" onclick=" toggleDataSet(5); activarUnicoGH(this); changeLimtis(-1)">Todo</button>
+        </div>
     </div>
     <!-- ... -->
 </div>
@@ -92,7 +142,7 @@
         <p id="advertencia">Seleccione un sensor para editar!</p>
         <div class="botones">
             <button class="button aplicar" id="aplicar" onclick="changeLimtis(-1)">Aplicar</button>
-            <button class="button" id="atras">Atrás</button>
+            <a class="button atras" href="Mis%20huertos.html">Atrás</a>
         </div>
     </div>
 </div>
@@ -100,6 +150,7 @@
 <div class="inferior">
     <!-- Contenido de la parte inferior de tu página -->
 </div>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>

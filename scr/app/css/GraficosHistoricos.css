@@ -3,6 +3,11 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0;
+
+}
+
+header{
+    width: 100%;
 }
 
 .dropdown{
@@ -17,12 +22,15 @@ body {
     height: 50px;
 }
 
-.button-menu{
+.button-menu, .button-menu1, .button-menu2{
     display: flex;
     justify-content: space-around;
     width: 100%;
     margin: 10px;
+    flex-direction: row;
 }
+
+
 
 .button-color{
     display: flex;
@@ -71,11 +79,10 @@ body {
     width: 100%;
     justify-content:space-around;
     align-items: center;
-    margin: 15px;
 }
 .chart-container {
-    height: 500px;
-    width: 750px;
+    height: 100%;
+    width: 70%;
     display: flex; /* Usar display flex para centrar verticalmente */
     justify-content: center; /* Centrar horizontalmente */
     align-items: center; /* Centrar verticalmente */
@@ -117,8 +124,66 @@ h3{
     width: 280px;
 }
 
+.atras{
+    padding: 0;
+    display: inline-block; /* Para que se pueda aplicar la altura y alinear verticalmente */
+    line-height: 50px; /* Igualar la altura del texto con la altura del enlace */
+    text-decoration: none; /* Quitar el subrayado de los enlaces */
+}
+
 p{
     font-family: "Kanit Light";
     color: red;
     text-align: center;
 }
+
+/* Consulta de medios para tamaños de pantalla menores o iguales a 500px */
+@media screen and (max-width: 1140px) {
+    .grafica-edit{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    .button-menu{
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .button-menu1, .button-menu2{
+        margin: 0;
+    }
+
+
+    .dropdown{
+        display: grid;
+        gap: 35px;
+    }
+
+    .dropdown div{
+        display: grid;
+
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .button-menu, .button-menu1, .button-menu2{
+        margin: 0;
+    }
+    .button{
+        margin: 5px;
+        width: 100px;
+    }
+
+    .aplicar {
+        width: 150px;
+    }
+}
+
+

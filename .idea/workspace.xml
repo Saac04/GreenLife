@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae426f53-5770-4190-bee0-6ee36902a102" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scr/app/css/Marcos.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/app/admin/ConsultasAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/scr/app/admin/ConsultasAdmin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/Mis huertos.html" beforeDir="false" afterPath="$PROJECT_DIR$/scr/app/cliente/Mis huertos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scr/app/cliente/GraficosHistoricos.html" beforeDir="false" afterPath="$PROJECT_DIR$/scr/app/cliente/GraficosHistoricos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/app/css/ConsultasAdmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/scr/app/css/ConsultasAdmin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/app/cliente/misHuertos.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/scr/app/css/GraficosHistoricos.css" beforeDir="false" afterPath="$PROJECT_DIR$/scr/app/css/GraficosHistoricos.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/app/js/ConsultasAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/scr/app/js/ConsultasAdmin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/css/Botones.css" beforeDir="false" afterPath="$PROJECT_DIR$/scr/css/Botones.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scr/css/Fuentes.css" beforeDir="false" afterPath="$PROJECT_DIR$/scr/css/Fuentes.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/css/MisHuertos.css" beforeDir="false" afterPath="$PROJECT_DIR$/scr/css/MisHuertos.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +57,7 @@
       <recent name="C:\Users\santi\Documents\pdf-uni\GreenLife\scr\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\santi\Documents\pdf-uni\GreenLife\scr\app\cliente" />
       <recent name="C:\Users\santi\Documents\pdf-uni\GreenLife\scr\img" />
     </key>
   </component>
