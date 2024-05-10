@@ -9,7 +9,9 @@
     justify-content: space-between;
 }
 
-
+#nombreUsuario{
+    width: 240px;
+}
 
 #negro {
     color: #333333;
