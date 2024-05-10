@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
 <<<<<<< develop
     <list default="true" id="ae426f53-5770-4190-bee0-6ee36902a102" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -26,6 +27,9 @@
 =======
     <list default="true" id="ae426f53-5770-4190-bee0-6ee36902a102" name="Changes" comment="" />
 >>>>>>> esta listo pero falta el header
+=======
+    <list default="true" id="ae426f53-5770-4190-bee0-6ee36902a102" name="Changes" comment="" />
+>>>>>>> 80753c72c0898f256125f811a5a841b69c5ebd4a
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,12 +51,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
+<<<<<<< HEAD
 <<<<<<< develop
   "customColor": "",
   "associatedIndex": 2
 =======
   "associatedIndex": 3
 >>>>>>> esta listo pero falta el header
+=======
+  "associatedIndex": 3
+>>>>>>> 80753c72c0898f256125f811a5a841b69c5ebd4a
 }]]></component>
   <component name="ProjectId" id="2gEH9mQmZ1wbLH7EV6q730n8XQq" />
   <component name="ProjectViewState">
@@ -79,6 +87,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< HEAD
     "git-widget-placeholder": "feature/ExportarDatos",
@@ -90,6 +99,10 @@
     "git-widget-placeholder": "feature/GestionClientes",
     "last_opened_file_path": "C:/Users/Usuario/Desktop/progr_web/.AA proyecto en grupo/codigo/gestión y edición de clientes",
 >>>>>>> esta listo pero falta el header
+=======
+    "git-widget-placeholder": "feature/GestionClientes",
+    "last_opened_file_path": "C:/Users/Usuario/Desktop/progr_web/.AA proyecto en grupo/codigo/gestión y edición de clientes",
+>>>>>>> 80753c72c0898f256125f811a5a841b69c5ebd4a
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
