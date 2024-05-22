@@ -13,9 +13,10 @@ document.querySelector('.boton_nuevohuerto').addEventListener('click', function(
     nuevoHuerto.innerHTML = `
       <h3>Huerto ${numHuertos + 1}</h3>
       <div>
-        <a class="button" href="GraficosHistoricos.html">Ver Sensores</a>
-        <button class="button boton-eliminar" onclick="abrirEliminarPopup(${numHuertos + 1})">Eliminar</button>
+        <button class="button" onclick="vincularSonda(${numHuertos + 1})">Añadir Sonda</button>
+        <a class="button" href="GraficosHistoricos.html">Ver Gráficas</a>
         <button class="button boton-editar" onclick="abrirEditarPopup(${numHuertos + 1})">Editar Nombre</button>
+        <button class="button boton-eliminar" onclick="abrirEliminarPopup(${numHuertos + 1})">Eliminar</button>
       </div>
     `;
 
@@ -69,6 +70,11 @@ function editarNombre() {
         }
         popup.style.display = 'none';
     }
+}
+
+function vincularSonda() {
+    var popup = document.getElementById('popupAñadirSonda');
+    popup.style.display = (popup.style.display === 'none') ? 'block' : 'none';
 }
 
 // Cerrando los popups
