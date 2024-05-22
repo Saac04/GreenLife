@@ -15,9 +15,11 @@ document.querySelector('.boton_nuevohuerto').addEventListener('click', function(
       <div>
         <button class="button" onclick="vincularSonda(${numHuertos + 1})">Añadir Sonda</button>
         <a class="button" href="GraficosHistoricos.html">Ver Gráficas</a>
+      </div>
+      <div>
         <button class="button boton-editar" onclick="abrirEditarPopup(${numHuertos + 1})">Editar Nombre</button>
         <button class="button boton-eliminar" onclick="abrirEliminarPopup(${numHuertos + 1})">Eliminar</button>
-      </div>
+<     </div>
     `;
 
     // Añade el nuevo huerto al contenedor de huertos
