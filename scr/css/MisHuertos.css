@@ -74,12 +74,15 @@ a{
 .boton_nuevohuerto{
     margin-top: 20px;
     margin-right: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 /* CSS del popup */
 
-button {
+button{
     background-color: #7ED957;
     color: white;
     font-family: 'Kanit', sans-serif;
@@ -89,6 +92,11 @@ button {
     outline: none;
     padding: 10px;
     cursor: pointer;
+}
+
+.button-container{
+    display: grid;
+    justify-items: center;
 }
 
 h2 {
@@ -115,6 +123,17 @@ p {
 }
 
 .eliminar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.añadir {
     display: none;
     position: fixed;
     top: 0;
@@ -163,18 +182,13 @@ input[type="text"] {
     margin-right: auto;
 }
 
-.button-container {
-    text-align: right;
-}
 
-.button {
-    background-color: #7ED957;
-    color: white;
-    font-family: 'Kanit', sans-serif;
-    font-size: 20px;
-    border: none;
-    border-radius: 10px;
-    outline: none;
-    padding: 10px;
-    cursor: pointer;
+.boton-eliminar{
+    background-color: #E54D4D;
+    height: 40px;
+    align-self: center;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Opcional: centra horizontalmente */
 }

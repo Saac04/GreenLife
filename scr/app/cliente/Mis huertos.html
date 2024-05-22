@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GreenLife - Mis Huertos</title>
-  <link rel="stylesheet" href="../../css/MisHuertos.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../../css/MenuHam.css">
   <link rel="stylesheet" href="../../css/Botones.css">
   <link rel="stylesheet" href="../../css/Fuentes.css">
   <link rel="stylesheet" href="../../css/header.css">
   <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="../../css/MisHuertos.css">
 </head>
 <body>
 
@@ -67,28 +67,13 @@
   <div class="huerto dios fondoImpar" data-id="1">
     <h3>Huerto 1</h3>
     <div>
-      <a class="button" href="GraficosHistoricos.html">Ver Sensores</a>
+      <button class="button" onclick="vincularSonda(1)">Añadir Sonda</button>
+      <a class="button" href="GraficosHistoricos.html">Ver Gráficas</a>
+      <button class="button" onclick="abrirEditarPopup(1)">Editar Nombre</button>
       <button class="button boton-eliminar" onclick="abrirEliminarPopup(1)">Eliminar</button>
-      <button class="button boton-editar" onclick="abrirEditarPopup(1)">Editar Nombre</button>
-    </div>
-  </div>
-  <div class="huerto dios fondoPar" data-id="2">
-    <h3>Huerto 2</h3>
-    <div>
-      <a class="button" href="GraficosHistoricos.html">Ver Sensores</a>
-      <button class="button boton-eliminar" onclick="abrirEliminarPopup(2)">Eliminar</button>
-      <button class="button boton-editar" onclick="abrirEditarPopup(2)">Editar Nombre</button>
-    </div>
-  </div>
-  <div class="huerto dios fondoImpar" data-id="3">
-    <h3>Huerto 3</h3>
-    <div>
-      <a class="button" href="GraficosHistoricos.html">Ver Sensores</a>
-      <button class="button boton-eliminar" onclick="abrirEliminarPopup(3)">Eliminar</button>
-      <button class="button boton-editar" onclick="abrirEditarPopup(3)">Editar Nombre</button>
-    </div>
-  </div>
 
+    </div>
+  </div>
 
 </div>
 
@@ -111,7 +96,7 @@
     <input type="text" name="nombreHuerto" placeholder="Introduce el nuevo nombre del huerto">
     <div class="button-container">
       <!-- Botón de confirmar -->
-      <button class="button">Confirmar</button>
+      <button class="popupButton" onclick="editarNombre()">Confirmar</button>
     </div>
   </div>
 </div>
@@ -128,7 +113,27 @@
     <!-- Botones de confirmación y cancelación -->
     <div class="button-container">
       <!-- Botón de confirmar -->
-      <button class="button">Confirmar</button>
+      <button class="popupButton" onclick="confirmarEliminar()">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Contenedor del Añadir sonda -->
+<div id="popupAñadirSonda" class="añadir">
+  <div class="popup-contenido">
+    <!-- X de cerrar el popup -->
+    <span class="cerrar">&times;</span>
+    <!-- h2 de dentro del popup -->
+    <h2>Vinculación por número de serie</h2>
+    <!-- Descripcion de donde encontrar el numero de serie -->
+    <p>Para encontrar el número de serie de tu dispositivo, simplemente da la vuelta a la sonda. En la parte trasera, verás una
+      etiqueta con una serie de números y letras, introdúcelo y empieza a disfrutar de tu sensor.
+    </p>
+    <!-- Input para introducir el numero de serie -->
+    <input type="text" name="Introducir número de serie" placeholder="Introducir número de serie">
+    <div class="button-container">
+      <!-- Botón de confirmar -->
+      <button class="popupButton" onclick="vincularSonda()">Confirmar</button>
     </div>
   </div>
 </div>
