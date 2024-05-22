@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/tecnico_cliente.css">
+    <title>Comunicación técnico-cliente</title>
+</head>
+<body>
+<!-- Contenedor principal -->
+<div class="container">
+    <!-- Sección de soporte -->
+    <div class="soporte-section">
+        <h2 class="soporte">Soporte</h2>
+        <h3 class="info-soporte">Bienvenido a nuestra sección de soporte, aquí encontrarás dos recursos útiles
+            para resolver tus dudas: Preguntas Frecuentes (FAQ) y Consultas al Técnico o Administrador.
+        </h3>
+        <button class="btn-horario-atencion-cliente" onclick="mostrarHorario()">Horario Atención al Cliente</button>
+    </div>
+    <div class="content-section">
+        <div class="preguntas-frecuentes-section">
+            <h2 class="soporte">Preguntas Frecuentes (FAQ)</h2>
+            <!-- Aquí puedes agregar el contenido de las Preguntas Frecuentes -->
+            <div class="faq">
+                <button class="accordion">
+                    ¿Cuál es la durabilidad y vida útil del sensor?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="pannel">
+                    <p>
+                        En condiciones normales de uso, el sensor puede funcionar de manera confiable durante varios años sin necesidad de mantenimiento intensivo.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq">
+                <button class="accordion">
+                    ¿Qué parámetros específicos puede medir el sensor?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="pannel">
+                    <p>
+                        Nuestro sensor mide pH, humedad, temperatura, salinidad y luminosidad, proporcionando datos precisos para optimizar el crecimiento de cultivos hidropónicos verticales.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq">
+                <button class="accordion">
+                    ¿Hay opciones de conectividad, como Wi-Fi, Bluetooth o cableado?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="pannel">
+                    <p>
+                        Sí, nuestro sensor ofrece opciones de conectividad, incluyendo Wi-Fi.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="consultas-section">
+            <h2 class="consultas">Consultas</h2>
+            <h3 class="info-consultas">Para empezar con la consulta, selecciona si va destinada al administrador
+                o al técnico.
+            </h3>
+            <select id="destinatario">
+                <option value="">Selecciona el destinatario</option>
+                <option value="Administrador">Administrador</option>
+                <option value="Técnico">Técnico</option>
+            </select>
+            <form id="formulario-consulta">
+                <input type="text" id="nombre" placeholder="Introduce nombre">
+                <input type="text" id="apellidos" placeholder="Introduce apellidos">
+                <textarea id="problema" placeholder="Describe el problema"></textarea>
+                <button type="submit" class="btn-enviar-formulario">Enviar Formulario</button>
+                <p id="mensaje"></p>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../js/tecnico_cliente.js"></script>
+</body>
+</html>
