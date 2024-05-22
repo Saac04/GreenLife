@@ -58,47 +58,82 @@
 
 
 
-  <div class="nombrePagina">
-    <h2>Mis huertos</h2>
-  </div>
+<div class="nombrePagina">
+  <h2>Huertos de "(Nombre del usuario)" </h2>
+</div>
 
 <div class="contendorHuertos">
 
-  <div id="fondo1" class="huerto dios">
+  <div class="huerto dios fondoImpar" data-id="1">
     <h3>Huerto 1</h3>
     <div>
       <a class="button" href="GraficosHistoricos.html">Ver Sensores</a>
-      <button class="button boton-eliminar">Eliminar</button>
-      <button class="button boton-editar">Editar Nombre</button>
+      <button class="button boton-eliminar" onclick="abrirEliminarPopup(1)">Eliminar</button>
+      <button class="button boton-editar" onclick="abrirEditarPopup(1)">Editar Nombre</button>
     </div>
   </div>
-
-  <div id="fondo2" class="huerto dios">
+  <div class="huerto dios fondoPar" data-id="2">
     <h3>Huerto 2</h3>
     <div>
       <a class="button" href="GraficosHistoricos.html">Ver Sensores</a>
-      <button class="button boton-eliminar">Eliminar</button>
-      <button class="button boton-editar">Editar Nombre</button>
+      <button class="button boton-eliminar" onclick="abrirEliminarPopup(2)">Eliminar</button>
+      <button class="button boton-editar" onclick="abrirEditarPopup(2)">Editar Nombre</button>
     </div>
   </div>
-
-  <div id="fondo3" class="huerto dios">
+  <div class="huerto dios fondoImpar" data-id="3">
     <h3>Huerto 3</h3>
     <div>
       <a class="button" href="GraficosHistoricos.html">Ver Sensores</a>
-      <button class="button boton-eliminar">Eliminar</button>
-      <button class="button boton-editar">Editar Nombre</button>
+      <button class="button boton-eliminar" onclick="abrirEliminarPopup(3)">Eliminar</button>
+      <button class="button boton-editar" onclick="abrirEditarPopup(3)">Editar Nombre</button>
     </div>
   </div>
 
+
+</div>
+
+<!-- Repite los bloques anteriores para más huertos -->
+<div class="main-container">
+  <button class="button boton_nuevohuerto">+ Añadir Huerto</button>
 </div>
 
 
-
-  <!-- Repite los bloques anteriores para más huertos -->
-  <div class="main-container">
-    <button class="button boton_nuevohuerto" onclick="location.href='VinculacionQR.html'">+ Añadir Huerto</button>
+<!-- Contenedor del Popup editar nombre -->
+<div id="popupEditarNombre" class="editar">
+  <div class="popup-contenido">
+    <!-- X de cerrar el popup -->
+    <span class="cerrar">&times;</span>
+    <!-- h2 de dentro del popup -->
+    <h2>Editar el nombre del huerto</h2>
+    <!-- Descripcion de donde encontrar el numero de serie -->
+    <p>Introduce el nuevo nombre del huerto.</p>
+    <!-- Input para introducir el nuevo nombre -->
+    <input type="text" name="nombreHuerto" placeholder="Introduce el nuevo nombre del huerto">
+    <div class="button-container">
+      <!-- Botón de confirmar -->
+      <button class="button">Confirmar</button>
+    </div>
   </div>
+</div>
+
+<!-- Contenedor del Popup eliminar -->
+<div id="popupEliminar" class="eliminar">
+  <div class="popup-contenido">
+    <!-- X de cerrar el popup -->
+    <span class="cerrar">&times;</span>
+    <!-- h2 de dentro del popup -->
+    <h2>¿Quieres eliminar el huerto?</h2>
+    <!-- Descripcion -->
+    <p>¿Estás seguro de que quieres eliminar definitivamente este huerto?</p>
+    <!-- Botones de confirmación y cancelación -->
+    <div class="button-container">
+      <!-- Botón de confirmar -->
+      <button class="button">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+
 <script src="../../js/MisHuertos.js"></script>
 
 </body>

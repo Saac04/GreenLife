@@ -56,23 +56,15 @@ a{
 
 .dios{
 
-}
-#fondo1{
-    background-image: url("../img/huerto1.jpg");
-    height: 100%;
-    width: 100%;
-    background-position: center;
-    align-content: center ;
-}
-#fondo2{
+}.fondoImpar{
+     background-image: url("../img/huerto1.jpg");
+     height: 100%;
+     width: 100%;
+     background-position: center;
+     align-content: center ;
+ }
+.fondoPar{
     background-image: url("../img/huerto2.png");
-    height: 100%;
-    width: 100%;
-    background-position: center;
-    align-content: center ;
-}
-#fondo3{
-    background-image: url("../img/huerto1.jpg");
     height: 100%;
     width: 100%;
     background-position: center;
@@ -82,4 +74,107 @@ a{
 .boton_nuevohuerto{
     margin-top: 20px;
     margin-right: 76px;
+}
+
+
+/* CSS del popup */
+
+button {
+    background-color: #7ED957;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+h2 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #479555;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+.editar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.eliminar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.popup-contenido {
+    position: absolute;
+    font-family: 'Kanit', sans-serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+.cerrar {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    font-family: 'Kanit Light', sans-serif;
+    font-size: 20px;
+    color: #333333;
+    background-color: #ffffff;
+    border: none;
+    border-bottom: 2px solid #c6c6c6;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-container {
+    text-align: right;
+}
+
+.button {
+    background-color: #7ED957;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px;
+    cursor: pointer;
 }
