@@ -12,14 +12,16 @@ document.querySelector('.boton_nuevohuerto').addEventListener('click', function(
     nuevoHuerto.dataset.id = numHuertos + 1; // Añadir el data-id
     nuevoHuerto.innerHTML = `
       <h3>Huerto ${numHuertos + 1}</h3>
-      <div>
+      <div class="botonesHuerto">
+      <div class="botones1">
         <button class="button" onclick="vincularSonda(${numHuertos + 1})">Añadir Sonda</button>
         <a class="button" href="GraficosHistoricos.html">Ver Gráficas</a>
       </div>
-      <div>
+      <div class="botones2">
         <button class="button boton-editar" onclick="abrirEditarPopup(${numHuertos + 1})">Editar Nombre</button>
         <button class="button boton-eliminar" onclick="abrirEliminarPopup(${numHuertos + 1})">Eliminar</button>
-<     </div>
+        </div>
+        </div>
     `;
 
     // Añade el nuevo huerto al contenedor de huertos
