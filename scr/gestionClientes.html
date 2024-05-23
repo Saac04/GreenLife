@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gestión de Clientes</title>
     <link rel="stylesheet" href="css/gestionClientes.css">
-    <title>Gestión y edición de clientes</title>
 </head>
 <body>
 <div id="clients" class="table">
@@ -41,8 +40,40 @@
     </div>
 </div>
 
+<!-- Popup para editar nombre del cliente -->
+<div id="miPopup2" class="popup">
+    <div class="popup-contenido">
+        <!-- X de cerrar el popup -->
+        <span class="cerrar" onclick="togglePopup('miPopup2')">&times;</span>
+        <!-- h2 de dentro del popup -->
+        <h2 class="popupH2">Editar el nombre del cliente</h2>
+        <!-- Descripcion de donde encontrar el numero de serie -->
+        <p class="popupP">Introduce el nuevo nombre del cliente.</p>
+        <!-- Input para introducir el nuevo nombre -->
+        <input type="text" id="nuevoNombreCliente" placeholder="Nuevo nombre del cliente..">
+        <!-- Campo oculto para almacenar el índice del cliente -->
+        <input type="hidden" id="clienteIndex">
+        <div class="button-container">
+            <!-- Botón de confirmar -->
+            <button class="button" onclick="confirmarCambioNombre()">Confirmar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Popup para eliminar cliente -->
+<div id="miPopupEliminar" class="popup">
+    <div class="popup-contenido">
+        <span class="cerrar" onclick="togglePopup('miPopupEliminar')">&times;</span>
+        <h2 class="popupH2">Eliminar Cliente</h2>
+        <p class="popupP">¿Quieres eliminar definitivamente a este usuario?</p>
+        <input type="hidden" id="clienteEliminarIndex">
+        <div class="button-container">
+            <button class="button" onclick="confirmarEliminar()">Confirmar</button>
+        </div>
+    </div>
+</div>
+
 <!-- Script JavaScript -->
 <script src="js/gestionClientes.js"></script>
-
 </body>
 </html>
