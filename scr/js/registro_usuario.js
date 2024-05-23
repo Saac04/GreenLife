@@ -88,7 +88,7 @@ function volver() {
 
 function tengoCuenta() {
     // Aquí puedes cambiar la URL por la de la página a la que quieras redirigir al usuario
-    window.location.href = "../inicioSesion.html";
+    window.location.href = "inicioSesion.html";
 }
 
 /*function terminosYCondiciones() {

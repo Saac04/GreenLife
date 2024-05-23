@@ -311,8 +311,13 @@ function changeLimtis(i){
     var maximo
     var minimo
 
+    var boton = document.querySelector('button[data-btn="1"]');
 
-    var limid = document.getElementsByClassName('active')[0].id
+    console.log(boton)
+
+    var limid = boton.id
+
+    console.log(limid)
 
 
     if ((i === -1 && limid === 'humedad') || ( i === -1 && limid === 'luminosidad' )){

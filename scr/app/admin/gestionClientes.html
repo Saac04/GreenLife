@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/MenuHam.css">
+    <link rel="stylesheet" href="../../css/Botones.css">
+    <link rel="stylesheet" href="../../css/Fuentes.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../css/Marcos.css">
+    <link rel="stylesheet" href="../../css/gestionClientes.css">
+    <title>Gestión y edición de clientes</title>
+</head>
+<body>
+
+<header class="header">
+    <div><img class="logo" src="../../img/Grado_en_tecnologías_interactivas.svg" alt="LOGO"></div>
+    <h1><span class="green">Green</span><span class="life">Life</span></h1>
+    <nav>
+        <ul class="nav-menu" id="menuOrdenador">
+            <li><a class="text-button" href="gestionClientes.html">Gestión</a></li>
+            <li><a class="text-button" href="ConsultasAdmin.html">Consultas</a></li>
+            <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="superior">
+    <!-- Contenido de la parte superior de tu página -->
+</div>
+<nav id="navMenu" role="navigation">
+    <div id="menuToggle">
+        <!--
+        A fake / hidden checkbox is used as click reciever,
+        so you can use the :checked selector on it.
+        -->
+        <input type="checkbox" />
+
+        <!--
+        Some spans to act as a hamburger.
+
+        They are acting like a real hamburger,
+        not that McDonalds stuff.
+        -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <!--
+        Too bad the menu has to be inside of the button
+        but hey, it's pure CSS magic.
+        -->
+        <ul id="menu">
+            <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+            <li><a class="text-button" href="ConsultasAdmin.html"><Consulta></Consulta></a></li>
+            <li><a class="text-button" href="gestionClientes.html">Gestión</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div id="clients" class="table">
+    <!-- Encabezado -->
+    <h2>Gestión y edición de clientes</h2>
+
+    <!-- Barra de búsqueda -->
+    <div class="search-bar">
+        <input type="text" id="searchClients" onkeyup="searchClients()" placeholder="Buscar por nombre..">
+    </div>
+
+    <!-- Tabla de clientes -->
+    <table id="clients-table" class="clients-table">
+        <thead>
+        <!-- Fila principal del encabezado -->
+        <tr>
+            <!-- Celdas del encabezado principal  -->
+            <th>Nombre del Cliente</th>
+            <th>Correo Electrónico</th>
+            <th>Rol</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Aquí se agregarán dinámicamente los clientes -->
+        </tbody>
+    </table>
+    <!-- Botones de cliente -->
+    <div class="client-buttons">
+        <button class="add-client">Añadir Cliente</button>
+        <button class="save-client">Guardar</button>
+    </div>
+</div>
+
+<!-- Script JavaScript -->
+<script src="../../js/gestionClientes.js"></script>
+
+</body>
+</html>
