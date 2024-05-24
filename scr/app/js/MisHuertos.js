@@ -100,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => console.error('Error:', error));
     }
-
     // Función para añadir un nuevo huerto
     function añadirHuerto() {
         // Obtener el ID del usuario actual (esto debe estar disponible en tu aplicación)
