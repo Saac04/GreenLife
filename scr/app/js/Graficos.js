@@ -308,8 +308,7 @@ function changeLimtis(maximo, minimo ){
         maximo = conversorInputGrafica(maximo, limid)
         minimo = conversorInputGrafica(minimo, limid)
     }
-
-
+    
     console.log(maximo)
     console.log(minimo)
 
