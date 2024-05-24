@@ -12,6 +12,9 @@ header {
     height: 64px;
 }
 
+header h1{
+    font-family: Kanit regular;
+}
 header *{
     width: 100%;
 }
