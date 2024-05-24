@@ -5,11 +5,59 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../../css/Botones.css">
+    <link rel="stylesheet" href="../../css/Fuentes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/MenuHam.css">
+    <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../css/tecnico_cliente.css">
     <title>Comunicación técnico-cliente</title>
     <script src="../../js/CheckSession.js"></script>
 </head>
 <body>
+
+<header class="header">
+    <div><img class="logo" src="../../img/Grado_en_tecnologías_interactivas.svg" alt="LOGO"></div>
+    <h1><span class="green">Green</span><span class="life">Life</span></h1>
+    <nav>
+        <ul class="nav-menu" id="menuOrdenador">
+            <li><a class="text-button" href="#">Mis huertos</a></li>
+            <li><a class="text-button" href="tecnico_cliente.html">Soporte</a></li>
+            <li><a class="text-button" href="gestionarCuenta.html"><i class="fa fa-user-circle-o"></i></a></li>
+            <li><a class="text-button" href="../../index.html"><i class="fa fa-sign-out"></i></a></li>
+
+        </ul>
+    </nav>
+</header>
+
+<nav id="navMenu" role="navigation">
+    <div id="menuToggle">
+        <!--
+        Una falsa / oculta checkbox es usada como click reciever
+        -->
+        <input type="checkbox" />
+
+        <!--
+        Algunos spans que actuan como hamburgesa.
+        -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <!--
+        Una pena que el menu tenga que estar dentro del boton
+        pero eh, es pura magia de CSS.
+        -->
+        <ul id="menu">
+            <li><a class="text-button" href="gestionarCuenta.html"><i class="fa fa-user-circle-o"></i></a></li>
+            <li><a class="text-button" href="../../index.html"><i class="fa fa-sign-out"></i></a></li>
+            <li><a class="text-button" href="tecnico_cliente.html">FAQ</a></li>
+            <li><a class="text-button" href="#">Sobre Nosotros</a></li>
+        </ul>
+    </div>
+</nav>
 <!-- Contenedor principal -->
 <div class="container">
     <!-- Sección de soporte -->

@@ -13,7 +13,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px;
     min-height: 100vh;
     font-family: 'Kanit', sans-serif;
     background-color: #FFFFFF;
@@ -21,6 +20,7 @@ body {
 
 .container {
     width: 100%;
+    padding: 50px;
 }
 
 /* Estilos para los encabezados H2 (gestión y edición de clientes) */
