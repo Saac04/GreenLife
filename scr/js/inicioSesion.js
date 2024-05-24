@@ -12,26 +12,32 @@ document.getElementById("login-container").addEventListener('submit', inicioSesi
  */
 
 async function inicioSesion(event){
-    // eliminamos el mensaje de error previo, si lo hay
-    //const output = document.getElementById("login-error");
     event.preventDefault();
 
+    // Obtener referencia al elemento de mensaje de error
+    const mensajeError = document.getElementById('mensaje-error');
+    // Limpiar mensaje de error previo
+    mensajeError.textContent = '';
 
     const formData = new FormData(event.target);
-    /*for (const entry of formData.entries()) {
-
-        console.log(entry[0], entry[1]);
-    }*/
 
     var email = document.querySelector('input[type="email"]').value;
     var password = document.querySelector('input[type="password"]').value;
 
-    //const email = formData.get('email');
-    //const password = formData.get('password');
     console.log(JSON.stringify({ email, password }))
 
     var Objeto = JSON.stringify({ email, password })
 
+    // Validar campos vacíos
+    if (!email) {
+        mensajeError.textContent = 'Por favor, introduzca su correo electrónico.';
+        return;
+    }
+
+    if (!password) {
+        mensajeError.textContent = 'Por favor, introduzca su contraseña.';
+        return;
+    }
 
     try {
         const respuesta = await fetch('api/sesion/', {
@@ -43,36 +49,37 @@ async function inicioSesion(event){
         });
         console.log('Código de estado:', respuesta.status);
 
+        const respuestaTexto = await respuesta.text(); // Obtener el texto de la respuesta
+
+        console.log('Respuesta del servidor:', respuestaTexto); // Registrar la respuesta del servidor
+
         if (respuesta.status === 200) {
             // Procesa los datos
             console.log("Mis_Hue...html")
             window.location.href = 'app/cliente/Mis_huertos.html';
         } else {
             // La respuesta no es 200-299
-            throw new Error('Respuesta no exitosa del servidor');
+            const data = JSON.parse(respuestaTexto); // Intenta analizar la respuesta como JSON
+            if(data.error === "Credenciales incorrectas") {
+                throw new Error("Credenciales inválidas, por favor introdúcelas de nuevo.");
+            } else {
+                throw new Error(data.message || 'Respuesta no exitosa del servidor');
+            }
         }
     } catch (error) {
         console.error('Error al procesar la respuesta:', error);
-        // Aquí puedes manejar el error, mostrar un mensaje al usuario, etc.
-        //document.getElementById("login-error").style.visibility='visible';
-        //document.getElementById("login-error").innerText = 'Error al iniciar sesión. Por favor, inténtelo de nuevo.';
+        // Mostrar mensaje de error al usuario
+        mensajeError.textContent = error.message || 'Error al iniciar sesión. Por favor, inténtelo de nuevo.';
     }
 }
+
 class UsuarioModel{
-
     url = '../api/usuarios/';
-
-
-
-
 }
 
 function iniciarSesion() {
     var emailInput = document.querySelector('input[type="email"]').value;
     var passwordInput = document.querySelector('input[type="password"]').value;
-
-
-
 
     var mensajeError = document.getElementById('mensaje-error');
 

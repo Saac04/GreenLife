@@ -17,8 +17,8 @@ async function logOut(){
     } catch (error) {
         console.error('Error al procesar la respuesta:', error);
         // Aquí puedes manejar el error, mostrar un mensaje al usuario, etc.
-        //document.getElementById("login-error").style.visibility='visible';
-        //document.getElementById("login-error").innerText = 'Error al iniciar sesión. Por favor, inténtelo de nuevo.';
+        document.getElementById("login-error").style.visibility='visible';
+        document.getElementById("login-error").innerText = 'Error al iniciar sesión. Por favor, inténtelo de nuevo.';
     }
 
 }
