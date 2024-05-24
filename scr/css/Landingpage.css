@@ -6,8 +6,8 @@ body{
 
 section{
     height: 100%;
-    width: 100%;
-    padding: 0.1rem;
+    width: 83%;
+    padding: 8rem;
     margin: 0 auto;
     border-radius: 5px;
     background-color: rgb(143,228,102,0.2);
@@ -55,6 +55,7 @@ section{
     border-radius: 30px; /* Esto da las esquinas redondeadas tipo píldora */
     z-index: 0;
     margin-left: 10%;
+    width:8rem;
 }
 .boton_Sabermas{
     background-color: #FFFFFF; /* Ajusta el código de color para que coincida con el verde exacto */
@@ -69,6 +70,7 @@ section{
     border-radius: 30px; /* Esto da las esquinas redondeadas tipo píldora */
     z-index: 0;
     margin-left: 20%;
+    width:8rem;
 }
 img{
     width: 40%;
@@ -124,7 +126,7 @@ img{
 .Contenedor{
     height: 100%;
     width: 100%;
-    padding: 0.1rem;
+    padding: 0;
     margin: 0 auto;
     border-radius: 5px;
     background-color: #5CBA23;
