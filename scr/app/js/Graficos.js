@@ -22,7 +22,7 @@ const DATA_PH = generarNumerosAleatorios(DATA_COUNT, 5.5, 7);
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['09:00', '12:00', '15:00', '18:00', '21:00'],
+        labels: [1, 2, 3, 4, 5, 6, 7],
         datasets: [
             {
                 label: 'HUMEDAD (%)',
@@ -215,7 +215,6 @@ var myChart = new Chart(ctx, {
 function toggleDataSet(datasetIndex) {
     var chart = myChart;
     var datasets = myChart.data.datasets;
-
     if (datasetIndex === 5) {
         for (var i = 0; i < datasets.length; i++) {
             showGraphic(i)
@@ -308,9 +307,6 @@ function changeLimtis(maximo, minimo ){
         maximo = conversorInputGrafica(maximo, limid)
         minimo = conversorInputGrafica(minimo, limid)
     }
-    
-    console.log(maximo)
-    console.log(minimo)
 
     agregarLineasHorizontales(myChart, maximo, minimo);
 }
@@ -477,57 +473,86 @@ function cambiarFontSizeY(fontSize) {
     myChart.update();
 }
 
-function cargarSondas() {
-    // Obtener el ID del huerto (puedes pasarlo directamente desde PHP o desde un elemento HTML)
-    var id_huerto =/* <?php echo $_GET['id_huerto']; ?>;*/ 1
+function cargarHuerto() {
 
-    // Hacer la solicitud al servidor
-    fetch('../../api/obtener_sondas.php?id_huerto=' + id_huerto)
-        .then(response => response.json())
-        .then(data => {
-            var dropdown = document.getElementById('sonda');
-            dropdown.innerHTML = ''; // Limpiar el dropdown
+    var id_huerto = obtenerParametroUrl('id');
 
-            // Agregar una opción predeterminada
-            /*var defaultOption = document.createElement('option');
-            defaultOption.text = 'Selecciona una sonda';
-            defaultOption.disabled = true;
-            defaultOption.selected = true;
-            defaultOption.className = 'dropdown-option';
-            dropdown.appendChild(defaultOption);
-*/
+    if (!id_huerto){
+        return
+    }
 
-            // Agregar cada sonda al dropdown
-            data.forEach(s => {
-                var option = document.createElement('option');
-                option.text = s.nombre;
-                option.value = s.id_sondas;
-                option.className = 'dropdown-option';
-                dropdown.appendChild(option);
-            });
-            if (data.length > 0) {
-                var firstSondaId = data[0].id_sondas;
-
-                // Obtener la fecha actual
-                var fechaActual = new Date().toISOString().slice(0, 19).replace('T', ' ');
-
-
-                // Calcular la fecha de inicio retrocediendo 5 registros
-                var fechaInicio = new Date();
-                fechaInicio.setHours(fechaInicio.getHours() - 20); // Retroceder 5 horas
-
-
-                // Llamar a la función cargarLecturas con las fechas calculadas
-                cargarLecturas(firstSondaId, fechaInicio.toISOString().slice(0, 19).replace('T', ' '), fechaActual);
+    fetch('../../api/obtenerHuertosYNombres.php') // Reemplaza con la ruta correcta a tu archivo PHP
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al obtener los datos del PHP');
             }
-
+            return response.json();
         })
+        .then(data => {
+            // Verificar que el JSON contiene la lista de huertos
+            if (Array.isArray(data)) {
 
+                let h2 = document.getElementById("nombre-huerto")
 
+                for (let i = 0; i < data.length ; i++) {
+                    if (data[i].id_huerto  === id_huerto){
+                       h2.textContent = data[i].nombre
+                    }
+                }
+            } else {
+                console.error('El JSON no contiene una lista de huertos');
+            }
+        })
         .catch(error => console.error('Error:', error));
+}
+function obtenerParametroUrl(nombre) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(nombre);
+}
+function cargarSondas() {
+    // Obtener el ID del huerto desde la URL
+    var id_huerto = obtenerParametroUrl('id');
+
+    // Verificar si id_huerto no es nulo o indefinido
+    if (id_huerto) {
+        // Hacer la solicitud al servidor
+        fetch('../../api/obtener_sondas.php?id_huerto=' + id_huerto)
+            .then(response => response.json())
+            .then(data => {
+                var dropdown = document.getElementById('sonda');
+                dropdown.innerHTML = ''; // Limpiar el dropdown
+
+                // Agregar cada sonda al dropdown
+                data.forEach(s => {
+                    var option = document.createElement('option');
+                    option.text = s.nombre;
+                    option.value = s.id_sondas;
+                    option.className = 'dropdown-option';
+                    dropdown.appendChild(option);
+                });
+
+                if (data.length > 0) {
+                    var firstSondaId = data[0].id_sondas;
+
+                    // Obtener la fecha actual
+                    var fechaActual = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+                    // Calcular la fecha de inicio retrocediendo 5 registros
+                    var fechaInicio = new Date();
+                    fechaInicio.setHours(fechaInicio.getHours() - 22); // Retroceder 5 horas
+
+                    // Llamar a la función cargarLecturas con las fechas calculadas
+                    cargarLecturas(firstSondaId, fechaInicio.toISOString().slice(0, 19).replace('T', ' '), fechaActual);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    } else {
+        console.error('ID de huerto no proporcionado en la URL');
+    }
 }
 
 function cargarLecturas(id_sonda, fechaInicio, fechaFin) {
+
     // Hacer la solicitud al servidor para obtener las lecturas de la sonda dentro del rango de fechas
     fetch('../../api/ObtenerDatosSonda.php?id_sonda='+ id_sonda + '&fechaInicio=' + fechaInicio + '&fechaFinal=' + fechaFin)
         .then(response => response.json())
@@ -543,12 +568,14 @@ function cargarLecturas(id_sonda, fechaInicio, fechaFin) {
             var pH = data.map(lectura => lectura.pH);
 
 
+
             // Dividir los promedios totales en 7 partes iguales
             var promediosHumedad = calcularPromedios(humedad);
             var promediosTemperatura = calcularPromedios(temperatura);
             var promediosLuminosidad = calcularPromedios(luminosidad.map(valor => valor / 100));
             var promediosSalinidad = calcularPromedios(salinidad);
             var promediosPH = calcularPromedios(pH);
+
 
             // Actualizar los datos de la gráfica
             myChart.data.datasets[0].data = promediosHumedad;
@@ -615,11 +642,18 @@ function actualizarLimites(idSonda, tipoParametro) {
 }
 // Esta función calculará el promedio de un conjunto de números
 function calcularPromedios(lecturas) {
+
+    console.log(lecturas)
     var lecturasTotales = lecturas.length;
     var promedios = [];
 
     var tamanoParte = Math.floor(lecturasTotales / 7); // Redondear hacia arriba para asegurar que todas las partes tengan al menos un elemento
 
+    if (tamanoParte < 1) {
+        tamanoParte = 1
+    }
+
+    console.log(tamanoParte)
     // Iterar sobre las partes
     for (var i = 0; i < 7; i++) {
         var inicio = i * tamanoParte;
@@ -656,8 +690,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Llamar a la función cargarLecturas con las fechas y el ID de la sonda
         cargarLecturas(id_sonda, fechaInicio, fechaFin);
     });
+
+    cargarHuerto()
 });
-
-
-
-fetch('../../api/ObtenerDatosSonda.php?id_sonda='+ id_sonda)

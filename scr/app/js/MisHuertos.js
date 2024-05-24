@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         let enlaceGraficos = document.createElement('a');
                         enlaceGraficos.className = 'button';
-                        enlaceGraficos.href = 'GraficosHistoricos.html';
+                        enlaceGraficos.href = "GraficosHistoricos.html?id=" + huerto.id_huerto;
                         enlaceGraficos.textContent = 'Ver Gráficas';
                         botones1.appendChild(enlaceGraficos);
 
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="botonesHuerto">
                         <div class="botones1">
                             <button class="button" onclick="vincularSonda(${data.id_huerto})">Añadir Sonda</button>
-                            <a class="button" href="GraficosHistoricos.html">Ver Gráficas</a>
+                            <a class="button" href = "GraficosHistoricos.html?id= ${+ data.id_huerto}">Ver Gráficas</a>
                         </div>
                         <div class="botones2">
                             <button class="button boton-editar" onclick="abrirEditarPopup(${data.id_huerto})">Editar Nombre</button>
@@ -158,6 +158,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.boton_nuevohuerto').addEventListener('click', añadirHuerto);
 });
 
+//Funcion para enviar la Id del huerto a la pagina de Graficos
+function enviarIdHuerto(id){
+    window.location.href = "GraficosHistoricos.html?id=" + id;
+}
 
 // Variable para almacenar el ID del huerto que se está editando o eliminando
 var currentHuertoId = null;
