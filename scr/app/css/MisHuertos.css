@@ -1,0 +1,231 @@
+/* Estilos generales para el cuerpo de la página */
+body {
+    font-family: "Kanit Medium", sans-serif; /* Fuente principal del cuerpo */
+    background-color: #f4f4f4; /* Color de fondo de la página */
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    display: flex; /* Usa flexbox para el diseño */
+    flex-direction: column; /* Organiza los elementos en columna */
+    justify-content: center; /* Centra los elementos verticalmente */
+}
+
+/* Estilos para los enlaces */
+a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+/* Estilos para el contenedor del nombre de la página */
+.nombrePagina {
+    display: flex; /* Usa flexbox para el diseño */
+    justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+/* Estilos para el contenedor principal */
+.main-container {
+    padding: 0px; /* Sin padding */
+    margin-left: auto; /* Margen automático a la izquierda */
+}
+
+/* Estilos para el contenedor de huertos */
+.contendorHuertos {
+    display: flex; /* Usa flexbox para el diseño */
+    flex-direction: column; /* Organiza los elementos en columna */
+    justify-content: center; /* Centra los elementos verticalmente */
+    gap: 25px; /* Espacio entre los elementos */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    width: 90%; /* Ancho del 90% del contenedor padre */
+}
+
+/* Estilos para cada huerto individual */
+.huerto {
+    display: flex; /* Usa flexbox para el diseño */
+    flex-direction: column; /* Organiza los elementos en columna */
+    height: 100%; /* Altura completa del contenedor padre */
+    width: 100%; /* Ancho completo del contenedor padre */
+    background-color: #98fb98; /* Color de fondo del huerto */
+    border-radius: 10px; /* Esquinas redondeadas */
+    padding-bottom: 30px; /* Padding inferior */
+    margin: 0 auto; /* Centra el huerto horizontalmente */
+}
+
+/* Estilos para los encabezados dentro de cada huerto */
+.huerto h3 {
+    text-align: center; /* Alinea el texto al centro */
+    color: #ffffff; /* Color del texto */
+}
+
+/* Estilos para el contenedor de botones en los huertos */
+.botonesHuerto {
+    display: flex; /* Usa flexbox para el diseño */
+    justify-content: center; /* Centra los botones horizontalmente */
+    width: 100%; /* Ancho completo del contenedor padre */
+    gap: 10px; /* Espacio entre los botones */
+    flex-direction: row; /* Organiza los botones en fila */
+}
+
+/* Estilos comunes para grupos de botones */
+.botones2, .botones1 {
+    display: flex; /* Usa flexbox para el diseño */
+    flex-direction: row; /* Organiza los botones en fila */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+/* Estilos para el fondo de huertos impares */
+.fondoImpar {
+    background-image: url("../../img/huerto1.jpg"); /* Imagen de fondo */
+    height: 100%; /* Altura completa del contenedor padre */
+    width: 100%; /* Ancho completo del contenedor padre */
+    background-position: center; /* Posición de la imagen centrada */
+    align-content: center; /* Alineación del contenido centrada */
+}
+
+/* Estilos para el fondo de huertos pares */
+.fondoPar {
+    background-image: url("../../img/huerto2.png"); /* Imagen de fondo */
+    height: 100%; /* Altura completa del contenedor padre */
+    width: 100%; /* Ancho completo del contenedor padre */
+    background-position: center; /* Posición de la imagen centrada */
+    align-content: center; /* Alineación del contenido centrada */
+}
+
+/* Estilos para el botón de nuevo huerto */
+.boton_nuevohuerto {
+    margin-top: 20px; /* Margen superior */
+    margin-right: 76px; /* Margen derecho */
+    display: flex; /* Usa flexbox para el diseño */
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+/* Estilos para los botones en general */
+button {
+    background-color: #7ED957; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    font-family: 'Kanit', sans-serif; /* Fuente del texto */
+    font-size: 20px; /* Tamaño del texto */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Esquinas redondeadas */
+    outline: none; /* Sin contorno */
+    padding: 10px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar por el botón */
+}
+
+/* Estilos para el contenedor de botones en el popup */
+.button-container {
+    display: grid; /* Usa grid para el diseño */
+    justify-items: center; /* Centra los botones horizontalmente */
+}
+
+/* Estilos para los encabezados h2 */
+h2 {
+    font-family: 'Kanit', sans-serif; /* Fuente del encabezado */
+    font-size: 28px; /* Tamaño del texto */
+    font-weight: 400; /* Grosor del texto */
+    color: #479555; /* Color del texto */
+    text-align: center; /* Alineación centrada */
+}
+
+/* Estilos para los párrafos */
+p {
+    text-align: center; /* Alineación centrada */
+}
+
+/* Estilos comunes para los popups (editar, eliminar, añadir) */
+.editar, .eliminar, .añadir {
+    display: none; /* No se muestran por defecto */
+    position: fixed; /* Posición fija */
+    top: 0; /* Desde la parte superior */
+    left: 0; /* Desde la parte izquierda */
+    width: 100%; /* Ancho completo de la pantalla */
+    height: 100%; /* Altura completa de la pantalla */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    z-index: 9999; /* Coloca el popup sobre otros elementos */
+}
+
+/* Estilos para el contenido de los popups */
+.popup-contenido {
+    position: absolute; /* Posición absoluta */
+    font-family: 'Kanit', sans-serif; /* Fuente del contenido */
+    top: 50%; /* Centrado verticalmente */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta la posición para centrar */
+    background-color: #fff; /* Fondo blanco */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 5px; /* Esquinas redondeadas */
+    width: 80%; /* Ancho del 80% del contenedor padre */
+    max-width: 500px; /* Ancho máximo de 500px */
+    box-sizing: border-box; /* Incluye el padding en el ancho y alto */
+}
+
+/* Estilos para el botón de cerrar los popups */
+.cerrar {
+    position: absolute; /* Posición absoluta */
+    top: 5px; /* Desde la parte superior */
+    right: 15px; /* Desde la parte derecha */
+    font-size: 30px; /* Tamaño del texto */
+    cursor: pointer; /* Cambia el cursor al pasar por el botón */
+}
+
+/* Estilos para los campos de texto */
+input[type="text"] {
+    font-family: 'Kanit Light', sans-serif; /* Fuente del texto */
+    font-size: 20px; /* Tamaño del texto */
+    color: #333333; /* Color del texto */
+    background-color: #ffffff; /* Fondo blanco */
+    border: none; /* Sin borde */
+    border-bottom: 2px solid #c6c6c6; /* Línea inferior */
+    padding: 10px; /* Espaciado interno */
+    width: 100%; /* Ancho completo */
+    margin-bottom: 20px; /* Margen inferior */
+    box-sizing: border-box; /* Incluye el padding en el ancho y alto */
+    display: block; /* Muestra el campo como un bloque */
+    margin-left: auto; /* Margen automático a la izquierda */
+    margin-right: auto; /* Margen automático a la derecha */
+}
+
+/* Estilos para el botón de eliminar */
+.boton-eliminar {
+    background-color: #E54D4D; /* Color de fondo rojo */
+    height: 40px; /* Altura fija */
+    align-self: center; /* Centra el botón verticalmente */
+    text-align: center; /* Alineación del texto centrada */
+    display: flex; /* Usa flexbox para el diseño */
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+
+
+
+
+/* Hacer responsive */
+
+@media screen and (max-width:1100px){
+    .botonesHuerto{
+        flex-direction: row;
+        margin: 0px;
+    }
+
+    .botones1, .botones2{
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        gap: 10px;
+        margin: 10px;
+        flex-direction: column;
+    }
+
+    .botones2{
+
+    }
+}
+
+@media screen and (max-width:1050px){
+    .huerto, .fondoImpar h3{
+        color: black;
+    }
+    .button{
+        text-wrap: none;
+    }
+}
+

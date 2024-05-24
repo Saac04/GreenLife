@@ -1,0 +1,198 @@
+/* Importar nuestra fuente */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap');
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para el cuerpo del documento */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    min-height: 100vh;
+    font-family: 'Kanit', sans-serif;
+    background-color: #FFFFFF;
+}
+
+.container {
+    width: 100%;
+}
+
+/* Estilos para los encabezados H2 (gestión y edición de clientes) */
+h2 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #479555;
+    text-align: center;
+}
+
+/* estilos para el h2 de soporte */
+.soporte {
+    align-self: center;
+}
+
+/* Estilos de los h3 */
+h3 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #333333;
+}
+
+/* Estilos para la sección de soporte */
+.soporte-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Estilos para la sección de contenido */
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Estilos para la sección de consultas */
+.consultas-section {
+    width: 50%;
+    margin-right: 100px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Estilos del apartado de formulario */
+#formulario-consulta {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para los inputs del formulario */
+#formulario-consulta input, #formulario-consulta textarea, #destinatario {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Kanit Light", sans-serif;
+    font-size: 20px;
+    width: 100%;
+}
+
+/* Estilos para el boton de enviar formulario */
+.btn-enviar-formulario {
+    margin-top: 20px;
+    padding: 10px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #7ED957;
+    color: white;
+    font-family: "Kanit Light", sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Estilos para el botón horario de atención al cliente */
+.btn-horario-atencion-cliente {
+    align-self: flex-end;
+    background-color: #7ED957;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 0;
+    color: white;
+    font-family: "Kanit Light", sans-serif;
+    font-size: 20px;
+}
+
+/* Estilos para la sección de preguntas frecuentes y consultas */
+.preguntas-frecuentes-section, .consultas-section {
+    width: 45%;
+}
+
+/* Estilos para el mensaje que sale al pulsar sobre el botón de enviar formulario */
+#mensaje {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Estilos para las preguntas frecuentes */
+.wrapper {
+    max-width: 95%;
+    margin: auto;
+    font-family: 'Kanit', sans-serif;
+    font-size: 28px;
+}
+
+/* Estilos para el título dentro de la clase wrapper */
+.wrapper > h1 {
+    margin: 1.5rem 0;
+    text-align: center;
+    color: #479555;
+    letter-spacing: 3px;
+}
+
+/* Estilos para los elementos con la clase accordion */
+.accordion {
+    background-color: white;
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    width: 100%;
+    padding: 2rem 2.5rem;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos para el icono dentro de los elementos con la clase accordion */
+.accordion i {
+    font-size: 1.6rem;
+}
+
+/* Estilos cuando el elemento tiene la clase 'active' o cuando se pasa el ratón sobre él */
+.active,
+.accordion:hover {
+    background-color: #f1f7f5;
+}
+
+/* Estilos para los paneles de las preguntas frecuentes */
+.pannel {
+    padding: 0 2rem 2.5rem 2rem;
+    background-color: white;
+    overflow: hidden;
+    background-color: #f1f7f5;
+    display: none;
+}
+
+/* Estilos para el texto dentro de los paneles */
+.pannel p {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+/* Estilos para los elementos con la clase 'faq' */
+.faq {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+}
+
+/* Estilos cuando el elemento tiene la clase 'active' */
+.faq.active {
+    border: none;
+}
