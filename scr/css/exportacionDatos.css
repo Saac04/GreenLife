@@ -1,84 +1,85 @@
-.export-container{ /*contenedor para guiarme*/
-
+/* Contenedor principal de exportación */
+.export-container {
     margin-left: 50px;
     margin-right: 50px;
 }
 
+/* Contenedor para selección de fecha y sensor */
 .selection-container {
     display: flex;
     justify-content: space-between;
 }
 
-#nombreUsuario{
+/* Ajuste del ancho del campo de nombre de usuario */
+#nombreUsuario {
     width: 240px;
 }
 
+/* Estilo para el párrafo con id negro */
 #negro {
     color: #333333;
     margin-top: -20px;
 }
-.date-inputs { 
+
+/* Contenedor para las entradas de fecha */
+.date-inputs {
     display: flex;
     align-items: center;
     margin-top: -30px;
 }
 
+/* Estilo para el selector de sensor */
 #sensor {
     margin-left: 0px;
-    margin-right: 10px; /* Ajusta el margen derecho para alinear con los placeholders */
-    margin-bottom: 10px; /* Margen inferior */
+    margin-right: 10px;
+    margin-bottom: 10px;
     margin-top: -17px;
-    width: 492px; 
+    width: 100%;
     height: 42px;
-
 }
 
-
-
-.contenedor-buscador{
-
+/* Contenedor del buscador */
+.contenedor-buscador {
     display: flex;
     justify-content: flex-start;
-    align-items:center ;
+    align-items: center;
 }
 
-
-
 /* Estilos para los campos de entrada de texto */
-input[type="text"], textarea {    
-    border: 2px solid #c6c6c6; /* Borde alrededor del campo de entrada */
-    border-radius: 10px; /* Radio del borde */
-    width: 183px; /* Ancho del campo de entrada */
-    height: 20px; /* Altura del campo de entrada */
-
+input[type="text"], textarea {
+    border: 2px solid #c6c6c6;
+    border-radius: 10px;
+    width: 100%;
+    height: 20px;
 }
 
 /* Estilos para los campos de entrada de texto y el elemento select */
 .input-field, select {
-    font-family: 'Kanit Light', sans-serif; /* Establece la fuente para el texto de entrada */
+    font-family: 'Kanit Light', sans-serif;
     font-size: 20px;
-    color: #333333; /* Color del texto */
-    background-color: #ffffff; /* Fondo blanco */
-    border: 2px solid #c6c6c6; /* Borde alrededor del campo de entrada */
-    border-radius: 10px; /* Radio del borde */
-    width: 183px; /* Ancho del campo de entrada */
-    height: 20px; /* Altura del campo de entrada */
-    padding: 0px; /* Ajuste de relleno */
-    margin-bottom: 0px; /* Margen inferior */
-    margin-top:15px;
+    color: #333333;
+    background-color: #ffffff;
+    border: 2px solid #c6c6c6;
+    border-radius: 10px;
+    width: 100%;
+    height: 42px;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 15px;
 }
 
-.button{
+/* Estilo para el botón */
+.button {
     padding: 0px 10px 0 10px;
     margin-left: 10px;
     margin-top: 15px;
 }
 
+/* Estilo para los encabezados h3 */
 h3 {
     white-space: nowrap;
 }
 
-/* Estilo general para las tablas */
 /* Estilo general para las tablas */
 .my-table {
     text-align: left;
@@ -113,6 +114,31 @@ h3 {
     background-color: #e9ecef;
 }
 
+/* Estilo para los encabezados h3 */
+h3 {
+    width: 20%;
+}
 
-
-
+/* Estilos responsivos */
+@media (max-width: 900px) {
+    .selection-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .export-container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .input-field, select {
+        width: 100%;
+    }
+    .button {
+        margin-top: 10px;
+        width: 100%;
+    }
+    h3 {
+        width: 100%;
+        font-size: 18px;
+        white-space: normal;
+    }
+}
