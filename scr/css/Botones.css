@@ -199,7 +199,7 @@ input[type="checkbox"]:checked {
         font-size: 18px; /* Tamaño de letra de los botones de solo texto para pantallas pequeñas */
     }
 
-    input[type="text"], input[type="email"], textarea, input[type="submit"]{
+    input[type="text"], textarea, input[type="submit"]{
         font-size: 14px; /* Tamaño de fuente para pantallas pequeñas */
     }
 
