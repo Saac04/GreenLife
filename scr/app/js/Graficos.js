@@ -310,8 +310,7 @@ function changeLimtis(i){
     var limiteID = asingNumberToId(i)
     var maximo
     var minimo
-
-
+    
     var limid = document.getElementsByClassName('active')[0].id
 
 
