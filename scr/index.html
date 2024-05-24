@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GreenLife</title>
+    <title>GreenLife: Cultiva Inteligentemente con Tecnología de Monitoreo</title>
     <!--
     Header
     -->
@@ -15,6 +15,18 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/Fuentes.css">
     <link rel="stylesheet" href="css/Landingpage.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <header class="header">
+        <div><img class="logo" src="img/Grado_en_tecnologías_interactivas.svg" alt="LOGO" onclick="redirigirAIndex()"></div>
+        <h1><span class="green">Green</span><span class="life">Life</span></h1>
+        <nav>
+            <ul class="nav-menu" id="menuOrdenador">
+                <li><a class="text-button" href="SobreNosotros.html">Sobre Nosotros</a></li>
+                <li><a class="text-button" href="FAQ.html">FAQ</a></li>
+                <li><a class="text-button" href="inicioSesion.html"><i class="fa fa-user-circle-o"></i></a></li>
+            </ul>
+        </nav>
+    </header>
 
 </head>
 
@@ -32,102 +44,90 @@
     </nav>
 </header>
 
-<nav id="navMenu" role="navigation">
-    <div id="menuToggle">
-        <!--
-        A fake / hidden checkbox is used as click reciever,
-        so you can use the :checked selector on it.
-        -->
-        <input type="checkbox" />
+<body>
+<!-- Inicio de parte Engancho -->
 
-        <!--
-        Some spans to act as a hamburger.
-
-        They are acting like a real hamburger,
-        not that McDonalds stuff.
-        -->
-        <span></span>
-        <span></span>
-        <span></span>
-
-        <!--
-        Too bad the menu has to be inside of the button
-        but hey, it's pure CSS magic.
-        -->
-        <ul id="menu">
-            <li><a class="text-button" href="inicioSesion.html"><i class="fa fa-user-circle-o"></i></a></li>
-            <li><a class="text-button" href="FAQ.html">FAQ</a></li>
-            <li><a class="text-button" href="SobreNosotros.html">Sobre Nosotros</a></li>
-        </ul>
-    </div>
-</nav>
-<div id="contenedorbanner">
-    <div id="Nombre_del_Producto">
-        <h1 id="greenLife">Green<span id="life">Life</span></h1>
-    </div>
-    <div>
-        <a href="registro_usuario.html" class="button" id="registerButton">REGISTRARSE</a>
-    </div>
-    <div class="banner-image">
-    </div>
-</div>
-
-<div id="container">
-    <div id="text">
-        <h1>Cuando quieras, donde quieras.</h1>
-        <p class="h2">Con nuestra aplicación web, tienes acceso a tus herramientas en cualquier momento y en cualquier lugar. Ya sea que estés en casa, en el trabajo o de viaje.</p>
-    </div>
-    <div id="character">
-        <img id="image" src="img/Anuncio%20chica.png">
-    </div>
-</div>
-<section id="conocer-producto">
-    <div class="product">
-        <div class="product-info">
-            <img id="imagendesensor" src="img/Sensor.png">
-            <div id="preguntas-sensor">
-                <div>
-                    <h2 class="titulos">¿Cómo llegan los datos a tu dispositivo?</h2>
-                    <div class="rectangle"></div>
-                    <p class="h2">Los datos de GreenLife se pueden ver en tu smartphone o tablet a través de una aplicación después de escanear un código QR en el recibo del usuario.</p>
-                </div>
-                <div id="Duda">
-                    <h2 class="titulos">¿Qué es GreenLife?</h2>
-                    <div class="rectangle"></div>
-                    <p class="h2">GreenLife es un producto que mide la humedad, la temperatura, la intensidad de la luz y los niveles de pH para ayudarte a cuidar tus plantas de la mejor manera.</p>
-                </div>
-            </div>
-        </div>
-        <div class="product-measurements">
-            <div id="head1">
-                <h1>Conoce GreenLife</h1>
-                <div class="rectangle"></div>
-            </div>
-            <div id="mejoropcion">
-                <div class="ajustar">
-                    <h2 class="titulos">Tu mejor opción</h2>
-                    <div class="rectangle"></div>
-                </div>
-            <p class="h2">GreenLife no solo te ofrece una manera conveniente y eficiente de cultivar tus propias plantas en casa, sino que también te brinda la tranquilidad de saber que estás utilizando tecnología de vanguardia para maximizar el éxito de tu huerto hidropónico vertical.</p>
-            <div class="ajustar">
-                <h2 class="titulos">¿Qué medimos?</h2>
-                <div class="rectangle"></div>
-                <img id="Sensores" src="img/banner2.jpg">
-            </div>
-            </div>
-            <ul class="lista_iconos" id="lista-iconos-servicios">
-                <li><img class="icon" src="img/Humedad.png" alt="Humidity icon"> Humedad</li>
-                <li><img class="icon" src="img/Temperatura.png" alt="Temperature icon"> Temperatura</li>
-                <li><img class="icon" src="img/Luminosidad.png" alt="Light intensity icon"> Luminosidad</li>
-                <li><img class="icon" src="img/PH.png" alt="pH icon"> pH</li>
-                <li><img class="icon" src="img/Salinidad.png" alt="pH icon"> Salinidad</li>
-            </ul>
+<section>
+    <div class="Slogan">
+        <h1>Conoce <span id="titulodeproducto">Green</span>Life, cultiva con Inteligencia, crece con Tecnología</h1>
+        <h2>Adquiere tu GreenLife hoy y transforma tu manera de cultivar</h2>
+        <h3>GreenLife te permite tomar decisiones informadas y mejorar tus prácticas de
+            cultivo para maximizar rendimientos y calidad. Con nuestra interfaz web intuitiva y fácil de usar,
+            accede a tus datos de cultivo desde cualquier lugar y en cualquier momento.</h3>
+        <div id="botones">
+            <a href="registro_usuario.html" class="boton_registro">REGISTRARSE</a>
+            <a href="#saber-mas" class="boton_Sabermas">SABER MAS</a>
         </div>
     </div>
+    <img src="img/Monitorizacion.svg" alt="imagen de la agencia">
 </section>
 
+<!-- Inicio de parte Anuncio -->
+
+<div class="Contenedor">
+    <div class="texto">
+        <div class="tituloTexto">
+            <h2>Cuando quieras, donde quieras</h2>
+            <p>Con nuestra aplicación web, tienes acceso a tus herramientas en cualquier momento y en cualquier lugar, <strong>incluso desde tu móvil</strong>. Ya sea que estés en casa, en el trabajo o de viaje, siempre tendrás a mano la información necesaria para cuidar y optimizar tu huerto, con la comodidad de poder hacerlo con tu ordenador o directamente desde tu smartphone. Entre todas las funcionalidades que ofrecemos se destacan tales como: monitoreo en tiempo real, análisis de datos, configuración remota o edición de límites de parámetros.
+            </p>
+        </div>
+    </div>
+    <img src="img/chica.svg" alt="Descripción de la imagen">
+</div>
+
+
+<!-- Inicio de parte Atractivo -->
+
+<div class="Atractivo" id="saber-mas">
+    <div class="Razones">
+        <div class="engloba">
+            <h1>¿Qué es GreenLife?</h1>
+            <div class="rectangle"></div>
+        </div>
+        <p>Con GreenLife, los agricultores y jardineros pueden tomar decisiones
+            informadas y optimizar sus prácticas de cultivo para maximizar los
+            rendimientos y la calidad de los productos. La interfaz web intuitiva
+            y fácil de usar permite el acceso remoto a los datos recopilados, lo que
+            brinda a los usuarios la capacidad de monitorear y
+            controlar sus huertos desde cualquier lugar y en cualquier momento.
+        </p>
+        <div class="engloba">
+            <h1>¿Que medimos?</h1>
+            <div class="rectangle"></div>
+        </div>
+
+        <img src="img/Parametros.png" alt="imagen de parametros">
+        <div>
+            <div class="engloba">
+                <h1>¿Por qué elegir GreenLife?</h1>
+                <div class="rectangle"></div>
+            </div>
+            <p>GreenLife no solo te ofrece una manera conveniente y
+                eficiente de cultivar tus propias plantas en casa,
+                sino que también te brinda la tranquilidad de saber que
+                estás utilizando tecnología de vanguardia para
+                maximizar el éxito de tu huerto hidropónico vertical.</p>
+        </div>
+    </div>
+    <div class="TextoDescriptivo">
+        <div>
+            <img src="img/Planta%20sensor.png" alt="imagen de el sensor">
+        </div>
+        <div>
+            <div class="engloba">
+                <h1>¿Cómo llegan los datos a su dispositivo?</h1>
+                <div class="rectangle"></div>
+            </div>
+            <p>Al obtener su GreenLife, este vendrá con un codigo QR el cual
+                tendra la capacidad de afiliar el sistema de sensores a su cuenta
+                de GreenLife, de ahi apareceran los datos a tiempo real que este
+                midiendo su huerto, y lo mejor es que podra tener mas de un dispositivo
+                GreenLife vinculado a su cuenta.</p>
+        </div>
+    </div>
+</div>
 <footer class="footer-container">
-    <button class="text-button" >Contactanos</button>
+    <button class="text-button" >Contacto</button>
     <h4>© 2024 GreenLife. Todos los derechos reservados.</h4>
     <div class="social-icons">
         <a href="#"><i class="fa fa-instagram"></i></a>
@@ -135,8 +135,5 @@
         <a href="#"><i class="fa fa-twitter"></i></a>
     </div>
 </footer>
-
-
-<script src="js/Botones.js" ></script>
 </body>
 </html>
