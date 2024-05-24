@@ -1,0 +1,7 @@
+# ejecutar el motor de redirecciones
+RewriteEngine on
+# si la url solicitada no se corresponde con ningún archivo ni directorio
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# redireccionar al index.php del dirtorio actual
+RewriteRule ^ index.php [L]
