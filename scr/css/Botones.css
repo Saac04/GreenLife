@@ -212,7 +212,11 @@ input[type='date']{
         font-size: 18px; /* Tamaño de letra de los botones de solo texto para pantallas pequeñas */
     }
 
+<<<<<<< HEAD
     input[type="text"], input[type="email"], textarea, input[type="submit"], input[type="password"]{
+=======
+    input[type="text"], textarea, input[type="submit"]{
+>>>>>>> edfe4db00531d223d9da13126e004611fd0096ee
         font-size: 14px; /* Tamaño de fuente para pantallas pequeñas */
     }
 
