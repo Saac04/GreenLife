@@ -2,14 +2,19 @@
 /* BOTONES */
 /*------------------------------------------------------------------------------*/
 
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-h1, .h1{
-    font-family: "Kanit Medium", sans-serif;
+
+
+
+h1, .h1, .kanit-medium{
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
     font-size: 32px;
     color: #333333;
 }
 
-h2, .h2{
+h2, .h2, .kanit-regular{
     font-family: "Kanit", sans-serif;
     font-weight: 400;
     font-size: 28px;
@@ -17,20 +22,23 @@ h2, .h2{
 }
 
 h3, .h3{
-    font-family: "Kanit Light", sans-serif;
+    font-family: "Kanit", sans-serif;
     font-size: 24px;
+    font-weight: 400;
     color: #333333;
 }
 
 h4, .h4{
-    font-family: "Kanit Light", sans-serif;
+    font-family: "Kanit", sans-serif;
     font-size: 16px;
+    font-weight: 400;
     color: #333333;
 }
 
 p, .p{
     font-family: "Kanit ExtraLight", sans-serif;
     font-size: 20px;
+    font-weight: 200;
     color: #333333;
 }
 
@@ -50,7 +58,7 @@ a{
             font-size: 18px; /* Tamaño de letra para h2 en pantallas pequeñas */
         }
 
-        h3, .h3 {
+        h3, .h3 , .dropdown-label-h3{
             font-size: 16px; /* Tamaño de letra para h3 en pantallas pequeñas */
         }
 

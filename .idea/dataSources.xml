@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+<<<<<<< HEAD
     <data-source source="LOCAL" name="greenlife@localhost" uuid="e2eec2d6-fedb-48a2-8dd7-cb62e439b40f">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/greenlife</jdbc-url>
+=======
+    <data-source source="LOCAL" name="greenlife@localhost" uuid="7688cb9b-fd49-404b-a21d-e79a9c20ec0d">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://localhost:3306/greenlife</jdbc-url>
+>>>>>>> feature/GraficaPart2
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

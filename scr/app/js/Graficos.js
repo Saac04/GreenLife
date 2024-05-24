@@ -1,15 +1,6 @@
 //import * as Utils from "./Utils.js";
 var ctx = document.getElementById('myChart').getContext('2d');
 
-var limites = {
-    "humedad": [90, 45],
-    "temperatura": [30, 15],
-    "luminosidad": [40, 10],
-    "salinidad": [2.5, 0],
-    "pH": [7, 5.5]
-};
-
-
 function generarNumerosAleatorios(tamaño, minimo, maximo) {
     const numeros = [];
     for (let i = 0; i < tamaño; i++) {
@@ -31,7 +22,7 @@ const DATA_PH = generarNumerosAleatorios(DATA_COUNT, 5.5, 7);
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['09:00', '12:00', '15:00', '18:00', '21:00'],
+        labels: [1, 2, 3, 4, 5, 6, 7],
         datasets: [
             {
                 label: 'HUMEDAD (%)',
@@ -224,7 +215,6 @@ var myChart = new Chart(ctx, {
 function toggleDataSet(datasetIndex) {
     var chart = myChart;
     var datasets = myChart.data.datasets;
-
     if (datasetIndex === 5) {
         for (var i = 0; i < datasets.length; i++) {
             showGraphic(i)
@@ -306,33 +296,18 @@ function conversorInputGrafica(input, tipo){
         return ((input - 4) / 5) * 100
     }
 }
-function changeLimtis(i){
-    var limiteID = asingNumberToId(i)
-    var maximo
-    var minimo
+function changeLimtis(maximo, minimo ){
+
+    var boton = document.querySelector('button[data-btn="1"]');
+    var limid = boton.id
 
 
-    var limid = document.getElementsByClassName('active')[0].id
+    if (limid != 'humedad' && limid != 'luminosidad' ){
 
-
-    if ((i === -1 && limid === 'humedad') || ( i === -1 && limid === 'luminosidad' )){
-
-        maximo = document.getElementById("maximo").value
-        minimo = document.getElementById("minimo").value
-
-    } else if (i === -1 && limid != 'humedad' && limid != 'luminosidad' ){
-
-        maximo = conversorInputGrafica(document.getElementById("maximo").value, limid)
-        minimo = conversorInputGrafica(document.getElementById("minimo").value, limid)
-
-    } else if (limid != 'humedad' && limid != 'luminosidad'){
-
-        maximo = conversorInputGrafica(limites[limiteID][0] , limiteID)
-        minimo = conversorInputGrafica(limites[limiteID][1] , limiteID)
-    } else {
-        maximo = limites[limiteID][0]
-        minimo = limites[limiteID][1]
+        maximo = conversorInputGrafica(maximo, limid)
+        minimo = conversorInputGrafica(minimo, limid)
     }
+
     agregarLineasHorizontales(myChart, maximo, minimo);
 }
 
@@ -351,7 +326,7 @@ function agregarLineasHorizontales(chart, maximo, minimo) {
                 },
                 labelMax: {
                     type: 'label',
-                    xValue: 3.9,
+                    xValue: 5.9,
                     yValue: parseInt(maximo) + 5,
                     color:'black',
                     backgroundColor: 'rgba(0,0,0,0)',
@@ -371,7 +346,7 @@ function agregarLineasHorizontales(chart, maximo, minimo) {
                 },
                 labelMin: {
                     type: 'label',
-                    xValue: 3.9,
+                    xValue: 5.9,
                     yValue: parseInt(minimo) + 5,
                     color:'black',
                     backgroundColor: 'rgba(0,0,0,0)',
@@ -428,8 +403,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Habilitar el input si se hace clic en un botón dentro del div
                 maxInput.disabled = false;
                 minInput.disabled = false;
-                maxInput.value = undefined;
-                minInput.value = undefined;
                 advertencia.style.display = "none"
             }
         });
@@ -441,4 +414,282 @@ document.addEventListener("DOMContentLoaded", function() {
         minInput.disabled = true;
         advertencia.style.display = "block"
     });
+
+    cargarSondas();
+
+
+
+});
+
+function validarLimites() {
+    var maximo = document.getElementById("maximo").value;
+    var minimo = document.getElementById("minimo").value;
+    var advertencia = document.getElementById("advertencia");
+
+    var sondaDropdown = document.getElementsByClassName('dropdown-option')[0];
+    var idSonda = sondaDropdown.value;
+
+    var boton = document.querySelector('button[data-btn="1"]');
+    parametro = boton.id
+
+    if (parametro === 'luminosidad'){
+        parametro = 'lux'
+    }
+
+    if (maximo !== '' && minimo !== '' && Number(maximo) < Number(minimo)) {
+        advertencia.textContent = "Asegúrese de que el máximo no sea menor que el mínimo";
+        advertencia.style.display = "block"; // Mostrar advertencia
+    } else {
+        // advertencia.textContent = "Valores aceptados";
+        advertencia.style.display = "none"; // Ocultar advertencia
+        actualizarLimites(idSonda, parametro); // Ejemplo: sonda 1, parámetro 'humedad'
+        cargarLimites(idSonda, parametro)
+    }
+}
+
+
+
+
+
+function detectarCambioAnchura() {
+    if (window.innerWidth < 500) {
+        cambiarFontSizeY(12)
+    } else if (window.innerWidth > 500){
+        cambiarFontSizeY(18)
+    }
+}
+
+window.addEventListener('resize', detectarCambioAnchura);
+
+function cambiarFontSizeY(fontSize) {
+    // Obtener la configuración de cada eje Y y actualizar el tamaño de fuente
+    myChart.options.scales.y.ticks.font.size = fontSize;
+    myChart.options.scales.y1.ticks.font.size = fontSize;
+    myChart.options.scales.y2.ticks.font.size = fontSize;
+    myChart.options.scales.y3.ticks.font.size = fontSize;
+    myChart.options.scales.y4.ticks.font.size = fontSize;
+
+    // Actualizar el gráfico para reflejar los cambios
+    myChart.update();
+}
+
+function cargarHuerto() {
+
+    var id_huerto = obtenerParametroUrl('id');
+
+    if (!id_huerto){
+        return
+    }
+
+    fetch('../../api/obtenerHuertosYNombres.php') // Reemplaza con la ruta correcta a tu archivo PHP
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al obtener los datos del PHP');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Verificar que el JSON contiene la lista de huertos
+            if (Array.isArray(data)) {
+
+                let h2 = document.getElementById("nombre-huerto")
+
+                for (let i = 0; i < data.length ; i++) {
+                    if (data[i].id_huerto  === id_huerto){
+                       h2.textContent = data[i].nombre
+                    }
+                }
+            } else {
+                console.error('El JSON no contiene una lista de huertos');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+}
+function obtenerParametroUrl(nombre) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(nombre);
+}
+function cargarSondas() {
+    // Obtener el ID del huerto desde la URL
+    var id_huerto = obtenerParametroUrl('id');
+
+    // Verificar si id_huerto no es nulo o indefinido
+    if (id_huerto) {
+        // Hacer la solicitud al servidor
+        fetch('../../api/obtener_sondas.php?id_huerto=' + id_huerto)
+            .then(response => response.json())
+            .then(data => {
+                var dropdown = document.getElementById('sonda');
+                dropdown.innerHTML = ''; // Limpiar el dropdown
+
+                // Agregar cada sonda al dropdown
+                data.forEach(s => {
+                    var option = document.createElement('option');
+                    option.text = s.nombre;
+                    option.value = s.id_sondas;
+                    option.className = 'dropdown-option';
+                    dropdown.appendChild(option);
+                });
+
+                if (data.length > 0) {
+                    var firstSondaId = data[0].id_sondas;
+
+                    // Obtener la fecha actual
+                    var fechaActual = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+                    // Calcular la fecha de inicio retrocediendo 5 registros
+                    var fechaInicio = new Date();
+                    fechaInicio.setHours(fechaInicio.getHours() - 22); // Retroceder 5 horas
+
+                    // Llamar a la función cargarLecturas con las fechas calculadas
+                    cargarLecturas(firstSondaId, fechaInicio.toISOString().slice(0, 19).replace('T', ' '), fechaActual);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    } else {
+        console.error('ID de huerto no proporcionado en la URL');
+    }
+}
+
+function cargarLecturas(id_sonda, fechaInicio, fechaFin) {
+
+    // Hacer la solicitud al servidor para obtener las lecturas de la sonda dentro del rango de fechas
+    fetch('../../api/ObtenerDatosSonda.php?id_sonda='+ id_sonda + '&fechaInicio=' + fechaInicio + '&fechaFinal=' + fechaFin)
+        .then(response => response.json())
+        .then(data => {
+            if (data.length === 0) {
+                alert("No hay lecturas disponibles para las fechas seleccionadas.");
+                return;
+            }
+            var humedad = data.map(lectura => lectura.humedad);
+            var temperatura = data.map(lectura => lectura.temperatura);
+            var luminosidad = data.map(lectura => lectura.lux);
+            var salinidad = data.map(lectura => lectura.salinidad);
+            var pH = data.map(lectura => lectura.pH);
+
+
+
+            // Dividir los promedios totales en 7 partes iguales
+            var promediosHumedad = calcularPromedios(humedad);
+            var promediosTemperatura = calcularPromedios(temperatura);
+            var promediosLuminosidad = calcularPromedios(luminosidad.map(valor => valor / 100));
+            var promediosSalinidad = calcularPromedios(salinidad);
+            var promediosPH = calcularPromedios(pH);
+
+
+            // Actualizar los datos de la gráfica
+            myChart.data.datasets[0].data = promediosHumedad;
+            myChart.data.datasets[1].data = promediosTemperatura;
+            myChart.data.datasets[2].data = promediosLuminosidad;
+            myChart.data.datasets[3].data = promediosSalinidad;
+            myChart.data.datasets[4].data = promediosPH;
+
+
+
+            // Actualizar las etiquetas del eje x
+            myChart.data.labels = ['1', '2', '3', '4', '5', '6', '7'];
+
+            // Actualizar la gráfica
+            myChart.update();
+
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+function cargarLimites() {
+    var sondaDropdown = document.getElementsByClassName('dropdown-option')[0];
+    var idSonda = sondaDropdown.value;
+
+    var boton = document.querySelector('button[data-btn="1"]');
+    parametro = boton.id
+
+    if (parametro === 'luminosidad'){
+        parametro = 'lux'
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '../../api/obtener_limites.php?id_sonda=' + idSonda + '&tipo_parametro=' + parametro, true);
+    xhr.onload = function() {
+        if (this.status == 200) {
+            var datos = JSON.parse(this.responseText);
+            document.getElementById('maximo').value = datos.valor_max;
+            document.getElementById('minimo').value = datos.valor_min;
+
+            changeLimtis(datos.valor_max, datos.valor_min )
+
+        }
+    };
+    xhr.send();
+}
+
+function actualizarLimites(idSonda, tipoParametro) {
+    var valorMax = document.getElementById('maximo').value;
+    var valorMin = document.getElementById('minimo').value;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '../../api/actualizar_limites.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onload = function() {
+        if (this.status == 200) {
+            alert('Límites actualizados correctamente.');
+        } else {
+            alert('Error al actualizar los límites.');
+        }
+    };
+    xhr.send('id_sonda=' + idSonda + '&tipo_parametro=' + tipoParametro + '&valor_max=' + valorMax + '&valor_min=' + valorMin);
+
+    changeLimtis(valorMax,valorMin)
+}
+// Esta función calculará el promedio de un conjunto de números
+function calcularPromedios(lecturas) {
+
+    console.log(lecturas)
+    var lecturasTotales = lecturas.length;
+    var promedios = [];
+
+    var tamanoParte = Math.floor(lecturasTotales / 7); // Redondear hacia arriba para asegurar que todas las partes tengan al menos un elemento
+
+    if (tamanoParte < 1) {
+        tamanoParte = 1
+    }
+
+    console.log(tamanoParte)
+    // Iterar sobre las partes
+    for (var i = 0; i < 7; i++) {
+        var inicio = i * tamanoParte;
+        var fin = Math.min((i + 1) * tamanoParte, lecturasTotales); // Asegurar que el índice final esté dentro del rango
+
+        var parteLecturas = lecturas.slice(inicio, fin); // Obtener la parte actual de las lecturas
+        var suma = parteLecturas.reduce((total, lectura) => total + lectura, 0); // Calcular la suma de la parte actual
+
+        var promedio = parseFloat(suma) / parteLecturas.length; // Calcular el promedio de la parte actual
+
+        promedios.push(promedio); // Agregar el promedio al array de promedios
+    }
+
+    return promedios;
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Agregar evento de escucha al botón "Ver Datos"
+    document.getElementById('button_tiempo').addEventListener('click', function() {
+        // Obtener las fechas de inicio y fin de los campos de entrada
+        var fechaInicio = document.getElementById('fechaIni').value;
+        var fechaFin = document.getElementById('fechaFin').value;
+
+        // Verificar si la fecha de inicio es posterior a la fecha final
+        if (fechaInicio > fechaFin) {
+            alert("La fecha de inicio no puede ser posterior a la fecha de fin.");
+            return;
+        }
+
+        // Obtener el ID de la primera sonda seleccionada en el dropdown
+        var id_sonda = document.getElementById('sonda').value;
+
+        // Llamar a la función cargarLecturas con las fechas y el ID de la sonda
+        cargarLecturas(id_sonda, fechaInicio, fechaFin);
+    });
+
+    cargarHuerto()
 });

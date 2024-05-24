@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2024 at 05:03 PM
+-- Generation Time: May 23, 2024 at 05:59 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -7636,24 +7636,25 @@ CREATE TABLE `sondas` (
   `id_sondas` int(11) NOT NULL,
   `estatus` int(11) DEFAULT NULL CHECK (`estatus` in (0,1)),
   `id_huerto` int(11) DEFAULT NULL,
-  `serial` varchar(100) NOT NULL
+  `serial` varchar(100) NOT NULL,
+  `nombre` varchar(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `sondas`
 --
 
-INSERT INTO `sondas` (`id_sondas`, `estatus`, `id_huerto`, `serial`) VALUES
-(1, 1, 1, 'ABC123'),
-(2, 1, 2, 'DEF456'),
-(3, 1, 3, 'GHI789'),
-(4, 1, 4, 'JKL012'),
-(5, 1, 5, 'MNO345'),
-(6, 1, 6, 'PQR678'),
-(7, 1, 7, 'STU901'),
-(8, 1, NULL, 'VWX234'),
-(9, 1, NULL, 'YZA567'),
-(10, 1, NULL, 'BCD890');
+INSERT INTO `sondas` (`id_sondas`, `estatus`, `id_huerto`, `serial`, `nombre`) VALUES
+(1, 1, 1, 'ABC123', 'Sonda1'),
+(2, 1, 2, 'DEF456', 'Sonda-Sur'),
+(3, 1, 3, 'GHI789', 'Sonda-Manu'),
+(4, 1, 1, 'JKL012', 'Sonda2'),
+(5, 1, 1, 'MNO345', 'Sonda3'),
+(6, 1, 3, 'PQR678', 'Sonda-Cesar'),
+(7, 1, 2, 'STU901', 'Sonda-Norte'),
+(8, 1, NULL, 'VWX234', NULL),
+(9, 1, NULL, 'YZA567', NULL),
+(10, 1, NULL, 'BCD890', NULL);
 
 -- --------------------------------------------------------
 
@@ -7667,7 +7668,7 @@ CREATE TABLE `usuarios` (
   `rol` int(11) DEFAULT 2,
   `nombre` varchar(100) NOT NULL,
   `apellido` varchar(100) NOT NULL,
-  `contraseña` varchar(255) NOT NULL,
+  `contrasenya` varchar(255) NOT NULL,
   `codigo_de_invitado` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -7675,7 +7676,7 @@ CREATE TABLE `usuarios` (
 -- Dumping data for table `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `correo`, `rol`, `nombre`, `apellido`, `contraseña`, `codigo_de_invitado`) VALUES
+INSERT INTO `usuarios` (`id_usuario`, `correo`, `rol`, `nombre`, `apellido`, `contrasenya`, `codigo_de_invitado`) VALUES
 (11, 'juan.perez@example.com', 0, 'Juan', 'Perez', 'password123', NULL),
 (12, 'maria.lopez@example.com', 1, 'Maria', 'Lopez', 'password123', NULL),
 (13, 'carlos.gomez@example.com', 2, 'Carlos', 'Gomez', 'password123', 'DEF456'),
@@ -7752,7 +7753,7 @@ ALTER TABLE `huertos`
 -- AUTO_INCREMENT for table `lecturas`
 --
 ALTER TABLE `lecturas`
-  MODIFY `id_lectura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8192;
+  MODIFY `id_lectura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7451;
 
 --
 -- AUTO_INCREMENT for table `limites`

@@ -10,6 +10,7 @@ header {
     border-bottom: 3px solid #479555;
     background-color: white;
     height: 64px;
+    width: 100%;
 }
 
 header *{

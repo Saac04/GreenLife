@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenLife - Mis Huertos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/MenuHam.css">
+  <link rel="stylesheet" href="../../css/Botones.css">
+  <link rel="stylesheet" href="../../css/Fuentes.css">
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="../css/MisHuertos.css">
+</head>
+<body>
+
+<header class="header">
+  <div><img class="logo" src="../../img/Grado_en_tecnologías_interactivas.svg" alt="LOGO"></div>
+  <h1><span class="green">Green</span><span class="life">Life</span></h1>
+  <nav>
+    <ul class="nav-menu" id="menuOrdenador">
+      <li><a class="text-button" href="#">Mis huertos</a></li>
+      <li><a class="text-button" href="#">Soporte</a></li>
+      <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+    </ul>
+  </nav>
+</header>
+
+<nav id="navMenu" role="navigation">
+  <div id="menuToggle">
+    <!--
+    Una falsa / oculta checkbox es usada como click reciever
+    -->
+    <input type="checkbox" />
+
+    <!--
+    Algunos spans que actuan como hamburgesa.
+    -->
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <!--
+    Una pena que el menu tenga que estar dentro del boton
+    pero eh, es pura magia de CSS.
+    -->
+    <ul id="menu">
+      <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
+      <li><a class="text-button" href="#">FAQ</a></li>
+      <li><a class="text-button" href="#">Sobre Nosotros</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class="nombrePagina">
+  <h2 id="Nombre_Usuario">Huertos de "(Nombre del usuario)" </h2>
+</div>
+
+<div class="contendorHuertos" id="contenedorHuertos">
+
+  <!--<div class="huerto dios fondoImpar" data-id="1">
+    <h3>Huerto 1</h3>
+    <div class="botonesHuerto">
+    <div class="botones1">
+      <button class="button" onclick="vincularSonda(1)">Añadir Sonda</button>
+      <a class="button" href="GraficosHistoricos.html">Ver Gráficas</a>
+    </div>
+    <div class="botones2">
+      <button class="button" onclick="abrirEditarPopup(1)">Editar Nombre</button>
+      <button class="button boton-eliminar" onclick="abrirEliminarPopup(1)">Eliminar</button>
+    </div>
+    </div>
+  </div>-->
+
+</div>
+
+<!-- Repite los bloques anteriores para más huertos -->
+<div class="main-container">
+  <button class="button boton_nuevohuerto">+ Añadir Huerto</button>
+</div>
+
+
+<!-- Contenedor del Popup editar nombre -->
+<div id="popupEditarNombre" class="editar">
+  <div class="popup-contenido">
+    <!-- X de cerrar el popup -->
+    <span class="cerrar">&times;</span>
+    <!-- h2 de dentro del popup -->
+    <h2>Editar el nombre del huerto</h2>
+    <!-- Descripcion de donde encontrar el numero de serie -->
+    <p>Introduce el nuevo nombre del huerto.</p>
+    <!-- Input para introducir el nuevo nombre -->
+    <input type="text" name="nombreHuerto" placeholder="Introduce el nuevo nombre del huerto">
+    <div class="button-container">
+      <!-- Botón de confirmar -->
+      <button class="popupButton" onclick="editarNombre()">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Contenedor del Popup eliminar -->
+<div id="popupEliminar" class="eliminar">
+  <div class="popup-contenido">
+    <!-- X de cerrar el popup -->
+    <span class="cerrar">&times;</span>
+    <!-- h2 de dentro del popup -->
+    <h2>¿Quieres eliminar el huerto?</h2>
+    <!-- Descripcion -->
+    <p>¿Estás seguro de que quieres eliminar definitivamente este huerto?</p>
+    <!-- Botones de confirmación y cancelación -->
+    <div class="button-container">
+      <!-- Botón de confirmar -->
+      <button class="popupButton" onclick="confirmarEliminar()">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Contenedor del Añadir sonda -->
+<div id="popupAñadirSonda" class="añadir">
+  <div class="popup-contenido">
+    <!-- X de cerrar el popup -->
+    <span class="cerrar" onclick="cerrarPopupVincular()">&times;</span>
+    <!-- h2 de dentro del popup -->
+    <h2>Vinculación por número de serie</h2>
+    <!-- Descripcion de donde encontrar el numero de serie -->
+    <p>Para encontrar el número de serie de tu dispositivo, simplemente da la vuelta a la sonda. En la parte trasera, verás una
+      etiqueta con una serie de números y letras, introdúcelo y empieza a disfrutar de tu sensor.
+    </p>
+    <!-- Input para introducir el numero de serie -->
+    <input type="text" name="Introducir número de serie" placeholder="Introducir número de serie">
+    <div class="button-container">
+      <!-- Botón de confirmar -->
+      <button class="popupButton" onclick="vincularSonda()">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+
+<script src="../js/MisHuertos.js"></script>
+
+</body>
+</html>
