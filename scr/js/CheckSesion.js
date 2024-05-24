@@ -13,7 +13,4 @@ window.onload = function() {
         });
 
     // Forzar la recarga de la página al utilizar la navegación hacia atrás del navegador
-    if (performance.navigation.type === 2) {
-        window.location.reload(true);
-    }
 };

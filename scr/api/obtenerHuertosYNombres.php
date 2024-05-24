@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 header('Content-Type: application/json');
 
 $servername = "localhost";
@@ -15,7 +16,7 @@ if ($conn->connect_error) {
     die(json_encode(['error' => 'Conexión fallida: ' . $conn->connect_error]));
 }
 
-$id_usuario = 13; // ID del usuario que quieres buscar
+$id_usuario = $_SESSION['id']; // ID del usuario que quieres buscar
 
 // Consulta para obtener los huertos asociados al usuario
 $sql_huertos = "SELECT huertos.id_huerto, huertos.nombre FROM huertos WHERE huertos.id_usuario = $id_usuario";

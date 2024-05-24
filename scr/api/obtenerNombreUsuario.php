@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 header('Content-Type: application/json');
 
 $servername = "localhost";
@@ -15,10 +17,13 @@ if ($conn->connect_error) {
     die(json_encode(['error' => 'Conexión fallida: ' . $conn->connect_error]));
 }
 
-$id_usuario = 13; // Aquí puedes cambiar el ID del usuario que quieres buscar
+
+$id_usuario = $_SESSION['id']; // Aquí puedes cambiar el ID del usuario que quieres buscar
+
 
 $sql = "SELECT nombre FROM usuarios WHERE id_usuario = $id_usuario";
 $result = $conn->query($sql);
+
 
 if ($result->num_rows > 0) {
     // Obtener los datos de cada fila

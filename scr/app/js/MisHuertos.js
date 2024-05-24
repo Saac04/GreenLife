@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+
     // Obtener los datos del archivo PHP
     fetch('../../api/obtenerNombreUsuario.php') // Reemplaza con la ruta correcta a tu archivo PHP
         .then(response => {
@@ -8,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.json();
         })
         .then(data => {
+            console.log(data)
+
             // Verificar que el JSON contiene el nombre del usuario
             if (data.nombre) {
                 // Obtener el elemento h2 existente por su ID
@@ -24,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     // Función para cargar los huertos del usuario desde la base de datos
     function cargarHuertos() {
         fetch('../../api/obtenerHuertosYNombres.php') // Reemplaza con la ruta correcta a tu archivo PHP
@@ -35,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.json();
             })
             .then(data => {
+
                 // Verificar que el JSON contiene la lista de huertos
                 if (Array.isArray(data)) {
                     let container = document.getElementById('contenedorHuertos'); // Usar el contenedor existente
@@ -102,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Error:', error));
     }
     // Función para añadir un nuevo huerto
-    function añadirHuerto() {
+    async function añadirHuerto() {
         // Obtener el ID del usuario actual (esto debe estar disponible en tu aplicación)
         var idUsuario = 13; // Reemplaza con el ID del usuario real
         var nombreHuerto = 'Nuevo Huerto'; // Nombre predeterminado para el nuevo huerto
@@ -177,7 +181,7 @@ function abrirEditarPopup(id) {
     var popup = document.getElementById('popupEditarNombre');
     popup.style.display = 'block';
 }
-function confirmarEliminar() {
+async function confirmarEliminar() {
     if (currentHuertoId !== null) {
         // Enviar solicitud para eliminar el huerto de la base de datos
         fetch('../../api/eliminarHuerto.php', {
@@ -215,7 +219,7 @@ function cerrarPopupVincular() {
     popup.style.display = 'none';
 }
 
-function editarNombre() {
+async function editarNombre() {
     var popup = document.getElementById('popupEditarNombre');
     if (popup.style.display === 'none' || popup.style.display === '') {
         popup.style.display = 'block';

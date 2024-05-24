@@ -29,7 +29,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $sql = "SELECT `usuarios`.`id_usuario`, 
        `usuarios`.`correo`, 
        `roles`.`id` as `idRol`, 
-       `roles`.`rol` 
+       `roles`.`rol`,
+       `usuarios`.`nombre` 
 		FROM `usuarios` 
 		INNER JOIN `roles` ON `usuarios`.`rol` = `roles`.`id`
 		WHERE `usuarios`.`correo` = '$email' AND `usuarios`.`contrasenya` = '$password'";
@@ -43,6 +44,9 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
             session_start();
             $_SESSION['user'] = $registro;
+            $_SESSION['id'] = 13;
+
+            $_SESSION['nombre'] = $registro['nombre'];
 
             $salida = [];
             $salida['id'] = $registro['id'];
@@ -51,12 +55,12 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
 
             http_response_code(200);
-            /*
+
             header('Access-Control-Allow-Origin: *');
             header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE');
             header('Content-Type: application/json; charset=utf-8');
 
-            echo json_encode($salida);*/
+            echo json_encode($salida);
         } else {
             http_response_code(401);
         }
