@@ -58,7 +58,7 @@ a{
             font-size: 18px; /* Tamaño de letra para h2 en pantallas pequeñas */
         }
 
-        h3, .h3 {
+        h3, .h3 , .dropdown-label-h3{
             font-size: 16px; /* Tamaño de letra para h3 en pantallas pequeñas */
         }
 

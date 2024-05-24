@@ -16,9 +16,33 @@ header{
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin: 10px;
+    margin: 0px;
+    align-items: center;
 }
 
+.selector-tiempo{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    gap: 15px;
+}
+
+.selector-tiempo div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.selector-tiempo .button{
+}
+
+
+#fechaFin{
+
+}
+#fechaIni{
+
+}
 .button{
     width: 157px;
     height: 50px;
@@ -28,10 +52,9 @@ header{
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin: 10px;
+    margin: 10px 0px 10px 0px;
     flex-direction: row;
 }
-
 
 
 .button-color{
@@ -75,7 +98,7 @@ header{
 .color-active{
     background-color: #479555;
 }
-.dropdown, .button {
+.button {
     margin: 10px;
 }
 
@@ -83,7 +106,7 @@ header{
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 20px 0px 20px 0px;
 }
@@ -93,7 +116,7 @@ header{
     flex-direction: column;
 }
 .chart-container {
-    width: 70%;
+    width: 67%;
     display: flex; /* Usar display flex para centrar verticalmente */
     justify-content: center; /* Centrar horizontalmente */
     align-items: center; /* Centrar verticalmente */
@@ -179,6 +202,13 @@ p{
     margin-top: 10px;
 }
 
+#button_tiempo{
+    height: 30px;
+    width: fit-content;
+    text-wrap: nowrap;
+}
+
+
 
 /* Consulta de medios para tamaños de pantalla menores o iguales a 500px */
 @media screen and (max-width: 1140px) {
@@ -202,12 +232,18 @@ p{
 
 
     .dropdown{
-        display: grid;
+        display: flex;
         gap: 35px;
+        height: 300px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
     }
 
     .dropdown div{
-        display: grid;
+        display: flex;
+        height: fit-content;
 
     }
 
@@ -220,6 +256,16 @@ p{
     .chart-container{
         width: 100%;
     }
+
+    .button-menu{
+        margin: 25px 0px 25px 0px;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .selector-tiempo{
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 650px)  {
@@ -231,7 +277,8 @@ p{
 
 @media screen and (max-width: 600px) {
 
-    .button-menu, .button-menu1, .button-menu2{
+
+    .button-menu1, .button-menu2{
         margin: 0;
     }
     .button{

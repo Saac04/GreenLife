@@ -48,13 +48,15 @@
 
 /* Estilos para el formulario */
 form {
-    font-family: 'Kanit Light', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
 }
 
 /* Estilos para los campos de entrada de texto */
 input[type="text"], input[type="email"], input[type="password"], textarea, input[type="number"] {
     font-family: 'Kanit Light', sans-serif; /* Establece la fuente para el texto de entrada */
     font-size: 20px;
+    font-weight: 400;
     color: #333333; /* Color del texto */
     background-color: #ffffff; /* Fondo blanco */
     border: none; /* Sin bordes */
@@ -105,7 +107,8 @@ display: inline-block;
 .dropdown-btn {
 background: none; /* Fondo transparente */
 color: #333333; /* Color del texto */
-font-family: 'Kanit Light', sans-serif;
+font-family: 'Kanit', sans-serif;
+    font-weight: 400;
 font-size: 20px; /* Tamaño de letra por defecto */
 border: none; /* Sin borde */
 cursor: pointer;
@@ -132,7 +135,8 @@ font-size: 20px; /* Tamaño de letra por defecto */
 .dropdown-select{
     background: none; /* Fondo transparente */
     color: #333333; /* Color del texto */
-    font-family: 'Kanit Light', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
     font-size: 24px; /* Tamaño de letra por defecto */
     border: none; /* Sin borde */
     border-bottom: 1px solid #545454;
@@ -158,7 +162,7 @@ font-size: 20px; /* Tamaño de letra por defecto */
 
 
 .dropdown-label-h3{
-    font-family: "Kanit Light", sans-serif;
+    font-family: 'Kanit', sans-serif;
     font-size: 24px;
     color: #333333;
 }
@@ -187,6 +191,11 @@ input[type="checkbox"], .checkbox {
 input[type="checkbox"]:checked {
     background-color: #479555; /* Cambia el color de fondo al marcar */
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type='date']{
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
 }
 
 /*------------------------------------------------------------------------------*/

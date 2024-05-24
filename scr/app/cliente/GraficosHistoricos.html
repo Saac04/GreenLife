@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Huertos</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="../css/Marcos.css">
     <link rel="stylesheet" href="../../css/Botones.css">
     <link rel="stylesheet" href="../../css/Fuentes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -67,24 +66,36 @@
     <div>
         <label class="dropdown-label-h3" for="sonda">Selecciona una sonda:</label>
         <select class="dropdown-select"  id="sonda">
-            <option class="dropdown-option" value="tomates">Tomates</option>
-            <option class="dropdown-option" value="chile">Chile</option>
-            <option class="dropdown-option" value="Jasmin">Jasmin</option>
-            <option class="dropdown-option" value="planta cde cesar no se que coño es">Cesar</option>
             <!-- Otras opciones -->
         </select>
     </div>
 
-    <div>
-        <label class="dropdown-label-h3" for="tiempo">Selecciona un rango de tiempo:</label>
-        <select class="dropdown-select" id="tiempo">
-            <option class="dropdown-option" value="dia">Día</option>
-            <option class="dropdown-option" value="1semana">Una semana</option>
-            <option class="dropdown-option" value="2semanas">Dos semanas</option>
-            <option class="dropdown-option" value="mes">Mes</option>
-            <!-- Otras opciones -->
-        </select>
+    <div class="selector-tiempo">
+
+        <div>
+            <label class="dropdown-label-h3" for="fechaIni">Fecha de Inicio</label>
+            <input type="date" id="fechaIni" name="fechaIni" required>
+        </div>
+
+        <div>
+            <label class="dropdown-label-h3" for="fechaFin">Fecha de Fin:</label>
+            <input type="date" id="fechaFin" name="fechaFin" required>
+        </div>
+
+
+        <button id="button_tiempo" class="button"  type="submit">Ver Datos</button>
     </div>
+
+<!--    <div>-->
+<!--        <label class="dropdown-label-h3" for="tiempo">Selecciona un rango de tiempo:</label>-->
+<!--        <select class="dropdown-select" id="tiempo">-->
+<!--            <option class="dropdown-option" value="dia">Día</option>-->
+<!--            <option class="dropdown-option" value="1semana">Una semana</option>-->
+<!--            <option class="dropdown-option" value="2semanas">Dos semanas</option>-->
+<!--            <option class="dropdown-option" value="mes">Mes</option>-->
+<!--            &lt;!&ndash; Otras opciones &ndash;&gt;-->
+<!--        </select>-->
+<!--    </div>-->
 
 </div>
 
@@ -94,25 +105,25 @@
 
     <div class="button-menu1">
         <div class="button-color">
-            <button class="button color-humedad" id="humedad" data-btn="0" onclick="toggleDataSet(0); activarUnicoGH(this); changeLimtis(0)">Humedad</button>
+            <button class="button color-humedad" id="humedad" data-btn="0" onclick="toggleDataSet(0); activarUnicoGH(this); cargarLimites(); changeLimtis(0)">Humedad</button>
             <div class=""></div>
         </div>
         <div class="button-color">
-            <button class="button color-temperatura" id="temperatura" data-btn="0" onclick="toggleDataSet(1); activarUnicoGH(this); changeLimtis(1)">Temperatura</button>
+            <button class="button color-temperatura" id="temperatura" data-btn="0" onclick="toggleDataSet(1); activarUnicoGH(this); cargarLimites();changeLimtis(1)">Temperatura</button>
             <div class=""></div>
         </div>
         <div class="button-color">
-            <button class="button color-luminosidad" id="luminosidad" data-btn="0" onclick="toggleDataSet(2); activarUnicoGH(this); changeLimtis(2)">Luminosidad</button>
+            <button class="button color-luminosidad" id="luminosidad" data-btn="0" onclick="toggleDataSet(2); activarUnicoGH(this); cargarLimites();changeLimtis(2)">Luminosidad</button>
             <div class="color-luminosidad"></div>
         </div>
     </div>
     <div class="button-menu2">
         <div class="button-color">
-            <button class="button color-salinidad" id="salinidad" data-btn="0" onclick="toggleDataSet(3); activarUnicoGH(this); changeLimtis(3)">Salinidad</button>
+            <button class="button color-salinidad" id="salinidad" data-btn="0" onclick="toggleDataSet(3); activarUnicoGH(this); cargarLimites();changeLimtis(3)">Salinidad</button>
             <div class="color-salinidad"></div>
         </div>
         <div class="button-color">
-            <button class="button color-pH" id="pH" data-btn="0" onclick="toggleDataSet(4); activarUnicoGH(this); changeLimtis(4)">Ph</button>
+            <button class="button color-pH" id="pH" data-btn="0" onclick="toggleDataSet(4); activarUnicoGH(this); cargarLimites();changeLimtis(4)">Ph</button>
             <div class="color-pH"></div>
         </div>
 
@@ -143,7 +154,7 @@
             </div>
             <p id="advertencia">Seleccione un parametro para editar!</p>
             <div class="botones">
-                <button class="button aplicar" id="aplicar" onclick="changeLimtis(-1)">Aplicar</button>
+                <button class="button aplicar" id="aplicar" onclick=" validarLimites();">Aplicar</button>
                 <a class="button atras" href="Mis%20huertos.html">Atrás</a>
             </div>
         </div>
@@ -158,6 +169,8 @@
     </div>
 
 </div>
+
+
 
 
 <div class="inferior">
