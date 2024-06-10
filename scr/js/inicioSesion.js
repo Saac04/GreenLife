@@ -58,8 +58,9 @@ async function inicioSesion(event){
             console.log("Mis_Hue...html")
             window.location.href = 'app/cliente/MisHuertos.html';
         } else {
+            mensajeError.textContent = 'Por favor, introduzca su contraseña.'
             // La respuesta no es 200-299
-            const data = JSON.parse(respuestaTexto); // Intenta analizar la respuesta como JSON
+            const data = (respuestaTexto); // Intenta analizar la respuesta como JSON
             if(data.error === "Credenciales incorrectas") {
                 throw new Error("Credenciales inválidas, por favor introdúcelas de nuevo.");
             } else {
