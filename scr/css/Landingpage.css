@@ -15,7 +15,6 @@ section{
     align-items: center;
 }
 .Slogan{
-    font-family: Kanit;
     padding: 4rem;
     display: grid;
 
@@ -25,19 +24,16 @@ section{
 }
 .Slogan h1{
     font-size: 28px;
-    font-family: Kanit regular;
     color: rgb(84,84,84);
     text-align: center;
 }
 .Slogan h2{
     font-size: 18px;
-    font-family: Kanit Medium;
     color:rgb(84,84,84);
     text-align: center;
 }
 .Slogan h3{
     font-size: 14px;
-    font-family: Kanit Light;
     color:rgb(84,84,84);
     text-align: justify;
 }
