@@ -9,32 +9,28 @@
 }
 
 /* Estilos para el cuerpo del documento */
+
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    font-family: 'Kanit', sans-serif; /* Fuente principal */
-    background-color: #FFFFFF; /* Color de fondo */
+    position: relative;
 }
 
-/* Estilos para los encabezados H2 (gestión y edición de clientes) */
+/* Estilos para los encabezados H2 */
 h2 {
+    margin-top: 20px;
     font-family: 'Kanit', sans-serif;
     font-size: 28px;
     font-weight: 400;
-    color: #479555; /* Color del texto */
-    margin-bottom: 40px; /* Espacio inferior */
-    text-align: center; /* Alineación del texto */
+    color: #479555;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 /* Estilos para la barra de búsqueda */
 .search-bar {
     display: flex;
-    margin-bottom: 10px;
     justify-content: flex-end;
+    margin-bottom: 10px;
     width: 100%;
-    height: 30px;
 }
 
 /* Estilos para el campo de búsqueda */
@@ -44,31 +40,35 @@ h2 {
     font-family: 'Kanit', sans-serif;
     font-size: 20px;
     color: #333333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-/* Estilos para el contenedor principal (la tabla) */
+/* Estilos para el contenedor principal */
 .table {
-    margin-top: 20px;
+    margin: 20px auto auto;
+    width: 80%;
 }
 
 /* Estilos para las tablas */
 table {
-    width: 800px;
+    width: 100%;
     border-collapse: collapse;
+    border: 1px solid #ddd;
 }
 
 /* Estilos para la tabla de clientes */
 .clients-table {
-    font-family: "Kanit Light", sans-serif; /* Fuente de la tabla */
-    font-size: 20px; /* Tamaño de la fuente */
-    margin-bottom: 20px; /* Espacio inferior */
+    font-family: "Kanit Light", sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
 /* Estilos para los botones dentro de la tabla */
 .clients-table button {
-    padding: 12px 20px; /* Relleno */
-    font-family: "Kanit Light", sans-serif; /* Fuente */
-    font-size: 20px; /* Tamaño de la fuente */
+    padding: 12px 20px;
+    font-family: "Kanit Light", sans-serif;
+    font-size: 20px;
 }
 
 /* Estilos para los botones de cliente */
@@ -76,6 +76,7 @@ table {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
+    width: 100%;
 }
 
 /* Estilos para las celdas de tabla */
@@ -91,16 +92,6 @@ td {
 thead {
     position: sticky;
     top: 0;
-    background-color: #f2f2f2;
-}
-
-/* Estilos para las celdas de encabezado */
-th {
-    background-color: #f2f2f2;
-}
-
-/* Estilos para las filas pares del cuerpo de la tabla */
-tbody tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
@@ -122,89 +113,130 @@ button {
     width: 100%;
     padding: 10px 20px;
     font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
 }
 
-/* Estilos para el botón de guardar */
-.save-client {
-    padding: 10px 24px;
-    font-size: 20px;
+.clients-table .eliminar-cliente {
+    background-color: #FF6347;
 }
 
-/* Estilos para el efecto hover en los botones */
-button:hover {
-    background-color: #479555;
+.clients-table .editar-cliente {
+    background-color: #7ED957;
 }
 
-/* Estilos generales para el popup */
+/* Estilos para el popup */
 .popup {
     display: none;
     position: fixed;
-    top: 0;
+    z-index: 1;
     left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
+    overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Kanit', sans-serif;
 }
 
 .popup-contenido {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: #fefefe;
+    margin: auto;
     padding: 20px;
-    border-radius: 5px;
+    border: 1px solid #888;
     width: 80%;
-    max-width: 500px;
-    box-sizing: border-box;
+    max-width: 400px;
+    border-radius: 10px;
 }
 
 .cerrar {
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    font-size: 30px;
-    cursor: pointer;
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-input[type="text"] {
-    font-family: 'Kanit Light', sans-serif;
-    font-size: 20px;
-    color: #333333;
-    background-color: #ffffff;
-    border: none;
-    border-bottom: 2px solid #c6c6c6;
-    padding: 10px;
-    width: 100%;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.button-container {
-    text-align: right;
-}
-
-.button {
-    background-color: #7ED957;
-    color: white;
-    font-family: 'Kanit', sans-serif;
-    font-size: 20px;
-    border: none;
-    border-radius: 10px;
-    outline: none;
-    padding: 10px;
+.cerrar:hover,
+.cerrar:focus {
+    color: #000;
+    text-decoration: none;
     cursor: pointer;
 }
 
 .popupH2 {
-    margin-top: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
 .popupP {
-    text-align: center;
-    margin-bottom: 30px;
+    font-size: 20px;
+    margin-bottom: 20px;
 }
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 1020px) {
+    .search-bar, .table, table {
+        margin: auto
+    }
+
+    .clients-table thead {
+        display: none;
+    }
+
+    .clients-table tr {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .clients-table td {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: right;
+        padding-left: 0; /* Ajuste aquí */
+        position: relative;
+    }
+
+    .clients-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: calc(50% - 20px);
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .client-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .client-buttons button,
+    .clients-table .eliminar-cliente,
+    .clients-table .editar-cliente {
+        width: 60%; /* Ancho del botón */
+        text-align: center;
+        margin: 5px auto;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .clients-table td {
+        flex-direction: row;
+
+    }
+}
+
+
