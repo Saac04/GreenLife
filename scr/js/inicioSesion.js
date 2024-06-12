@@ -76,4 +76,13 @@ async function inicioSesion(event){
 
 class UsuarioModel{
     url = '../api/usuarios/';
+
+}
+function OlvidarContrasenya() {
+    var popup = document.getElementById('miPopup');
+    popup.style.display = (popup.style.display === 'none') ? 'block' : 'none';
+}
+function CodigoInvitado() {
+    var popup = document.getElementById('miPopup2');
+    popup.style.display = (popup.style.display === 'none') ? 'block' : 'none';
 }
