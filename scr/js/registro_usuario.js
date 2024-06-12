@@ -81,17 +81,7 @@ function register() {
     window.location.href = "pagina_futuro.html";
 }
 
-function volver() {
-    // Aquí puedes cambiar la URL por la de la página a la que quieras redirigir al usuario
-    window.location.href = "pagina_volver.html";
-}
-
 function tengoCuenta() {
     // Aquí puedes cambiar la URL por la de la página a la que quieras redirigir al usuario
     window.location.href = "inicioSesion.html";
 }
-
-/*function terminosYCondiciones() {
-    // Aquí puedes cambiar la URL por la de la página a la que quieras redirigir al usuario
-    window.location.href = "otra_pagina.html";
-}*/
