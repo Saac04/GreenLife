@@ -32,6 +32,11 @@ body {
 }
 /* Titles positioning */
 
+.PrimerTexto{
+    padding: 2rem;
+    text-align: center;
+
+}
 .ContainerOrigen{
     display: flex;
     flex-direction: row;
@@ -40,14 +45,17 @@ body {
 
 }
 .ContainerOrigen img{
-    width: 675px;
-    height: 358px;
+    width: 40rem;
+    height: 23rem;
     order: 1;
+    border-radius: 3rem;
 }
 .textOrigen{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: justify;
+    margin: 10px;
     order: 2;
 
 }
@@ -60,15 +68,18 @@ body {
 }
 
 .ContainerMision img{
-    width: 675px;
-    height: 358px;
+    width: 40rem;
+    height: 23rem;
     order: 2;
+    border-radius: 1rem;
 }
 
 .textMision{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: justify;
+    margin: 10px;
     order: 1;
 }
 
@@ -81,14 +92,18 @@ body {
 }
 
 .ContainerVision img{
-    width: 358px;
-    height: 358px;
+    width: 40rem;
+    height: 23rem;
+    order: 1;
+    border-radius: 1rem;
 }
 
 .textVision{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: justify;
+    margin: 10px;
     order: 2;
 }
 
@@ -100,15 +115,20 @@ body {
 }
 
 .ContainerCeo img{
-    width: 675px;
-    height: 358px;
+    width: 40rem;
+    height: 23rem;
     order: 2;
+    border-radius: 2rem;
 }
 
 .textCeo{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: justify;
+    margin: 10px;
+    width: 522px;
+    height: 288px;
     order: 1;
 }
 
@@ -116,7 +136,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 5rem;
     gap: 50px;
 }
 
@@ -124,12 +144,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: justify;
 }
 
 .TextUltimo{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: justify;
 }
 
 h2{
