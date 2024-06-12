@@ -1,6 +1,3 @@
-/* Importar nuestra fuente */
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap');
-
 /* Estilos generales */
 * {
     margin: 0;
@@ -9,7 +6,6 @@
 }
 
 /* Estilos para el cuerpo del documento */
-
 body {
     position: relative;
 }
@@ -25,6 +21,26 @@ h2 {
     text-align: center;
 }
 
+/* Estilos para el mensaje de error */
+.error-message {
+    display: none; /* Ocultar el mensaje de error inicialmente */
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    color: #FF6347; /* Color rojo para el mensaje de error */
+    font-size: 14px; /* Tamaño de fuente del mensaje de error */
+    margin-top: 5px; /* Espacio superior */
+}
+
+.guardarBBDD {
+    text-align: center;
+    display: none; /* Ocultar el mensaje de error inicialmente */
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    color: #479555; /* Color rojo para el mensaje de error */
+    font-size: 20px; /* Tamaño de fuente del mensaje de error */
+    margin-top: 5px; /* Espacio superior */
+}
+
 /* Estilos para la barra de búsqueda */
 .search-bar {
     display: flex;
@@ -35,12 +51,13 @@ h2 {
 
 /* Estilos para el campo de búsqueda */
 .search-bar input[type="text"] {
-    padding: 12px;
+    padding: 8px;
     width: 300px;
     font-family: 'Kanit', sans-serif;
     font-size: 20px;
+    font-weight: 300;
     color: #333333;
-    border: 1px solid #ddd;
+    border: 1px solid #c6c6c6;
     border-radius: 5px;
 }
 
@@ -54,7 +71,7 @@ h2 {
 table {
     width: 100%;
     border-collapse: collapse;
-    border: 1px solid #ddd;
+    border: 1px solid #f2f2f2;
 }
 
 /* Estilos para la tabla de clientes */
@@ -82,7 +99,7 @@ table {
 /* Estilos para las celdas de tabla */
 th,
 td {
-    border: 1px solid #ddd;
+    border: 1px solid #c6c6c6;
     padding: 6px;
     text-align: center;
     white-space: nowrap;
@@ -122,6 +139,10 @@ button {
     background-color: #FF6347;
 }
 
+.nombreCliente,
+.rol {
+    cursor: pointer;
+}
 .clients-table .editar-cliente {
     background-color: #7ED957;
 }
@@ -153,7 +174,7 @@ button {
 }
 
 .cerrar {
-    color: #aaaaaa;
+    color: #c6c6c6;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -174,6 +195,7 @@ button {
 
 .popupP {
     font-size: 20px;
+    font-weight: 300;
     margin-bottom: 20px;
 }
 
@@ -182,10 +204,38 @@ button {
     justify-content: flex-end;
 }
 
+/* Estilos para los desplegables */
+.select-container {
+    margin-bottom: 10px;
+}
+
+.select-container select {
+    padding: 12px;
+    width: 72%;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Kanit', sans-serif;
+    color: #333333;
+    border: none;
+    border-bottom: 2px solid #c6c6c6;
+    background-color: white; /* Cambia el color de fondo según tu diseño */
+    transition: border-color 0.3s ease; /* Agrega una transición suave para el borde */
+}
+
+.select-container select:focus {
+    font-family: 'Kanit', sans-serif;
+    color: #333333;
+    font-weight: 300;
+    outline: none;
+    border-color: #c6c6c6; /* Cambia el color del borde cuando el desplegable obtiene foco */
+}
+
+
 /* Estilos para dispositivos móviles */
 @media (max-width: 1020px) {
     .search-bar, .table, table {
-        margin: auto
+        margin: auto;
+        border: none;
     }
 
     .clients-table thead {
@@ -194,49 +244,58 @@ button {
 
     .clients-table tr {
         display: block;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
     }
 
     .clients-table td {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        text-align: right;
-        padding-left: 0; /* Ajuste aquí */
+        text-align: center;
+        padding: 10px; /* Incrementar el padding */
         position: relative;
+        border: 1px solid #c6c6c6;
+        align-items: center;
     }
 
     .clients-table td::before {
         content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        width: calc(50% - 20px);
-        white-space: nowrap;
-        text-align: left;
+        position: static;
+        text-align: center;
         font-weight: bold;
+        margin-bottom: 5px; /* Espacio entre label y contenido */
     }
 
     .client-buttons {
         flex-direction: column;
         align-items: center;
         width: 100%;
+        margin: -20px 0 50px 0;
     }
 
     .client-buttons button,
     .clients-table .eliminar-cliente,
     .clients-table .editar-cliente {
-        width: 60%; /* Ancho del botón */
+        width: 70%; /* Reducir el ancho del botón */
         text-align: center;
-        margin: 5px auto;
+        padding: 10px 20px;
+    }
+
+    .client-buttons button {
+        width: 40%;
+        margin-bottom: 10px; /* Espacio entre los botones */
     }
 }
 
 @media (max-width: 600px) {
+    /* Estilos para centrar el campo de búsqueda */
+    .search-bar {
+        justify-content: center; /* Centrar horizontalmente */
+    }
 
-    .clients-table td {
-        flex-direction: row;
-
+    .client-buttons button {
+        width: 60%;
+        margin-bottom: 10px; /* Espacio entre los botones */
     }
 }
-
 

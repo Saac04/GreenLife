@@ -49,8 +49,7 @@ function fillTable() {
         deleteButton.classList.add('eliminar-cliente');
         deleteButton.setAttribute('data-index', index);
         deleteButton.addEventListener('click', function () {
-            let clienteIndex = this.getAttribute('data-index');
-            document.getElementById('clienteEliminarIndex').value = clienteIndex;
+            document.getElementById('clienteEliminarIndex').value = this.getAttribute('data-index');
             togglePopup('miPopupEliminar');
         });
         deleteCell.appendChild(deleteButton);
@@ -79,100 +78,56 @@ function setupMenu() {
     });
 }
 
-document.getElementById('editarClienteForm').addEventListener('submit', function (event) {
-    event.preventDefault();
+function confirmarEditarCliente() {
     let clienteIndex = document.getElementById('clienteIndex').value;
     let nuevoNombre = document.getElementById('nuevoNombreCliente').value;
     let nuevoCorreo = document.getElementById('nuevoCorreoCliente').value;
     let nuevoRol = document.getElementById('nuevoRolCliente').value;
+    let errorEditar = document.getElementById('errorEditar');
 
-    if (nuevoNombre.trim() !== "") {
-        usuariosValidos[clienteIndex].nombreCliente = nuevoNombre.trim();
+    if (nuevoNombre.trim() === "" || nuevoCorreo.trim() === "" || nuevoRol === "" || !validarCorreo(nuevoCorreo)) {
+        errorEditar.style.display = 'block';
+        return;
+    } else {
+        errorEditar.style.display = 'none';
     }
-    if (nuevoCorreo.trim() !== "") {
-        usuariosValidos[clienteIndex].contacto = nuevoCorreo.trim();
-    }
-    if (nuevoRol.trim() !== "") {
-        usuariosValidos[clienteIndex].rol = nuevoRol.trim();
-    }
+
+    usuariosValidos[clienteIndex].nombreCliente = nuevoNombre;
+    usuariosValidos[clienteIndex].contacto = nuevoCorreo;
+    usuariosValidos[clienteIndex].rol = nuevoRol;
+
     fillTable();
     togglePopup('miPopup2');
-});
-
-document.getElementById('agregarClienteForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-    let nuevoNombre = document.getElementById('nuevoNombreClienteAdd').value;
-    let nuevoCorreo = document.getElementById('nuevoCorreoClienteAdd').value;
-    let nuevoRol = document.getElementById('nuevoRolClienteAdd').value;
-
-    if (nuevoNombre.trim() !== "" && nuevoCorreo.trim() !== "" && nuevoRol.trim() !== "") {
-        usuariosValidos.push({ nombreCliente: nuevoNombre.trim(), contacto: nuevoCorreo.trim(), rol: nuevoRol.trim() });
-        fillTable();
-        togglePopup('miPopupAdd');
-    }
-});
-
-function searchClients() {
-    let input = document.getElementById('searchClients');
-    let filter = input.value.toLowerCase();
-    let rows = document.querySelectorAll('#clients-table tbody tr');
-
-    rows.forEach(row => {
-        let cells = row.querySelectorAll('td');
-        let match = false;
-
-        cells.forEach(cell => {
-            if (cell.textContent.toLowerCase().includes(filter)) {
-                match = true;
-            }
-        });
-
-        row.style.display = match ? '' : 'none';
-    });
 }
 
-function sortTable(column) {
-    let direction = sortDirection[column];
-    usuariosValidos.sort((a, b) => {
-        let textA = a[column].toLowerCase();
-        let textB = b[column].toLowerCase();
-        if (textA < textB) return direction ? -1 : 1;
-        if (textA > textB) return direction ? 1 : -1;
-        return 0;
-    });
-    sortDirection[column] = !direction;
-    fillTable();
-}
+function confirmarAnyadir() {
+    // Ocultar el mensaje de error
+    document.getElementById('errorAgregar').style.display = 'none';
 
-document.querySelectorAll('#clients-table th').forEach((header, index) => {
-    header.addEventListener('click', function () {
-        if (index === 0) {
-            sortTable('nombreCliente');
-        } else if (index === 2) {
-            sortTable('rol');
+    let nuevoNombre = document.getElementById('nuevoNombreClienteAdd').value.trim();
+    let nuevoCorreo = document.getElementById('nuevoCorreoClienteAdd').value.trim();
+    let nuevoRol = document.getElementById('nuevoRolClienteAdd').value.trim();
+
+    if (nuevoNombre !== "" && nuevoCorreo !== "" && nuevoRol !== "") {
+        // Validar el formato del correo electrónico
+        if (validarCorreo(nuevoCorreo)) {
+            usuariosValidos.push({ nombreCliente: nuevoNombre, contacto: nuevoCorreo, rol: nuevoRol });
+            fillTable();
+            togglePopup('miPopupAdd');
+        } else {
+            // Mostrar mensaje de error
+            document.getElementById('errorAgregar').style.display = 'block';
         }
-    });
-});
-
-function confirmarCambioNombre() {
-    let clienteIndex = document.getElementById('clienteIndex').value;
-    let nuevoNombre = document.getElementById('nuevoNombreCliente').value;
-    let nuevoCorreo = document.getElementById('nuevoCorreoCliente').value;
-    let nuevoRol = document.getElementById('nuevoRolCliente').value;
-
-    if (nuevoNombre.trim() !== "") {
-        usuariosValidos[clienteIndex].nombreCliente = nuevoNombre.trim();
+    } else {
+        // Mostrar mensaje de error
+        document.getElementById('errorAgregar').style.display = 'block';
     }
-    if (nuevoCorreo.trim() !== "") {
-        usuariosValidos[clienteIndex].contacto = nuevoCorreo.trim();
-    }
-    if (nuevoRol.trim() !== "") {
-        usuariosValidos[clienteIndex].rol = nuevoRol.trim();
-    }
-    fillTable();
-    togglePopup('miPopup2');
 }
 
+function validarCorreo(correo) {
+    let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(correo);
+}
 
 function confirmarEliminar() {
     let clienteIndex = document.getElementById('clienteEliminarIndex').value;
@@ -181,11 +136,41 @@ function confirmarEliminar() {
     togglePopup('miPopupEliminar');
 }
 
-function confirmarAñadir() {
-    let nuevoNombre = document.getElementById('nuevoNombreClienteAdd').value;
-    let nuevoCorreo = document.getElementById('nuevoCorreoClienteAdd').value;
-    let nuevoRol = document.getElementById('nuevoRolClienteAdd').value;
-    usuariosValidos.push({ nombreCliente: nuevoNombre, contacto: nuevoCorreo, rol: nuevoRol });
+function searchClients() {
+    let input = document.getElementById("searchClients");
+    let filter = input.value.toLowerCase();
+    let rows = document.querySelectorAll("#clients-table tbody tr");
+
+    rows.forEach(row => {
+        let nombreCliente = row.querySelector("td[data-label='Nombre del Cliente']").textContent.toLowerCase();
+        if (nombreCliente.indexOf(filter) > -1) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+}
+
+function guardarBBDD() {
+    // Mostrar el mensaje de confirmación
+    let mensaje = document.querySelector('.guardarBBDD');
+    mensaje.style.display = 'block';
+
+    // Ocultar el mensaje después de 3 segundos
+    setTimeout(() => {
+        mensaje.style.display = 'none';
+    }, 3000);
+}
+
+
+function sortTable(property) {
+    usuariosValidos.sort((a, b) => {
+        let textA = a[property].toUpperCase();
+        let textB = b[property].toUpperCase();
+        if (textA < textB) return sortDirection[property] ? -1 : 1;
+        if (textA > textB) return sortDirection[property] ? 1 : -1;
+        return 0;
+    });
+    sortDirection[property] = !sortDirection[property];
     fillTable();
-    togglePopup('miPopupAdd');
 }

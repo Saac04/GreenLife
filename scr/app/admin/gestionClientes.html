@@ -36,7 +36,7 @@
         <span></span>
         <ul id="menu">
             <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
-            <li><a class="text-button" href="ConsultasAdmin.html"><Consulta></Consulta></a></li>
+            <li><a class="text-button" href="ConsultasAdmin.html">Consultas</a></li>
             <li><a class="text-button" href="gestionClientes.html">Gestión</a></li>
         </ul>
     </div>
@@ -52,19 +52,21 @@
     <table id="clients-table" class="clients-table">
         <thead>
         <tr>
-            <th onclick="sortTable('nombreCliente')">Nombre del Cliente</th>
+            <th onclick="sortTable('nombreCliente')" class="nombreCliente">Nombre del Cliente</th>
             <th>Correo Electrónico</th>
-            <th onclick="sortTable('rol')">Rol</th>
+            <th onclick="sortTable('rol')" class="rol">Rol</th>
             <th>Editar</th>
             <th>Eliminar</th>
         </tr>
         </thead>
         <tbody>
+        <!-- Tabla implementada por JavaScript-->
         </tbody>
     </table>
     <div class="client-buttons">
         <button class="add-client" onclick="togglePopup('miPopupAdd')">Añadir Cliente</button>
-        <button class="save-client">Guardar</button>
+        <h3 class="guardarBBDD">Datos guardados en la Base de Datos</h3>
+        <button class="save-client" onclick="guardarBBDD()">Guardar</button>
     </div>
 </div>
 
@@ -76,22 +78,17 @@
         <input type="hidden" id="clienteIndex">
         <input type="text" id="nuevoNombreCliente" placeholder="Nuevo Nombre">
         <input type="text" id="nuevoCorreoCliente" placeholder="Nuevo Correo Electrónico">
-        <input type="text" id="nuevoRolCliente" placeholder="Nuevo Rol">
-        <div class="button-container">
-            <button class="button" onclick="confirmarCambioNombre()">Guardar</button>
+        <div class="select-container">
+            <select id="nuevoRolCliente">
+                <option value="">Selecciona un Rol</option>
+                <option value="Administrador">Administrador</option>
+                <option value="Usuario">Usuario</option>
+                <option value="Técnico">Técnico</option>
+            </select>
         </div>
-    </div>
-</div>
-
-<!-- Popup para eliminar cliente -->
-<div id="miPopupEliminar" class="popup">
-    <div class="popup-contenido">
-        <span class="cerrar" onclick="togglePopup('miPopupEliminar')">&times;</span>
-        <h2 class="popupH2">Eliminar Cliente</h2>
-        <p class="popupP">¿Estás seguro de que deseas eliminar este cliente?</p>
-        <input type="hidden" id="clienteEliminarIndex">
+        <p id="errorEditar" class="error-message" style="display:none;">Por favor, rellena todos los campos y proporciona un correo electrónico válido.</p>
         <div class="button-container">
-            <button class="button" onclick="confirmarEliminar()">Eliminar</button>
+            <button class="button" onclick="confirmarEditarCliente()">Guardar</button>
         </div>
     </div>
 </div>
@@ -103,9 +100,31 @@
         <h2 class="popupH2">Añadir Cliente</h2>
         <input type="text" id="nuevoNombreClienteAdd" placeholder="Nombre">
         <input type="text" id="nuevoCorreoClienteAdd" placeholder="Correo Electrónico">
-        <input type="text" id="nuevoRolClienteAdd" placeholder="Rol">
+        <div class="select-container">
+            <select id="nuevoRolClienteAdd">
+                <option value="">Selecciona un Rol</option>
+                <option value="Administrador">Administrador</option>
+                <option value="Usuario">Usuario</option>
+                <option value="Técnico">Técnico</option>
+            </select>
+        </div>
+        <!-- Mensaje de error -->
+        <p id="errorAgregar" class="error-message">Por favor, rellena todos los campos y proporciona un correo electrónico válido.</p>
         <div class="button-container">
-            <button class="button" onclick="confirmarAñadir()">Añadir</button>
+            <button class="button" onclick="confirmarAnyadir()">Añadir</button>
+        </div>
+    </div>
+</div>
+
+<!-- Popup para eliminar cliente -->
+<div id="miPopupEliminar" class="popup">
+    <div class="popup-contenido">
+        <span class="cerrar" onclick="togglePopup('miPopupEliminar')">&times;</span>
+        <h2 class="popupH2">Eliminar Cliente</h2>
+        <h3 class="popupP">¿Estás seguro de que deseas eliminar este cliente?</h3>
+        <input type="hidden" id="clienteEliminarIndex">
+        <div class="button-container">
+            <button class="button" onclick="confirmarEliminar()">Eliminar</button>
         </div>
     </div>
 </div>
