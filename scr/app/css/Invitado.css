@@ -1,0 +1,303 @@
+@import url(../../css/Fuentes.css);
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+
+}
+
+header{
+    width: 100%;
+}
+
+.dropdown{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0px;
+    align-items: center;
+}
+
+.selector-tiempo{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    gap: 15px;
+}
+
+.selector-tiempo div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.selector-tiempo .button{
+}
+
+
+#fechaFin{
+
+}
+#fechaIni{
+
+}
+.button{
+    width: 157px;
+    height: 50px;
+}
+
+.button-menu, .button-menu1, .button-menu2{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px 0px 10px 0px;
+    flex-direction: row;
+}
+
+
+.button-color{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.color-humedad{
+    background-color: #25A6FF;
+}
+.color-temperatura{
+    background-color: #E54D4D;
+}
+.color-luminosidad{
+    background-color: #FFCB40
+}
+.color-salinidad{
+    background-color: #847E7E
+}
+.color-pH{
+    background-color: #0B8C00
+}
+/* Colores oscuros (no utilizados inicialmente) */
+.color-humedad-oscuro {
+    background-color: #1A79B2;
+}
+.color-temperatura-oscuro {
+    background-color: #A33838;
+}
+.color-luminosidad-oscuro {
+    background-color: #CC9A33;
+}
+.color-salinidad-oscuro {
+    background-color: #5E5A5A;
+}
+.color-ph-oscuro {
+    background-color: #086600;
+}
+
+.color-active{
+    background-color: #479555;
+}
+.button {
+    margin: 10px;
+}
+
+.grafica-edit{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px 20px 0px;
+}
+
+.editar-agregar{
+    display: flex;
+    flex-direction: column;
+}
+.chart-container {
+    width: 67%;
+    display: flex; /* Usar display flex para centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+h3{
+    text-align: center;
+}
+
+.editar{
+    width: 370px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+.limites {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+}
+.limite {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.limite input{
+    width: 50px;
+    height: 24px;
+}
+.botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.agregar-sonda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content ;
+}
+.aplicar{
+    width: 250px;
+}
+
+.agregar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 0;
+}
+
+hr{
+    border: 1px solid #8c8c8c;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 35px;
+    /*margin-bottom: 10px;*/
+
+}
+
+.atras{
+    padding: 0;
+    display: inline-block; /* Para que se pueda aplicar la altura y alinear verticalmente */
+    line-height: 50px; /* Igualar la altura del texto con la altura del enlace */
+    text-decoration: none; /* Quitar el subrayado de los enlaces */
+}
+
+p{
+    font-family: "Kanit Light";
+    color: red;
+    text-align: center;
+}
+
+#advertencia-sonda{
+    display: none;
+}
+
+#NumSerie{
+    margin-top: 10px;
+}
+
+#button_tiempo{
+    height: 30px;
+    width: fit-content;
+    text-wrap: nowrap;
+}
+
+
+
+/* Consulta de medios para tamaños de pantalla menores o iguales a 500px */
+@media screen and (max-width: 1140px) {
+    .grafica-edit{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    .button-menu{
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .button-menu1, .button-menu2{
+        margin: 0;
+    }
+
+
+    .dropdown{
+        display: flex;
+        gap: 35px;
+        height: 300px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .dropdown div{
+        display: flex;
+        height: fit-content;
+
+    }
+
+    .chart-container{
+        width: max-content;
+    }
+}
+
+@media screen and (max-width: 850px){
+    .chart-container{
+        width: 100%;
+    }
+
+    .button-menu{
+        margin: 25px 0px 25px 0px;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .selector-tiempo{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 650px)  {
+    #myChart{
+        width: 100%;
+        height: 280px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+
+    .button-menu1, .button-menu2{
+        margin: 0;
+    }
+    .button{
+        margin: 5px;
+        width: 150px;
+    }
+
+    .aplicar {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .button{
+        width: 100px;
+    }
+    .aplicar {
+        width: 150px;
+    }
+}
+
+
