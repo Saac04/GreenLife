@@ -14,7 +14,49 @@
     <input type="email" class="input-field" placeholder="Correo electrónico">
     <input type="password" class="input-field" placeholder="Contraseña">
     <h4 id="mensaje-error" class="error-message"></h4>
-    <h4 class="forgot-password">¿Olvidaste tu contraseña?</h4>
+    <div class="DivisorDeBotones">
+    <!--POPUP1-->
+    <button class="forgot-password" onclick="OlvidarContrasenya()">¿Olvidaste tu contraseña?</button>
+    <!-- Contenedor del Popup 1 -->
+    <div id="miPopup" class="popup">
+        <div class="popup-contenido">
+            <!-- X de cerrar el popup -->
+            <span class="cerrar" onclick="OlvidarContrasenya()">&times;</span>
+            <!-- h2 de dentro del popup -->
+            <h2>Restablecer Contraseña</h2>
+            <!-- Descripcion de donde encontrar el numero de serie -->
+            <p>Introduce el correo electronico asociado a la cuenta para enviar un correo de restablecimiento de contraseña
+            </p>
+            <!-- Input para introducir el numero de serie -->
+            <input type="text" name="Introducir número de serie" placeholder="Introduce tu correo electronico">
+            <div class="button-container">
+                <!-- Botón de confirmar -->
+                <button class="button">Confirmar</button>
+            </div>
+        </div>
+    </div>
+    <!--POPUP2-->
+    <button class="forgot-password" onclick="CodigoInvitado()">Iniciar como invitado</button>
+    <!-- Contenedor del Popup 2 -->
+    <div id="miPopup2" class="popup">
+        <div class="popup-contenido">
+            <!-- X de cerrar el popup -->
+            <span class="cerrar" onclick="CodigoInvitado()">&times;</span>
+            <!-- h2 de dentro del popup -->
+            <h2>Inicio como Invitado</h2>
+            <!-- Descripcion de donde encontrar el numero de serie -->
+            <p>Introduce el codigo de invitado
+            </p>
+            <!-- Input para introducir el numero de serie -->
+            <input type="text" name="Introducir número de serie" placeholder="Codigo de invitado">
+            <div class="button-container">
+                <!-- Botón de confirmar -->
+                <button class="button">Confirmar</button>
+            </div>
+        </div>
+    </div>
+    <!--POPUP FIN-->
+    </div>
     <button class="button" onclick="toggleActive(this)" type="submit">Iniciar sesión</button>
     <div class="separator"><span class="separator-text">ó</span></div>
     <button class="button" onclick="toggleActive(this); registrarse();">Registrarse</button>

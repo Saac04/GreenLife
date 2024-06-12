@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap');
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Kanit", sans-serif;
 }
 
 .wrapper {
   max-width: 95%;
   margin: auto;
-  font-family: Kanit, Medium;
+  font-family: 'Kanit' Medium;
   font-size: 28px;
 }
 
@@ -25,7 +24,7 @@
   color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
   font-size: 1.2rem;
-  font-family: Kanit, Light;
+  font-family: 'Kanit' Light;
   font-size: 20px;
   width: 100%;
   padding: 2rem 2.5rem;
@@ -57,7 +56,7 @@
   color: rgba(0, 0, 0, 0.7);
   font-size: 1.2rem;
   line-height: 1.4;
-  font-family: Kanit, Thin;
+  font-family: 'Kanit' Thin;
   font-size: 20px;
 }
 

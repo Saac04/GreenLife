@@ -5,8 +5,7 @@ body{
 /*Inicio de seccion de Engancho*/
 
 section{
-    height: 100%;
-    width: 100%;
+    height: 100vh;
     padding: 0.1rem;
     margin: 0 auto;
     border-radius: 5px;
@@ -25,21 +24,26 @@ section{
 }
 .Slogan h1{
     font-size: 28px;
-    font-family: Kanit regular;
+    font-family: 'Kanit' regular;
     color: rgb(84,84,84);
     text-align: center;
 }
 .Slogan h2{
     font-size: 18px;
-    font-family: Kanit Medium;
+    font-family: 'Kanit' Medium;
     color:rgb(84,84,84);
     text-align: center;
 }
 .Slogan h3{
     font-size: 14px;
-    font-family: Kanit Light;
+    font-family: 'Kanit' Light;
     color:rgb(84,84,84);
     text-align: justify;
+}
+#botones{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .boton_registro{
@@ -54,7 +58,6 @@ section{
     cursor: pointer;
     border-radius: 30px; /* Esto da las esquinas redondeadas tipo píldora */
     z-index: 0;
-    margin-left: 10%;
 }
 .boton_Sabermas{
     background-color: #FFFFFF; /* Ajusta el código de color para que coincida con el verde exacto */
@@ -68,18 +71,20 @@ section{
     cursor: pointer;
     border-radius: 30px; /* Esto da las esquinas redondeadas tipo píldora */
     z-index: 0;
-    margin-left: 20%;
 }
 img{
-    width: 40%;
-    height: 40%;
+    width: 60%;
+    height: 60%;
 }
-/*Responsive de seccion Inicio de section de Engancho*/
-@media (max-width: 890px){
+@media (max-width: 900px){
+    .boton_Sabermas{
+        font-size: 14px;
+    }
     .boton_registro{
-        margin-left: 5%;
+        font-size: 14px;
     }
 }
+/*Responsive de seccion Inicio de section de Engancho*/
 @media (max-width: 820px)
 {
     section
@@ -100,12 +105,11 @@ img{
     }
     #botones{
         display: flex;
+
     }
     .boton_registro{
-        margin-left: 30%;
     }
     .boton_Sabermas{
-        margin-left: 50px;
     }
 
 
@@ -134,10 +138,11 @@ img{
 }
 .tituloTexto{
     padding: 4rem;
+    font-family: 'Kanit' ;
 }
 .tituloTexto h2{
     font-size: 32px;
-    font-family: Kanit regular;
+    font-family: 'Kanit' regular;
     color: white;
 }
 .tituloTexto p{
@@ -146,7 +151,9 @@ img{
     border-radius: 20px;
     padding: 15px;
 }
+
 .Contenedor img{
+    height: 50vh;
     padding: 10px;
     background-color: #FFFFFF;
     border-radius: 50px;
@@ -157,6 +164,16 @@ img{
 @media (max-width: 940px) {
     .Contenedor{
         gap: 0;
+    }
+}
+@media (max-width: 1460px) {
+    .Contenedor img{
+        height: 50vh;
+        padding: 10px;
+        background-color: #FFFFFF;
+        border-radius: 50px;
+        margin: 30px;
+
     }
 }
 @media (max-width: 820px) {
@@ -181,8 +198,6 @@ img{
 }
 
 /*Final de seccion Anuncio*/
-
-
 .rectangle{
     background-color: #5CBA23;
     height: 0.5vh;
@@ -200,13 +215,13 @@ img{
     padding: 3rem;
 }
 .Atractivo h1{
-    font-size: 22px;
-    font-family: Kanit Light;
+    font-size: 20px;
+    font-family: 'Kanit' Light;
     margin-bottom: 0;
 }
 .Atractivo p{
     text-align: justify;
-    font-family: Kanit Light;
+    font-family: 'Kanit' Light;
 }
 .Atractivo img{
     width: 100%;
@@ -245,7 +260,7 @@ img{
         height: 35%;
     }
 }
-@media (max-width: 820px)
+@media (max-width: 850px)
 {
     .Atractivo{
         display: grid;
