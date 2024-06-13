@@ -1,38 +1,48 @@
 <?php
+session_start();
+header('Content-Type: application/json');
 
-// Conexión a la base de datos
-$conexion = new mysqli("localhost", "root", "", "greenlife");
+require_once 'includes/connexion.php';  // Incluye el archivo de conexión
 
 // Verificar conexión
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
+if ($connexion->connect_error) {
+    die(json_encode(['error' => 'Conexión fallida: ' . $connexion->connect_error]));
 }
 
-// Obtener el ID de la sonda (suponiendo que ya lo tienes)
-$id_sonda = $_GET['id_sonda'];
+// Obtener el ID de la sonda y las fechas desde los parámetros GET
+$id_sonda = $_GET['id_sonda'] ?? null;
+$fechaInicio = $_GET['fechaInicio'] ?? null;
+$fechaFinal = $_GET['fechaFinal'] ?? null;
 
-// Obtener las fechas de inicio y finalización de la solicitud
-$fechaInicio = $_GET['fechaInicio'];
-$fechaFinal = $_GET['fechaFinal'];
+if (!$id_sonda || !$fechaInicio || !$fechaFinal) {
+    die(json_encode(['error' => 'Datos incompletos']));
+}
 
 // Consulta para obtener las lecturas de la sonda especificada dentro del rango de fechas
-$sql = "SELECT * FROM lecturas WHERE id_sonda = $id_sonda AND fecha_hora BETWEEN '$fechaInicio' AND '$fechaFinal' ORDER BY fecha_hora DESC";
+$sql = "SELECT * FROM lecturas WHERE id_sonda = ? AND fecha_hora BETWEEN ? AND ? ORDER BY fecha_hora DESC";
+$stmt = $connexion->prepare($sql);
+if ($stmt) {
+    $stmt->bind_param("iss", $id_sonda, $fechaInicio, $fechaFinal);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-$resultado = $conexion->query($sql);
+    // Crear un array para almacenar las lecturas
+    $lecturas = array();
 
-// Crear un array para almacenar las lecturas
-$lecturas = array();
-
-if ($resultado->num_rows > 0) {
-    while($row = $resultado->fetch_assoc()) {
-        // Agregar cada lectura al array
-        $lecturas[] = $row;
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            // Agregar cada lectura al array
+            $lecturas[] = $row;
+        }
     }
+
+    // Devolver las lecturas en formato JSON
+    echo json_encode($lecturas);
+
+    $stmt->close();
+} else {
+    echo json_encode(['error' => 'Error al preparar la consulta: ' . $connexion->error]);
 }
 
-// Devolver las lecturas en formato JSON
-echo json_encode($lecturas);
-
-// Cerrar la conexión
-$conexion->close();
+$connexion->close();
 ?>
