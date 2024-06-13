@@ -45,6 +45,59 @@ function openTab(event, tabId) {
         event.currentTarget.className += " active";
     }
 }
+// Función para generar un código aleatorio de números y letras
+function generarCodigoAleatorio(longitud) {
+    const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let codigo = '';
+    for (let i = 0; i < longitud; i++) {
+        const randomIndex = Math.floor(Math.random() * caracteres.length);
+        codigo += caracteres[randomIndex];
+    }
+    return codigo;
+}
+
+// Función para copiar el código al portapapeles
+function copiarAlPortapapeles(elemento) {
+    const seleccion = window.getSelection();
+    const rango = document.createRange();
+    rango.selectNodeContents(elemento);
+    seleccion.removeAllRanges();
+    seleccion.addRange(rango);
+
+    try {
+        document.execCommand('copy');
+        mostrarMensajeCopiado();
+    } catch (err) {
+        console.error('Error al copiar el código: ', err);
+    }
+
+    seleccion.removeAllRanges();
+}
+
+// Función para mostrar un mensaje discreto después de copiar
+function mostrarMensajeCopiado() {
+    const mensaje = document.getElementById('mensaje-copiar');
+    mensaje.style.display = 'block';
+    mensaje.style.flexDirection= 'row';
+    mensaje.style.alignContent= 'center';
+    setTimeout(() => {
+        mensaje.style.display = 'none';
+    }, 3500); // El mensaje desaparece después de 2 segundos
+}
+
+// Evento para cambiar el código al hacer clic en "Cambiar código"
+document.querySelector('.reroll-codigo').addEventListener('click', function(event) {
+    event.preventDefault();
+    const nuevoCodigo = generarCodigoAleatorio(10); // Cambiar el número 10 por la longitud deseada
+    document.getElementById('codigo').childNodes[0].nodeValue = nuevoCodigo;
+    mostrarMensajeCopiado();
+});
+
+// Evento para copiar el código al portapapeles al hacer clic en el propio código
+/*document.getElementById('codigo').addEventListener('click', function() {
+    copiarAlPortapapeles(this);
+});*/
+
 // Función para cambiar el correo
 function cambiarCorreo() {
     var correoActual = document.getElementById('correoActual').value;

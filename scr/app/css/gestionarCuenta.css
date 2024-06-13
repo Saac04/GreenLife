@@ -5,40 +5,65 @@
     justify-content: center;
     padding: 0px 20px;
 }
-#tabs{
+
+/* Estilos para el contenedor de las pestañas */
+#tabs {
     display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap; /* Permite que las pestañas se ajusten en varias filas si es necesario */
 }
 
-.tab {
+/* Estilos para las pestañas individuales */
+.tabs2-1 {
     display: flex;
-    width: 20%;
+    flex-direction: row;
+}
+.tabs2-2 {
+    display: flex;
+    flex-direction: row;
+}
+.tab-last {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Estilos generales para cada pestaña */
+.tab {
+    flex-grow: 1; /* Permite que las pestañas crezcan igualmente */
     justify-content: center;
     padding: 0px 20px;
-    cursor: pointer;
-    border: 1px solid #ddd;
-    border-bottom: none;
-    background-color: #f1f1f1;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border: 1px solid #ddd; /* Borde alrededor de cada pestaña */
+    border-bottom: none; /* Elimina el borde inferior */
+    background-color: #f1f1f1; /* Fondo gris claro */
+    text-align: center; /* Centra el texto */
 }
+
+/* Estilos para la pestaña activa */
 .tab.active {
-    background-color: white;
-    border-bottom: 2px solid green;
-    font-weight: bold;
+    background-color: white; /* Fondo blanco para la pestaña activa */
+    border-bottom: 2px solid green; /* Borde inferior verde */
+    font-weight: bold; /* Texto en negrita */
 }
+
+/* Muestra el contenido de la pestaña activa */
 .tab-content.active {
     display: block;
 }
 
-/*.tab-content #eliminar-cuenta{
+/* Estilos para el contenido de las pestañas */
+/*.tab-content #eliminar-cuenta {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
 }*/
 .tab-content {
-    display: none;
+    display: none; /* Oculta el contenido de las pestañas por defecto */
     padding: 20px;
     border: 1px solid #ddd;
-    background-color: white;
+    background-color: white; /* Fondo blanco para el contenido */
 }
 
 /* Centrar el texto de los encabezados h2 */
@@ -48,26 +73,48 @@ h2 {
 
 /* Estilo para los encabezados h4 */
 h4 {
-    color: #7ED957;
-    text-align: center; /* Centrar texto de h4 */
+    color: #7ED957; /* Color verde */
+    text-align: center; /* Centra el texto */
 }
-#informacion-general{
+
+/* Estilo específico para la sección de información general */
+#informacion-general {
     margin: 0 50px;
     border: none;
 }
-.cont-info-gen{
+
+/* Estilos para las secciones de información general */
+.cont-info-gen {
     padding-left: 20px;
     border-top: 2px solid grey;
     border-bottom: 0px solid grey;
 }
-.cont-info-gen-last{
+.cont-info-gen-last {
     padding-left: 20px;
     border-top: 2px solid grey;
     border-bottom: 2px solid grey;
 }
-.reroll-codigo{
-    margin-left: 20px;
+.codigo {
+    cursor: pointer;
+    user-select: all;
+    position: relative;
+    margin: 0px;
 }
+.ponerle-flex{
+    display: flex;
+    flex-direction: row;
+}
+.mensaje-copiar {
+    display: none;
+    margin-left: 15px;
+    color: #7ED957;
+
+    font-size: 0.9em;
+}
+.reroll-codigo {
+    margin-left: 15px;
+}
+
 /* Contenedor para los inputs de correo y contraseña */
 .correoYcontraseña {
     display: flex;
@@ -78,21 +125,13 @@ h4 {
     box-sizing: border-box; /* Incluye padding en el ancho total */
 }
 
-/* Contenedor principal para eliminar cuenta */
-/*#eliminar-cuenta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}*/
-
 /* Estilo para los contenedores dentro de eliminar cuenta */
 .contenedores {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 15px;
+    gap: 15px; /* Espacio entre los contenedores */
 }
 
 /* Ajuste de ancho para eliminarCuenta1 y eliminarCuenta2 */
@@ -117,7 +156,6 @@ h4 {
     text-align: center; /* Centrar texto */
 }
 
-
 /* Estilo para el botón de eliminar cuenta */
 #botonEliminar {
     width: 100%;
@@ -137,14 +175,19 @@ h4 {
     height: 32px;
     margin-bottom: 10px;
 }
-#cerrar-sesion{
+
+/* Estilos para la sección de cerrar sesión */
+#cerrar-sesion {
     border: none;
 }
-#pregunta-cerrar-sesion{
+
+/* Contenedor de la pregunta para cerrar sesión */
+#pregunta-cerrar-sesion {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 /* Estilos responsivos */
 @media (min-width: 768px) {
     .contenedores {
