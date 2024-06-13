@@ -1,11 +1,14 @@
+/* Importa la fuente 'Kanit' de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap');
 
+/* Estilos generales para todos los elementos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilo general del cuerpo */
 body {
     display: flex;
     justify-content: center;
@@ -15,76 +18,86 @@ body {
     background-color: #FFFFFF;
 }
 
+/* Contenedor principal de la sección de registro */
 .register-container {
     text-align: center;
     background-size: cover;
 }
 
+/* Estilo para el encabezado principal */
 h1 {
     font-size: 48px;
     font-weight: 500;
     color: #545454;
     text-align: center;
 }
+
 h1 span {
-    color: #76BD57;
+    color: #76BD57; /* Color especial para el span dentro del h1 */
 }
 
+/* Estilo para el encabezado secundario */
 h2 {
     font-size: 28px;
     font-weight: 400;
     color: #479555;
     margin-top: 20px;
 }
+
+/* Estilo para el encabezado de menor jerarquía */
 h4 {
     font-size: 18px;
     font-weight: 400;
     color: #479555;
 }
 
-/*-- casillas de nombre, apellidos, correo electrónico y contraseña --*/
+/* Estilo para los campos de entrada */
 .input-field {
-    font-family: "kanit light", serif;
+    font-family: 'Kanit Light', serif;
     font-size: 20px;
     font-weight: 300;
     display: block;
     width: 426px;
-    box-sizing: border-box;  /* ancho y la altura de los elementos incluyen el padding y el borde */
+    box-sizing: border-box;  /* Incluye el padding y el borde en las dimensiones totales */
     border: none;
     border-bottom: 2px solid #C6C6C6;
-    margin: 30px 0;  /* Aumenta este valor para más espacio entre los campos    */
+    margin: 30px 0;  /* Espacio entre los campos de entrada */
     padding: 10px;
 }
 
+/* Quita el contorno al enfocar el campo de entrada */
 .input-field:focus {
     outline: none;
 }
 
+/* Estilo para los textos de marcador de posición */
 ::placeholder {
-    color: #c6c6c6; /* Puedes ajustar el color según tus preferencias */
+    color: #c6c6c6; /* Color del marcador de posición */
 }
 
+/* Estilo para el mensaje de error */
 #mensaje-error {
     font-size: 15px;
     font-weight: 400;
     color: #EA3B50;
 }
 
-.aceptar_terminos{
+/* Estilo para la sección de aceptación de términos */
+.aceptar_terminos {
     display: flex;
     gap: 20px;
 }
 
-.aceptar_terminos label, .aceptar_terminos a{
+.aceptar_terminos label, .aceptar_terminos a {
     color: #479555;
     text-decoration: none;
 }
 
-.aceptar_terminos label:hover .aceptar_terminos a:hover{
+.aceptar_terminos label:hover, .aceptar_terminos a:hover {
     text-decoration: underline;
 }
 
-/*-- boton de crear cuenta --*/
+/* Estilo para el botón de crear cuenta */
 .button {
     width: 426px;
     height: 44px;
@@ -101,15 +114,20 @@ h4 {
     cursor: pointer;
     display: flex;
 }
+
+/* Estilo para el contenedor de salir */
 #Salirse {
     display: flex;
-    justify-content: flex-end
+    justify-content: flex-end;
 }
+
+/* Estilo para el botón de atrás */
 #BotonAtras {
     width: 165px;
     height: 44px;
 }
 
+/* Estilo para el enlace de "Ya tengo cuenta" */
 .ya_tengo_cuenta {
     text-align: left;
     margin-top: -10px;
@@ -122,10 +140,11 @@ h4 {
     text-decoration: underline;
 }
 
+/* Estilo para el segundo botón */
 .button2 {
     width: 165px;
     height: 44px;
-    font-family: "kanit light", serif;
+    font-family: 'Kanit Light', serif;
     font-size: 20px;
     font-weight: 300;
     display: block;
@@ -140,7 +159,7 @@ h4 {
     float: right;
 }
 
-/*-- cuando el tamaño sea menor a 800px cambia a vista de móvil --*/
+/* Estilos responsivos para pantallas con ancho máximo de 800px */
 @media (max-width: 800px) {
     h1 {
         font-size: 36px;
@@ -155,7 +174,7 @@ h4 {
     .input-field {
         font-size: 14px;
         width: 320px;
-        margin: 20px 0;  /* Aumenta este valor para más espacio entre los campos    */
+        margin: 20px 0;  /* Espacio entre los campos de entrada */
     }
     #mensaje-error {
         font-size: 12px;

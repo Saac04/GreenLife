@@ -1,5 +1,7 @@
+/* Importa la fuente 'Kanit' de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap');
 
+/* Estilo general del cuerpo */
 body {
     display: flex;
     justify-content: center;
@@ -8,55 +10,68 @@ body {
     font-family: 'Kanit', sans-serif;
     background-color: #FFFFFF;
 }
+
+/* Contenedor principal de la sección de login */
 .login-container {
     text-align: center;
     margin: 0 auto;
 }
 
+/* Estilo para el encabezado principal */
 h1 {
     font-size: 48px;
     font-weight: 500;
     color: #545454;
 }
+
 h1 span {
-    color: #76BD57;
+    color: #76BD57; /* Color especial para el span dentro del h1 */
 }
+
+/* Estilo para el encabezado secundario */
 h2 {
     font-size: 28px;
     font-weight: 400;
     color: #479555;
 }
+
+/* Estilo para el encabezado de menor jerarquía */
 h4 {
     font-size: 14px;
     font-weight: 400;
     color: #479555;
 }
+
+/* Estilo para los campos de entrada */
 .input-field {
     font-size: 20px;
     font-weight: 300;
     display: block;
     width: 100%;
-    box-sizing: border-box;  /* ancho y la altura de los elementos incluyen el padding y el borde */
+    box-sizing: border-box;  /* Incluye el padding y el borde en las dimensiones totales */
     border: none;
-
-    margin: 30px 0;  /* Aumenta este valor para más espacio entre los campos    */
+    margin: 30px 0;  /* Espacio entre los campos de entrada */
     padding: 10px;
 }
 
+/* Quita el contorno al enfocar el campo de entrada */
 .input-field:focus {
     outline: none;
 }
 
+/* Estilo para los textos de marcador de posición */
 ::placeholder {
-    color: #c6c6c6; /* Puedes ajustar el color según tus preferencias */
-  }
+    color: #c6c6c6; /* Color del marcador de posición */
+}
 
+/* Estilo para el mensaje de error */
 #mensaje-error {
     font-size: 15px;
     font-weight: 400;
     color: #EA3B50;
 }
 
+/* Estilo para los botones principales */
 .button {
     width: 426px;
     height: 44px;
@@ -73,20 +88,21 @@ h4 {
     cursor: pointer;
 }
 
-
+/* Estilo para el separador */
 .separator {
     width: 100%;
     border-top: 1px solid #c6c6c6;
     text-align: center;
-    margin-top: 0 ;
+    margin-top: 0;
     margin-bottom: -22px;
-
 }
 
+/* Estilo para el texto dentro del separador */
 .separator-text {
-    color: rgba(51, 51, 51, 0.68); /* Color #333333 con 68% de opacidad */
+    color: rgba(51, 51, 51, 0.68); /* Color con opacidad */
 }
 
+/* Estilo especial para el span dentro del separador */
 .separator span {
     background-color: #FFFFFF;
     padding: 0 10px;
@@ -94,6 +110,7 @@ h4 {
     top: -12px;
 }
 
+/* Estilo para el segundo botón */
 .button2 {
     width: 165px;
     height: 44px;
@@ -111,6 +128,7 @@ h4 {
     float: right;
 }
 
+/* Estilos responsivos para pantallas con ancho máximo de 460px */
 @media (max-width: 460px) {
     .button {
         width: 340px;
@@ -127,8 +145,9 @@ h4 {
         margin-bottom: 22px;
         cursor: pointer;
     }
-
 }
+
+/* Estilos responsivos para pantallas con ancho máximo de 390px */
 @media (max-width: 390px) {
     .button {
         width: 290px;
@@ -145,8 +164,9 @@ h4 {
         margin-bottom: 22px;
         cursor: pointer;
     }
-
 }
+
+/* Estilos responsivos para pantallas con ancho máximo de 340px */
 @media (max-width: 340px) {
     .button {
         width: 230px;
@@ -163,12 +183,9 @@ h4 {
         margin-bottom: 22px;
         cursor: pointer;
     }
-
 }
 
-
-/* acordame de que quiero el texto de los botones un poquito más al medio */
-/* Para el correo electronico */
+/* Estilo adicional para centrar el contenido del cuerpo */
 body {
     display: flex;
     align-items: center;
@@ -176,6 +193,7 @@ body {
     height: 100vh;
 }
 
+/* Estilo para los botones en general */
 button {
     color: #5CBA23;
     background-color: #FFFFFF;
@@ -188,6 +206,7 @@ button {
     cursor: pointer;
 }
 
+/* Estilo para los encabezados secundarios */
 h2 {
     font-family: 'Kanit', sans-serif;
     font-size: 28px;
@@ -196,10 +215,12 @@ h2 {
     text-align: center;
 }
 
+/* Estilo para los párrafos */
 p {
     text-align: center;
 }
 
+/* Estilo para los popups */
 .popup {
     display: none;
     position: fixed;
@@ -211,6 +232,7 @@ p {
     z-index: 9999;
 }
 
+/* Estilo para el contenido del popup */
 .popup-contenido {
     position: absolute;
     font-family: 'Kanit', sans-serif;
@@ -225,6 +247,7 @@ p {
     box-sizing: border-box;
 }
 
+/* Estilo para el botón de cierre del popup */
 .cerrar {
     position: absolute;
     top: 5px;
@@ -233,6 +256,7 @@ p {
     cursor: pointer;
 }
 
+/* Estilo para los campos de entrada de texto */
 input[type="text"] {
     font-family: 'Kanit Light', sans-serif;
     font-size: 20px;
@@ -249,10 +273,12 @@ input[type="text"] {
     margin-right: auto;
 }
 
+/* Contenedor para alinear botones a la derecha */
 .button-container {
     text-align: right;
 }
 
+/* Estilo para los botones en general */
 .button {
     background-color: #7ED957;
     color: white;
@@ -265,16 +291,8 @@ input[type="text"] {
     cursor: pointer;
 }
 
-#OlvidarContrasenya{
-    background-color: white;
-    color: #7ED957;
-    font-size: 12px;
-    padding: 3px;
-    margin: 0;
-    width: 200px;
-    height: 20px;
-}
-#Inicio_Invitado{
+/* Estilo para el botón "Olvidar Contraseña" */
+#OlvidarContrasenya {
     background-color: white;
     color: #7ED957;
     font-size: 12px;
@@ -284,7 +302,18 @@ input[type="text"] {
     height: 20px;
 }
 
+/* Estilo para el botón "Inicio Invitado" */
+#Inicio_Invitado {
+    background-color: white;
+    color: #7ED957;
+    font-size: 12px;
+    padding: 3px;
+    margin: 0;
+    width: 200px;
+    height: 20px;
+}
 
+/* Estilo para el botón de registrarse */
 #botonregistrarse {
     height: 44px;
     width: 426px;
@@ -292,22 +321,21 @@ input[type="text"] {
     display: flex;
 }
 
+/* Estilo para el botón de volver */
 #botonvolver {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Estilo para el botón de iniciar sesión */
 #botoniniciarsesion {
     display: flex;
 }
 
-
-.DivisorDeBotones{
+/* Contenedor para dividir botones */
+.DivisorDeBotones {
     display: flex;
     justify-content: space-between;
-    flex-direction: row-reverse
+    flex-direction: row-reverse;
 }
-
-
-
