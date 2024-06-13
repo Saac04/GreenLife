@@ -13,58 +13,50 @@ switch ($_SERVER['REQUEST_METHOD']) {
         }
         break;
     case 'POST':
-        // Incluir el archivo de conexión a la BBDD.
-        // Verificamos la variable $conexion para ocultar errores en PHPStorm
-        require_once '../includes/connexion.php';
-        if(!isset($connexion)) die();
+    require_once '../includes/connexion.php';
+    if(!isset($connexion)) die();
 
-        $json = file_get_contents('php://input');
+    $json = file_get_contents('php://input');
+    $objeto = json_decode($json);
 
-        // Decodificar el JSON a un objeto PHP
-        $objeto = json_decode($json);
+    $email = $objeto->email;
+    $password = $objeto->password;
 
-        $email = $objeto->email;
-        $password = $objeto->password;
+    $sql = "SELECT `usuarios`.`id_usuario`, 
+            `usuarios`.`correo`, 
+            `roles`.`id` as `idRol`, 
+            `roles`.`rol`,
+            `usuarios`.`nombre` 
+            FROM `usuarios` 
+            INNER JOIN `roles` ON `usuarios`.`rol` = `roles`.`id`
+            WHERE `usuarios`.`correo` = '$email' AND `usuarios`.`contrasenya` = '$password'";
 
-        $sql = "SELECT `usuarios`.`id_usuario`, 
-       `usuarios`.`correo`, 
-       `roles`.`id` as `idRol`, 
-       `roles`.`rol`,
-       `usuarios`.`nombre` 
-		FROM `usuarios` 
-		INNER JOIN `roles` ON `usuarios`.`rol` = `roles`.`id`
-		WHERE `usuarios`.`correo` = '$email' AND `usuarios`.`contrasenya` = '$password'";
+    $resultado = mysqli_query($connexion, $sql);
 
+    if (mysqli_affected_rows($connexion) === 1) {
+        $registro = mysqli_fetch_assoc($resultado);
 
-        $resultado = mysqli_query($connexion, $sql);
+        session_start();
+        $_SESSION['user'] = $registro;
+        $_SESSION['id'] =  $registro['id_usuario'];
+        $_SESSION['nombre'] = $registro['nombre'];
 
+        $salida = [];
+        $salida['id'] = $registro['id_usuario'];
+        $salida['nombre'] = $registro['nombre'];
+        $salida['rol'] = $registro['idRol'];
 
-        if (mysqli_affected_rows($connexion) === 1) {
-            $registro = mysqli_fetch_assoc($resultado);
+        http_response_code(200);
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE');
+        header('Content-Type: application/json; charset=utf-8');
 
-            session_start();
-            $_SESSION['user'] = $registro;
-            $_SESSION['id'] = $registro['id_usuario'];
+        echo json_encode($salida);
+    } else {
+        http_response_code(401);
+    }
+    break;
 
-            $_SESSION['nombre'] = $registro['nombre'];
-
-            $salida = [];
-            $salida['id'] = $registro['id'];
-            $salida['nombre'] = $registro['nombre'];
-            $salida['rol'] = $registro['rol'];
-
-
-            http_response_code(200);
-
-            header('Access-Control-Allow-Origin: *');
-            header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE');
-            header('Content-Type: application/json; charset=utf-8');
-
-            echo json_encode($salida);
-        } else {
-            http_response_code(401);
-        }
-        break;
     case 'DELETE':
         // Inicializar la sesión.
         session_start();

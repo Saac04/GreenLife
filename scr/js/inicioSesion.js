@@ -1,22 +1,7 @@
-document.getElementById("login-container").addEventListener('submit', inicioSesion);
-
-/**
- * Se ejecutará cuando se envíe el formulario.
- * Puesto que se usa fetch, es una función asíncrona
- * @param event Objeto con información del evento.
- */
-
-/**
- * Obtiene todos los usuarios
- * @returns {Promise<any|boolean>}
- */
-
 async function inicioSesion(event){
     event.preventDefault();
 
-    // Obtener referencia al elemento de mensaje de error
     const mensajeError = document.getElementById('mensaje-error');
-    // Limpiar mensaje de error previo
     mensajeError.textContent = '';
 
     const formData = new FormData(event.target);
@@ -24,13 +9,8 @@ async function inicioSesion(event){
     var email = document.querySelector('input[type="email"]').value;
     var password = document.querySelector('input[type="password"]').value;
 
-    console.log(JSON.stringify({ email, password }))
+    var Objeto = JSON.stringify({ email, password });
 
-    var Objeto = JSON.stringify({ email, password })
-
-    console.log(email)
-
-    // Validar campos vacíos
     if (!email) {
         mensajeError.textContent = 'Por favor, introduzca su correo electrónico.';
         return;
@@ -49,20 +29,25 @@ async function inicioSesion(event){
                 'Content-Type': 'application/json'
             }
         });
-        console.log('Código de estado:', respuesta.status);
 
-        const respuestaTexto = await respuesta.text(); // Obtener el texto de la respuesta
-
-        console.log('Respuesta del servidor:', respuestaTexto); // Registrar la respuesta del servidor
+        const data = await respuesta.json();
 
         if (respuesta.status === 200) {
-            // Procesa los datos
-            console.log("Mis_Hue...html")
-            window.location.href = 'app/cliente/MisHuertos.html';
+            switch (data.rol) {
+                case "0":
+                    window.location.href = 'app/admin/gestionClientes.html';
+                    break;
+                case "1":
+                    window.location.href = 'app/tecnico/ConsultasTecnico.html';
+                    break;
+                case "2":
+                    window.location.href = 'app/cliente/MisHuertos.html';
+                    break;
+                default:
+                    throw new Error('Rol de usuario no reconocido.');
+            }
         } else {
-            mensajeError.textContent = 'Por favor, introduzca su contraseña.'
-            // La respuesta no es 200-299
-            const data = (respuestaTexto); // Intenta analizar la respuesta como JSON
+            mensajeError.textContent = 'Por favor, introduzca su contraseña.';
             if(data.error === "Credenciales incorrectas") {
                 throw new Error("Credenciales inválidas, por favor introdúcelas de nuevo.");
             } else {
@@ -71,20 +56,6 @@ async function inicioSesion(event){
         }
     } catch (error) {
         console.error('Error al procesar la respuesta:', error);
-        // Mostrar mensaje de error al usuario
         mensajeError.textContent = error.message || 'Error al iniciar sesión. Por favor, inténtelo de nuevo.';
     }
-}
-
-class UsuarioModel{
-    url = '../api/usuarios/';
-
-}
-function OlvidarContrasenya() {
-    var popup = document.getElementById('miPopup');
-    popup.style.display = (popup.style.display === 'none') ? 'block' : 'none';
-}
-function CodigoInvitado() {
-    var popup = document.getElementById('miPopup2');
-    popup.style.display = (popup.style.display === 'none') ? 'block' : 'none';
 }
