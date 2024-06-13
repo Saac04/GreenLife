@@ -14,7 +14,37 @@ function verificarCredenciales(correo, contraseña) {
     }
     return false;
 }
+//Función de Tabs
+function openTab(event, tabId) {
+    var i, tabContent, tablinks;
+    tabContent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tab");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
 
+    console.log(document.getElementById(tabId).id)
+    if (document.getElementById(tabId).id == "eliminar-cuenta"){
+
+        console.log("entramos")
+
+        document.getElementById(tabId).style.display = "flex";
+        document.getElementById(tabId).style.flexDirection = "column";
+        document.getElementById(tabId).style.alignItems = "center";
+        document.getElementById(tabId).style.padding = "20px";
+
+
+        event.currentTarget.className += " active";
+    }
+    else{
+
+        document.getElementById(tabId).style.display = "block";
+        event.currentTarget.className += " active";
+    }
+}
 // Función para cambiar el correo
 function cambiarCorreo() {
     var correoActual = document.getElementById('correoActual').value;

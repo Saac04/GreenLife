@@ -3,14 +3,42 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px;
+    padding: 0px 20px;
+}
+#tabs{
+    display: flex;
 }
 
-/* Estilo general para los contenedores globales */
-.global {
-    display: grid;
+.tab {
+    display: flex;
+    width: 20%;
     justify-content: center;
-    margin-bottom: 20px; /* Espacio inferior para separar secciones */
+    padding: 0px 20px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    background-color: #f1f1f1;
+}
+.tab.active {
+    background-color: white;
+    border-bottom: 2px solid green;
+    font-weight: bold;
+}
+.tab-content.active {
+    display: block;
+}
+
+/*.tab-content #eliminar-cuenta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}*/
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: white;
 }
 
 /* Centrar el texto de los encabezados h2 */
@@ -23,7 +51,23 @@ h4 {
     color: #7ED957;
     text-align: center; /* Centrar texto de h4 */
 }
-
+#informacion-general{
+    margin: 0 50px;
+    border: none;
+}
+.cont-info-gen{
+    padding-left: 20px;
+    border-top: 2px solid grey;
+    border-bottom: 0px solid grey;
+}
+.cont-info-gen-last{
+    padding-left: 20px;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+}
+.reroll-codigo{
+    margin-left: 20px;
+}
 /* Contenedor para los inputs de correo y contraseña */
 .correoYcontraseña {
     display: flex;
@@ -35,12 +79,12 @@ h4 {
 }
 
 /* Contenedor principal para eliminar cuenta */
-#eliminar-cuenta {
+/*#eliminar-cuenta {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-}
+}*/
 
 /* Estilo para los contenedores dentro de eliminar cuenta */
 .contenedores {
@@ -68,10 +112,11 @@ h4 {
 /* Ajuste de ancho para eliminarCuenta3 */
 #eliminarCuenta3 {
     width: 100%; /* Ancho total del contenedor padre */
-    padding: 10px;
+    padding: 0px;
     box-sizing: border-box; /* Incluye padding en el ancho total */
     text-align: center; /* Centrar texto */
 }
+
 
 /* Estilo para el botón de eliminar cuenta */
 #botonEliminar {
@@ -92,11 +137,14 @@ h4 {
     height: 32px;
     margin-bottom: 10px;
 }
-
-#correoActual {
-
+#cerrar-sesion{
+    border: none;
 }
-
+#pregunta-cerrar-sesion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 /* Estilos responsivos */
 @media (min-width: 768px) {
     .contenedores {
