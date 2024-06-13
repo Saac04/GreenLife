@@ -24,16 +24,16 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: 20px;
+    gap: 10px;
 }
 
 .social-icons a {
-    width: 50px;
+    width: 35px;
 }
 
 .social-icons a i{
     color: #545454;
-    font-size: 50px;
+    font-size: 35px;
 }
 
 h4 {

@@ -73,12 +73,6 @@ h4 {
     cursor: pointer;
 }
 
-.forgot-password {
-    display: flex;
-    text-align: right;
-    margin-top: -10px;
-
-}
 
 .separator {
     width: 100%;
@@ -270,6 +264,45 @@ input[type="text"] {
     padding: 10px;
     cursor: pointer;
 }
+
+#OlvidarContrasenya{
+    background-color: white;
+    color: #7ED957;
+    font-size: 12px;
+    padding: 3px;
+    margin: 0;
+    width: 200px;
+    height: 20px;
+}
+#Inicio_Invitado{
+    background-color: white;
+    color: #7ED957;
+    font-size: 12px;
+    padding: 3px;
+    margin: 0;
+    width: 200px;
+    height: 20px;
+}
+
+
+#botonregistrarse {
+    height: 44px;
+    width: 426px;
+    padding: 0;
+    display: flex;
+}
+
+#botonvolver {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#botoniniciarsesion {
+    display: flex;
+}
+
+
 .DivisorDeBotones{
     display: flex;
     justify-content: space-between;

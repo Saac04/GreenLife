@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/inicioSesion.css">
 </head>
 <body>
+<!-- Formulario -->
 <form class="login-container" id="login-container" onsubmit="inicioSesion(event)">
     <h1 onclick="redirigirAIndex()"><span>Green</span>Life</h1>
     <h2>Inicio de sesión</h2>
@@ -16,7 +17,7 @@
     <h4 id="mensaje-error" class="error-message"></h4>
     <div class="DivisorDeBotones">
     <!--POPUP1-->
-    <button class="forgot-password" onclick="OlvidarContrasenya()">¿Olvidaste tu contraseña?</button>
+    <button class="forgot-password" type="button" onclick="OlvidarContrasenya()">¿Olvidaste tu contraseña?</button>
     <!-- Contenedor del Popup 1 -->
     <div id="miPopup" class="popup">
         <div class="popup-contenido">
@@ -36,7 +37,7 @@
         </div>
     </div>
     <!--POPUP2-->
-    <button class="forgot-password" onclick="CodigoInvitado()">Iniciar como invitado</button>
+    <button class="forgot-password" type="button" onclick="CodigoInvitado()">Iniciar como invitado</button>
     <!-- Contenedor del Popup 2 -->
     <div id="miPopup2" class="popup">
         <div class="popup-contenido">
@@ -55,12 +56,13 @@
             </div>
         </div>
     </div>
-    <!--POPUP FIN-->
     </div>
-    <button class="button" onclick="toggleActive(this)" type="submit">Iniciar sesión</button>
+    <!--POPUP FIN-->
+    <!--Botones de confirmacion-->
+    <button class="button" id="botoniniciarsesion" onclick="toggleActive(this)" type="submit">Iniciar sesión</button>
     <div class="separator"><span class="separator-text">ó</span></div>
-    <button class="button" onclick="toggleActive(this); registrarse();">Registrarse</button>
-    <button class="button2" onclick="toggleActive(this) ; redirigirAIndex();">Volver</button>
+    <a class="button" id="botonregistrarse" href="registro_usuario.html">Registrarse</a>
+    <button class="button2" type="button" id="botonvolver" onclick="toggleActive(this) ; redirigirAIndex();">Volver</button>
 </form>
 <script src="js/Botones.js"></script>
 <script src="js/inicioSesion.js"></script>

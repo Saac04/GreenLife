@@ -88,7 +88,6 @@ h4 {
 .button {
     width: 426px;
     height: 44px;
-    font-family: "kanit light", serif;
     font-size: 20px;
     font-weight: 300;
     display: block;
@@ -100,6 +99,15 @@ h4 {
     margin-top: 22px;
     margin-bottom: 22px;
     cursor: pointer;
+    display: flex;
+}
+#Salirse {
+    display: flex;
+    justify-content: flex-end
+}
+#BotonAtras {
+    width: 165px;
+    height: 44px;
 }
 
 .ya_tengo_cuenta {

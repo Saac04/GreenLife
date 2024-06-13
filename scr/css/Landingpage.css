@@ -1,9 +1,11 @@
+/* Estilo global del cuerpo */
 body{
     background-color: white;
 }
 
-/*Inicio de seccion de Engancho*/
+/* Inicio de sección de Engancho */
 
+/* Estilo para la sección principal */
 section{
     height: 100vh;
     padding: 0.1rem;
@@ -13,38 +15,49 @@ section{
     display: flex;
     align-items: center;
 }
+
+/* Estilo para el contenedor del Slogan */
 .Slogan{
     padding: 4rem;
     display: grid;
-
 }
+
+/* Estilo para el título del producto */
 #titulodeproducto{
     color: rgb(118,189,87);
 }
+
+/* Estilo para el primer encabezado dentro del Slogan */
 .Slogan h1{
     font-size: 28px;
     font-family: 'Kanit' regular;
     color: rgb(84,84,84);
     text-align: center;
 }
+
+/* Estilo para el segundo encabezado dentro del Slogan */
 .Slogan h2{
     font-size: 18px;
     font-family: 'Kanit' Medium;
     color:rgb(84,84,84);
     text-align: center;
 }
+
+/* Estilo para el tercer encabezado dentro del Slogan */
 .Slogan h3{
     font-size: 14px;
     font-family: 'Kanit' Light;
     color:rgb(84,84,84);
     text-align: justify;
 }
-#botones{
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+
+/* Estilo para el contenedor de botones */
+.button{
+    background-color: rgb(143,228,102,0);
+    gap: 2.5rem;
 }
 
+/* Estilo para el botón de registro */
 .boton_registro{
     background-color: #35A145; /* Ajusta el código de color para que coincida con el verde exacto */
     border: none;
@@ -53,11 +66,13 @@ section{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 18px; /* Ajusta el tamaño de la fuente según sea necesario */
+    font-size: 14px; /* Ajusta el tamaño de la fuente según sea necesario */
     cursor: pointer;
     border-radius: 30px; /* Esto da las esquinas redondeadas tipo píldora */
     z-index: 0;
 }
+
+/* Estilo para el botón de saber más */
 .boton_Sabermas{
     background-color: #FFFFFF; /* Ajusta el código de color para que coincida con el verde exacto */
     border: none;
@@ -66,15 +81,19 @@ section{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 18px; /* Ajusta el tamaño de la fuente según sea necesario */
+    font-size: 14px; /* Ajusta el tamaño de la fuente según sea necesario */
     cursor: pointer;
     border-radius: 30px; /* Esto da las esquinas redondeadas tipo píldora */
     z-index: 0;
 }
+
+/* Estilo global para las imágenes */
 img{
     width: 60%;
     height: 60%;
 }
+
+/* Estilos responsivos para pantallas con ancho máximo de 900px */
 @media (max-width: 900px){
     .boton_Sabermas{
         font-size: 14px;
@@ -83,17 +102,15 @@ img{
         font-size: 14px;
     }
 }
-/*Responsive de seccion Inicio de section de Engancho*/
-@media (max-width: 820px)
-{
-    section
-    {
+
+/* Estilos responsivos para la sección de Engancho */
+@media (max-width: 830px){
+    section{
         display: grid;
         height: 100%;
         width: 100%;
     }
-    section img
-    {
+    section img{
         width: 80%;
         height: 80%;
         margin-left: 3rem;
@@ -104,26 +121,23 @@ img{
     }
     #botones{
         display: flex;
-
     }
-    .boton_registro{
-    }
-    .boton_Sabermas{
-    }
-
-
-    @media (max-width: 600px) {
-        .boton_registro {
-            margin-left: 5%;
-        }
-    }
-
+    .boton_registro{}
+    .boton_Sabermas{}
 }
 
-/*Fin de seccion de engancho*/
+/* Estilos adicionales responsivos para pantallas con ancho máximo de 600px */
+@media (max-width: 600px){
+    .boton_registro{
+        margin-left: 5%;
+    }
+}
 
-/*Inicio de seccion de Anuncio*/
+/* Fin de sección de Engancho */
 
+/* Inicio de sección de Anuncio */
+
+/* Estilo para el contenedor principal */
 .Contenedor{
     height: 100%;
     width: 100%;
@@ -135,15 +149,21 @@ img{
     gap: 5rem;
     align-items: center;
 }
+
+/* Estilo para el contenedor del texto del título */
 .tituloTexto{
     padding: 4rem;
-    font-family: 'Kanit' ;
+    font-family: 'Kanit';
 }
+
+/* Estilo para el segundo encabezado dentro del título */
 .tituloTexto h2{
     font-size: 32px;
     font-family: 'Kanit' regular;
     color: white;
 }
+
+/* Estilo para el párrafo dentro del título */
 .tituloTexto p{
     background-color: white;
     color: green;
@@ -151,31 +171,35 @@ img{
     padding: 15px;
 }
 
+/* Estilo para las imágenes dentro del contenedor */
 .Contenedor img{
     height: 50vh;
     padding: 10px;
     background-color: #FFFFFF;
     border-radius: 50px;
     margin: 30px;
-
 }
-/*Responsive de Anuncio*/
-@media (max-width: 940px) {
+
+/* Estilos responsivos para pantallas con ancho máximo de 940px */
+@media (max-width: 940px){
     .Contenedor{
         gap: 0;
     }
 }
-@media (max-width: 1460px) {
+
+/* Estilos responsivos para pantallas con ancho máximo de 1460px */
+@media (max-width: 1460px){
     .Contenedor img{
         height: 50vh;
         padding: 10px;
         background-color: #FFFFFF;
         border-radius: 50px;
         margin: 30px;
-
     }
 }
-@media (max-width: 820px) {
+
+/* Estilos responsivos para pantallas con ancho máximo de 820px */
+@media (max-width: 820px){
     .Contenedor{
         display: grid;
         place-items: center;
@@ -187,85 +211,101 @@ img{
     .tituloTexto{
         padding: 30px;
     }
-
     .Contenedor img{
-
         width: 300px;
         height: 300px;
-
     }
 }
 
-/*Final de seccion Anuncio*/
+/* Final de sección de Anuncio */
+
+/* Estilo para el rectángulo */
 .rectangle{
     background-color: #5CBA23;
     height: 0.5vh;
     width: auto;
-
 }
 
+/* Estilo para el contenedor que engloba */
 .engloba{
     width: fit-content;
 }
-/*Inicio de section de Atractivo*/
+
+/* Inicio de sección de Atractivo */
+
+/* Estilo para el contenedor de la sección Atractivo */
 .Atractivo{
     display: flex;
     gap:5rem;
     padding: 3rem;
 }
+
+/* Estilo para los encabezados dentro de Atractivo */
 .Atractivo h1{
     font-size: 20px;
     font-family: 'Kanit' Light;
     margin-bottom: 0;
 }
+
+/* Estilo para los párrafos dentro de Atractivo */
 .Atractivo p{
     text-align: justify;
     font-family: 'Kanit' Light;
 }
+
+/* Estilo para las imágenes dentro de Atractivo */
 .Atractivo img{
     width: 100%;
     height: 45%;
 }
+
+/* Estilo para las imágenes dentro del contenedor Razones */
 .Razones img{
     width: 100%;
     height: 45%;
 }
-.TextoDescriptivo {
-    display: grid;
 
+/* Estilo para el contenedor TextoDescriptivo */
+.TextoDescriptivo{
+    display: grid;
 }
+
+/* Estilo para las imágenes dentro de TextoDescriptivo */
 .TextoDescriptivo img{
     width: 100%;
     height: 100%;
 }
 
-/*Responive Atractivo*/
-@media (max-width: 1100px) {
+/* Estilos responsivos para pantallas con ancho máximo de 1100px */
+@media (max-width: 1100px){
     .Razones img{
         width: 100%;
         height: 45%;
     }
 }
-@media (max-width: 1020px) {
+
+/* Estilos responsivos para pantallas con ancho máximo de 1020px */
+@media (max-width: 1020px){
     .Razones img{
         width: 100%;
         height: 35%;
     }
 }
-@media (max-width: 960px)
-{
+
+/* Estilos responsivos para pantallas con ancho máximo de 960px */
+@media (max-width: 960px){
     .Razones img{
         width: 100%;
         height: 35%;
     }
 }
-@media (max-width: 850px)
-{
+
+/* Estilos responsivos para pantallas con ancho máximo de 850px */
+@media (max-width: 850px){
     .Atractivo{
         display: grid;
         place-items: center;
         gap: 0;
-
     }
     .Atractivo img{
         width: 90%;
@@ -275,12 +315,8 @@ img{
     .Atractivo h1{
         text-align: center;
     }
-    .TextoDescriptivo img {
+    .TextoDescriptivo img{
         width: 80%;
         height: 80%;
     }
 }
-
-
-
-

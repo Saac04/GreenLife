@@ -5,9 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GreenLife: Cultiva Inteligentemente con Tecnología de Monitoreo</title>
-    <!--
-    Header
-    -->
+    <!--Referencias utilizadas-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/MenuHam.css">
     <link rel="stylesheet" href="css/Botones.css">
@@ -36,26 +34,10 @@
 
 <nav id="navMenu" role="navigation">
     <div id="menuToggle">
-        <!--
-        A fake / hidden checkbox is used as click reciever,
-        so you can use the :checked selector on it.
-        -->
         <input type="checkbox" />
-
-        <!--
-        Some spans to act as a hamburger.
-
-        They are acting like a real hamburger,
-        not that McDonalds stuff.
-        -->
         <span></span>
         <span></span>
         <span></span>
-
-        <!--
-        Too bad the menu has to be inside of the button
-        but hey, it's pure CSS magic.
-        -->
         <ul id="menu">
             <li><a class="text-button" href="inicioSesion.html"><i class="fa fa-user-circle-o"></i></a></li>
             <li><a class="text-button" href="FAQ.html">FAQ</a></li>
@@ -63,7 +45,8 @@
         </ul>
     </div>
 </nav>
-
+<!--FIN HTML DE EL HEADER-->
+<!--Primera pantalla Slogan-->
 <section>
     <div class="Slogan">
         <h1>Conoce <span id="titulodeproducto">Green</span>Life, cultiva con Inteligencia, crece con Tecnología</h1>
@@ -71,16 +54,15 @@
         <h3>GreenLife te permite tomar decisiones informadas y mejorar tus prácticas de
             cultivo para maximizar rendimientos y calidad. Con nuestra interfaz web intuitiva y fácil de usar,
             accede a tus datos de cultivo desde cualquier lugar y en cualquier momento.</h3>
-        <div id="botones">
+        <div class="button">
             <a href="registro_usuario.html" class="boton_registro">REGISTRARSE</a>
             <a class="boton_Sabermas" onclick="scrollToSection('saber-mas')">SABER MÁS</a>
         </div>
     </div>
 
     <img src="img/Monitorizacion.svg" alt="imagen de la agencia">
-
 </section>
-<!--FIN HTML DE EL HEADER-->
+<!--Fin de Pantalla Slogan-->
 <!-- Inicio de parte Anuncio -->
 
 <div class="Contenedor">
@@ -93,9 +75,9 @@
     </div>
     <img src="img/chica.svg" alt="Descripción de la imagen">
 </div>
+<!--Fin de anuncio-->
 
-
-<!-- Inicio de parte Atractivo -->
+<!-- Inicio de parte Informacion de Producto-->
 
 <div class="Atractivo" id="saber-mas">
     <div class="Razones">
@@ -162,8 +144,9 @@
         }, 100); // Retraso de 100 milisegundos
     }
 </script>
+<!--Inicio del Footer-->
 <footer class="footer-container">
-    <button class="text-button" >Contacto</button>
+    <div></div>
     <h4>© 2024 GreenLife. Todos los derechos reservados.</h4>
     <div class="social-icons">
         <a href="#"><i class="fa fa-instagram"></i></a>
@@ -171,5 +154,6 @@
         <a href="#"><i class="fa fa-twitter"></i></a>
     </div>
 </footer>
+<!--Fin del Footer-->
 </body>
 </html>
