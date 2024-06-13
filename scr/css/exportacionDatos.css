@@ -1,5 +1,4 @@
-.export-container{ /*contenedor para guiarme*/
-
+.export-container { /*contenedor para guiarme*/
     margin-left: 50px;
     margin-right: 50px;
 }
@@ -9,7 +8,7 @@
     justify-content: space-between;
 }
 
-#nombreUsuario{
+#nombreUsuario {
     width: 240px;
 }
 
@@ -17,73 +16,53 @@
     color: #333333;
     margin-top: -20px;
 }
-.date-inputs { 
+
+.date-inputs {
     display: flex;
     align-items: center;
     margin-top: -30px;
 }
 
-#sensor {
-    margin-left: 0px;
-    margin-right: 10px; /* Ajusta el margen derecho para alinear con los placeholders */
-    margin-bottom: 10px; /* Margen inferior */
-    margin-top: -17px;
-    width: 150px;
-    height: 42px;
-
-}
-#sonda {
-    margin-left: 0px;
-    margin-right: 10px; /* Ajusta el margen derecho para alinear con los placeholders */
-    margin-bottom: 10px; /* Margen inferior */
-    margin-top: -17px;
-    width: 150px;
-    height: 42px;
-}
-#Huerto {
-    margin-left: 0px;
-    margin-right: 10px; /* Ajusta el margen derecho para alinear con los placeholders */
-    margin-bottom: 10px; /* Margen inferior */
+#sensor, #sonda, #Huerto {
+    margin-left: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
     margin-top: -17px;
     width: 150px;
     height: 42px;
 }
 
-
-
-.contenedor-buscador{
+.contenedor-buscador {
     display: flex;
     justify-content: flex-start;
-    align-items:center ;
+    align-items: center;
 }
 
 /* Estilos para los campos de entrada de texto */
-input[type="text"], textarea {    
-    border: 2px solid #c6c6c6; /* Borde alrededor del campo de entrada */
-    border-radius: 10px; /* Radio del borde */
-    width: 130px; /* Ancho del campo de entrada */
-    height: 20px; /* Altura del campo de entrada */
-
+input[type="text"], textarea {
+    border: 2px solid #c6c6c6;
+    border-radius: 10px;
+    width: 130px;
+    height: 20px;
 }
 
 /* Estilos para los campos de entrada de texto y el elemento select */
 .input-field, select {
-    font-family: 'Kanit Light', sans-serif; /* Establece la fuente para el texto de entrada */
+    font-family: 'Kanit Light', sans-serif;
     font-size: 20px;
-    color: #333333; /* Color del texto */
-    background-color: #ffffff; /* Fondo blanco */
-    border: 2px solid #c6c6c6; /* Borde alrededor del campo de entrada */
-    border-radius: 10px; /* Radio del borde */
-    width: 183px; /* Ancho del campo de entrada */
-    height: 20px; /* Altura del campo de entrada */
-    padding: 0px; /* Ajuste de relleno */
-    margin-bottom: 0px; /* Margen inferior */
-    margin-top:15px;
+    color: #333333;
+    background-color: #ffffff;
+    border: 2px solid #c6c6c6;
+    border-radius: 10px;
+    width: 183px;
+    height: 20px;
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 15px;
 }
 
-
-.button{
-    padding: 0px 10px 0 10px;
+.button {
+    padding: 0 10px;
     margin-left: 10px;
     margin-top: 15px;
 }
@@ -92,7 +71,6 @@ h3 {
     white-space: nowrap;
 }
 
-/* Estilo general para las tablas */
 /* Estilo general para las tablas */
 .my-table {
     text-align: left;
@@ -105,7 +83,6 @@ h3 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Estilo para los encabezados de las tablas */
 .my-table th {
     background-color: #479555;
     color: white;
@@ -115,65 +92,93 @@ h3 {
     letter-spacing: 0.1em;
 }
 
-/* Estilo para las celdas de las tablas */
 .my-table td {
     padding: 10px 15px;
     color: #495057;
     border-bottom: 1px solid #dee2e6;
 }
 
-/* Estilo para las filas de las tablas al pasar el ratón por encima */
 .my-table tr:hover {
     background-color: #e9ecef;
 }
 
-
 .Contenedor {
     display: flex;
-    justify-content: left; /* Centra horizontalmente el contenido */
-    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: left;
+    align-items: center;
     gap: 9rem;
     padding: 1rem;
-    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
-    max-width: 1000px; /* Ajusta el ancho máximo según tus necesidades */
+    margin: 0 auto;
+    max-width: 1000px;
 }
-.Titulo{
+
+.Titulo {
     display: grid;
-    justify-content: center; /* Centra horizontalmente el contenido */
-    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center;
+    align-items: center;
     padding: 1rem;
-    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
-    max-width: 1000px; /* Ajusta el ancho máximo según tus necesidades */
+    margin: 0 auto;
+    max-width: 1000px;
 }
 
 .sensor-container {
     display: grid;
-    justify-content: left; /* Centra horizontalmente el contenido */
-    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: left;
+    align-items: center;
     padding: 1rem;
-    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
-    max-width: 1000px; /* Ajusta el ancho máximo según tus necesidades */
+    margin: 0 auto;
+    max-width: 1000px;
 }
 
 #Parametros {
     display: flex;
 }
 
-@media (max-width: 813px){
- .Contenedor{
-     display: flex;
-     gap: 2rem;
- }
+@media (max-width: 813px) {
+    .Contenedor {
+        display: flex;
+        gap: 2rem;
+    }
 }
-@media (max-width: 700px){
-    .Contenedor{
+
+@media (max-width: 700px) {
+    .Contenedor {
         display: grid;
         gap: 0;
     }
     .sensor-container {
         display: grid;
-
     }
 }
 
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 4rem;
+}
 
+table th, table td {
+    border: 1px solid #dddddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #5CBA23;
+    color: #FFFFFF;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background-color: #e0e0e0;
+}
+
+/* Estilo para estado "off" en rojo */
+.estado-off {
+    color: red;
+}

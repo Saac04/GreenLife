@@ -10,6 +10,29 @@
     <link rel="stylesheet" href="../../css/MenuHam.css">
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" type="text/css" href="../../css/exportacionDatos.css">
+    <style>
+        /* Estilos adicionales para la tabla */
+        .export-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .export-container th, .export-container td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .export-container th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .estado-off {
+            background-color: #ffcccc;
+        }
+    </style>
 </head>
 <body>
 <header class="header">
@@ -38,67 +61,31 @@
     </div>
 </nav>
 <div class="Titulo">
-    <h2>Exportación de datos históricos</h2>
+    <h2>Testeo de sensores</h2>
     <p id="negro">Para comenzar la exportación de datos históricos, por favor selecciona el rango de fechas y el sensor sobre el que quieres exportar los datos.</p>
 </div>
 <div class="Contenedor">
     <div class="username-container">
         <h3>Introduce el nombre de usuario </h3>
         <div class="contenedor-buscador">
-            <input list="usernames" id="nombreUsuario" type="text" class="input-field" placeholder="Nombre de usuario">
-            <datalist id="usernames">
-            </datalist>
-            <button class="button">Mostrar tabla</button>
+            <input id="nombreUsuario" type="text" class="input-field" placeholder="Nombre de usuario">
+            <button id="mostrarTablaBtn" class="button">Mostrar tabla</button>
         </div>
     </div>
-    <div class="selection-container">
-        <div class="date-container">
-            <h3 id="soyH3">Selecciona la fecha</h3>
-            <div class="date-inputs">
-                <input type="text" class="input-field" placeholder="DD/MM/AAAA">
-            </div>
-        </div>
-    </div>
-</div>
     <div id="Parametros">
         <div class="sensor-container">
             <h3>Selecciona el Huerto </h3>
             <select id="Huerto" class="input-field">
-
-            </select>
-        </div>
-        <div class="sensor-container">
-            <h3>Selecciona la sonda </h3>
-            <select id="sonda" class="input-field">
-                
-            </select>
-        </div>
-        <div class="sensor-container">
-            <h3>Selecciona el sensor </h3>
-            <select id="sensor" class="input-field">
                 <option value="Todos">Todos</option>
-                <option value="Temperatura">Temperatura</option>
-                <option value="Humedad">Humedad</option>
-                <option value="Salinidad">Salinidad</option>
-                <option value="Ph">Ph</option>
-                <option value="Luminosidad">Luminosidad</option>
+                <option value="Huerto 1">Huerto 1</option>
+                <option value="Huerto 2">Huerto 2</option>
+                <option value="Huerto 3">Huerto 3</option>
             </select>
         </div>
     </div>
-
-    <div class="export-container"></div>
-    <table id="data-table">
-        <thead>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
 </div>
+
+<div class="export-container"></div>
 <script src="../../js/exportacionDatos.js"></script>
 </body>
 </html>
