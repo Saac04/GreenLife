@@ -1,16 +1,18 @@
-
-h2{
+h2 {
     text-align: center;
 }
 
-.tabla-consulta{
+.tabla-consulta {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     gap: 15px;
+    height: 80%;
+    width: 90%;
+    margin: auto;
 }
 
-.tabla{
+.tabla {
     max-height: 500px;
     overflow-y: scroll;
     padding: 15px;
@@ -21,13 +23,17 @@ h2{
     border-collapse: collapse;
 }
 
-.consulta-table tr{}
-
 .consulta-table th,
 .consulta-table td {
     padding: 8px;
     border: 1px solid #c6c6c6;
     text-align: left;
+}
+
+/* Añadir estilos específicos para la columna de fecha */
+.consulta-table th:nth-child(3),
+.consulta-table td:nth-child(3) {
+    width: 150px; /* Ajusta el ancho según sea necesario */
 }
 
 .consulta-table th {
@@ -42,52 +48,165 @@ h2{
     background-color: #ddd;
 }
 
-.consulta-table tbody td:nth-child(3){
-    display: flex;
-    justify-content: center;
+.consulta-table tbody td:nth-child(4),
+.consulta-table tbody td:nth-child(5),
+.consulta-table tbody td:nth-child(6) {
+    text-align: center;
 }
 
-
-.consulta{
+.consulta {
     display: flex;
     flex-direction: column;
-    border: #c6c6c6 1px solid ;
+    border: #c6c6c6 1px solid;
     border-radius: 10px;
     max-height: 600px;
     width: 350px;
 }
 
-
-
-.nombre{
-    border-bottom: #c6c6c6 1px solid ;
+.nombre, .usuario, .asunto {
+    border-bottom: #c6c6c6 1px solid;
     padding: 5px;
 }
 
-.usuario{
-    border-bottom: #c6c6c6 1px solid ;
-    padding: 5px
+.p2 {
+    font-family: "Kanit Light", sans-serif;
 }
 
-.asunto{
-    border-bottom: #c6c6c6 1px solid ;
-    padding: 5px
+.abrir-consulta-btn, .eliminar-consulta-btn {
+    background-color: #7ed956;
+    width: 70%;
+    font-size: 14px;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
 }
 
-.p2{
-    font-family: "Kanit Light";
+.contenido-casilla {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.abrir-consulta-btn:hover {
+    background-color: darkgreen;
+}
+
+.eliminar-consulta-btn {
+    background-color: red;
+}
+
+.eliminar-consulta-btn:hover {
+    background-color: darkred;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.popup-contenido {
+    position: absolute;
+    font-family: 'Kanit', sans-serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+.cerrar {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.input-text {
+    font-family: 'Kanit Light', sans-serif;
+    font-size: 20px;
+    color: #333333;
+    background-color: #ffffff;
+    border: none;
+    border-bottom: 2px solid #c6c6c6;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-container {
+    text-align: right;
+}
+
+.button {
+    background-color: #7ED957;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.filtros {
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+#filtro-fechas {
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+}
+
+#selectorEstado,
+#selectorFechas {
+    height: 100%;
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+}
+
+.filtros label {
+    margin-right: 10px;
+}
+
+.filtros input[type="date"],
+.filtros input[type="checkbox"] {
+    padding: 5px;
+    font-size: 16px;
 }
 
 @media screen and (max-width: 800px) {
-    .tabla-consulta{
+    .tabla-consulta {
         display: grid;
         justify-content: center;
-        gap:30px
+        gap: 30px;
     }
 
-    .consulta{
+    .consulta {
         margin: 20px;
         justify-self: center;
     }
 }
-
