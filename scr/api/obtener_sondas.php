@@ -1,34 +1,46 @@
 <?php
-// Conexión a la base de datos
-$conexion = new mysqli("localhost", "root", "", "greenlife");
+session_start();
+header('Content-Type: application/json');
+
+require_once 'includes/connexion.php';  // Incluye el archivo de conexión
 
 // Verificar conexión
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
+if ($connexion->connect_error) {
+    die(json_encode(['error' => 'Conexión fallida: ' . $connexion->connect_error]));
 }
 
-// Obtener el ID del huerto (suponiendo que ya lo tienes)
-$id_huerto = $_GET['id_huerto'];
-//$id_huerto = 1;
+// Obtener el ID del huerto desde los parámetros GET
+$id_huerto = $_GET['id_huerto'] ?? null;
+
+if (!$id_huerto) {
+    die(json_encode(['error' => 'ID de huerto no proporcionado']));
+}
 
 // Consulta para obtener las sondas del huerto especificado
-$sql = "SELECT * FROM sondas WHERE id_huerto = $id_huerto";
+$sql = "SELECT * FROM sondas WHERE id_huerto = ?";
+$stmt = $connexion->prepare($sql);
+if ($stmt) {
+    $stmt->bind_param("i", $id_huerto);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-$resultado = $conexion->query($sql);
+    // Crear un array para almacenar las sondas
+    $sondas = array();
 
-// Crear un array para almacenar las sondas
-$sondas = array();
-
-if ($resultado->num_rows > 0) {
-    while($row = $resultado->fetch_assoc()) {
-        // Agregar cada sonda al array
-        $sondas[] = $row;
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            // Agregar cada sonda al array
+            $sondas[] = $row;
+        }
     }
+
+    // Devolver las sondas en formato JSON
+    echo json_encode($sondas);
+
+    $stmt->close();
+} else {
+    echo json_encode(['error' => 'Error al preparar la consulta: ' . $connexion->error]);
 }
 
-// Devolver las sondas en formato JSON
-echo json_encode($sondas);
-
-// Cerrar la conexión
-$conexion->close();
+$connexion->close();
 ?>

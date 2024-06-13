@@ -44,7 +44,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
             session_start();
             $_SESSION['user'] = $registro;
-            $_SESSION['id'] = 13;
+            $_SESSION['id'] = $registro['id_usuario'];
 
             $_SESSION['nombre'] = $registro['nombre'];
 

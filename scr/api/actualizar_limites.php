@@ -1,32 +1,42 @@
 <?php
-// obtener_limites.php
-$servername = "localhost"; // Cambia esto por tu servidor
-$username = "root";     // Cambia esto por tu usuario
-$password = "";  // Cambia esto por tu contraseña
-$dbname = "greenlife";     // Cambia esto por tu nombre de base de datos
+session_start();
+header('Content-Type: application/json');
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+require_once 'includes/connexion.php';  // Incluye el archivo de conexión
 
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+// Verificar conexión
+if ($connexion->connect_error) {
+    die(json_encode(['error' => 'Conexión fallida: ' . $connexion->connect_error]));
 }
 
+// Obtener los datos enviados desde el cliente
+$data = json_decode(file_get_contents('php://input'), true);
 
-$id_sonda = $_POST['id_sonda'];
-$tipo_parametro = $_POST['tipo_parametro'];
-$valor_min = $_POST['valor_min'];
-$valor_max = $_POST['valor_max'];
+if (isset($data['id_sonda']) && isset($data['tipo_parametro']) && isset($data['valor_min']) && isset($data['valor_max'])) {
+    $id_sonda = $data['id_sonda'];
+    $tipo_parametro = $data['tipo_parametro'];
+    $valor_min = $data['valor_min'];
+    $valor_max = $data['valor_max'];
 
-$sql = "UPDATE limites SET valor_min = ?, valor_max = ? WHERE id_sonda = ? AND tipo_parametro = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("diss", $valor_min, $valor_max, $id_sonda, $tipo_parametro);
+    // Preparar y ejecutar la declaración SQL para actualizar los límites
+    $sql = "UPDATE limites SET valor_min = ?, valor_max = ? WHERE id_sonda = ? AND tipo_parametro = ?";
+    $stmt = $connexion->prepare($sql);
+    if ($stmt) {
+        $stmt->bind_param("diss", $valor_min, $valor_max, $id_sonda, $tipo_parametro);
 
-if ($stmt->execute()) {
-echo "Límites actualizados correctamente.";
+        if ($stmt->execute()) {
+            echo json_encode(['success' => true, 'message' => 'Límites actualizados correctamente.']);
+        } else {
+            echo json_encode(['error' => 'Error al actualizar los límites: ' . $stmt->error]);
+        }
+
+        $stmt->close();
+    } else {
+        echo json_encode(['error' => 'Error al preparar la consulta: ' . $connexion->error]);
+    }
 } else {
-echo "Error al actualizar los límites.";
+    echo json_encode(['error' => 'Datos incompletos']);
 }
 
-$stmt->close();
-$conn->close();
+$connexion->close();
 ?>

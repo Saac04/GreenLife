@@ -28,6 +28,8 @@ async function inicioSesion(event){
 
     var Objeto = JSON.stringify({ email, password })
 
+    console.log(email)
+
     // Validar campos vacíos
     if (!email) {
         mensajeError.textContent = 'Por favor, introduzca su correo electrónico.';
