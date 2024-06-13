@@ -4,7 +4,6 @@ function register() {
     const emailInput = document.querySelector('input[type="email"]').value;
     const passwordInput = document.querySelector('input[type="password"]').value;
     const confirmPasswordInput = document.querySelectorAll('input[type="password"]')[1].value;
-    const aceptarTerminosCheckbox = document.getElementById('aceptar_terminos').checked;
 
     const mensajeError = document.getElementById('mensaje-error');
 
@@ -69,29 +68,13 @@ function register() {
         return;
     }
 
-    // Verificar que se han aceptado los términos
-    if(!aceptarTerminosCheckbox) {
-        mensajeError.innerText = "Debe aceptar los términos y condiciones.";
-        return;
-    }
-
     // Si ha pasado todas las pruebas anteriores, el usuario se puede registrar sin problemas
     // Redirigir al usuario a una página en el futuro
     // Aquí puedes cambiar la URL por la de la página a la que quieras redirigir al usuario
-    window.location.href = "pagina_futuro.html";
-}
-
-function volver() {
-    // Aquí puedes cambiar la URL por la de la página a la que quieras redirigir al usuario
-    window.location.href = "pagina_volver.html";
+    window.location.href = "app/cliente/MisHuertos.html";
 }
 
 function tengoCuenta() {
     // Aquí puedes cambiar la URL por la de la página a la que quieras redirigir al usuario
     window.location.href = "inicioSesion.html";
 }
-
-/*function terminosYCondiciones() {
-    // Aquí puedes cambiar la URL por la de la página a la que quieras redirigir al usuario
-    window.location.href = "otra_pagina.html";
-}*/

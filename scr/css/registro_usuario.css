@@ -2,7 +2,6 @@
 
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -31,29 +30,18 @@ h1 span {
 }
 
 h2 {
-    font-size: 28px;
-    font-weight: 400;
-    color: #479555;
     margin-top: 20px;
 }
 h4 {
     font-size: 18px;
-    font-weight: 400;
     color: #479555;
 }
 
 /*-- casillas de nombre, apellidos, correo electrónico y contraseña --*/
 .input-field {
-    font-family: "kanit light", serif;
-    font-size: 20px;
-    font-weight: 300;
     display: block;
     width: 426px;
-    box-sizing: border-box;  /* ancho y la altura de los elementos incluyen el padding y el borde */
-    border: none;
-    border-bottom: 2px solid #C6C6C6;
-    margin: 30px 0;  /* Aumenta este valor para más espacio entre los campos    */
-    padding: 10px;
+    margin: 15px 0;  /* Aumenta este valor para más espacio entre los campos    */
 }
 
 .input-field:focus {
@@ -70,43 +58,16 @@ h4 {
     color: #EA3B50;
 }
 
-.aceptar_terminos{
-    display: flex;
-    gap: 20px;
-}
-
-.aceptar_terminos label, .aceptar_terminos a{
-    color: #479555;
-    text-decoration: none;
-}
-
-.aceptar_terminos label:hover .aceptar_terminos a:hover{
-    text-decoration: underline;
-}
-
 /*-- boton de crear cuenta --*/
 .button {
     width: 426px;
     height: 44px;
-    font-family: "kanit light", serif;
-    font-size: 20px;
-    font-weight: 300;
-    display: block;
-    border: none;
-    border-radius: 10px;
-    background-color: #7ED957;
-    color: white;
-    padding: 10px;
     margin-top: 22px;
     margin-bottom: 22px;
-    cursor: pointer;
 }
 
 .ya_tengo_cuenta {
-    text-align: left;
     margin-top: -10px;
-    color: #479555;
-    text-decoration: none;
     cursor: pointer;
 }
 
@@ -117,18 +78,13 @@ h4 {
 .button2 {
     width: 165px;
     height: 44px;
-    font-family: "kanit light", serif;
     font-size: 20px;
-    font-weight: 300;
-    display: block;
-    border: none;
     border-radius: 10px;
     background-color: #7ED957;
     color: white;
     padding: 10px;
     margin-top: 22px;
     margin-bottom: 22px;
-    cursor: pointer;
     float: right;
 }
 
