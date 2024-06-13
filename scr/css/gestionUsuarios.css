@@ -12,7 +12,7 @@ body {
 
 /* Estilos para los encabezados H2 */
 h2 {
-    margin-top: 20px;
+    margin-top: 50px;
     font-family: 'Kanit', sans-serif;
     font-size: 28px;
     font-weight: 400;
@@ -26,26 +26,16 @@ h2 {
     display: none; /* Ocultar el mensaje de error inicialmente */
     font-family: 'Kanit', sans-serif;
     font-weight: 300;
-    color: #FF6347; /* Color rojo para el mensaje de error */
-    font-size: 14px; /* Tamaño de fuente del mensaje de error */
-    margin-top: 5px; /* Espacio superior */
-}
-
-.guardarBBDD {
-    text-align: center;
-    display: none; /* Ocultar el mensaje de error inicialmente */
-    font-family: 'Kanit', sans-serif;
-    font-weight: 300;
-    color: #479555; /* Color rojo para el mensaje de error */
-    font-size: 20px; /* Tamaño de fuente del mensaje de error */
-    margin-top: 5px; /* Espacio superior */
+    color: #FF6347;
+    font-size: 14px;
+    margin-top: 5px;
 }
 
 /* Estilos para la barra de búsqueda */
 .search-bar {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     width: 100%;
 }
 
@@ -74,11 +64,25 @@ table {
     border: 1px solid #f2f2f2;
 }
 
-/* Estilos para la tabla de clientes */
+/* Estilos para la tabla de usuario */
 .clients-table {
     font-family: "Kanit Light", sans-serif;
     font-size: 20px;
     margin-bottom: 20px;
+}
+
+/* Estilo del símbolo de desplegable */
+th.asc::after {
+
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .5em;
+    border-top: solid 6px black;
+    border-left: solid 6px transparent;
+    border-right: solid 6px transparent;
+    cursor: pointer;
 }
 
 /* Estilos para los botones dentro de la tabla */
@@ -88,12 +92,28 @@ table {
     font-size: 20px;
 }
 
-/* Estilos para los botones de cliente */
+/* Estilos para los botones de usuario */
 .client-buttons {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 10px;
     width: 100%;
+}
+
+/* Estilos para el texto de se han guardado los datos en la base de datos */
+.guardarBBDD {
+    text-align: center;
+    display: none;
+    font-weight: 300;
+    color: #479555;
+    font-size: 20px;
+    flex: 1; /* Agregar flex: 1 para que ocupe todo el espacio disponible */
+}
+
+/* Estilo del botón de guardar */
+.btn-guardar {
+    margin-left: auto;
 }
 
 /* Estilos para las celdas de tabla */
@@ -125,8 +145,8 @@ button {
 }
 
 /* Estilos para los botones de eliminar y editar dentro de la tabla */
-.clients-table .eliminar-cliente,
-.clients-table .editar-cliente {
+.clients-table .eliminar-usuario,
+.clients-table .editar-usuario {
     width: 100%;
     padding: 10px 20px;
     font-size: 20px;
@@ -135,15 +155,13 @@ button {
     border: none;
 }
 
-.clients-table .eliminar-cliente {
+/* Estilos específicos para el botón de eliminar usuario */
+.clients-table .eliminar-usuario {
     background-color: #FF6347;
 }
 
-.nombreCliente,
-.rol {
-    cursor: pointer;
-}
-.clients-table .editar-cliente {
+/* Estilos específicos para el botón de editar usuario */
+.clients-table .editar-usuario {
     background-color: #7ED957;
 }
 
@@ -163,6 +181,7 @@ button {
     font-family: 'Kanit', sans-serif;
 }
 
+/* Contenido del popup */
 .popup-contenido {
     background-color: #fefefe;
     margin: auto;
@@ -173,6 +192,7 @@ button {
     border-radius: 10px;
 }
 
+/* Botón de cerrar el popup */
 .cerrar {
     color: #c6c6c6;
     float: right;
@@ -180,6 +200,7 @@ button {
     font-weight: bold;
 }
 
+/* Estilo del botón de cerrar cuando se pasa el ratón o se enfoca */
 .cerrar:hover,
 .cerrar:focus {
     color: #000;
@@ -187,18 +208,21 @@ button {
     cursor: pointer;
 }
 
+/* Encabezado del popup */
 .popupH2 {
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 20px;
 }
 
+/* Texto del popup */
 .popupP {
     font-size: 20px;
     font-weight: 300;
     margin-bottom: 20px;
 }
 
+/* Contenedor para los botones dentro del popup */
 .button-container {
     display: flex;
     justify-content: flex-end;
@@ -218,18 +242,18 @@ button {
     color: #333333;
     border: none;
     border-bottom: 2px solid #c6c6c6;
-    background-color: white; /* Cambia el color de fondo según tu diseño */
+    background-color: white;
     transition: border-color 0.3s ease; /* Agrega una transición suave para el borde */
 }
 
+/* Estilo del selector cuando está enfocado */
 .select-container select:focus {
     font-family: 'Kanit', sans-serif;
     color: #333333;
     font-weight: 300;
     outline: none;
-    border-color: #c6c6c6; /* Cambia el color del borde cuando el desplegable obtiene foco */
+    border-color: #c6c6c6;
 }
-
 
 /* Estilos para dispositivos móviles */
 @media (max-width: 1020px) {
@@ -252,12 +276,13 @@ button {
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        padding: 10px; /* Incrementar el padding */
+        padding: 10px;
         position: relative;
         border: 1px solid #c6c6c6;
         align-items: center;
     }
 
+    /* Etiquetas de celdas para dispositivos móviles */
     .clients-table td::before {
         content: attr(data-label);
         position: static;
@@ -274,8 +299,8 @@ button {
     }
 
     .client-buttons button,
-    .clients-table .eliminar-cliente,
-    .clients-table .editar-cliente {
+    .clients-table .eliminar-usuario,
+    .clients-table .editar-usuario {
         width: 70%; /* Reducir el ancho del botón */
         text-align: center;
         padding: 10px 20px;
@@ -285,12 +310,16 @@ button {
         width: 40%;
         margin-bottom: 10px; /* Espacio entre los botones */
     }
+
+    .btn-guardar {
+        margin: 5px 0;
+    }
 }
 
 @media (max-width: 600px) {
     /* Estilos para centrar el campo de búsqueda */
     .search-bar {
-        justify-content: center; /* Centrar horizontalmente */
+        justify-content: center;
     }
 
     .client-buttons button {
@@ -298,4 +327,3 @@ button {
         margin-bottom: 10px; /* Espacio entre los botones */
     }
 }
-

@@ -11,23 +11,25 @@
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../css/Marcos.css">
-    <link rel="stylesheet" href="../../css/gestionClientes.css">
-    <title>Gestión y edición de clientes</title>
+    <link rel="stylesheet" href="../../css/gestionUsuarios.css">
+    <title>Gestión y edición de usuarios</title>
 </head>
 <body>
 
+<!-- Header de la página, logo, boton de gestión, consultas y perfil -->
 <header class="header">
     <div><img class="logo" src="../../img/Grado_en_tecnologías_interactivas.svg" alt="LOGO"></div>
     <h1><span class="green">Green</span><span class="life">Life</span></h1>
     <nav>
         <ul class="nav-menu" id="menuOrdenador">
-            <li><a class="text-button" href="gestionClientes.html">Gestión</a></li>
+            <li><a class="text-button" href="gestionUsuarios.html">Gestión</a></li>
             <li><a class="text-button" href="ConsultasAdmin.html">Consultas</a></li>
             <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
         </ul>
     </nav>
 </header>
 
+<!-- Menú de la página (para versión de móvil), logo, boton de gestión, consultas y perfil -->
 <nav id="navMenu" role="navigation">
     <div id="menuToggle">
         <input type="checkbox" />
@@ -37,99 +39,91 @@
         <ul id="menu">
             <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
             <li><a class="text-button" href="ConsultasAdmin.html">Consultas</a></li>
-            <li><a class="text-button" href="gestionClientes.html">Gestión</a></li>
+            <li><a class="text-button" href="gestionUsuarios.html">Gestión</a></li>
         </ul>
     </div>
 </nav>
 
+<!-- Cuerpo de la página -->
 <div id="clients" class="table">
-    <h2>Gestión y edición de clientes</h2>
+    <!-- Título de la página -->
+    <h2>Gestión y edición de usuarios</h2>
 
+    <!-- Sección de búsqueda -->
     <div class="search-bar">
         <input type="text" id="searchClients" onkeyup="searchClients()" placeholder="Buscar por nombre..">
     </div>
 
+    <!-- Tabla de usuarios -->
     <table id="clients-table" class="clients-table">
         <thead>
+        <!-- Primera fila de la tabla (títulos) -->
         <tr>
-            <th onclick="sortTable('nombreCliente')" class="nombreCliente">Nombre del Cliente</th>
+            <th onclick="sortTable('nombreUsuario')" class="nombreUsuario asc" >Nombre del Usuario</th>
             <th>Correo Electrónico</th>
-            <th onclick="sortTable('rol')" class="rol">Rol</th>
+            <th onclick="sortTable('rol')" class="rol asc">Rol</th>
             <th>Editar</th>
             <th>Eliminar</th>
         </tr>
         </thead>
+        <!-- Siguientes filas de la página -->
         <tbody>
         <!-- Tabla implementada por JavaScript-->
         </tbody>
     </table>
+    <!-- Botón de guardar y texto de que se han guardado los cambios en la BBDD -->
     <div class="client-buttons">
-        <button class="add-client" onclick="togglePopup('miPopupAdd')">Añadir Cliente</button>
         <h3 class="guardarBBDD">Datos guardados en la Base de Datos</h3>
-        <button class="save-client" onclick="guardarBBDD()">Guardar</button>
+        <button class="btn-guardar" onclick="guardarBBDD()">Guardar</button>
     </div>
 </div>
 
-<!-- Popup para editar cliente -->
+<!-- Popup para editar usuarios -->
 <div id="miPopup2" class="popup">
+    <!-- Contenido del popup -->
     <div class="popup-contenido">
+        <!-- x para cerrar el popup -->
         <span class="cerrar" onclick="togglePopup('miPopup2')">&times;</span>
-        <h2 class="popupH2">Editar Cliente</h2>
-        <input type="hidden" id="clienteIndex">
-        <input type="text" id="nuevoNombreCliente" placeholder="Nuevo Nombre">
-        <input type="text" id="nuevoCorreoCliente" placeholder="Nuevo Correo Electrónico">
+        <h2 class="popupH2">Editar Usuario</h2>
+        <input type="hidden" id="usuarioIndex">
+        <!-- Inputs del popup para editar los datos -->
+        <input type="text" id="nuevoNombreUsuario" placeholder="Nuevo Nombre">
+        <input type="text" id="nuevoCorreoUsuario" placeholder="Nuevo Correo Electrónico">
+        <!-- Selector entre administrador, Usuario Registrado y Técnico -->
         <div class="select-container">
-            <select id="nuevoRolCliente">
+            <select id="nuevoRolUsuario">
                 <option value="">Selecciona un Rol</option>
                 <option value="Administrador">Administrador</option>
-                <option value="Usuario">Usuario</option>
-                <option value="Técnico">Técnico</option>
-            </select>
-        </div>
-        <p id="errorEditar" class="error-message" style="display:none;">Por favor, rellena todos los campos y proporciona un correo electrónico válido.</p>
-        <div class="button-container">
-            <button class="button" onclick="confirmarEditarCliente()">Guardar</button>
-        </div>
-    </div>
-</div>
-
-<!-- Popup para añadir cliente -->
-<div id="miPopupAdd" class="popup">
-    <div class="popup-contenido">
-        <span class="cerrar" onclick="togglePopup('miPopupAdd')">&times;</span>
-        <h2 class="popupH2">Añadir Cliente</h2>
-        <input type="text" id="nuevoNombreClienteAdd" placeholder="Nombre">
-        <input type="text" id="nuevoCorreoClienteAdd" placeholder="Correo Electrónico">
-        <div class="select-container">
-            <select id="nuevoRolClienteAdd">
-                <option value="">Selecciona un Rol</option>
-                <option value="Administrador">Administrador</option>
-                <option value="Usuario">Usuario</option>
+                <option value="Usuario">Usuario Registrado</option>
                 <option value="Técnico">Técnico</option>
             </select>
         </div>
         <!-- Mensaje de error -->
-        <p id="errorAgregar" class="error-message">Por favor, rellena todos los campos y proporciona un correo electrónico válido.</p>
+        <p id="errorEditar" class="error-message" style="display:none;">Por favor, rellena todos los campos y proporciona un correo electrónico válido.</p>
         <div class="button-container">
-            <button class="button" onclick="confirmarAnyadir()">Añadir</button>
+            <!-- Botón de Guardar cambios -->
+            <button class="button" onclick="confirmarEditarUsuario()">Guardar</button>
         </div>
     </div>
 </div>
 
-<!-- Popup para eliminar cliente -->
+<!-- Popup para eliminar usuario -->
 <div id="miPopupEliminar" class="popup">
     <div class="popup-contenido">
+        <!-- x para cerrar el popup -->
         <span class="cerrar" onclick="togglePopup('miPopupEliminar')">&times;</span>
-        <h2 class="popupH2">Eliminar Cliente</h2>
-        <h3 class="popupP">¿Estás seguro de que deseas eliminar este cliente?</h3>
-        <input type="hidden" id="clienteEliminarIndex">
+        <!-- Inputs del popup para editar los datos -->
+        <h2 class="popupH2">Eliminar Usuario</h2>
+        <h3 class="popupP">¿Estás seguro de que deseas eliminar este usuario?</h3>
+        <input type="hidden" id="usuarioEliminarIndex">
+        <!-- Botón de Eliminar usuario -->
         <div class="button-container">
             <button class="button" onclick="confirmarEliminar()">Eliminar</button>
         </div>
     </div>
 </div>
 
-<script src="../../js/gestionClientes.js"></script>
+<script src="../../js/gestionUsuarios.js"></script>
 
 </body>
 </html>
