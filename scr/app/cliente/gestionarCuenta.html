@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Especifica la codificación de caracteres como UTF-8 -->
     <meta charset="UTF-8">
+    <!-- Ajusta el diseño de la página para que sea responsivo en todos los dispositivos -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
     <title>gestionarCuenta</title>
+    <!-- Incluye los estilos de Font Awesome para los iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Incluye los estilos personalizados -->
     <link rel="stylesheet" type="text/css" href="../../css/Botones.css">
-    <link rel="stylesheet" type="text/css" href="../../css/Fuentes.css ">
+    <link rel="stylesheet" type="text/css" href="../../css/Fuentes.css">
     <link rel="stylesheet" type="text/css" href="../../css/header.css">
     <link rel="stylesheet" type="text/css" href="../../css/MenuHam.css">
-    <link rel="stylesheet" type="text/css" href="../../css/gestionarCuenta.css ">
+    <link rel="stylesheet" type="text/css" href="../css/gestionarCuenta.css">
 </head>
 <body>
 <header class="header">
+    <!-- Logo de la página -->
     <div><img class="logo" src="../../img/Grado_en_tecnologías_interactivas.svg" alt="LOGO"></div>
+    <!-- Título del sitio -->
     <h1><span class="green">Green</span><span class="life">Life</span></h1>
     <nav>
         <ul class="nav-menu" id="menuOrdenador">
+            <!-- Enlaces de navegación -->
             <li><a class="text-button" href="MisHuertos.html">Mis huertos</a></li>
             <li><a class="text-button" href="tecnico_cliente.html">Soporte</a></li>
             <li><a class="text-button" href="gestionarCuenta.html"><i class="fa fa-user-circle-o"></i></a></li>
+            <!-- Comentario sobre enlace deshabilitado
             <li><a class="text-button" href="../../index.html"><i class="fa fa-sign-out"></i></a></li>
-
+            -->
         </ul>
     </nav>
 </header>
@@ -29,86 +38,125 @@
 <nav id="navMenu" role="navigation">
     <div id="menuToggle">
         <!--
-        Una falsa / oculta checkbox es usada como click reciever
+        Una falsa / oculta checkbox es usada como receptor de clics
         -->
         <input type="checkbox" />
 
         <!--
-        Algunos spans que actuan como hamburgesa.
+        Algunos spans que actúan como hamburguesa.
         -->
         <span></span>
         <span></span>
         <span></span>
 
         <!--
-        Una pena que el menu tenga que estar dentro del boton
+        Una pena que el menú tenga que estar dentro del botón
         pero eh, es pura magia de CSS.
         -->
         <ul id="menu">
             <li><a class="text-button" href="gestionarCuenta.html"><i class="fa fa-user-circle-o"></i></a></li>
+            <!-- Comentario sobre enlace deshabilitado
             <li><a class="text-button" href="../../index.html"><i class="fa fa-sign-out"></i></a></li>
+            -->
             <li><a class="text-button" href="tecnico_cliente.html">FAQ</a></li>
             <li><a class="text-button" href="#">Soporte</a></li>
         </ul>
     </div>
 </nav>
 
-<div class="gestion-cuenta">
+<!-- Contenedor de pestañas -->
+<div id="tabs">
+    <!-- Pestañas de navegación -->
+    <div class="tab tabs2-1 active" onclick="openTab(event, 'informacion-general')"><h3>Información General</h3></div>
+    <div class="tab tabs2-1" onclick="openTab(event, 'cambiar-correo')"><h3>Cambiar Correo</h3></div>
+    <div class="tab tabs2-2" onclick="openTab(event, 'cambiar-contrasena')"><h3>Cambiar Contraseña</h3></div>
+    <div class="tab tabs2-2" onclick="openTab(event, 'eliminar-cuenta')"><h3>Eliminar Cuenta</h3></div>
+    <div class="tab tab-last" onclick="openTab(event, 'cerrar-sesion')"><h3>Cerrar sesión</h3></div>
+</div>
 
-    <div class="global">
-        <h2>Cambiar Correo</h2>
-        <div class="correoYcontraseña">
-            <input id="correoActual" type="email" placeholder="Correo actual">
-            <input id="correoNuevo" type="email" placeholder="Correo nuevo">
-            <input id="contraseñaCorreo" type="password" placeholder="Contraseña">
+<!-- Contenido de cada pestaña -->
+<div id="informacion-general" class="tab-content active">
+    <h2>Información General</h2>
+    <div class="cont-info-gen"><h3>Nombre del usuario</h3> <h3>correo@gmail.com</h3></div>
+    <div class="cont-info-gen-last"><h3>Código de Invitado:</h3>
+        <div class="ponerle-flex">
+        <p id="codigo" class="h3 codigo" onclick="copiarAlPortapapeles(this)">12345</p>
+        <a class="h3 reroll-codigo" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
+        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
+        </svg> Cambiar código</a><span id="mensaje-copiar" class="mensaje-copiar h4">Copiado</span>
         </div>
-        <h4>¿Olvidaste tu contraseña?</h4>
-        <button id="botonCorreo" class="button">Confirmar</button>
     </div>
+</div>
+<div id="cambiar-correo" class="tab-content">
+    <h2>Cambiar Correo</h2>
+    <!-- Formulario para cambiar el correo -->
+    <div class="correoYcontraseña">
+        <input id="correoActual" type="email" placeholder="Correo actual">
+        <input id="correoNuevo" type="email" placeholder="Correo nuevo">
+        <input id="contraseñaCorreo" type="password" placeholder="Contraseña">
+    </div>
+    <h4>¿Olvidaste tu contraseña?</h4>
+    <button id="botonCorreo" class="button">Confirmar</button>
+</div>
 
-    <div class="global">
-        <h2>Reestablecer Contraseña</h2>
-        <div class="correoYcontraseña">
-            <input id="contraseñaActual" type="password" placeholder="Contraseña actual">
-            <input id="contraseñaNueva" type="password" placeholder="Contraseña nueva">
-            <input id="confirmarContraseña" type="password" placeholder="Confirmar contraseña">
+<div id="cambiar-contrasena" class="tab-content">
+    <h2>Cambiar Contraseña</h2>
+    <!-- Formulario para cambiar la contraseña -->
+    <div class="correoYcontraseña">
+        <input id="contraseñaActual" type="password" placeholder="Contraseña actual">
+        <input id="contraseñaNueva" type="password" placeholder="Contraseña nueva">
+        <input id="confirmarContraseña" type="password" placeholder="Confirmar contraseña">
+    </div>
+    <h4>¿Olvidaste tu contraseña?</h4>
+    <button id="botonContraseña" class="button">Confirmar</button>
+</div>
+
+<div id="eliminar-cuenta" class="tab-content">
+    <h2>Eliminar Cuenta</h2>
+    <!-- Contenedores con información y motivos para eliminar la cuenta -->
+    <div class="contenedores">
+        <div id="eliminarCuenta1">
+            <p>Hola, <strong>Alan</strong>:
+                Hola, Alan: Lamentamos que quieras eliminar tu cuenta. ¿Por qué quieres eliminar la cuenta? Queremos recordarte que al eliminar tu cuenta, perderás acceso a todos los servicios y contenidos asociados a ella.
+            </p>
+            <h4>¿Olvidaste tu contraseña?</h4>
         </div>
-        <h4>¿Olvidaste tu contraseña?</h4>
-        <button id="botonContraseña" class="button">Confirmar</button>
-    </div>
-
-    <div id="eliminar-cuenta">
-        <h2>Eliminar Cuenta</h2>
-        <div class="contenedores">
-            <div id="eliminarCuenta1">
-                <p>Hola, <strong>Alan</strong>:
-                    Hola, Alan: Lamentamos que quieras eliminar tu cuenta. ¿Por qué quieres eliminar la cuenta? Queremos recordarte que al eliminar tu cuenta, perderás acceso a todos los servicios y contenidos asociados a ella.
-                </p>
-                <h4>¿Olvidaste tu contraseña?</h4>
-            </div>
-            <div id="eliminarCuenta2">
-                <h3>Por favor, selecciona el motivo e ingresa tu contraseña</h3>
-
-                <div id="motivoContra">
-                    <select id="hola">
-                        <option value="no-uso">No uso la cuenta</option>
-                        <option value="seguridad">Preocupaciones de seguridad</option>
-                        <!-- Añade más opciones si es necesario -->
-                    </select>
-                    <input id="contraseñaEliminar" type="password" placeholder="Contraseña">
+        <div id="eliminarCuenta2">
+            <h3>Por favor, selecciona el motivo e ingresa tu contraseña</h3>
+            <div id="motivoContra">
+                <select id="hola">
+                    <option value="no-uso">No uso la cuenta</option>
+                    <option value="seguridad">Preocupaciones de seguridad</option>
+                    <!-- Añade más opciones si es necesario -->
+                </select>
+                <input id="contraseñaEliminar" type="password" placeholder="Contraseña">
+                <div class="gestion-cuenta">
+                    <div id="eliminarCuenta3">
+                        <!-- Mensaje que informa al usuario de las consecuencias de eliminar la cuenta -->
+                        <p>Si presionas el siguiente botón todos tus datos se eliminarán definitivamente y no se podrán recuperar. Si en el futuro decides crear otra cuenta, no podrás registrarte con el mismo nombre de usuario.</p>
+                        <!-- Botón para confirmar la eliminación definitiva de la cuenta -->
+                        <button id="botonEliminar" class="button">Borrar definitivamente la cuenta</button>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div id="eliminarCuenta3">
-            <p>Si presionas el siguiente botón todos tus datos se eliminarán definitivamente y no se podrán recuperar. Si en el futuro decides crear otra cuenta, no podrás registrarte con el mismo nombre de usuario.</p>
-            <button id="botonEliminar" class="button">Borrar definitivamente la cuenta</button>
-        </div>
+    </div>
+</div>
+<!-- Contenido de la pestaña "Cerrar sesión" -->
+<div id="cerrar-sesion" class="tab-content">
+    <!-- Mensaje de confirmación para cerrar sesión -->
+    <div id="pregunta-cerrar-sesion">
+        <h3>¿Esta seguro de que desea cerrar sesión?</h3>
+        <!-- Enlace que cierra la sesión y redirige a la página principal -->
+        <a class="button" href="../../index.html">Cerrar sesión</a>
     </div>
 </div>
 
-</div>
+<!-- Inclusión de archivos JavaScript -->
 <script src="../../js/Botones.js"></script>
-<script src="../../js/gestionarCuenta.js"></script>
+<script src="../../js/logOut.js"></script>
+<script src="../js/gestionarCuenta.js"></script>
+
 </body>
 </html>

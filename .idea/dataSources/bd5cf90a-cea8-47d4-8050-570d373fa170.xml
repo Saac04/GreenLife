@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="greenlife@localhost">
+<<<<<<< HEAD
   <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.48">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
@@ -134,6 +135,10 @@ test\\_%|schema||&apos;&apos;||TRIGGER|G
 test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <ServerVersion>10.4.28</ServerVersion>
     </root>
+=======
+  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.51">
+    <root id="1"/>
+>>>>>>> origin/feature/GestionCuenta
     <collation id="2" parent="1" name="big5_chinese_ci">
       <Charset>big5</Charset>
       <DefaultForCharset>1</DefaultForCharset>
