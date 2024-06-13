@@ -35,7 +35,7 @@ async function inicioSesion(event){
         if (respuesta.status === 200) {
             switch (data.rol) {
                 case "0":
-                    window.location.href = 'app/admin/gestionClientes.html';
+                    window.location.href = 'app/admin/gestionUsuarios.html';
                     break;
                 case "1":
                     window.location.href = 'app/tecnico/ConsultasTecnico.html';
