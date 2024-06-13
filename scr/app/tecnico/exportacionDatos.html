@@ -26,26 +26,10 @@
 
 <nav id="navMenu" role="navigation">
     <div id="menuToggle">
-        <!--
-        A fake / hidden checkbox is used as click reciever,
-        so you can use the :checked selector on it.
-        -->
         <input type="checkbox" />
-
-        <!--
-        Some spans to act as a hamburger.
-
-        They are acting like a real hamburger,
-        not that McDonalds stuff.
-        -->
         <span></span>
         <span></span>
         <span></span>
-
-        <!--
-        Too bad the menu has to be inside of the button
-        but hey, it's pure CSS magic.
-        -->
         <ul id="menu">
             <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
             <li><a class="text-button" href="exportacionDatos.html">Datos</a></li>
@@ -53,30 +37,13 @@
         </ul>
     </div>
 </nav>
-<div class="export-container">
+<div class="Titulo">
     <h2>Exportación de datos históricos</h2>
     <p id="negro">Para comenzar la exportación de datos históricos, por favor selecciona el rango de fechas y el sensor sobre el que quieres exportar los datos.</p>
-    <div class="selection-container">
-        <div class="date-container">
-            <h3 id="soyH3">Selecciona la fecha</h3>
-            <div class="date-inputs">
-                <input type="text" class="input-field" placeholder="DD/MM/AAAA">
-            </div>
-        </div>
-        <div class="sensor-container">
-            <h3>Selecciona el sensor sobre el que desea exportar los datos</h3>
-            <select id="sensor" class="input-field">
-                <option value="Todos">Todos</option>
-                <option value="Temperatura">Temperatura</option>
-                <option value="Humedad">Humedad</option>
-                <option value="Salinidad">Salinidad</option>
-                <option value="Ph">Ph</option>
-                <option value="Luminosidad">Luminosidad</option>
-            </select>
-        </div>
-    </div>
+</div>
+<div class="Contenedor">
     <div class="username-container">
-        <h3>Introduce el nombre de usuario sobre el que deseas exportar los datos</h3>
+        <h3>Introduce el nombre de usuario </h3>
         <div class="contenedor-buscador">
             <input list="usernames" id="nombreUsuario" type="text" class="input-field" placeholder="Nombre de usuario">
             <datalist id="usernames">
@@ -84,6 +51,27 @@
             <button class="button">Mostrar tabla</button>
         </div>
     </div>
+    <div class="selection-container">
+        <div class="date-container">
+            <h3 id="soyH3">Selecciona la fecha</h3>
+            <div class="date-inputs">
+                <input type="text" class="input-field" placeholder="DD/MM/AAAA">
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="sensor-container">
+        <h3>Selecciona el sensor </h3>
+        <select id="sensor" class="input-field">
+            <option value="Todos">Todos</option>
+            <option value="Temperatura">Temperatura</option>
+            <option value="Humedad">Humedad</option>
+            <option value="Salinidad">Salinidad</option>
+            <option value="Ph">Ph</option>
+            <option value="Luminosidad">Luminosidad</option>
+        </select>
+    </div>
+    <div class="export-container"></div>
     <table id="data-table">
         <thead>
         <tr>

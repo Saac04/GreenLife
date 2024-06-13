@@ -33,22 +33,17 @@
 
 }
 
-
-
 .contenedor-buscador{
-
     display: flex;
     justify-content: flex-start;
     align-items:center ;
 }
 
-
-
 /* Estilos para los campos de entrada de texto */
 input[type="text"], textarea {    
     border: 2px solid #c6c6c6; /* Borde alrededor del campo de entrada */
     border-radius: 10px; /* Radio del borde */
-    width: 183px; /* Ancho del campo de entrada */
+    width: 130px; /* Ancho del campo de entrada */
     height: 20px; /* Altura del campo de entrada */
 
 }
@@ -66,6 +61,9 @@ input[type="text"], textarea {
     padding: 0px; /* Ajuste de relleno */
     margin-bottom: 0px; /* Margen inferior */
     margin-top:15px;
+}
+#sensor {
+    width: 150px;
 }
 
 .button{
@@ -114,5 +112,44 @@ h3 {
 }
 
 
+.Contenedor {
+    display: flex;
+    justify-content: left; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    gap: 9rem;
+    padding: 1rem;
+    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
+    max-width: 1000px; /* Ajusta el ancho máximo según tus necesidades */
+}
+.Titulo{
+    display: grid;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    padding: 1rem;
+    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
+    max-width: 1000px; /* Ajusta el ancho máximo según tus necesidades */
+}
+
+.sensor-container {
+    display: grid;
+    justify-content: left; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    padding: 1rem;
+    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
+    max-width: 1000px; /* Ajusta el ancho máximo según tus necesidades */
+}
+
+@media (max-width: 813px){
+ .Contenedor{
+     display: flex;
+     gap: 2rem;
+ }
+}
+@media (max-width: 700px){
+    .Contenedor{
+        display: grid;
+        gap: 0;
+    }
+}
 
 
