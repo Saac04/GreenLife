@@ -99,7 +99,6 @@ function agregarFila() {
     //Generar fecha aleatoria
     var fechaAleatoria = generarFechaAleatoria(new Date(2022, 0, 1), new Date()); // Rango de fecha aleatorio
 
-
     // HTML de la nueva fila con el asunto, la consulta y el correo generado aleatoriamente
     nuevaFila.innerHTML = `
         <td class="p p2">${generarCorreoAleatorio()}</td>
@@ -238,3 +237,43 @@ document.getElementById('selectorFechas').addEventListener('change', function() 
 
     rows.forEach(row => table.appendChild(row));
 });
+
+// Función para abrir el popup de responder consulta
+function abrirPopupResponder(event, button) {
+    event.stopPropagation();
+    var nombre = document.querySelector('.consulta .nombre').textContent;
+    if (nombre.trim() === '') {
+        alert('Por favor, abre una consulta antes de responder.');
+        return;
+    }
+    consultaResponder = button.closest('tr');
+    var popup = document.getElementById('miPopupResponder');
+    popup.style.display = 'block';
+}
+
+// Función para cerrar el popup de responder consulta
+function cerrarPopupResponder() {
+    var popup = document.getElementById('miPopupResponder');
+    popup.style.display = 'none';
+}
+
+// Función para enviar la respuesta a la consulta
+function enviarRespuesta() {
+    var respuesta = document.getElementById('respuestaConsulta').value;
+    var error = document.querySelector('.error_consulta');
+    var enviado = document.querySelector('.exito_consulta')
+
+    if (respuesta.trim() !== '') {
+        enviado.style.visibility = 'visible';
+        setTimeout(function () {
+            enviado.style.visibility = 'hidden';
+            cerrarPopupResponder()
+        }, 3000)
+
+    } else {
+        error.style.visibility = 'visible'; // Mostrar el mensaje de error
+        setTimeout(function() {
+            error.style.visibility = 'hidden'; // Esconder el mensaje de error después de 3 segundos
+        }, 3000);
+    }
+}

@@ -28,11 +28,7 @@
 <!-- Menú de la página (para versión de móvil), logo, botón de gestión, consultas y perfil -->
 <nav id="navMenu" role="navigation">
   <div id="menuToggle">
-    <!-- Se utiliza una casilla de verificación falsa/oculta como receptor de clics,
-    por lo que puede usar el selector :checked en ella. -->
     <input type="checkbox" />
-    <!-- Unos spans para actuar como hamburguesa,
-    están actuando como una verdadera hamburguesa. -->
     <span></span>
     <span></span>
     <span></span>
@@ -99,6 +95,9 @@
       <div class="usuario p p2">Correo electrónico</div>
       <div class="asunto p p2">Asunto</div>
       <div class="consultaTexto p"></div>
+      <div class="contenedorBotonConsultas">
+        <button class="responderConsulta" onclick="abrirPopupResponder(event, this)">Responder</button>
+      </div>
     </div>
   </div>
 </div>
@@ -118,6 +117,25 @@
     </div>
   </div>
 </div>
+
+<!-- Popup para responder consulta -->
+<div id="miPopupResponder" class="popup">
+  <div class="popup-contenido">
+    <!-- x para cerrar el popup -->
+    <span class="cerrar" onclick="cerrarPopupResponder()">&times;</span>
+    <!-- Inputs del popup para responder la consulta -->
+    <h2 class="popupH2">Responder Consulta</h2>
+    <input type="text" id="respuestaConsulta" placeholder="Escribe tu respuesta aquí...">
+    <p class="error_consulta">Introduce la respuesta antes de enviar!!</p> <!-- El mensaje de error -->
+    <p class="exito_consulta">Mensaje enviado correctamente!</p> <!-- El mensaje de éxito -->
+    <!-- Botón de Enviar respuesta -->
+    <div class="button-container">
+      <button class="button" onclick="enviarRespuesta()">Enviar</button>
+    </div>
+  </div>
+</div>
+
+
 
 <script src="../js/ConsultasAdmin.js"></script>
 </body>
