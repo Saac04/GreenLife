@@ -59,3 +59,27 @@ async function inicioSesion(event){
         mensajeError.textContent = error.message || 'Error al iniciar sesión. Por favor, inténtelo de nuevo.';
     }
 }
+
+class UsuarioModel{
+    url = '../api/usuarios/';
+
+}
+function OlvidarContrasenya() {
+    var popup = document.getElementById('miPopup');
+    // Verificar si el estilo 'display' está configurado como 'block'
+    if (popup.style.display === 'block') {
+        popup.style.display = 'none';
+    } else {
+        popup.style.display = 'block';
+    }
+}
+
+function CodigoInvitado() {
+    var popup = document.getElementById('miPopup2');
+    // Verificar si el estilo 'display' está configurado como 'block'
+    if (popup.style.display === 'block') {
+        popup.style.display = 'none';
+    } else {
+        popup.style.display = 'block';
+    }
+}

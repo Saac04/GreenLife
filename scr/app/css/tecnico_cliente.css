@@ -63,7 +63,6 @@ h3 {
 /* Estilos para la sección de consultas */
 .consultas-section {
     width: 50%;
-    margin-right: 100px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -195,4 +194,16 @@ h3 {
 /* Estilos cuando el elemento tiene la clase 'active' */
 .faq.active {
     border: none;
+}
+
+@media (max-width: 601px) {
+
+    .content-section {
+        display: grid;
+
+        width: 50rem;
+        height: 50rem;
+
+
+    }
 }

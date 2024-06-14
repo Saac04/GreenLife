@@ -1,9 +1,11 @@
+/* Estilo para el pie de página */
 footer {
     background-color: #c6c6c6;
     width: 100%;
     bottom: 0;
 }
 
+/* Contenedor principal del pie de página */
 .footer-container {
     margin: 0 auto;
     display: flex;
@@ -11,65 +13,69 @@ footer {
     align-items: center;
 }
 
+/* Estilo para todos los elementos dentro del contenedor del pie de página */
 .footer-container *{
     width: 100%;
     padding: 0.4rem 0 0.4rem 0;
 }
 
+/* Estilo específico para el contenedor de iconos sociales */
 .footer-container .social-icons {
     order: 3; /* Cambia el orden de los elementos para que aparezca al final */
 }
 
+/* Estilo para los iconos sociales */
 .social-icons {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: 20px;
+    gap: 10px;
 }
 
+/* Estilo para los enlaces dentro de los iconos sociales */
 .social-icons a {
-    width: 50px;
+    width: 35px;
 }
 
+/* Estilo para los iconos dentro de los enlaces */
 .social-icons a i{
     color: #545454;
-    font-size: 50px;
+    font-size: 35px;
 }
 
+/* Estilo para los encabezados h4 */
 h4 {
     font-family: "Kanit ExtraLight";
     margin: 0 0 10px 0;
     text-align: center;
     white-space: nowrap;
     order: 2; /* Coloca el h4 al final en pantallas pequeñas */
-
-
 }
 
+/* Estilos responsivos para pantallas con ancho máximo de 850px */
 @media screen and (max-width: 850px) {
     .footer-container {
-        flex-direction: column; /* Vuelve a la dirección de fila en pantallas grandes */
+        flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
     }
 
     h4 {
-        order: 5; /* Mueve el h4 a la posición original en pantallas grandes */
+        order: 5; /* Mueve el h4 a la última posición en pantallas pequeñas */
     }
 
     .social-icons {
         justify-content: center;
-        order: 1        ; /* Mueve los iconos a la posición original en pantallas grandes */
+        order: 1; /* Mueve los iconos sociales a la primera posición en pantallas pequeñas */
     }
 
     button {
-        order: 1; /* Mueve el botón a la posición original en pantallas grandes */
-        margin-bottom: 0; /* Elimina el margen inferior del botón en pantallas grandes */
+        order: 1; /* Mueve el botón a la primera posición en pantallas pequeñas */
+        margin-bottom: 0; /* Elimina el margen inferior del botón en pantallas pequeñas */
     }
 }
 
-@media screen and (max-width: 500px){
-    .footer-container *{
-        padding: 0.2rem 0 0.2rem 0;
+/* Estilos responsivos para pantallas con ancho máximo de 500px */
+@media screen and (max-width: 500px) {
+    .footer-container * {
+        padding: 0.2rem 0 0.2rem 0; /* Reduce el padding para pantallas pequeñas */
     }
-
 }
-

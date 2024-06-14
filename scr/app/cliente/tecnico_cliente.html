@@ -17,47 +17,41 @@
     <script src="../../js/CheckSession.js"></script>
 </head>
 <body>
-
 <header class="header">
+    <!-- Logo de la página -->
     <div><img class="logo" src="../../img/Grado_en_tecnologías_interactivas.svg" alt="LOGO"></div>
+    <!-- Título del sitio -->
     <h1><span class="green">Green</span><span class="life">Life</span></h1>
     <nav>
         <ul class="nav-menu" id="menuOrdenador">
-            <li><a class="text-button" href="#">Mis huertos</a></li>
+            <!-- Enlaces de navegación -->
+            <li><a class="text-button" href="MisHuertos.html">Mis huertos</a></li>
             <li><a class="text-button" href="tecnico_cliente.html">Soporte</a></li>
             <li><a class="text-button" href="gestionarCuenta.html"><i class="fa fa-user-circle-o"></i></a></li>
+            <!-- Comentario sobre enlace deshabilitado
             <li><a class="text-button" href="../../index.html"><i class="fa fa-sign-out"></i></a></li>
-
+            -->
         </ul>
     </nav>
 </header>
 
 <nav id="navMenu" role="navigation">
     <div id="menuToggle">
-        <!--
-        Una falsa / oculta checkbox es usada como click reciever
-        -->
         <input type="checkbox" />
-
-        <!--
-        Algunos spans que actuan como hamburgesa.
-        -->
         <span></span>
         <span></span>
         <span></span>
-
-        <!--
-        Una pena que el menu tenga que estar dentro del boton
-        pero eh, es pura magia de CSS.
-        -->
         <ul id="menu">
             <li><a class="text-button" href="gestionarCuenta.html"><i class="fa fa-user-circle-o"></i></a></li>
+            <!-- Comentario sobre enlace deshabilitado
             <li><a class="text-button" href="../../index.html"><i class="fa fa-sign-out"></i></a></li>
+            -->
             <li><a class="text-button" href="tecnico_cliente.html">FAQ</a></li>
-            <li><a class="text-button" href="#">Sobre Nosotros</a></li>
+            <li><a class="text-button" href="#">Soporte</a></li>
         </ul>
     </div>
 </nav>
+
 <!-- Contenedor principal -->
 <div class="container">
     <!-- Sección de soporte -->
@@ -107,8 +101,23 @@
                     </p>
                 </div>
             </div>
+            <div class="faq">
+                <button class="accordion">
+                    ¿Cuanto tardan en responder?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="pannel">
+                    <p>
+                        Nuestro tiempo de respuesta habitual es de 3 días hábiles.
+                        Esto significa que no contamos los fines de
+                        semana ni los días festivos oficiales en nuestro
+                        cálculo de tiempo de respuesta.
+                    </p>
+                </div>
+            </div>
         </div>
 
+        
         <div class="consultas-section">
             <h2 class="consultas">Consultas</h2>
             <h3 class="info-consultas">Para empezar con la consulta, selecciona si va destinada al administrador

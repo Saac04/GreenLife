@@ -1,10 +1,13 @@
+/* Importa la fuente 'Kanit' de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap');
 
+/* Estilos generales para todos los elementos */
 * {
     margin: 0;
     box-sizing: border-box;
 }
 
+/* Estilo general del cuerpo */
 body {
     display: flex;
     justify-content: center;
@@ -14,44 +17,53 @@ body {
     background-color: #FFFFFF;
 }
 
+/* Contenedor principal de la sección de registro */
 .register-container {
     text-align: center;
     background-size: cover;
 }
 
+/* Estilo para el encabezado principal */
 h1 {
     font-size: 48px;
     font-weight: 500;
     color: #545454;
     text-align: center;
 }
+
 h1 span {
-    color: #76BD57;
+    color: #76BD57; /* Color especial para el span dentro del h1 */
 }
 
+/* Estilo para el encabezado secundario */
 h2 {
     margin-top: 20px;
 }
+
+/* Estilo para el encabezado de menor jerarquía */
 h4 {
     font-size: 18px;
     color: #479555;
 }
 
-/*-- casillas de nombre, apellidos, correo electrónico y contraseña --*/
+/* Estilo para los campos de entrada */
 .input-field {
     display: block;
     width: 426px;
     margin: 15px 0;  /* Aumenta este valor para más espacio entre los campos    */
 }
 
+/* Quita el contorno al enfocar el campo de entrada */
 .input-field:focus {
     outline: none;
 }
 
+/* Estilo para los textos de marcador de posición */
 ::placeholder {
-    color: #c6c6c6; /* Puedes ajustar el color según tus preferencias */
+    color: #c6c6c6; /* Color del marcador de posición */
 }
 
+/* Estilo para el mensaje de error */
 #mensaje-error {
     font-size: 15px;
     font-weight: 400;
@@ -66,6 +78,19 @@ h4 {
     margin-bottom: 22px;
 }
 
+/* Estilo para el contenedor de salir */
+#Salirse {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Estilo para el botón de atrás */
+#BotonAtras {
+    width: 165px;
+    height: 44px;
+}
+
+/* Estilo para el enlace de "Ya tengo cuenta" */
 .ya_tengo_cuenta {
     margin-top: -10px;
     cursor: pointer;
@@ -75,6 +100,7 @@ h4 {
     text-decoration: underline;
 }
 
+/* Estilo para el segundo botón */
 .button2 {
     width: 165px;
     height: 44px;
@@ -88,7 +114,7 @@ h4 {
     float: right;
 }
 
-/*-- cuando el tamaño sea menor a 800px cambia a vista de móvil --*/
+/* Estilos responsivos para pantallas con ancho máximo de 800px */
 @media (max-width: 800px) {
     h1 {
         font-size: 36px;
@@ -103,7 +129,7 @@ h4 {
     .input-field {
         font-size: 14px;
         width: 320px;
-        margin: 20px 0;  /* Aumenta este valor para más espacio entre los campos    */
+        margin: 20px 0;  /* Espacio entre los campos de entrada */
     }
     #mensaje-error {
         font-size: 12px;
