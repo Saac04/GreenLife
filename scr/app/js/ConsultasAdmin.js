@@ -79,6 +79,12 @@ function obtenerAsuntoAleatorio() {
     return listaAsuntos[indice];
 }
 
+// Función para generar una fecha aleatoria entre un rango de fechas
+function generarFechaAleatoria(start, end) {
+    var date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+    return date.toISOString().split('T')[0]; // Devuelve la fecha en formato YYYY-MM-DD
+}
+
 // Función para agregar una fila a la tabla
 function agregarFila() {
     // Obtener referencia a la tabla
@@ -87,21 +93,21 @@ function agregarFila() {
     // Obtener un asunto aleatorio
     var asunto = obtenerAsuntoAleatorio();
 
-    // Obtener la consulta relacionada con el asunto
-    var consulta = obtenerConsultaRelacionada(asunto);
-
     // Crear una nueva fila
     var nuevaFila = document.createElement('tr');
 
+    //Generar fecha aleatoria
+    var fechaAleatoria = generarFechaAleatoria(new Date(2022, 0, 1), new Date()); // Rango de fecha aleatorio
+
     // HTML de la nueva fila con el asunto, la consulta y el correo generado aleatoriamente
     nuevaFila.innerHTML = `
-    <td class="p p2" >${generarCorreoAleatorio()} </td>
-    <td class="p p2">${asunto}</td>
-    <td class="p p2"><input type="checkbox" class="finalizado checkbox"></td>
-  `;
-
-    // Agregar el atributo onclick al tr para llamar a la función rellenarDivsDesdeTR(this)
-    nuevaFila.setAttribute('onclick', 'rellenarDivsDesdeTR(this)');
+        <td class="p p2">${generarCorreoAleatorio()}</td>
+        <td class="p p2">${asunto}</td>
+        <td class="p p2">${fechaAleatoria}</td>
+        <td class="p p2"><div class="contenido-casilla"><input type="checkbox" class="finalizado checkbox"></div></td>
+        <td class="p p2"><div class="contenido-casilla"><button class="abrir-consulta-btn" onclick="abrirConsulta(event, this)">Abrir</button></div></td>
+        <td class="p p2"><div class="contenido-casilla"><button class="eliminar-consulta-btn" onclick="abrirPopupEliminar(event, this)">Eliminar</button></div></td>
+    `;
 
     // Agregar la fila a la tabla
     tabla.appendChild(nuevaFila);
@@ -110,7 +116,7 @@ function agregarFila() {
 // Función para agregar múltiples filas al cargar la página
 function agregarFilasAlCargar() {
     // Determinar el número de filas a agregar
-    var numFilas = 20; // Por ejemplo, agregar 5 filas al cargar la página
+    var numFilas = 20; // Por ejemplo, agregar 20 filas al cargar la página
 
     // Agregar las filas a la tabla
     for (var i = 0; i < numFilas; i++) {
@@ -130,7 +136,6 @@ function rellenarDivsDesdeTR(trElement) {
     var correo = tds[0].textContent;
     var asunto = tds[1].textContent;
 
-
     var nombre = listaNombres[Math.floor(Math.random() * listaNombres.length)];
     var consulta = obtenerConsultaRelacionada(asunto);
 
@@ -141,6 +146,134 @@ function rellenarDivsDesdeTR(trElement) {
     divConsulta.querySelector('.nombre').textContent = nombre;
     divConsulta.querySelector('.usuario').textContent = correo;
     divConsulta.querySelector('.asunto').textContent = asunto;
-    divConsulta.querySelector('.consultaTexto' +
-        '').textContent = consulta;
+    divConsulta.querySelector('.consultaTexto').textContent = consulta;
+}
+
+// Función para manejar el evento de clic en el botón "Abrir"
+function abrirConsulta(event, button) {
+    // Detener la propagación del evento clic
+    event.stopPropagation();
+
+    // Obtener el tr que contiene el botón clicado
+    var trElement = button.closest('tr');
+
+    // Llamar a la función para rellenar los divs con los valores del tr
+    rellenarDivsDesdeTR(trElement);
+
+    // Mostrar el div de consulta
+    var popup = document.getElementById('miPopupConsulta');
+    popup.style.display = 'block';
+}
+
+// Función para manejar el evento de clic en el botón "Eliminar"
+function abrirPopupEliminar(event, button) {
+    // Detener la propagación del evento clic
+    event.stopPropagation();
+
+    // Obtener el tr que contiene el botón clicado
+    var trElement = button.closest('tr');
+
+    // Guardar la referencia al tr a eliminar
+    consultaEliminar = trElement;
+
+    // Mostrar el popup de eliminar
+    var popup = document.getElementById('miPopupEliminar');
+    popup.style.display = 'block';
+}
+
+// Función para cerrar el popup de eliminar
+function cerrarPopupEliminar() {
+    var popup = document.getElementById('miPopupEliminar');
+    popup.style.display = 'none';
+}
+
+// Función para eliminar la consulta seleccionada
+function eliminarConsulta() {
+    // Eliminar la fila de la tabla
+    consultaEliminar.remove();
+
+    // Cerrar el popup de eliminar
+    cerrarPopupEliminar();
+}
+
+// Función para filtrar las consultas por estado
+function filtrarPorEstado() {
+    var selectorEstado = document.getElementById('selectorEstado');
+    var estadoSeleccionado = selectorEstado.value;
+    var filas = document.querySelectorAll('.consulta-table tbody tr');
+
+    filas.forEach(function(fila) {
+        var checkbox = fila.querySelector('input[type="checkbox"]');
+        var estaContestada = checkbox.checked;
+
+        if (estadoSeleccionado === 'Todos' ||
+            (estadoSeleccionado === 'Contestadas' && estaContestada) ||
+            (estadoSeleccionado === 'No contestadas' && !estaContestada)) {
+            fila.style.display = '';
+        } else {
+            fila.style.display = 'none';
+        }
+    });
+}
+
+// Agregar evento para el selector de estado
+document.getElementById('selectorEstado').addEventListener('change', filtrarPorEstado);
+
+document.getElementById('selectorFechas').addEventListener('change', function() {
+    const order = this.value;
+    const table = document.querySelector('.consulta-table tbody');
+    const rows = Array.from(table.rows);
+
+    rows.sort((a, b) => {
+        const dateA = new Date(a.cells[2].innerText);
+        const dateB = new Date(b.cells[2].innerText);
+
+        if (order === 'Ascendente') {
+            return dateA - dateB;
+        } else {
+            return dateB - dateA;
+        }
+    });
+
+    rows.forEach(row => table.appendChild(row));
+});
+
+// Función para abrir el popup de responder consulta
+function abrirPopupResponder(event, button) {
+    event.stopPropagation();
+    var nombre = document.querySelector('.consulta .nombre').textContent;
+    if (nombre.trim() === '') {
+        alert('Por favor, abre una consulta antes de responder.');
+        return;
+    }
+    consultaResponder = button.closest('tr');
+    var popup = document.getElementById('miPopupResponder');
+    popup.style.display = 'block';
+}
+
+// Función para cerrar el popup de responder consulta
+function cerrarPopupResponder() {
+    var popup = document.getElementById('miPopupResponder');
+    popup.style.display = 'none';
+}
+
+// Función para enviar la respuesta a la consulta
+function enviarRespuesta() {
+    var respuesta = document.getElementById('respuestaConsulta').value;
+    var error = document.querySelector('.error_consulta');
+    var enviado = document.querySelector('.exito_consulta')
+
+    if (respuesta.trim() !== '') {
+        enviado.style.visibility = 'visible';
+        setTimeout(function () {
+            enviado.style.visibility = 'hidden';
+            cerrarPopupResponder()
+        }, 3000)
+
+    } else {
+        error.style.visibility = 'visible'; // Mostrar el mensaje de error
+        setTimeout(function() {
+            error.style.visibility = 'hidden'; // Esconder el mensaje de error después de 3 segundos
+        }, 3000);
+    }
 }

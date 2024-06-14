@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../../css/MenuHam.css">
   <link rel="stylesheet" href="../../css/Botones.css">
   <link rel="stylesheet" href="../../css/Fuentes.css">
   <link rel="stylesheet" href="../../css/header.css">
   <link rel="stylesheet" href="../../css/footer.css">
-  <link rel="stylesheet" href="../css/Marcos.css">
   <link rel="stylesheet" href="../css/ConsultasAdmin.css">
-
+  <title>Consultas Admin</title>
 </head>
 <body>
+<!-- Header de la página, logo, botón de gestión, consultas y perfil -->
 <header class="header">
   <div><img class="logo" src="../../img/Grado_en_tecnologías_interactivas.svg" alt="LOGO"></div>
   <h1><span class="green">Green</span><span class="life">Life</span></h1>
@@ -27,31 +25,14 @@
   </nav>
 </header>
 
-<div class="superior">
-  <!-- Contenido de la parte superior de tu página -->
-</div>
+<!-- Menú de la página (para versión de móvil), logo, botón de gestión, consultas y perfil -->
 <nav id="navMenu" role="navigation">
   <div id="menuToggle">
-    <!--
-    A fake / hidden checkbox is used as click reciever,
-    so you can use the :checked selector on it.
-    -->
     <input type="checkbox" />
-
-    <!--
-    Some spans to act as a hamburger.
-
-    They are acting like a real hamburger,
-    not that McDonalds stuff.
-    -->
     <span></span>
     <span></span>
     <span></span>
 
-    <!--
-    Too bad the menu has to be inside of the button
-    but hey, it's pure CSS magic.
-    -->
     <ul id="menu">
       <li><a class="text-button" href="#"><i class="fa fa-user-circle-o"></i></a></li>
       <li><a class="text-button" href="#"><Consulta></Consulta></a></li>
@@ -59,10 +40,36 @@
     </ul>
   </div>
 </nav>
+<!-- Fin del header -->
 
+<!-- Cuerpo de la página -->
 <div>
+  <!-- Título de la página -->
   <h2>Consultas</h2>
 
+  <!-- Filtros de fecha y estado -->
+  <div class="filtros">
+    <div class="filtrarFechas">
+      <label for="filtro-fechas">Filtrar por Fecha:</label>
+      <label for="selectorFechas"></label>
+      <select name="selector de las fechas" id="selectorFechas">
+        <option value="Ascendente">Ascendente</option>
+        <option value="Descendente">Descendente</option>
+      </select>
+    </div>
+
+    <div class="filtrarRespuesta">
+      <label for="filtro-estado">Filtrar por Estado:</label>
+      <label for="selectorEstado"></label>
+      <select name="selector de estado" id="selectorEstado">
+        <option value="Todos">Todas</option>
+        <option value="Contestadas">Contestadas</option>
+        <option value="No contestadas">No contestadas</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Tabla de consultas (Nombre, Correo y Asunto) -->
   <div class="tabla-consulta">
     <div class="tabla">
       <table class="consulta-table">
@@ -70,7 +77,10 @@
         <tr>
           <th class="h3">Correo del Usuario</th>
           <th class="h3">Asunto</th>
-          <th class="h3">Finalizado</th>
+          <th class="h3">Fecha</th>
+          <th class="h3">Contestado</th>
+          <th class="h3">Abrir Consulta</th>
+          <th class="h3">Eliminar Consulta</th>
         </tr>
         </thead>
         <tbody>
@@ -79,20 +89,52 @@
         </tbody>
       </table>
     </div>
+    <!-- Tabla de clientes (correo del Usuario, Asunto y Finalizado) -->
     <div class="consulta">
-
       <div class="nombre p p2">Nombre</div>
-      <div class="usuario p p2">Usuario</div>
+      <div class="usuario p p2">Correo electrónico</div>
       <div class="asunto p p2">Asunto</div>
       <div class="consultaTexto p"></div>
-
+      <div class="contenedorBotonConsultas">
+        <button class="responderConsulta" onclick="abrirPopupResponder(event, this)">Responder</button>
+      </div>
     </div>
   </div>
+</div>
 
+<!-- Popup para eliminar usuario -->
+<div id="miPopupEliminar" class="popup">
+  <div class="popup-contenido">
+    <!-- x para cerrar el popup -->
+    <span class="cerrar" onclick="cerrarPopupEliminar()">&times;</span>
+    <!-- Inputs del popup para editar los datos -->
+    <h2 class="popupH2">Eliminar Consulta</h2>
+    <h3 class="popupP">¿Estás seguro de que deseas eliminar esta consulta?</h3>
+    <input type="hidden" id="consultaEliminarIndex">
+    <!-- Botón de Eliminar consulta -->
+    <div class="button-container">
+      <button class="button" onclick="eliminarConsulta()">Eliminar</button>
+    </div>
+  </div>
 </div>
-<div class="inferior">
-  <!-- Contenido de la parte superior de tu página -->
+
+<!-- Popup para responder consulta -->
+<div id="miPopupResponder" class="popup">
+  <div class="popup-contenido">
+    <!-- x para cerrar el popup -->
+    <span class="cerrar" onclick="cerrarPopupResponder()">&times;</span>
+    <!-- Inputs del popup para responder la consulta -->
+    <h2 class="popupH2">Responder Consulta</h2>
+    <input type="text" id="respuestaConsulta" placeholder="Escribe tu respuesta aquí...">
+    <p class="error_consulta">Introduce la respuesta antes de enviar!!</p> <!-- El mensaje de error -->
+    <p class="exito_consulta">Mensaje enviado correctamente!</p> <!-- El mensaje de éxito -->
+    <!-- Botón de Enviar respuesta -->
+    <div class="button-container">
+      <button class="button" onclick="enviarRespuesta()">Enviar</button>
+    </div>
+  </div>
 </div>
+
 
 
 <script src="../js/ConsultasAdmin.js"></script>

@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< develop
       <change beforePath="$PROJECT_DIR$/scr/Mis huertos.html" beforeDir="false" afterPath="$PROJECT_DIR$/scr/app/cliente/Mis huertos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scr/app/cliente/GraficosHistoricos.html" beforeDir="false" afterPath="$PROJECT_DIR$/scr/app/cliente/GraficosHistoricos.html" afterDir="false" />
@@ -23,6 +24,11 @@
 >>>>>>> 269576d03ff406defcf982d196edce6f183875ab
 =======
 >>>>>>> 9f58c1613747a0528efb1b555fe07fdcbbcbc3e0
+=======
+      <change beforePath="$PROJECT_DIR$/scr/app/admin/ConsultasAdmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/scr/app/admin/ConsultasAdmin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/app/css/ConsultasAdmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/scr/app/css/ConsultasAdmin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/app/js/ConsultasAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/scr/app/js/ConsultasAdmin.js" afterDir="false" />
+>>>>>>> origin/feature/CosultaAdmin
     </list>
 =======
     <list default="true" id="ae426f53-5770-4190-bee0-6ee36902a102" name="Changes" comment="" />
@@ -50,6 +56,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectColorInfo"><![CDATA[{
 <<<<<<< HEAD
 <<<<<<< develop
@@ -62,6 +69,9 @@
   "associatedIndex": 3
 >>>>>>> 80753c72c0898f256125f811a5a841b69c5ebd4a
 }]]></component>
+=======
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+>>>>>>> origin/feature/CosultaAdmin
   <component name="ProjectId" id="2gEH9mQmZ1wbLH7EV6q730n8XQq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -74,6 +84,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/CosultaAdmin&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/santi/Documents/pdf-uni/GreenLife/scr/img&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,

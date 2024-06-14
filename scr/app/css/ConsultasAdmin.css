@@ -1,16 +1,20 @@
+/* Estilos generales que se mantienen */
 
-h2{
+h2 {
     text-align: center;
 }
 
-.tabla-consulta{
+.tabla-consulta {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     gap: 15px;
+    height: 80%;
+    width: 90%;
+    margin: auto;
 }
 
-.tabla{
+.tabla {
     max-height: 500px;
     overflow-y: scroll;
     padding: 15px;
@@ -21,13 +25,16 @@ h2{
     border-collapse: collapse;
 }
 
-.consulta-table tr{}
-
 .consulta-table th,
 .consulta-table td {
     padding: 8px;
     border: 1px solid #c6c6c6;
     text-align: left;
+}
+
+.consulta-table th:nth-child(3),
+.consulta-table td:nth-child(3) {
+    width: 150px; /* Ajusta el ancho según sea necesario */
 }
 
 .consulta-table th {
@@ -42,52 +49,310 @@ h2{
     background-color: #ddd;
 }
 
-.consulta-table tbody td:nth-child(3){
-    display: flex;
-    justify-content: center;
+.consulta-table tbody td:nth-child(4),
+.consulta-table tbody td:nth-child(5),
+.consulta-table tbody td:nth-child(6) {
+    text-align: center;
 }
 
-
-.consulta{
+.consulta {
     display: flex;
     flex-direction: column;
-    border: #c6c6c6 1px solid ;
+    border: #c6c6c6 1px solid;
     border-radius: 10px;
     max-height: 600px;
     width: 350px;
+    margin: 10px;
 }
 
+.contenedorBotonConsultas {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
 
+.responderConsulta {
+    height: 40px;
+    width: 150px;
+    border: none;
+    margin: 10px;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 14px;
+    background-color: #7ED957;
+    cursor: pointer;
+}
 
-.nombre{
-    border-bottom: #c6c6c6 1px solid ;
+.nombre, .usuario, .asunto {
+    border-bottom: #c6c6c6 1px solid;
     padding: 5px;
 }
 
-.usuario{
-    border-bottom: #c6c6c6 1px solid ;
-    padding: 5px
+.p2 {
+    font-family: "Kanit Light", sans-serif;
 }
 
-.asunto{
-    border-bottom: #c6c6c6 1px solid ;
-    padding: 5px
+.abrir-consulta-btn, .eliminar-consulta-btn {
+    background-color: #7ed956;
+    width: 70%;
+    font-family: 'Kanit', sans-serif;
+    font-size: 14px;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
 }
 
-.p2{
-    font-family: "Kanit Light";
+.contenido-casilla {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
 }
 
-@media screen and (max-width: 800px) {
-    .tabla-consulta{
-        display: grid;
-        justify-content: center;
-        gap:30px
+.abrir-consulta-btn:hover,
+.responderConsulta:hover {
+    background-color: darkgreen;
+}
+
+.eliminar-consulta-btn {
+    background-color: red;
+}
+
+.eliminar-consulta-btn:hover {
+    background-color: darkred;
+}
+
+#respuestaConsulta {
+    width: 95%;
+    margin-bottom: 10px;
+}
+
+/* CSS para mantener el tamaño del contenedor constante y espacio reservado para el mensaje de error */
+.error_consulta {
+    color: #E54D4D;
+    display: block; /* Cambiado a block para que el espacio siempre esté reservado */
+    visibility: hidden; /* Mantener invisible por defecto */
+    height: 20px; /* Asegúrate de que el contenedor siempre tenga una altura fija */
+    font-family: "Kanit Light", sans-serif;
+    margin-bottom: 10px; /* Añadir un margen inferior para espaciarlo adecuadamente */
+}
+
+/* Estilos para el mensaje de éxito */
+.exito_consulta {
+    color: #4CAF50; /* Verde para indicar éxito */
+    display: block; /* Cambiado a block para que el espacio siempre esté reservado */
+    visibility: hidden; /* Mantener invisible por defecto */
+    height: 20px; /* Asegúrate de que el contenedor siempre tenga una altura fija */
+    font-family: "Kanit Light", sans-serif;
+    margin-bottom: 10px; /* Añadir un margen inferior para espaciarlo adecuadamente */
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.popup-contenido {
+    position: absolute;
+    font-family: 'Kanit', sans-serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+.cerrar {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.input-text {
+    font-family: 'Kanit Light', sans-serif;
+    font-size: 20px;
+    color: #333333;
+    background-color: #ffffff;
+    border: none;
+    border-bottom: 2px solid #c6c6c6;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-container {
+    text-align: right;
+}
+
+.button {
+    background-color: #7ED957;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.filtros {
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+#filtro-fechas {
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+}
+
+#selectorEstado,
+#selectorFechas {
+    height: 100%;
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+}
+
+.filtros label {
+    margin-right: 10px;
+}
+
+.filtros input[type="date"],
+.filtros input[type="checkbox"] {
+    padding: 5px;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 1260px) {
+    .tabla-consulta {
+        flex-direction: column; /* Cambia a diseño de columna para dispositivos más pequeños */
+        align-items: center; /* Centra los elementos en el eje principal */
     }
 
-    .consulta{
-        margin: 20px;
-        justify-self: center;
+    .consulta {
+        width: 90%; /* Aprovecha más el espacio en pantallas más pequeñas */
+        max-width: 350px; /* Limita el ancho máximo para mantener la legibilidad */
+    }
+
+    .contenedorBotonConsultas {
+        justify-content: space-around; /* Distribuye los botones de consulta */
+    }
+
+    .popup-contenido {
+        width: 90%; /* Aprovecha más el espacio en pantallas más pequeñas */
+        max-width: 350px; /* Limita el ancho máximo del popup */
     }
 }
 
+@media (max-width: 1000px) {
+    .consulta {
+        width: 80%; /* Aprovecha más el espacio en pantallas más pequeñas */
+        max-width: 300px; /* Limita el ancho máximo para dispositivos muy pequeños */
+    }
+
+    .abrir-consulta-btn,
+    .eliminar-consulta-btn {
+        width: 90%;
+    }
+}
+
+/* Estilos específicos para pantallas con un ancho de 900px o menos */
+@media (max-width: 900px) {
+    .tabla-consulta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tabla,
+    .consulta {
+        width: 100%;
+        max-width: 600px; /* Ajusta este valor según sea necesario */
+    }
+
+    .consulta-table th,
+    .consulta-table td,
+    .nombre,
+    .usuario,
+    .asunto,
+    .responderConsulta,
+    .abrir-consulta-btn,
+    .eliminar-consulta-btn {
+        font-size: 0.8em; /* Reduce el tamaño de la fuente */
+    }
+}
+
+@media (max-width: 660px) {
+    .consulta-table th,
+    .consulta-table td,
+    .nombre,
+    .asunto,
+    .responderConsulta,
+    .abrir-consulta-btn,
+    .eliminar-consulta-btn {
+        font-size: 0.7em; /* Reduce aún más el tamaño de la fuente */
+    }
+
+    .filtros {
+        text-align: center;
+        height: 30px;
+        margin-bottom: 30px;
+    }
+
+    .finalizado.checkbox {
+        height: 20px;
+        width: 20px;
+    }
+
+    .consulta-table th:nth-child(3),
+    .consulta-table td:nth-child(3),
+    .usuario {
+        width: 100px; /* Ajusta el ancho de la columna usuario a 100px */
+    }
+}
+
+
+@media (max-width: 480px) {
+    .consulta {
+        width: 95%; /* Aprovecha más el espacio en pantallas muy pequeñas */
+        max-width: 280px; /* Limita el ancho máximo para dispositivos extremadamente pequeños */
+    }
+
+    .consulta-table th,
+    .consulta-table td,
+    .nombre,
+    .usuario,
+    .asunto,
+    .responderConsulta,
+    .abrir-consulta-btn,
+    .eliminar-consulta-btn {
+        font-size: 0.6em; /* Reduce aún más el tamaño de la fuente */
+    }
+
+    .consulta-table th:nth-child(3),
+    .consulta-table td:nth-child(3) {
+        width: 100px; /* Ajusta el ancho según sea necesario */
+    }
+}
