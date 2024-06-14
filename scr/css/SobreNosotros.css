@@ -1,4 +1,4 @@
-    /* Reset some default styles */
+/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
@@ -31,7 +31,15 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 /* Titles positioning */
+.container{
+    justify-content: center;
+    align-items: center;
+}
+.PrimerTexto{
+    padding: 2rem;
+    text-align: center;
 
+}
 .ContainerOrigen{
     display: flex;
     flex-direction: row;
@@ -40,14 +48,17 @@ body {
 
 }
 .ContainerOrigen img{
-    width: 675px;
-    height: 358px;
+    width: 40rem;
+    height: 23rem;
     order: 1;
+    border-radius: 3rem;
 }
 .textOrigen{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: justify;
+    margin: 10px;
     order: 2;
 
 }
@@ -60,15 +71,18 @@ body {
 }
 
 .ContainerMision img{
-    width: 675px;
-    height: 358px;
+    width: 40rem;
+    height: 23rem;
     order: 2;
+    border-radius: 1rem;
 }
 
 .textMision{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: justify;
+    margin: 10px;
     order: 1;
 }
 
@@ -81,14 +95,20 @@ body {
 }
 
 .ContainerVision img{
-    width: 358px;
-    height: 358px;
+    width: 40rem;
+    height: 23rem;
+    order: 1;
+    border-radius: 1rem;
 }
 
 .textVision{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: justify;
+    margin: 10px;
+    width: 739.2px;
+    height: 288px;
     order: 2;
 }
 
@@ -100,15 +120,20 @@ body {
 }
 
 .ContainerCeo img{
-    width: 570px;
-    height: 358px;
+    width: 40rem;
+    height: 23rem;
     order: 2;
+    border-radius: 2rem;
 }
 
 .textCeo{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: justify;
+    margin: 10px;
+    width: 739.2px;
+    height: 288px;
     order: 1;
 }
 
@@ -116,7 +141,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 5rem;
     gap: 50px;
 }
 
@@ -124,12 +149,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: justify;
 }
 
 .TextUltimo{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: justify;
 }
 
 h2{
@@ -137,69 +164,61 @@ h2{
     margin-top: 20px;
     color: #479555;
 }
-.ContainerVision img {
-    width: 250px;
-    height: 230px;
+/* Responsive Styles */
+@media screen and (max-width: 1100px) {
+    .PrimerTexto {
+        margin: 10px;
+    }
+
+    .ContainerOrigen,
+    .ContainerMision,
+    .ContainerVision,
+    .ContainerCeo {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .ContainerOrigen img,
+    .ContainerMision img,
+    .ContainerVision img,
+    .ContainerCeo img {
+        order: 1;
+        margin-top: 1rem;
+    }
+
+    .textOrigen,
+    .textMision,
+    .textVision,
+    .textCeo {
+        order: 2;
+    }
 }
 
-
-
-    @media screen and (max-width: 1100px) {
-        .ContainerOrigen{
-            display: grid;
-            justify-content: center;
-        }
-
-        .ContainerOrigen img{
-            order: 5;
-        }
-
-        .ContainerMision{
-            display: grid;
-        }
-
-        .ContainerVision{
-            display: grid;
-        }
-
-        .ImagenVision{
-            order: 5;
-            display: grid;
-        }
-
-        img{
-            justify-self: center;
-        }
-
-        .ContainerCeo{
-            display: grid;
-        }
-
-    }
-    @media screen and (max-width: 720px) {
-        .ContainerOrigen img, .ContainerCeo img, .ContainerMision img{
-            width: 450px;
-            height: 100%;
-        }
-
-    }
-    @media screen and (max-width: 570px) {
-        .ContainerOrigen img, .ContainerCeo img, .ContainerMision img{
-            width: 280px;
-        }
-
-        .ContainerVision img{
-            width: 300px;
-            height: 100%;
-        }
-    }
-    @media screen and (max-width: 500px) {
-        .ContainerOrigen{
-            flex-direction: column;
-        }
+@media screen and (max-width: 720px) {
+    .ContainerOrigen img,
+    .ContainerCeo img,
+    .ContainerMision img,
+    .ContainerVision img {
+        width: 100%;
+        height: auto;
     }
 
-#menu{
-    height: 200%;
-    margin: -100px 0 0 -200px;
+    .ContainerOrigen,
+    .ContainerMision,
+    .ContainerVision,
+    .ContainerCeo {
+        padding: 10px;
+    }
+
+    .textOrigen,
+    .textMision,
+    .textVision,
+    .textCeo {
+        margin: 5px;
+    }
+    .textfinal{
+        margin-top: 1px;
+
+    }
 }

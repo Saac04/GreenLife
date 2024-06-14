@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="greenlife@localhost">
+<<<<<<< HEAD
   <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.48">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
@@ -271,6 +272,12 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
     </collation>
     <collation id="3" parent="1" name="armscii8_general_ci">
       <Charset>armscii8</Charset>
+=======
+  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.52">
+    <root id="1"/>
+    <collation id="2" parent="1" name="big5_chinese_ci">
+      <Charset>big5</Charset>
+>>>>>>> origin/feature/ArregloSobreNosotros
       <DefaultForCharset>1</DefaultForCharset>
     </collation>
     <collation id="4" parent="1" name="armscii8_general_nopad_ci">

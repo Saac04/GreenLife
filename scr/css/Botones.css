@@ -7,7 +7,8 @@
 /* Estilos para botones con fondo */
 .button {
     background-color: #7ED957;
-    color: #ffffff; /* Blanco */
+    color: #ffffff;
+    --color: #ffffff;/* Blanco */
     font-family: 'Kanit', sans-serif;
     font-size: 20px;
     border-radius: 10px;
@@ -213,18 +214,18 @@ input[type='date']{
     }
 
 <<<<<<< HEAD
-    input[type="text"], input[type="email"], textarea, input[type="submit"], input[type="password"]{
+input[type="text"], input[type="email"], textarea, input[type="submit"], input[type="password"] {
 =======
-    input[type="text"], textarea, input[type="submit"]{
+input[type="text"], textarea, input[type="submit"] {
 >>>>>>> edfe4db00531d223d9da13126e004611fd0096ee
-        font-size: 14px; /* Tamaño de fuente para pantallas pequeñas */
-    }
+font-size: 14px; /* Tamaño de fuente para pantallas pequeñas */
+}
 
-    .dropdown-label-h3{
+    .dropdown-label-h3 {
         font-size: 16px;
     }
 
-    .dropdown-select{
+    .dropdown-select {
         font-size: 16px;
     }
 
