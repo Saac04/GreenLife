@@ -207,6 +207,10 @@ p{
     width: fit-content;
     text-wrap: nowrap;
 }
+.fa-sign-out {
+    display: flex;
+    justify-content: flex-end
+}
 
 
 
