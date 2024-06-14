@@ -45,6 +45,106 @@ function openTab(event, tabId) {
         event.currentTarget.className += " active";
     }
 }
+//Funcion para sacar nombre, apellido, correo y codigo de invitado y ponerlos en información general
+
+let NombreApellido;
+document.addEventListener('DOMContentLoaded', async function() {
+
+    // Obtener los datos del archivo PHP
+    fetch('../../api/obtenerNombreUsuario.php') // Reemplaza con la ruta correcta a tu archivo PHP
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al obtener los datos del PHP');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data)
+
+            // Verificar que el JSON contiene el nombre del usuario
+            if (data.nombre) {
+                // Obtener el elemento h3 existente por su ID
+                let h3 = document.getElementById('Nombre-Usuario-G');
+
+                // Establecer el texto del h3 con el nombre del usuario
+                h3.textContent = data.nombre;
+
+                NombreApellido=data.nombre
+            } else {
+                console.error('El JSON no contiene el nombre del usuario');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    // Obtener los datos del archivo PHP
+    fetch('../../api/obtenerApellidoUsuario.php') // Reemplaza con la ruta correcta a tu archivo PHP
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al obtener los datos del PHP');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data)
+
+            // Verificar que el JSON contiene el nombre del usuario
+            if (data.apellido) {
+                // Obtener el elemento h3 existente por su ID
+                let h3 = document.getElementById('Nombre-Usuario-G');
+
+                // Establecer el texto del h3 con el nombre del usuario
+                h3.textContent =  NombreApellido+' '+data.apellido;
+            } else {
+                console.error('El JSON no contiene el nombre del usuario');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    // Obtener los datos del archivo PHP
+    fetch('../../api/obtenerCorreoUsuario.php') // Reemplaza con la ruta correcta a tu archivo PHP
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al obtener los datos del PHP');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data)
+
+            // Verificar que el JSON contiene el nombre del usuario
+            if (data.correo) {
+                // Obtener el elemento h3 existente por su ID
+                let h3 = document.getElementById('Correo');
+
+                // Establecer el texto del h3 con el nombre del usuario
+                h3.textContent = data.correo;
+            } else {
+                console.error('El JSON no contiene el nombre del usuario');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    // Obtener los datos del archivo PHP
+    fetch('../../api/obtenerCodigoInvitado.php') // Reemplaza con la ruta correcta a tu archivo PHP
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al obtener los datos del PHP');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data)
+
+            // Verificar que el JSON contiene el nombre del usuario
+            if (data.codigo_de_invitado) {
+                // Obtener el elemento p existente por su ID
+                let p = document.getElementById('codigo');
+
+                // Establecer el texto del p con el nombre del usuario
+                p.textContent = data.codigo_de_invitado;
+            } else {
+                console.error('El JSON no contiene el nombre del usuario');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+});
 // Función para generar un código aleatorio de números y letras
 function generarCodigoAleatorio(longitud) {
     const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -55,6 +155,36 @@ function generarCodigoAleatorio(longitud) {
     }
     return codigo;
 }
+document.querySelector('.reroll-codigo').addEventListener('click', function(event) {
+    event.preventDefault();
+    const nuevoCodigo = generarCodigoAleatorio(10); // Cambiar el número 10 por la longitud deseada
+
+    // Hacer la solicitud para actualizar el código en la base de datos
+    fetch('../../api/actualizarCodigoInvitado.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ nuevoCodigo: nuevoCodigo })
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al actualizar el código en la base de datos');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                // Actualizar el código en la página
+                document.getElementById('codigo').childNodes[0].nodeValue = nuevoCodigo;
+                mostrarMensajeCopiado();
+            } else {
+                console.error('Error al actualizar el código: ', data.error);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+});
+
 
 // Función para copiar el código al portapapeles
 function copiarAlPortapapeles(elemento) {
@@ -108,15 +238,42 @@ function cambiarCorreo() {
         alert("Introduce correo actual, correo nuevo y contraseña");
         return;
     }
-    if (!verificarCredenciales(correoActual, contraseña)) {
-        alert("Este usuario no está registrado o la contraseña introducida no es correcta");
-        return;
-    }
-    // Aquí puedes agregar el código para cambiar el correo
+
+    // Hacer la solicitud para actualizar el correo electrónico en la base de datos
+    fetch('../../api/actualizarCorreoElectronico.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ correoActual: correoActual, correoNuevo: correoNuevo, contraseñaCorreo: contraseña })
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Correo electrónico actualizado correctamente');
+            } else {
+                alert('Error al actualizar el correo electrónico: ' + data.error);
+            }
+        })
+        .catch(error => console.error('Error:', error));
 }
 
-// Función para reestablecer la contraseña
-function reestablecerContraseña() {
+// Asignar la función al botón
+document.getElementById('botonCorreo').addEventListener('click', function(event) {
+    event.preventDefault();
+    cambiarCorreo();
+});
+
+
+// Asignar la función al botón
+document.getElementById('botonCorreo').addEventListener('click', function(event) {
+    event.preventDefault();
+    cambiarCorreo();
+});
+
+
+// Función para cambiar la contraseña
+function CambiarContraseña() {
     var contraseñaActual = document.getElementById('contraseñaActual').value;
     var contraseñaNueva = document.getElementById('contraseñaNueva').value;
 
@@ -153,5 +310,5 @@ function eliminarCuenta() {
 
 // Añadimos los manejadores de eventos a los botones
 document.getElementById('botonCorreo').addEventListener('click', cambiarCorreo);
-document.getElementById('botonContraseña').addEventListener('click', reestablecerContraseña);
+document.getElementById('botonContraseña').addEventListener('click', CambiarContraseña);
 document.getElementById('botonEliminar').addEventListener('click', eliminarCuenta);

@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
-  <component name="dataSourceStorageLocal" created-in="PS-231.9011.38">
-=======
   <component name="dataSourceStorageLocal" created-in="PS-233.14015.96">
->>>>>>> origin/feature/GestionCuenta
     <data-source name="greenlife@localhost" uuid="bd5cf90a-cea8-47d4-8050-570d373fa170">
-      <database-info product="MariaDB" version="10.4.28-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="3.3.3" dbms="MARIADB" exact-version="10.4.28">
+      <database-info product="MariaDB" version="10.4.32-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="3.3.3" dbms="MARIADB" exact-version="10.4.32" exact-driver-version="3.3">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
+      <user-name>pene</user-name>
       <schema-mapping>
         <introspection-scope>
           <node kind="schema" qname="@" />
