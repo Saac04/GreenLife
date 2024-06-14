@@ -21,6 +21,9 @@ body {
 .register-container {
     text-align: center;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Estilo para el encabezado principal */
@@ -40,13 +43,18 @@ h2 {
     margin-top: 20px;
 }
 
-/* Estilo para el encabezado de menor jerarquía */
 h4 {
     font-size: 18px;
     color: #479555;
 }
 
-/* Estilo para los campos de entrada */
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0; /* Aumenta este valor para más espacio entre los campos */
+}
+
 .input-field {
     display: block;
     width: 426px;
@@ -70,7 +78,6 @@ h4 {
     color: #EA3B50;
 }
 
-/*-- boton de crear cuenta --*/
 .button {
     width: 426px;
     height: 44px;
@@ -103,7 +110,6 @@ h4 {
 /* Estilo para el segundo botón */
 .button2 {
     width: 165px;
-    height: 44px;
     font-size: 20px;
     border-radius: 10px;
     background-color: #7ED957;
@@ -111,10 +117,12 @@ h4 {
     padding: 10px;
     margin-top: 22px;
     margin-bottom: 22px;
+    line-height: 24px; /* Altura de línea para centrar verticalmente el texto */
     float: right;
 }
 
-/* Estilos responsivos para pantallas con ancho máximo de 800px */
+
+/*-- cuando el tamaño sea menor a 800px cambia a vista de móvil --*/
 @media (max-width: 800px) {
     h1 {
         font-size: 36px;
@@ -131,6 +139,10 @@ h4 {
         width: 320px;
         margin: 20px 0;  /* Espacio entre los campos de entrada */
     }
+    .input-container {
+        width: 320px; /* Ajusta el ancho del contenedor para la vista móvil */
+    }
+
     #mensaje-error {
         font-size: 12px;
     }
@@ -145,5 +157,6 @@ h4 {
         height: 30px;
         font-size: 14px;
         padding: 8px;
+        line-height: 12px; /* Altura de línea para centrar verticalmente el texto */
     }
 }

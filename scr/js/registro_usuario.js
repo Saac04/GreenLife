@@ -4,8 +4,15 @@ function register() {
     const emailInput = document.querySelector('input[type="email"]').value;
     const passwordInput = document.querySelector('input[type="password"]').value;
     const confirmPasswordInput = document.querySelectorAll('input[type="password"]')[1].value;
+    const aceptarTerminosCheckbox = document.getElementById('AceptarTerminos');
 
     const mensajeError = document.getElementById('mensaje-error');
+
+    // Verificar si el checkbox de aceptar términos está seleccionado
+    if (!aceptarTerminosCheckbox.checked) {
+        mensajeError.innerText = "Debes aceptar los términos y condiciones.";
+        return;
+    }
 
     // Definir los usuarios válidos
     const usuariosValidos = [
