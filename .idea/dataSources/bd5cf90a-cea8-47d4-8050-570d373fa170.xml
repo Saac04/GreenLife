@@ -1194,7 +1194,11 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
     </schema>
     <schema id="325" parent="1" name="greenlife">
       <Current>1</Current>
+<<<<<<< HEAD
       <LastIntrospectionLocalTimestamp>2024-06-13.23:18:07</LastIntrospectionLocalTimestamp>
+=======
+      <LastIntrospectionLocalTimestamp>2024-06-14.00:37:53</LastIntrospectionLocalTimestamp>
+>>>>>>> feature/apiSantiago
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
     <schema id="326" parent="1" name="information_schema">
