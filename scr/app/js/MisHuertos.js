@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         let botonSonda = document.createElement('button');
                         botonSonda.className = 'button';
                         botonSonda.textContent = 'Añadir Sonda';
-                        botonSonda.onclick = () => vincularSonda(huerto.id_huerto);
+                        botonSonda.onclick = () => abrirPopupVincular(huerto.id_huerto);
                         botones1.appendChild(botonSonda);
 
                         let enlaceGraficos = document.createElement('a');
@@ -259,11 +259,95 @@ async function editarNombre() {
     }
 }
 
-
-function vincularSonda() {
+/*async function vincularSonda(idHuerto) {
     var popup = document.getElementById('popupAñadirSonda');
-    popup.style.display = (popup.style.display === 'none') ? 'block' : 'none';
+    popup.style.display = 'block';
+
+
+    var inputNumeroSerie = popup.querySelector('input[name="Introducir número de serie"]');
+    var numeroSerie = inputNumeroSerie.value.trim();
+
+    console.log(idHuerto)
+
+    if (numeroSerie && idHuerto) {
+        // Enviar solicitud para vincular la sonda al huerto en la base de datos
+        fetch('../../api/vincularSondaAHuerto.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id_huerto: idHuerto,
+                numero_serie: numeroSerie
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Sonda vinculada correctamente al huerto');
+                    // Aquí podrías realizar alguna acción adicional si es necesario
+                } else {
+                    console.error('Error al vincular la sonda:', data.error);
+                    // Manejar el error según corresponda
+                }
+            })
+            .catch(error => console.error('Error:', error));
+
+        // Limpiar el campo de entrada después de vincular la sonda
+        inputNumeroSerie.value = '';
+    }
+}*/
+
+
+function abrirPopupVincular(idHuerto) {
+    currentHuertoId = idHuerto;  // Guardar el idHuerto en una variable global
+    console.log(idHuerto)
+    var popup = document.getElementById('popupAñadirSonda');
+    popup.style.display = 'block';
 }
+
+function cerrarPopupVincular() {
+    var popup = document.getElementById('popupAñadirSonda');
+    popup.style.display = 'none';
+}
+async function vincularSonda() {
+    var popup = document.getElementById('popupAñadirSonda');
+    var inputNumeroSerie = popup.querySelector('input[name="Introducir número de serie"]');
+    var numeroSerie = inputNumeroSerie.value.trim();
+
+    if (numeroSerie && currentHuertoId !== null) {
+        // Enviar solicitud para vincular la sonda al huerto en la base de datos
+        fetch('../../api/vincularSondaAHuerto.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id_huerto: currentHuertoId,
+                numero_serie: numeroSerie
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Sonda vinculada correctamente al huerto');
+                    // Aquí podrías realizar alguna acción adicional si es necesario
+                } else {
+                    console.error('Error al vincular la sonda:', data.error);
+                    // Manejar el error según corresponda
+                }
+            })
+            .catch(error => console.error('Error:', error));
+
+        // Limpiar el campo de entrada después de vincular la sonda
+        inputNumeroSerie.value = '';
+    }
+
+    // Cerrar el popup después de intentar vincular la sonda
+    cerrarPopupVincular();
+}
+
+
 
 // Cerrando los popups
 document.querySelector('#popupEditarNombre .cerrar').addEventListener('click', function() {
