@@ -255,7 +255,6 @@ async function editarNombre() {
 
             currentHuertoId = null;
         }
-        popup.style.display = 'none';
     }
 }
 

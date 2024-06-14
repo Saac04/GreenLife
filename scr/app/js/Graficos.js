@@ -282,7 +282,7 @@ window.onload = noLegeds()
 
 function  noLegeds (){
     myChart.options.plugins.legend.display = false
-    myChart.update()
+    myChart.update
 }
 
 
@@ -528,21 +528,15 @@ function cargarSondas() {
                     option.text = s.nombre;
                     option.value = s.id_sondas;
                     option.className = 'dropdown-option';
+                    //option.onclick = cargarLecturasFechaPredeterminada()
+
                     dropdown.appendChild(option);
                 });
 
                 if (data.length > 0) {
                     var firstSondaId = data[0].id_sondas;
 
-                    // Obtener la fecha actual
-                    var fechaActual = new Date().toISOString().slice(0, 19).replace('T', ' ');
-
-                    // Calcular la fecha de inicio retrocediendo 5 registros
-                    var fechaInicio = new Date();
-                    fechaInicio.setHours(fechaInicio.getHours() - 22); // Retroceder 5 horas
-
-                    // Llamar a la función cargarLecturas con las fechas calculadas
-                    cargarLecturas(firstSondaId, fechaInicio.toISOString().slice(0, 19).replace('T', ' '), fechaActual);
+                    cargarLecturasFechaPredeterminada(firstSondaId)
                 }
             })
             .catch(error => console.error('Error:', error));
@@ -550,6 +544,41 @@ function cargarSondas() {
         console.error('ID de huerto no proporcionado en la URL');
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elemento = document.getElementsByClassName('dropdown-option')
+
+    if (elemento) {
+        elemento.addEventListener('click', function() {
+            alert('¡Has hecho clic en el botón con value="miValor"!');
+        });
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var dropdown = document.getElementById('sonda');
+
+    dropdown.addEventListener('change', function() {
+        var opcionSeleccionada = dropdown.options[dropdown.selectedIndex];
+
+        cargarLecturasFechaPredeterminada(+opcionSeleccionada.value)
+    });
+});
+function cargarLecturasFechaPredeterminada(id_sonda) {
+
+    var fechaActual = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+    // Calcular la fecha de inicio retrocediendo 5 registros
+    var fechaInicio = new Date();
+    fechaInicio.setHours(fechaInicio.getHours() - 22); // Retroceder 5 horas
+
+
+    // Llamar a la función cargarLecturas con las fechas calculadas
+    cargarLecturas(id_sonda, fechaInicio.toISOString().slice(0, 19).replace('T', ' '), fechaActual);
+}
+
+
 
 function cargarLecturas(id_sonda, fechaInicio, fechaFin) {
 
@@ -643,7 +672,6 @@ function actualizarLimites(idSonda, tipoParametro) {
 // Esta función calculará el promedio de un conjunto de números
 function calcularPromedios(lecturas) {
 
-    console.log(lecturas)
     var lecturasTotales = lecturas.length;
     var promedios = [];
 
@@ -653,7 +681,6 @@ function calcularPromedios(lecturas) {
         tamanoParte = 1
     }
 
-    console.log(tamanoParte)
     // Iterar sobre las partes
     for (var i = 0; i < 7; i++) {
         var inicio = i * tamanoParte;
@@ -688,8 +715,46 @@ document.addEventListener('DOMContentLoaded', function() {
         var id_sonda = document.getElementById('sonda').value;
 
         // Llamar a la función cargarLecturas con las fechas y el ID de la sonda
-        cargarLecturas(id_sonda, fechaInicio, fechaFin);
+        //cargarLecturas(id_sonda, fechaInicio, fechaFin);
     });
 
     cargarHuerto()
 });
+
+async function vincularSonda() {
+    var div = document.getElementById('vincular-sonda');
+    var inputNumeroSerie = div.querySelector('input[name="serie"]');
+    var numeroSerie = inputNumeroSerie.value.trim();
+    var currentHuertoId = +obtenerParametroUrl('id');
+
+    if (numeroSerie && currentHuertoId !== null) {
+        // Enviar solicitud para vincular la sonda al huerto en la base de datos
+        fetch('../../api/vincularSondaAHuerto.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id_huerto: currentHuertoId,
+                numero_serie: numeroSerie
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Sonda vinculada correctamente al huerto');
+                    // Aquí podrías realizar alguna acción adicional si es necesario
+                } else {
+                    console.error('Error al vincular la sonda:', data.error);
+                    // Manejar el error según corresponda
+                }
+            })
+            .catch(error => console.error('Error:', error));
+
+        // Limpiar el campo de entrada después de vincular la sonda
+        inputNumeroSerie.value = '';
+    }
+
+    // Cerrar el popup después de intentar vincular la sonda
+    cerrarPopupVincular();
+}
