@@ -1,4 +1,4 @@
-function register() {
+async function register() {
     const nameInput = document.querySelector('input[placeholder="Nombre"]').value;
     const surnameInput = document.querySelector('input[placeholder="Apellidos"]').value;
     const emailInput = document.querySelector('input[type="email"]').value;
@@ -6,13 +6,6 @@ function register() {
     const confirmPasswordInput = document.querySelectorAll('input[type="password"]')[1].value;
 
     const mensajeError = document.getElementById('mensaje-error');
-
-    // Definir los usuarios válidos
-    const usuariosValidos = [
-        { correo: "soytecnico@gmail.com", contrasena: "hola1234" },
-        { correo: "soyusuario@gmail.com", contrasena: "hola1234" },
-        { correo: "soyadministrador@gmail.com", contrasena: "hola1234" }
-    ];
 
     // Verificar que todos los campos estén rellenados
     if (!nameInput || !surnameInput || !emailInput || !passwordInput || !confirmPasswordInput) {
@@ -46,32 +39,47 @@ function register() {
         }
     }
 
-    // Verificar si el correo electrónico ya está registrado
-    const usuarioRegistrado = usuariosValidos.find(function (usuario){
-        return usuario.correo === emailInput;
-    });
-
-    if(usuarioRegistrado) {
-        mensajeError.innerText = "Este correo electrónico ya está registrado.";
-        return;
-    }
-
     // Verificar si las contraseñas coinciden
-    if(passwordInput !== confirmPasswordInput) {
+    if (passwordInput !== confirmPasswordInput) {
         mensajeError.innerText = "Las contraseñas no coinciden.";
         return;
     }
 
     // Verificar que la contraseña tiene al menos 8 caracteres
-    if(passwordInput.length < 8) {
+    if (passwordInput.length < 8) {
         mensajeError.innerText = "La contraseña debe contener al menos 8 caracteres.";
         return;
     }
 
-    // Si ha pasado todas las pruebas anteriores, el usuario se puede registrar sin problemas
-    // Redirigir al usuario a una página en el futuro
-    // Aquí puedes cambiar la URL por la de la página a la que quieras redirigir al usuario
-    window.location.href = "app/cliente/MisHuertos.html";
+    const userData = {
+        nombre: nameInput,
+        apellido: surnameInput,
+        correo: emailInput,
+        contrasena: passwordInput,
+        contrasenaConfirm: confirmPasswordInput
+    };
+
+    try {
+        const response = await fetch('api/register.php', {
+            method: 'POST',
+            body: JSON.stringify(userData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            // Redirigir al usuario a la página de inicio de sesión
+            window.location.href = "app/cliente/MisHuertos.html";
+        } else {
+            mensajeError.innerText = result.error;
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        mensajeError.innerText = "Error al registrar el usuario. Por favor, inténtalo de nuevo.";
+    }
 }
 
 function tengoCuenta() {

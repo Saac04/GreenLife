@@ -1,148 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="greenlife@localhost">
-  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.51">
+  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.48">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
-      <Grants>|root||fsanpra||ALTER|G
-|root||root|127.0.0.1|ALTER|G
+      <Grants>|root||root|127.0.0.1|ALTER|G
 |root||root|::1|ALTER|G
 |root||root|localhost|ALTER|G
-|root||fsanpra||ALTER ROUTINE|G
 |root||root|127.0.0.1|ALTER ROUTINE|G
 |root||root|::1|ALTER ROUTINE|G
 |root||root|localhost|ALTER ROUTINE|G
-|root||fsanpra||CREATE|G
 |root||root|127.0.0.1|CREATE|G
 |root||root|::1|CREATE|G
 |root||root|localhost|CREATE|G
-|root||fsanpra||CREATE ROUTINE|G
 |root||root|127.0.0.1|CREATE ROUTINE|G
 |root||root|::1|CREATE ROUTINE|G
 |root||root|localhost|CREATE ROUTINE|G
-|root||fsanpra||CREATE TABLESPACE|G
 |root||root|127.0.0.1|CREATE TABLESPACE|G
 |root||root|::1|CREATE TABLESPACE|G
 |root||root|localhost|CREATE TABLESPACE|G
-|root||fsanpra||CREATE TEMPORARY TABLES|G
 |root||root|127.0.0.1|CREATE TEMPORARY TABLES|G
 |root||root|::1|CREATE TEMPORARY TABLES|G
 |root||root|localhost|CREATE TEMPORARY TABLES|G
-|root||fsanpra||CREATE USER|G
 |root||root|127.0.0.1|CREATE USER|G
 |root||root|::1|CREATE USER|G
 |root||root|localhost|CREATE USER|G
-|root||fsanpra||CREATE VIEW|G
 |root||root|127.0.0.1|CREATE VIEW|G
 |root||root|::1|CREATE VIEW|G
 |root||root|localhost|CREATE VIEW|G
-|root||fsanpra||DELETE|G
 |root||root|127.0.0.1|DELETE|G
 |root||root|::1|DELETE|G
 |root||root|localhost|DELETE|G
-|root||fsanpra||DELETE HISTORY|G
 |root||root|127.0.0.1|DELETE HISTORY|G
 |root||root|::1|DELETE HISTORY|G
 |root||root|localhost|DELETE HISTORY|G
-|root||fsanpra||DROP|G
 |root||root|127.0.0.1|DROP|G
 |root||root|::1|DROP|G
 |root||root|localhost|DROP|G
-|root||fsanpra||EVENT|G
 |root||root|127.0.0.1|EVENT|G
 |root||root|::1|EVENT|G
 |root||root|localhost|EVENT|G
-|root||fsanpra||EXECUTE|G
 |root||root|127.0.0.1|EXECUTE|G
 |root||root|::1|EXECUTE|G
 |root||root|localhost|EXECUTE|G
-|root||fsanpra||FILE|G
 |root||root|127.0.0.1|FILE|G
 |root||root|::1|FILE|G
 |root||root|localhost|FILE|G
-|root||fsanpra||INDEX|G
 |root||root|127.0.0.1|INDEX|G
 |root||root|::1|INDEX|G
 |root||root|localhost|INDEX|G
-|root||fsanpra||INSERT|G
 |root||root|127.0.0.1|INSERT|G
 |root||root|::1|INSERT|G
 |root||root|localhost|INSERT|G
-|root||fsanpra||LOCK TABLES|G
 |root||root|127.0.0.1|LOCK TABLES|G
 |root||root|::1|LOCK TABLES|G
 |root||root|localhost|LOCK TABLES|G
-|root||fsanpra||PROCESS|G
 |root||root|127.0.0.1|PROCESS|G
 |root||root|::1|PROCESS|G
 |root||root|localhost|PROCESS|G
-|root||fsanpra||REFERENCES|G
 |root||root|127.0.0.1|REFERENCES|G
 |root||root|::1|REFERENCES|G
 |root||root|localhost|REFERENCES|G
-|root||fsanpra||RELOAD|G
 |root||root|127.0.0.1|RELOAD|G
 |root||root|::1|RELOAD|G
 |root||root|localhost|RELOAD|G
-|root||fsanpra||REPLICATION CLIENT|G
 |root||root|127.0.0.1|REPLICATION CLIENT|G
 |root||root|::1|REPLICATION CLIENT|G
 |root||root|localhost|REPLICATION CLIENT|G
-|root||fsanpra||REPLICATION SLAVE|G
 |root||root|127.0.0.1|REPLICATION SLAVE|G
 |root||root|::1|REPLICATION SLAVE|G
 |root||root|localhost|REPLICATION SLAVE|G
-|root||fsanpra||SELECT|G
 |root||root|127.0.0.1|SELECT|G
 |root||root|::1|SELECT|G
 |root||root|localhost|SELECT|G
-|root||fsanpra||SHOW DATABASES|G
 |root||root|127.0.0.1|SHOW DATABASES|G
 |root||root|::1|SHOW DATABASES|G
 |root||root|localhost|SHOW DATABASES|G
-|root||fsanpra||SHOW VIEW|G
 |root||root|127.0.0.1|SHOW VIEW|G
 |root||root|::1|SHOW VIEW|G
 |root||root|localhost|SHOW VIEW|G
-|root||fsanpra||SHUTDOWN|G
 |root||root|127.0.0.1|SHUTDOWN|G
 |root||root|::1|SHUTDOWN|G
 |root||root|localhost|SHUTDOWN|G
-|root||fsanpra||SUPER|G
 |root||root|127.0.0.1|SUPER|G
 |root||root|::1|SUPER|G
 |root||root|localhost|SUPER|G
-|root||fsanpra||TRIGGER|G
 |root||root|127.0.0.1|TRIGGER|G
 |root||root|::1|TRIGGER|G
 |root||root|localhost|TRIGGER|G
-|root||fsanpra||UPDATE|G
 |root||root|127.0.0.1|UPDATE|G
 |root||root|::1|UPDATE|G
 |root||root|localhost|UPDATE|G
-|root||fsanpra||grant option|G
 |root||root|127.0.0.1|grant option|G
 |root||root|::1|grant option|G
 |root||root|localhost|grant option|G
-datos\\_sensores|schema||fsanpra||ALTER|G
-datos\\_sensores|schema||fsanpra||ALTER ROUTINE|G
-datos\\_sensores|schema||fsanpra||CREATE|G
-datos\\_sensores|schema||fsanpra||CREATE ROUTINE|G
-datos\\_sensores|schema||fsanpra||CREATE TEMPORARY TABLES|G
-datos\\_sensores|schema||fsanpra||CREATE VIEW|G
-datos\\_sensores|schema||fsanpra||DELETE|G
-datos\\_sensores|schema||fsanpra||DELETE HISTORY|G
-datos\\_sensores|schema||fsanpra||DROP|G
-datos\\_sensores|schema||fsanpra||EVENT|G
-datos\\_sensores|schema||fsanpra||EXECUTE|G
-datos\\_sensores|schema||fsanpra||INDEX|G
-datos\\_sensores|schema||fsanpra||INSERT|G
-datos\\_sensores|schema||fsanpra||LOCK TABLES|G
-datos\\_sensores|schema||fsanpra||REFERENCES|G
-datos\\_sensores|schema||fsanpra||SELECT|G
-datos\\_sensores|schema||fsanpra||SHOW VIEW|G
-datos\\_sensores|schema||fsanpra||TRIGGER|G
-datos\\_sensores|schema||fsanpra||UPDATE|G
 phpmyadmin|schema||pma|localhost|DELETE|G
 phpmyadmin|schema||pma|localhost|INSERT|G
 phpmyadmin|schema||pma|localhost|SELECT|G
@@ -181,7 +132,7 @@ test\\_%|schema||&apos;&apos;||SELECT|G
 test\\_%|schema||&apos;&apos;||SHOW VIEW|G
 test\\_%|schema||&apos;&apos;||TRIGGER|G
 test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
-      <ServerVersion>10.4.32</ServerVersion>
+      <ServerVersion>10.4.28</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
@@ -1189,349 +1140,340 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
     <collation id="323" parent="1" name="utf8mb4_vietnamese_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <schema id="324" parent="1" name="datos_sensores">
-      <CollationName>utf8mb4_general_ci</CollationName>
-    </schema>
-    <schema id="325" parent="1" name="greenlife">
+    <schema id="324" parent="1" name="greenlife">
       <Current>1</Current>
-<<<<<<< HEAD
-      <LastIntrospectionLocalTimestamp>2024-06-13.23:18:07</LastIntrospectionLocalTimestamp>
-=======
-      <LastIntrospectionLocalTimestamp>2024-06-14.00:37:53</LastIntrospectionLocalTimestamp>
->>>>>>> feature/apiSantiago
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
-    <schema id="326" parent="1" name="information_schema">
+    <schema id="325" parent="1" name="information_schema">
       <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <schema id="327" parent="1" name="mysql">
+    <schema id="326" parent="1" name="mysql">
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
-    <schema id="328" parent="1" name="performance_schema">
+    <schema id="327" parent="1" name="performance_schema">
       <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <schema id="329" parent="1" name="phpmyadmin">
+    <schema id="328" parent="1" name="phpmyadmin">
       <CollationName>utf8_bin</CollationName>
     </schema>
-    <schema id="330" parent="1" name="prueba_ventas">
+    <schema id="329" parent="1" name="polihuerto">
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
-    <schema id="331" parent="1" name="test">
+    <schema id="330" parent="1" name="test">
       <CollationName>latin1_swedish_ci</CollationName>
     </schema>
-    <user id="332" parent="1" name="fsanpra"/>
-    <user id="333" parent="1" name="pma">
+    <user id="331" parent="1" name="pma">
       <Host>localhost</Host>
     </user>
-    <user id="334" parent="1" name="root">
+    <user id="332" parent="1" name="root">
       <Host>127.0.0.1</Host>
     </user>
-    <user id="335" parent="1" name="root">
+    <user id="333" parent="1" name="root">
       <Host>::1</Host>
     </user>
-    <user id="336" parent="1" name="root">
+    <user id="334" parent="1" name="root">
       <Host>localhost</Host>
     </user>
-    <table id="337" parent="325" name="consultas">
+    <table id="335" parent="324" name="consultas">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="338" parent="325" name="huertos">
+    <table id="336" parent="324" name="huertos">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="339" parent="325" name="lecturas">
+    <table id="337" parent="324" name="lecturas">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="340" parent="325" name="limites">
+    <table id="338" parent="324" name="limites">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="341" parent="325" name="roles">
+    <table id="339" parent="324" name="roles">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="342" parent="325" name="sondas">
+    <table id="340" parent="324" name="sondas">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="343" parent="325" name="usuarios">
+    <table id="341" parent="324" name="usuarios">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <check id="344" parent="337" name="tipo">
+    <check id="342" parent="335" name="tipo">
       <ColNames>tipo</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Predicate>`tipo` between 0 and 2</Predicate>
     </check>
-    <column id="345" parent="337" name="id_consulta">
+    <column id="343" parent="335" name="id_consulta">
       <AutoIncrement>7</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="346" parent="337" name="id_usuario">
+    <column id="344" parent="335" name="id_usuario">
       <DasType>int(11)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="347" parent="337" name="tipo">
+    <column id="345" parent="335" name="tipo">
       <DasType>int(11)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="348" parent="337" name="asunto">
+    <column id="346" parent="335" name="asunto">
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="349" parent="337" name="texto">
+    <column id="347" parent="335" name="texto">
       <DasType>text|0s</DasType>
       <Position>5</Position>
     </column>
-    <foreign-key id="350" parent="337" name="consultas_ibfk_1">
+    <foreign-key id="348" parent="335" name="consultas_ibfk_1">
       <ColNames>id_usuario</ColNames>
       <RefColNames>id_usuario</RefColNames>
       <RefTableName>usuarios</RefTableName>
     </foreign-key>
-    <index id="351" parent="337" name="PRIMARY">
+    <index id="349" parent="335" name="PRIMARY">
       <ColNames>id_consulta</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="352" parent="337" name="id_usuario">
+    <index id="350" parent="335" name="id_usuario">
       <ColNames>id_usuario</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="353" parent="337" name="PRIMARY">
+    <key id="351" parent="335" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="354" parent="338" name="id_huerto">
+    <column id="352" parent="336" name="id_huerto">
       <AutoIncrement>11</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="355" parent="338" name="id_usuario">
+    <column id="353" parent="336" name="id_usuario">
       <DasType>int(11)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="356" parent="338" name="nombre">
+    <column id="354" parent="336" name="nombre">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="357" parent="338" name="huertos_ibfk_1">
+    <foreign-key id="355" parent="336" name="huertos_ibfk_1">
       <ColNames>id_usuario</ColNames>
       <RefColNames>id_usuario</RefColNames>
       <RefTableName>usuarios</RefTableName>
     </foreign-key>
-    <index id="358" parent="338" name="PRIMARY">
+    <index id="356" parent="336" name="PRIMARY">
       <ColNames>id_huerto</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="359" parent="338" name="id_usuario">
+    <index id="357" parent="336" name="id_usuario">
       <ColNames>id_usuario</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="360" parent="338" name="PRIMARY">
+    <key id="358" parent="336" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="361" parent="339" name="id_lectura">
+    <column id="359" parent="337" name="id_lectura">
       <AutoIncrement>7451</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="362" parent="339" name="id_sonda">
+    <column id="360" parent="337" name="id_sonda">
       <DasType>int(11)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="363" parent="339" name="fecha_hora">
+    <column id="361" parent="337" name="fecha_hora">
       <DasType>datetime|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="364" parent="339" name="humedad">
+    <column id="362" parent="337" name="humedad">
       <DasType>decimal(5,2 digit)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="365" parent="339" name="temperatura">
+    <column id="363" parent="337" name="temperatura">
       <DasType>decimal(5,2 digit)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="366" parent="339" name="lux">
+    <column id="364" parent="337" name="lux">
       <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="367" parent="339" name="salinidad">
+    <column id="365" parent="337" name="salinidad">
       <DasType>decimal(5,2 digit)|0s</DasType>
       <Position>7</Position>
     </column>
-    <column id="368" parent="339" name="pH">
+    <column id="366" parent="337" name="pH">
       <DasType>decimal(3,2 digit)|0s</DasType>
       <Position>8</Position>
     </column>
-    <foreign-key id="369" parent="339" name="lecturas_ibfk_1">
+    <foreign-key id="367" parent="337" name="lecturas_ibfk_1">
       <ColNames>id_sonda</ColNames>
       <RefColNames>id_sondas</RefColNames>
       <RefTableName>sondas</RefTableName>
     </foreign-key>
-    <index id="370" parent="339" name="PRIMARY">
+    <index id="368" parent="337" name="PRIMARY">
       <ColNames>id_lectura</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="371" parent="339" name="id_sonda">
+    <index id="369" parent="337" name="id_sonda">
       <ColNames>id_sonda</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="372" parent="339" name="PRIMARY">
+    <key id="370" parent="337" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="373" parent="340" name="id_limite">
+    <column id="371" parent="338" name="id_limite">
       <AutoIncrement>51</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="374" parent="340" name="id_sonda">
+    <column id="372" parent="338" name="id_sonda">
       <DasType>int(11)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="375" parent="340" name="tipo_parametro">
+    <column id="373" parent="338" name="tipo_parametro">
       <DasType>varchar(50)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="376" parent="340" name="valor_min">
+    <column id="374" parent="338" name="valor_min">
       <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="377" parent="340" name="valor_max">
+    <column id="375" parent="338" name="valor_max">
       <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>5</Position>
     </column>
-    <foreign-key id="378" parent="340" name="limites_ibfk_1">
+    <foreign-key id="376" parent="338" name="limites_ibfk_1">
       <ColNames>id_sonda</ColNames>
       <RefColNames>id_sondas</RefColNames>
       <RefTableName>sondas</RefTableName>
     </foreign-key>
-    <index id="379" parent="340" name="PRIMARY">
+    <index id="377" parent="338" name="PRIMARY">
       <ColNames>id_limite</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="380" parent="340" name="id_sonda">
+    <index id="378" parent="338" name="id_sonda">
       <ColNames>id_sonda</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="381" parent="340" name="PRIMARY">
+    <key id="379" parent="338" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="382" parent="341" name="id">
+    <column id="380" parent="339" name="id">
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="383" parent="341" name="rol">
+    <column id="381" parent="339" name="rol">
       <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <check id="384" parent="342" name="estatus">
+    <check id="382" parent="340" name="estatus">
       <ColNames>estatus</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Predicate>`estatus` in (0,1)</Predicate>
     </check>
-    <column id="385" parent="342" name="id_sondas">
+    <column id="383" parent="340" name="id_sondas">
       <AutoIncrement>11</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="386" parent="342" name="estatus">
+    <column id="384" parent="340" name="estatus">
       <DasType>int(11)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="387" parent="342" name="id_huerto">
+    <column id="385" parent="340" name="id_huerto">
       <DasType>int(11)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="388" parent="342" name="serial">
+    <column id="386" parent="340" name="serial">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="389" parent="342" name="nombre">
+    <column id="387" parent="340" name="nombre">
       <DasType>varchar(12)|0s</DasType>
       <Position>5</Position>
     </column>
-    <foreign-key id="390" parent="342" name="sondas_ibfk_1">
+    <foreign-key id="388" parent="340" name="sondas_ibfk_1">
       <ColNames>id_huerto</ColNames>
       <RefColNames>id_huerto</RefColNames>
       <RefTableName>huertos</RefTableName>
     </foreign-key>
-    <index id="391" parent="342" name="PRIMARY">
+    <index id="389" parent="340" name="PRIMARY">
       <ColNames>id_sondas</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="392" parent="342" name="id_huerto">
+    <index id="390" parent="340" name="id_huerto">
       <ColNames>id_huerto</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="393" parent="342" name="PRIMARY">
+    <key id="391" parent="340" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="394" parent="343" name="id_usuario">
+    <column id="392" parent="341" name="id_usuario">
       <AutoIncrement>21</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="395" parent="343" name="correo">
+    <column id="393" parent="341" name="correo">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="396" parent="343" name="rol">
+    <column id="394" parent="341" name="rol">
       <DasType>int(11)|0s</DasType>
       <DefaultExpression>2</DefaultExpression>
       <Position>3</Position>
     </column>
-    <column id="397" parent="343" name="nombre">
+    <column id="395" parent="341" name="nombre">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="398" parent="343" name="apellido">
+    <column id="396" parent="341" name="apellido">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="399" parent="343" name="contrasenya">
+    <column id="397" parent="341" name="contrasenya">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="400" parent="343" name="codigo_de_invitado">
+    <column id="398" parent="341" name="codigo_de_invitado">
       <DasType>varchar(100)|0s</DasType>
       <Position>7</Position>
     </column>
-    <index id="401" parent="343" name="PRIMARY">
+    <index id="399" parent="341" name="PRIMARY">
       <ColNames>id_usuario</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="402" parent="343" name="PRIMARY">
+    <key id="400" parent="341" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
