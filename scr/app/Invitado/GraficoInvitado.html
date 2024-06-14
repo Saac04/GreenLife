@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario Invitado</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../../css/Botones.css">
+    <link rel="stylesheet" href="../../css/Fuentes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/MenuHam.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../css/Invitado.css">
+    <style>
+        /* Estilos adicionales si son necesarios */
+    </style>
+</head>
+<body>
+<header class="header">
+    <div><img class="logo" src="../../img/Grado_en_tecnologías_interactivas.svg" alt="LOGO"></div>
+    <h1><span class="green">Green</span><span class="life">Life</span></h1>
+    <nav>
+        <ul class="nav-menu" id="menuOrdenador">
+            <li><a class="text-button" href="../../index.html"><i class="fa fa-sign-out"></i></a></li>
+        </ul>
+    </nav>
+</header>
+
+<nav id="navMenu" role="navigation">
+    <div id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+            <li><a class="text-button" href="gestionarCuenta.html"><i class="fa fa-user-circle-o"></i></a></li>
+            <li><a class="text-button" href="../../index.html"><i class="fa fa-sign-out"></i></a></li>
+            <li><a class="text-button" href="tecnico_cliente.html">FAQ</a></li>
+            <li><a class="text-button" href="#">Sobre Nosotros</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="superior">
+    <!-- Contenido de la parte superior de tu página -->
+</div>
+
+<h2 id="nombre-huerto">Visualizacion como Invitado</h2>
+<div>
+    <label class="dropdown-label-h3" for="huerto">Huerto:</label>
+    <select class="dropdown-select" id="huerto">
+        <option value="Huerto 1">Tomates</option>
+        <option value="Huerto 2">Chiles</option>
+    </select>
+</div>
+<div class="button-menu">
+    <div class="button-menu1">
+        <div class="button-color">
+            <button class="button color-humedad" id="humedad" data-btn="0" onclick="toggleDataSet(0); activarUnicoGH(this);">Humedad</button>
+            <div class=""></div>
+        </div>
+        <div class="button-color">
+            <button class="button color-temperatura" id="temperatura" data-btn="1" onclick="toggleDataSet(1); activarUnicoGH(this);">Temperatura</button>
+            <div class=""></div>
+        </div>
+        <div class="button-color">
+            <button class="button color-luminosidad" id="luminosidad" data-btn="2" onclick="toggleDataSet(2); activarUnicoGH(this);">Luminosidad</button>
+            <div class=""></div>
+        </div>
+    </div>
+    <div class="button-menu2">
+        <div class="button-color">
+            <button class="button color-salinidad" id="salinidad" data-btn="3" onclick="toggleDataSet(3); activarUnicoGH(this);">Salinidad</button>
+            <div class=""></div>
+        </div>
+        <div class="button-color">
+            <button class="button color-pH" id="pH" data-btn="4" onclick="toggleDataSet(4); activarUnicoGH(this);">pH</button>
+            <div class=""></div>
+        </div>
+        <div>
+            <button class="button active" id="todo" data-btn="5" onclick="toggleDataSet(5); activarUnicoGH(this);">Todo</button>
+        </div>
+    </div>
+</div>
+
+<div class="grafica-edit">
+    <div class="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+</div>
+
+<div class="inferior">
+    <!-- Contenido de la parte inferior de tu página -->
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation/dist/chartjs-plugin-annotation.min.js"></script>
+<script src="../js/Invitado.js"></script>
+<script src="../../js/Botones.js"></script>
+
+</body>
+</html>
